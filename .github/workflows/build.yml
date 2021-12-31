@@ -9,10 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/[email protected]
+      - uses: actions/checkout@v1
 
       - name: Use Go 1.13
-        uses: actions/[email protected]
+        uses: actions/setup-go@v1
         with:
           go-version: 1.13.x
 
@@ -24,7 +24,7 @@ jobs:
 
 
       - name: Deploy
-        uses: peaceiris/[email protected]
+        uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: $
           PUBLISH_BRANCH: gh-pages
