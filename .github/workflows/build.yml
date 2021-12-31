@@ -1,0 +1,31 @@
+ame: Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/[email protected]
+
+      - name: Use Go 1.13
+        uses: actions/[email protected]
+        with:
+          go-version: 1.13.x
+
+      - name: build game
+        run: |
+          go get github.com/tmedwards/tweego
+          export PATH=$PATH:$(go env GOPATH)/bin
+          tweego YouAndOblivion.twee -o dist/index.html
+
+
+      - name: Deploy
+        uses: peaceiris/[email protected]
+        env:
+          PERSONAL_TOKEN: $
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./dist
