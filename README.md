@@ -1,6 +1,5 @@
 # You And Oblivion
-## A Disco Elysium Fan-game
-## Be Gay; Solve Crimes
+## A Disco Elysium Fan-game :: Be Gay; Solve Crimes
 
 ## What are we using?
 * [Twine](https://twinery.org/)

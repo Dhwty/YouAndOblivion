@@ -492,6 +492,7 @@ You got: _roll
 <<AddParagraph "The bedroom is to your right, and what you can see in the light leaking from the living room suggests it's been trashed. The bathroom, a dingy and unwashed yellow on what probably used to be white, is in the same direction.">>
 <<AddOption "[Perception - Medium 10] Examine prybar" ExaminePrybar>>[[|ExaminePrybar]]
 <<AddOption "Look out window" AptWindow>>[[|AptWindow]]
+<<AddOption "Examine bathroom" ExamineBathroom>>[[|ExamineBathroom]]
 <<AddOption "Return to hall" 3FHall>>
 
 ::ExaminePrybar
@@ -523,4 +524,9 @@ You got: _roll
 <<PassiveSkill Perception>>
 <<AddParagraph "As you turn away from the window, you notice a smear on the glass that looks as if something twice rounded was pressed against the glass, clearing some of the grime. You wonder, for a moment, if the tenant was mooning someone in the next building, but something bothers you about the angle.">>
 /*Add Kim's ass checks*/
+<<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::ExamineBathroom
+<<PassiveSkill Perception>>
+<<AddParagraph "You don't really want to search this. It's worse than your bathroom. You're pretty sure you at least bleached the sink, last month. This place has a filthy yellow film on every surface in it. A wet towel is wadded up under the bar it should be hung on. A crusty strand of large beads lies in the sink. The mirror is so blurry, your face looks like pastel paints thrown at the wall. The toilet seat is up and the bowl is brown with yellow water.">>
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
