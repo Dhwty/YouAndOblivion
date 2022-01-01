@@ -448,6 +448,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "\"The noise complaint is hours old. There's no noise, now. It's ... I have a bad feeling about this one.\"">>
 
 <<AddOption "[Perception - Easy 8] \"Have you been smoking, this early?\"" SmokeCheck>>[[|SmokeCheck]]
+<<AddOption "Go inside" 3FHall>>[[|3FHall]]
 
 
 :: SmokeCheck {"position":"1100,200","size":"100,100"}
