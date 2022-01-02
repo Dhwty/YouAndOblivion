@@ -237,6 +237,9 @@ window.rollDice = function() {
 /*Reputation*/
 <<set $Kimfluence to 0>>
 <<set $StationRep to 0>>
+/*Thoughts*/
+<<set $thoughtKimsAss to 0>>
+<<set $thoughtCunoDoesntCare to 0>>
 
 
 :: PassageHeader {"position":"407,27","size":"100,100"}
@@ -531,7 +534,42 @@ You got: _roll
 <<PassiveSkill Perception>>
 <<AddParagraph "As you turn away from the window, you notice a smear on the glass that looks as if something twice rounded was pressed against the glass, clearing some of the grime. You wonder, for a moment, if the tenant was mooning someone in the next building, but something bothers you about the angle.">>
 /*Add Kim's ass checks*/
+<<AddOption "[Perception - Legendary 15] Examine the ass-print." KimsAssPrint>>[[|KimsAssPrint]]
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::KimsAssPrint
+<<if $thoughtKimsAss == 2>>
+    <<set _bonus to 10>>
+<</if>>
+<<set _roll to rollDice() + $MOT + _bonus>>
+<<if _roll >= 15>>
+    <<SkillSuccess>>
+    <<PassiveSkill Perception>>
+    <<AddParagraph "You know this ass. You've studied this ass. You can match these curves to the ones you've been watching through those perfectly-tailored pants. The ass that was pressed against this window was Kim's, beyond a shadow of a doubt.">>
+
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Perception">>
+    <<AddParagraph "You can't tell whose ass left this print, but there's got to be a way to determine it. Maybe if you studied some asses, you'd be better able to estimate the size of the person who left this print.">>
+    <<AddParagraph "In fact, maybe you should start with Kim's. He's right there. And for all his well-tailored pants don't show it at all, you're sure he must have an ass. You've seen him sit. You've seen him bend. And no man is truly assless, is he?">>
+
+	<<ThoughtGained "This Man Has No Ass!">>
+    <<set $thoughtKimsAss to 1>>
+
+    <<PassiveSkill "Perception">>
+    <<AddParagraph "You look more closely and realise that there are drip and smear marks below the ass print.">>
+
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "You know damn well what happened to this window. You've made it happen to enough windows. You'll make it happen to another window! Maybe when you find Kim's ass, you can use it to leave some marks on a window just like these. Some wet, hot smears--">>
+
+    <<PassiveSkill "Logic">>
+    <<AddParagraph "--on the freezing cold glass. That's not going to be enjoyable in this weather.">>
+
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "You should still do it with Kim' ass, when you find it. I bet he'd be hot for it.">>
+
+<</if>>
+<<AddOption "Look at something else" CrimeScene>>
 
 ::ExamineBathroom
 <<PassiveSkill Perception>>
