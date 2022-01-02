@@ -429,6 +429,11 @@ A Disco Elysium Fanwork
 <<set $paraAppendMode to true>>
 <</widget>>
 
+<<widget "ThoughtComplete">>
+<<run $greentext.push("@@.green;Thought complete: " + $args[0] + "@@")>>
+<<set $paraAppendMode to true>>
+<</widget>>
+
 <<widget "LevelUp">>
 <<run $greentext.push("@@.green;Level up!@@")>>
 <<set $paraAppendMode to true>>
