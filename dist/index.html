@@ -311,9 +311,13 @@ window.rollDice = function() {
 &lt;&lt;set $gotPrybar to 0&gt;&gt;
 /*Visited Locations*/
 &lt;&lt;set $visCrimeScene to 0&gt;&gt;
+&lt;&lt;set $seenAlley to 0&gt;&gt;
 /*Reputation*/
-&lt;&lt;set $KimLovesYou to 0&gt;&gt;
-&lt;&lt;set $StationRep to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="PassageHeader" tags="" position="407,27" size="100,100">&lt;&lt;set $paragraphs to []&gt;&gt;
+&lt;&lt;set $Kimfluence to 0&gt;&gt;
+&lt;&lt;set $StationRep to 0&gt;&gt;
+/*Thoughts*/
+&lt;&lt;set $thoughtKimsAss to 0&gt;&gt;
+&lt;&lt;set $thoughtCunoDoesntCare to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="PassageHeader" tags="" position="407,27" size="100,100">&lt;&lt;set $paragraphs to []&gt;&gt;
 &lt;&lt;if $lastoption&gt;&gt;
 @@.speaker.pastchoice;You@@ @@.pastchoice;- $lastoption@@
 
@@ -442,6 +446,11 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;set $paraAppendMode to true&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
 
+&lt;&lt;widget &quot;ThoughtComplete&quot;&gt;&gt;
+&lt;&lt;run $greentext.push(&quot;@@.green;Thought complete: &quot; + $args[0] + &quot;@@&quot;)&gt;&gt;
+&lt;&lt;set $paraAppendMode to true&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+
 &lt;&lt;widget &quot;LevelUp&quot;&gt;&gt;
 &lt;&lt;run $greentext.push(&quot;@@.green;Level up!@@&quot;)&gt;&gt;
 &lt;&lt;set $paraAppendMode to true&gt;&gt;
@@ -456,7 +465,8 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;The noise complaint is hours old. There&#39;s no noise, now. It&#39;s ... I have a bad feeling about this one.\&quot;&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;[Perception - Easy 8] \&quot;Have you been smoking, this early?\&quot;&quot; SmokeCheck&gt;&gt;[[|SmokeCheck]]</tw-passagedata><tw-passagedata pid="19" name="SmokeCheck" tags="" position="1100,200" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
+&lt;&lt;AddOption &quot;[Perception - Easy 8] \&quot;Have you been smoking, this early?\&quot;&quot; SmokeCheck&gt;&gt;[[|SmokeCheck]]
+&lt;&lt;AddOption &quot;Go inside&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="19" name="SmokeCheck" tags="" position="1100,200" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 You got: _roll
 &lt;&lt;if _roll &gt;= 8&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
@@ -507,8 +517,67 @@ You got: _roll
     &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill Perception&gt;&gt;
     &lt;&lt;AddParagraph  &quot;It&#39;s definitely an RCM-issue prybar. You can see the property number branded into the rubber of the handle. In fact, it reminds you of the one you borrowed from Kim, back in Martinaise, on your first case together.&quot;&gt;&gt;
+	&lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
+	&lt;&lt;if _roll &gt;= 8&gt;&gt;
+		&lt;&lt;PassiveSkill &quot;Esprit de Corps&quot;&gt;&gt;
+    	&lt;&lt;AddParagraph &quot;While you study the familiar edges of the prybar, your partner studies you. He watches you from the corner of his eye, his expression carved from stone. He’s holding his breath but saying nothing.&quot;&gt;&gt;
+    	&lt;&lt;AddParagraph &quot;He’s waiting for you to say something first.&quot;&gt;&gt;
+    	&lt;&lt;AddOption &quot;Wait him out.&quot; StaringContest&gt;&gt; [[|StaringContest]]
+    	&lt;&lt;AddOption &quot;\&quot;Hey, Kim. Guess what? We found your prybar!\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]
+    	&lt;&lt;AddOption &quot;\&quot;I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\&quot;&quot; HideTheBody&gt;&gt; [[|HideTheBody]]
+    &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="23" name="AptWindow" tags="" position="350,350" size="100,100">&lt;&lt;set $seenAlley to 1&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="23" name="IsThisYourPrybar" tags="" position="350,350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He sighs but doesn&#39;t deny it. \&quot;Yes. Good work, Detective,\&quot; he says with a desert dryness.&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Cool.\&quot; You look at something else.&quot; CrimeScene&gt;&gt; [[|CrimeScene]]
+&lt;&lt;AddOption &quot;\&quot;How did it end up here?\&quot;&quot; HowDidItGetHere&gt;&gt; [[|HowDidItGetHere]]
+&lt;&lt;AddOption &quot;\&quot;I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\&quot;&quot; HideTheBody&gt;&gt; [[|HideTheBody]]</tw-passagedata><tw-passagedata pid="24" name="StaringContest" tags="" position="475,350" size="100,100">&lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Two can play this game. Kim watches you out of the corner of his eye, and you watch him out of the corner of yours. A covert staring contest begins. Lucky for you, the indirect line of sight protects you from the full force of his judgemental eyebrow.&quot;
+&lt;&lt;AddOption &quot;[Authority - Hard 15] You’re a decorated officer. You’ve got this.&quot; StaringContestCheck&gt;&gt;[[|StaringContestCheck]]</tw-passagedata><tw-passagedata pid="25" name="StaringContestCheck" tags="" position="1100,200" size="100,100">&lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
+You got: _roll
+&lt;&lt;if _roll &gt;= 15&gt;&gt;
+    &lt;&lt;SkillSuccess&gt;&gt;
+    &lt;&lt;PassiveSkill Authority&gt;&gt;
+    &lt;&lt;AddParagraph &quot;A bead of sweat forms at your hairline, but you have the upper hand. His prybar, wet with blood, next to the murder victim. He knows how this must look.&quot;&gt;&gt;
+
+    &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;Finally, he deflates, his orange jacket sagging with his shoulders like an empty parachute. \&quot;I can&#39;t believe I&#39;m about to say this, but can you please say something?\&quot;&quot;&gt;&gt;
+    &lt;&lt;AddOption &quot;\&quot;Something.\&quot;&quot; Something&gt;&gt; [[|Something]]
+    &lt;&lt;AddOption &quot;\I mean... I don&#39;t know if it was missing, but we found your prybar.\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]
+&lt;&lt;else&gt;&gt;
+    &lt;&lt;SkillFailure&gt;&gt;
+    &lt;&lt;PassiveSkill Authority&gt;&gt;
+	&lt;&lt;AddParagraph &quot;You concentrate so hard that you forget to breathe. The spots gathering at the edges of your vision blot out what you can see of the lieutenant. You finally suck in a breath and forget what you were doing.&quot;&gt;&gt;
+	&lt;&lt;AddParagraph &quot;Dead body. Right. Best not to keel over into all that blood.&quot;&gt;&gt;
+    &lt;&lt;AddOption &quot;Look at something else.&quot; CrimeScene&gt;&gt; [[|CrimeScene]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="HideTheBody" tags="" position="725,350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;What?\&quot; Kim sputters, turning to give you a scandalised look. \&quot;No! Of course not!\&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Hey. No judgement, Kim. I&#39;m sure he had a very wackable face.\&quot; You pantomime bashing his head in with the prybar.&quot; WackableFace&gt;&gt; [[|WackableFace]]</tw-passagedata><tw-passagedata pid="27" name="WackableFace" tags="" position="850,350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;The lieutenant buries his face in his hands and lets out a muffled, strangled scream.&quot;&gt;&gt;
+&lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
+&lt;&lt;if _roll &gt;= 9&gt;&gt;
+    &lt;&lt;SkillSuccess&gt;&gt;
+    &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;The lieutenant is frustrated, tired, and itching for another cigarette to calm his nerves. You see it now in the way his fingers shake. He&#39;d hoped you knew him better than this.&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+    &lt;&lt;SkillFailure&gt;&gt;
+    &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;The lieutenant is clearly overcome with gratitude and emotion. You are a good partner.&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Detective. *Harry*.\&quot; The lieutenant claps both hands on your shoulders to make sure you are paying attention. Slowly, he looks you in the eye and says, \&quot;I did not kill this man. I do not know who did or why they used my prybar, but I did not kill him.\&quot;&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He lets go of your shoulders and steps back. \&quot;That is why I called you, Harry. To do our jobs.\&quot;&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;HalfLife&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He&#39;s a little unsettled by how quickly you were willing to help him destroy evidence of a murder.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;But also a little touched.&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else.&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="28" name="HowDidItGetHere" tags="" position="975,350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;I don&#39;t know,\&quot; Kim says softly. \&quot;I was hoping you could help me find that out.\&quot;&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="29" name="Something" tags="" position="1100,350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He gives you a flat look.&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\I mean... I don&#39;t know if it was missing, but we found your prybar.\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]</tw-passagedata><tw-passagedata pid="30" name="AptWindow" tags="" position="1225,350" size="100,100">&lt;&lt;set $seenAlley to 1&gt;&gt;
 &lt;&lt;PassiveSkill Perception&gt;&gt;
 &lt;&lt;AddParagraph  &quot;Behind the hanging, there&#39;s a window that looks like it hasn&#39;t been washed since the Revolution, and it looks down on an alley that almost looks cleaner than the apartment you&#39;re standing in. You spot two ginger-haired people digging through an unlocked skip.&quot;&gt;&gt;
 
@@ -518,7 +587,39 @@ You got: _roll
 &lt;&lt;PassiveSkill Perception&gt;&gt;
 &lt;&lt;AddParagraph &quot;As you turn away from the window, you notice a smear on the glass that looks as if something twice rounded was pressed against the glass, clearing some of the grime. You wonder, for a moment, if the tenant was mooning someone in the next building, but something bothers you about the angle.&quot;&gt;&gt;
 /*Add Kim&#39;s ass checks*/
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="24" name="ExamineBathroom" tags="" position="475,350" size="100,100">&lt;&lt;PassiveSkill Perception&gt;&gt;
+&lt;&lt;AddOption &quot;[Perception - Legendary 15] Examine the ass-print.&quot; KimsAssPrint&gt;&gt;[[|KimsAssPrint]]
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="31" name="KimsAssPrint" tags="" position="100,475" size="100,100">&lt;&lt;if $thoughtKimsAss == 2&gt;&gt;
+    &lt;&lt;set _bonus to 10&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;set _roll to rollDice() + $MOT + _bonus&gt;&gt;
+&lt;&lt;if _roll &gt;= 15&gt;&gt;
+    &lt;&lt;SkillSuccess&gt;&gt;
+    &lt;&lt;PassiveSkill Perception&gt;&gt;
+    &lt;&lt;AddParagraph &quot;You know this ass. You&#39;ve studied this ass. You can match these curves to the ones you&#39;ve been watching through those perfectly-tailored pants. The ass that was pressed against this window was Kim&#39;s, beyond a shadow of a doubt.&quot;&gt;&gt;
+
+&lt;&lt;else&gt;&gt;
+    &lt;&lt;SkillFailure&gt;&gt;
+    &lt;&lt;PassiveSkill &quot;Perception&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;You can&#39;t tell whose ass left this print, but there&#39;s got to be a way to determine it. Maybe if you studied some asses, you&#39;d be better able to estimate the size of the person who left this print.&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;In fact, maybe you should start with Kim&#39;s. He&#39;s right there. And for all his well-tailored pants don&#39;t show it at all, you&#39;re sure he must have an ass. You&#39;ve seen him sit. You&#39;ve seen him bend. And no man is truly assless, is he?&quot;&gt;&gt;
+
+	&lt;&lt;ThoughtGained &quot;This Man Has No Ass!&quot;&gt;&gt;
+    &lt;&lt;set $thoughtKimsAss to 1&gt;&gt;
+
+    &lt;&lt;PassiveSkill &quot;Perception&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;You look more closely and realise that there are drip and smear marks below the ass print.&quot;&gt;&gt;
+
+    &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;You know damn well what happened to this window. You&#39;ve made it happen to enough windows. You&#39;ll make it happen to another window! Maybe when you find Kim&#39;s ass, you can use it to leave some marks on a window just like these. Some wet, hot smears--&quot;&gt;&gt;
+
+    &lt;&lt;PassiveSkill &quot;Logic&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;--on the freezing cold glass. That&#39;s not going to be enjoyable in this weather.&quot;&gt;&gt;
+
+    &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;You should still do it with Kim&#39;s ass, when you find it. I bet he&#39;d be hot for it.&quot;&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="ExamineBathroom" tags="" position="225,475" size="100,100">&lt;&lt;PassiveSkill Perception&gt;&gt;
 &lt;&lt;AddParagraph &quot;You don&#39;t really want to search this. It&#39;s worse than your bathroom. You&#39;re pretty sure you at least bleached the sink, last month. This place has a filthy yellow film on every surface in it. A wet towel is wadded up under the bar it should be hung on. A crusty strand of large beads lies in the sink. The mirror is so blurry, your face looks like pastel paints thrown at the wall. The toilet seat is up and the bowl is brown with yellow water.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
