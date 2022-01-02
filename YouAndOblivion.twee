@@ -231,6 +231,7 @@ window.rollDice = function() {
 <<set $MOT to 3>>
 /*Clues*/
 <<set $gotPrybar to 0>>
+<<set $knowKimsPrybar to 0>>
 /*Visited Locations*/
 <<set $visCrimeScene to 0>>
 <<set $seenAlley to 0>>
@@ -500,7 +501,9 @@ You got: _roll
  <<AddParagraph "The room is still dingy, and the body remains on the floor. The smell is unpleasant, but you've woken up smelling like that, in worse places than this.">>
  <</if>>
 <<AddParagraph "The bedroom is to your right, and what you can see in the light leaking from the living room suggests it's been trashed. The bathroom, a dingy and unwashed yellow on what probably used to be white, is in the same direction.">>
-<<AddOption "[Perception - Medium 10] Examine prybar" ExaminePrybar>>[[|ExaminePrybar]]
+<<if $knowKimsPrybar < 1>>
+    <<AddOption "[Perception - Medium 10] Examine prybar" ExaminePrybar>>[[|ExaminePrybar]]
+<</if>>
 <<AddOption "Look out window" AptWindow>>[[|AptWindow]]
 <<AddOption "Examine bathroom" ExamineBathroom>>[[|ExamineBathroom]]
 <<AddOption "Return to hall" 3FHall>>
@@ -511,15 +514,13 @@ You got: _roll
 You got: _roll
 <<if _roll >= 10>>
     <<SkillSuccess>>
+	<<set $knowKimsPrybar to 1>>
     <<PassiveSkill Perception>>
     <<AddParagraph "You know this prybar. You've used this prybar -- not just this brand, or this style, but this one, right here. You tried to open a door with it that's probably never going to open again, and right here at the end, where it thins so you can get it in, it's still a little bent. This is Kim's prybar.">>
 
-<<PassiveSkill "Half Light">>
-<<AddParagraph  "And now it's wet with another man's blood.">>
-<<else>>
-    <<SkillFailure>>
-    <<PassiveSkill Perception>>
-    <<AddParagraph  "It's definitely an RCM-issue prybar. You can see the property number branded into the rubber of the handle. In fact, it reminds you of the one you borrowed from Kim, back in Martinaise, on your first case together.">>
+	<<PassiveSkill "Half Light">>
+	<<AddParagraph  "And now it's wet with another man's blood.">>
+
 	<<set _roll to rollDice() + $PSY>>
 	<<if _roll >= 8>>
 		<<PassiveSkill "Esprit de Corps">>
@@ -529,6 +530,10 @@ You got: _roll
     	<<AddOption "\"Hey, Kim. Guess what? We found your prybar!\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
     	<<AddOption "\"I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\"" HideTheBody>> [[|HideTheBody]]
     <</if>>
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill Perception>>
+    <<AddParagraph  "It's definitely an RCM-issue prybar. You can see the property number branded into the rubber of the handle. In fact, it reminds you of the one you borrowed from Kim, back in Martinaise, on your first case together.">>
 <</if>>
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
@@ -541,7 +546,7 @@ You got: _roll
 
 ::StaringContest
 <<SetSpeaker "You">>
-<<AddParagraph "Two can play this game. Kim watches you out of the corner of his eye, and you watch him out of the corner of yours. A covert staring contest begins. Lucky for you, the indirect line of sight protects you from the full force of his judgemental eyebrow."
+<<AddParagraph "Two can play this game. Kim watches you out of the corner of his eye, and you watch him out of the corner of yours. A covert staring contest begins. Lucky for you, the indirect line of sight protects you from the full force of his judgemental eyebrow.">>
 <<AddOption "[Authority - Hard 15] You’re a decorated officer. You’ve got this." StaringContestCheck>>[[|StaringContestCheck]]
 
 ::StaringContestCheck {"position":"1100,200","size":"100,100"}
@@ -566,7 +571,7 @@ You got: _roll
 
 ::HideTheBody
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "\"What?\" Kim sputters, turning to give you a scandalised look. \"No! Of course not!\">>
+<<AddParagraph "\"What?\" Kim sputters, turning to give you a scandalised look. \"No! Of course not!\"">>
 <<AddOption "\"Hey. No judgement, Kim. I'm sure he had a very wackable face.\" You pantomime bashing his head in with the prybar." WackableFace>> [[|WackableFace]]
 
 ::WackableFace
