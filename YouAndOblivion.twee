@@ -486,27 +486,66 @@ You got: _roll
 
 :: CrimeScene
 <<if $visCrimeScene < 1>>
-<<SetSpeaker "Dirty One-Bedroom Apartment">>
-<<AddParagraph "The door is half-open, held in place by the crumpled body of a man fallen across its path. He's barefoot, half a chicken-skinny calf sticking out of a pair of mustard-coloured bellbottom jeans you think you recognise. You're pretty sure you own a pair like that, and probably in about his size, to judge by the bulging waist that is as far as you can see before entering the room.">>
-<<AddParagraph "Picking your way carefully over the relatively fresh corpse, you come into a room where the light is still on from the night before. A cloth print of Guillaume de Million hangs over the one window at the far end of the room, next to the semi-kitchen bent into the corner. The carpet is a filthy grey that probably dates to the Revolution, and a pool of blood has soaked into it around the corpse's head, and a prybar dented the carpet, while it was still wet, and is now likely adhered to it with partially-dried blood. Whoever the corpse was, half his face is crushed in a way that's going to make identification difficult, if he's not the resident. He had, in life, an excellent set of sideburns with connecting moustache, though, that rather remind you of the way you used to wear your facial hair.">>
+	<<SetSpeaker "Dirty One-Bedroom Apartment">>
+	<<AddParagraph "The door is half-open, held in place by the crumpled body of a man fallen across its path. He's barefoot, half a chicken-skinny calf sticking out of a pair of mustard-coloured bellbottom jeans you think you recognise. You're pretty sure you own a pair like that, and probably in about his size, to judge by the bulging waist that is as far as you can see before entering the room.">>
+    <<AddParagraph "Picking your way carefully over the relatively fresh corpse, you come into a room where the light is still on from the night before. A cloth print of Guillaume de Million hangs over the one window at the far end of the room, next to the semi-kitchen bent into the corner. The carpet is a filthy grey that probably dates to the Revolution. A pool of blood has soaked into it around the corpse's head, and a prybar dented the carpet, while it was still wet, and is now likely adhered to it with partially-dried blood. Whoever the corpse was, half his face is crushed in a way that's going to make identification difficult, if he's not the resident. He had, in life, an excellent set of sideburns with connecting moustache, though, that rather remind you of the way you used to wear your facial hair.">>
 
-<<PassiveSkill "Inland Empire">>
-<<AddParagraph "You've recovered, since then. At least some. At least you like to think you have.">>
+	<<PassiveSkill "Inland Empire">>
+	<<AddParagraph "You've recovered, since then. At least some. At least you like to think you have.">>
 
-<<SetSpeaker "Dirty One-Bedroom Apartment">>
- <<AddParagraph "The man is shirtless, and the massive coat of hair covering his chest like a rug is spotted with crusted mats of red and white. The smell in the room is fresher and far more vile than any left behind by the gathering of that white crust, and you notice the yellow-brown stain in the carpet that has absolutely ruined those jeans. Though, they are mustard. It might fade enough to be unnoticeable, but they'd still be a dead man's pants.">>
- <<set $visCrimeScene to 1>>
+	<<SetSpeaker "Dirty One-Bedroom Apartment">>
+ 	<<AddParagraph "The man is shirtless, and the massive coat of hair covering his chest like a rug is spotted with crusted mats of red and white. The smell in the room is fresher and far more vile than any left behind by the gathering of that white crust, and you notice the yellow-brown stain in the carpet that has absolutely ruined those jeans. Though, they are mustard. It might fade enough to be unnoticeable, but they'd still be a dead man's pants.">>
+ 	<<set $visCrimeScene to 1>>
  <<else>>
- <<SetSpeaker "Dirty One-Bedroom Apartment">>
- <<AddParagraph "The room is still dingy, and the body remains on the floor. The smell is unpleasant, but you've woken up smelling like that, in worse places than this.">>
- <</if>>
+	<<SetSpeaker "Dirty One-Bedroom Apartment">>
+	<<AddParagraph "The room is still dingy, and the body remains on the floor. The smell is unpleasant, but you've woken up smelling like that, in worse places than this.">>
+<</if>>
 <<AddParagraph "The bedroom is to your right, and what you can see in the light leaking from the living room suggests it's been trashed. The bathroom, a dingy and unwashed yellow on what probably used to be white, is in the same direction.">>
+
+<<AddOption "Examine body" FieldAutopsy>>[[|FieldAutopsy]]
+<<AddOption "Examine this room more thoroughly" ExamineMainRoom>>[[|ExamineMainRoom]]
 <<if $knowKimsPrybar < 1>>
     <<AddOption "[Perception - Medium 10] Examine prybar" ExaminePrybar>>[[|ExaminePrybar]]
 <</if>>
 <<AddOption "Look out window" AptWindow>>[[|AptWindow]]
 <<AddOption "Examine bathroom" ExamineBathroom>>[[|ExamineBathroom]]
+<<AddOption "Examine bedroom" ExamineBedroom>>[[|ExamineBedroom]]
 <<AddOption "Return to hall" 3FHall>>
+
+::FieldAutopsy
+<<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::ExamineMainRoom
+<<SetSpeaker "DIRTY ONE-BEDROOM FLAT ">>
+<<AddParagraph "It wouldn’t take a cop to know something went down here. (A lot of somethings, judging from the paraphernalia.) Broken shit against the walls, overturned vinyl player, blood absolutely everywhere... no wonder there was a noise complaint. This was a brawl.">>
+
+<<set _roll to rollDice() + $INT>>
+<<if _roll >=10>>
+    <<PassiveSkill "Visual Calculus">>
+    <<AddParagraph "Once you get past the obvious detritus, smaller elements of the scene begin to dance for you, yielding secrets your eyes have long been trained to see. An overturned end table, the trajectory of thrown décor – the victim was surprised in the bathroom doorway. And here, the way the rug is rumpled under the overturned sofa – unlikely it was deliberate. The assailant didn’t plan a bit of this.">>
+<</if>>
+
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >=12>>
+    <<PassiveSkill "Perception (Sight)">>
+    <<AddParagraph "The couch itself is stylishly retro; it’s old, but the stains on it are not. Nor is this tear that goes straight through them. A clean cut, too.">>
+<</if>>
+
+<<set _roll to rollDice() + $INT>>
+<<if _roll >=7>>
+    <<PassiveSkill "Inland Empire">>
+    <<AddParagraph "It’s not just blood that’s staining this place; there are older sins here, too. Ash ground into the rug. Open bottles, unmarked and overturned, capsules of heaven slipped one by one into the abyss until all that remains are empty plastic carcasses. And there, on the upholstery, one you know all too well: the remains of the fallen, lost on their way to a glory that did not truly await them.">>
+<</if>>
+
+<<SetSpeaker "HORRIFIC NECKTIE">>
+<<AddParagraph "THAT'S NOT AN OIL STAIN! THAT'S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!">>
+
+<<SetSpeaker YOU>>
+<<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim’s life. \"So it would seem.\"">>
+<<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
 ::ExaminePrybar
 <<ItemGained "Red-Handled Prybar">>
@@ -665,3 +704,6 @@ You got: _roll
 <<PassiveSkill Perception>>
 <<AddParagraph "You don't really want to search this. It's worse than your bathroom. You're pretty sure you at least bleached the sink, last month. This place has a filthy yellow film on every surface in it. A wet towel is wadded up under the bar it should be hung on. A crusty strand of large beads lies in the sink. The mirror is so blurry, your face looks like pastel paints thrown at the wall. The toilet seat is up and the bowl is brown with yellow water.">>
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::ExamineBedroom
+<<AddOption "Look at something else" CrimeScene>>
