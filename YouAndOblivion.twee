@@ -523,24 +523,29 @@ You got: _roll
 
 	<<set _roll to rollDice() + $PSY>>
 	<<if _roll >= 8>>
-		<<PassiveSkill "Esprit de Corps">>
-    	<<AddParagraph "While you study the familiar edges of the prybar, your partner studies you. He watches you from the corner of his eye, his expression carved from stone. He’s holding his breath but saying nothing.">>
-    	<<AddParagraph "He’s waiting for you to say something first.">>
-    	<<AddOption "Wait him out." StaringContest>> [[|StaringContest]]
-    	<<AddOption "\"Hey, Kim. Guess what? We found your prybar!\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
-    	<<AddOption "\"I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\"" HideTheBody>> [[|HideTheBody]]
+		<<include "PrybarConvo">>
     <</if>>
 <<else>>
     <<SkillFailure>>
     <<PassiveSkill Perception>>
     <<AddParagraph  "It's definitely an RCM-issue prybar. You can see the property number branded into the rubber of the handle. In fact, it reminds you of the one you borrowed from Kim, back in Martinaise, on your first case together.">>
+	<<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 <</if>>
+
+
+::PrybarConvo
+<<PassiveSkill "Esprit de Corps">>
+<<AddParagraph "While you study the familiar edges of the prybar, your partner studies you. He watches you from the corner of his eye, his expression carved from stone. He’s holding his breath but saying nothing.">>
+<<AddParagraph "He’s waiting for you to say something first.">>
+<<AddOption "Wait him out." StaringContest>> [[|StaringContest]]
+<<AddOption "\"Hey, Kim. Guess what? We found your prybar!\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
+<<AddOption "\"I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\"" HideTheBody>> [[|HideTheBody]]
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
 ::IsThisYourPrybar
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "He sighs but doesn't deny it. \"Yes. Good work, Detective,\" he says with a desert dryness.>>
-<<AddOption "\"Cool.\" You look at something else." CrimeScene>> [[|CrimeScene]]
+<<AddParagraph "He sighs but doesn't deny it. \"Yes. Good work, Detective,\" he says with a desert dryness.">>
+<<AddOption "\"Cool.\" You talk about something else." PrybarConvo>> [[|PrybarConvo]]
 <<AddOption "\"How did it end up here?\"" HowDidItGetHere>> [[|HowDidItGetHere]]
 <<AddOption "\"I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\"" HideTheBody>> [[|HideTheBody]]
 
@@ -566,7 +571,7 @@ You got: _roll
     <<PassiveSkill Authority>>
 	<<AddParagraph "You concentrate so hard that you forget to breathe. The spots gathering at the edges of your vision blot out what you can see of the lieutenant. You finally suck in a breath and forget what you were doing.">>
 	<<AddParagraph "Dead body. Right. Best not to keel over into all that blood.">>
-    <<AddOption "Look at something else." CrimeScene>> [[|CrimeScene]]
+    <<AddOption "Talk about something else." PrybarConvo>> [[|PrybarConvo]]
 <</if>>
 
 ::HideTheBody
@@ -596,12 +601,12 @@ You got: _roll
 
 <<PassiveSkill "Empathy">>
 <<AddParagraph "But also a little touched.">>
-<<AddOption "Look at something else." CrimeScene>>[[|CrimeScene]]
+<<AddOption "Talk about something else." PrybarConvo>>[[|PrybarConvo]]
 
 ::HowDidItGetHere
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"I don't know,\" Kim says softly. \"I was hoping you could help me find that out.\"">>
-<<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+<<AddOption "Talk about something else." PrybarConvo>>[[|PrybarConvo]]
 
 ::Something
 <<SetSpeaker "Kim Kitsuragi">>
