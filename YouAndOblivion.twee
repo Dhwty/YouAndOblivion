@@ -520,8 +520,88 @@ You got: _roll
     <<SkillFailure>>
     <<PassiveSkill Perception>>
     <<AddParagraph  "It's definitely an RCM-issue prybar. You can see the property number branded into the rubber of the handle. In fact, it reminds you of the one you borrowed from Kim, back in Martinaise, on your first case together.">>
+	<<set _roll to rollDice() + $PSY>>
+	<<if _roll >= 8>>
+		<<PassiveSkill "Esprit de Corps">>
+    	<<AddParagraph "While you study the familiar edges of the prybar, your partner studies you. He watches you from the corner of his eye, his expression carved from stone. He’s holding his breath but saying nothing.">>
+    	<<AddParagraph "He’s waiting for you to say something first.">>
+    	<<AddOption "Wait him out." StaringContest>> [[|StaringContest]]
+    	<<AddOption "\"Hey, Kim. Guess what? We found your prybar!\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
+    	<<AddOption "\"I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\"" HideTheBody>> [[|HideTheBody]]
+    <</if>>
 <</if>>
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::IsThisYourPrybar
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He sighs but doesn't deny it. \"Yes. Good work, Detective,\" he says with a desert dryness.>>
+<<AddOption "\"Cool.\" You look at something else." CrimeScene>> [[|CrimeScene]]
+<<AddOption "\"How did it end up here?\"" HowDidItGetHere>> [[|HowDidItGetHere]]
+<<AddOption "\"I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\"" HideTheBody>> [[|HideTheBody]]
+
+::StaringContest
+<<SetSpeaker "You">>
+<<AddParagraph "Two can play this game. Kim watches you out of the corner of his eye, and you watch him out of the corner of yours. A covert staring contest begins. Lucky for you, the indirect line of sight protects you from the full force of his judgemental eyebrow."
+<<AddOption "[Authority - Hard 15] You’re a decorated officer. You’ve got this." StaringContestCheck>>[[|StaringContestCheck]]
+
+::StaringContestCheck {"position":"1100,200","size":"100,100"}
+<<set _roll to rollDice() + $PSY>>
+You got: _roll
+<<if _roll >= 15>>
+    <<SkillSuccess>>
+    <<PassiveSkill Authority>>
+    <<AddParagraph "A bead of sweat forms at your hairline, but you have the upper hand. His prybar, wet with blood, next to the murder victim. He knows how this must look.">>
+
+    <<SetSpeaker "Kim Kitsuragi">>
+    <<AddParagraph "Finally, he deflates, his orange jacket sagging with his shoulders like an empty parachute. \"I can't believe I'm about to say this, but can you please say something?\"">>
+    <<AddOption "\"Something.\"" Something>> [[|Something]]
+    <<AddOption "\I mean... I don't know if it was missing, but we found your prybar.\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill Authority>>
+	<<AddParagraph "You concentrate so hard that you forget to breathe. The spots gathering at the edges of your vision blot out what you can see of the lieutenant. You finally suck in a breath and forget what you were doing.">>
+	<<AddParagraph "Dead body. Right. Best not to keel over into all that blood.">>
+    <<AddOption "Look at something else." CrimeScene>> [[|CrimeScene]]
+<</if>>
+
+::HideTheBody
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"What?\" Kim sputters, turning to give you a scandalised look. \"No! Of course not!\">>
+<<AddOption "\"Hey. No judgement, Kim. I'm sure he had a very wackable face.\" You pantomime bashing his head in with the prybar." WackableFace>> [[|WackableFace]]
+
+::WackableFace
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant buries his face in his hands and lets out a muffled, strangled scream.">>
+<<set _roll to rollDice() + $PSY>>
+<<if _roll >= 9>>
+    <<SkillSuccess>>
+    <<PassiveSkill "Empathy">>
+    <<AddParagraph "The lieutenant is frustrated, tired, and itching for another cigarette to calm his nerves. You see it now in the way his fingers shake. He'd hoped you knew him better than this.">>
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Empathy">>
+    <<AddParagraph "The lieutenant is clearly overcome with gratitude and emotion. You are a good partner.">>
+<</if>>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Detective. *Harry*.\" The lieutenant claps both hands on your shoulders to make sure you are paying attention. Slowly, he looks you in the eye and says, \"I did not kill this man. I do not know who did or why they used my prybar, but I did not kill him.\"">>
+<<AddParagraph "He lets go of your shoulders and steps back. \"That is why I called you, Harry. To do our jobs.\"">>
+
+<<PassiveSkill "HalfLife">>
+<<AddParagraph "He's a little unsettled by how quickly you were willing to help him destroy evidence of a murder.">>
+
+<<PassiveSkill "Empathy">>
+<<AddParagraph "But also a little touched.">>
+<<AddOption "Look at something else." CrimeScene>>[[|CrimeScene]]
+
+::HowDidItGetHere
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I don't know,\" Kim says softly. \"I was hoping you could help me find that out.\"">>
+<<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::Something
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He gives you a flat look.">>
+<<AddOption "\I mean... I don't know if it was missing, but we found your prybar.\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
 
 ::AptWindow
 <<set $seenAlley to 1>>
@@ -566,7 +646,7 @@ You got: _roll
     <<AddParagraph "--on the freezing cold glass. That's not going to be enjoyable in this weather.">>
 
     <<PassiveSkill "Electrochemistry">>
-    <<AddParagraph "You should still do it with Kim' ass, when you find it. I bet he'd be hot for it.">>
+    <<AddParagraph "You should still do it with Kim's ass, when you find it. I bet he'd be hot for it.">>
 
 <</if>>
 <<AddOption "Look at something else" CrimeScene>>
