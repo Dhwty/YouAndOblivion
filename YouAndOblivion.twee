@@ -523,7 +523,7 @@ You got: _roll
 
 	<<set _roll to rollDice() + $PSY>>
 	<<if _roll >= 8>>
-		<<Include "PrybarConvo">>
+		<<include "PrybarConvo">>
     <</if>>
 <<else>>
     <<SkillFailure>>
