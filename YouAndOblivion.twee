@@ -451,17 +451,17 @@ A Disco Elysium Fanwork
 :: Start [nobr] {"position":"1100,50","size":"100,100"}
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "Ah. We meet again. Just you, and me, floating in the deep, deep dark. Who are you?">>
-<<AddOption "1.1) I'm Harry Du Bois. We...worked this out last time." ImHDB>>[[|ImHDB]]
-<<AddOption "1.2) Lieutenant Double-Yefreitor Harrier Du Bois, of District 41, Revachol Citizen's Militia" ImDoubleY>>[[|ImDoubleY]]
-<<AddOption "1.3) I'm the DISCO KING!" ImDiscoKing>>[[|ImDiscoKing]]
-<<AddOption "1.4) Oh, oh *god*, not this again. Not more lost memories. Please, please no..." ImNotDoingThisAgain>>[[|ImNotDoingThisAgain]]
+<<AddOption "I'm Harry Du Bois. We...worked this out last time." ImHDB>>[[|ImHDB]]
+<<AddOption "Lieutenant Double-Yefreitor Harrier Du Bois, of District 41, Revachol Citizen's Militia" ImDoubleY>>[[|ImDoubleY]]
+<<AddOption "I'm the DISCO KING!" ImDiscoKing>>[[|ImDiscoKing]]
+<<AddOption "Oh, oh *god*, not this again. Not more lost memories. Please, please no..." ImNotDoingThisAgain>>[[|ImNotDoingThisAgain]]
 
 ::ImHDB
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "Good, good. You have a name! But what kind of a man are you, Harry Du Bois?">>
-<<AddOption "1.1.1) I'm... I'm a cop." ImACop>>[[|ImACop]]
-<<AddOption "1.1.2) I'm the DISCO KING! Put me up, put me down, put my feet back on the ground, baby!" ImDiscoKing>>[[|ImDiscoKing]]
-<<AddOption "1.1.3) I don't know. I thought I was a detective, but now I'm concerned." ImConcerned>>[[|ImConcerned]]
+<<AddOption "I'm... I'm a cop." ImACop>>[[|ImACop]]
+<<AddOption "I'm the DISCO KING! Put me up, put me down, put my feet back on the ground, baby!" ImDiscoKing>>[[|ImDiscoKing]]
+<<AddOption "I don't know. I thought I was a detective, but now I'm concerned." ImConcerned>>[[|ImConcerned]]
 
 ::ImACop
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN (sarcastic)">>
@@ -492,7 +492,7 @@ A Disco Elysium Fanwork
 ::OneOneThreeOptions
 <<AddOption "I'm a Lieutenant double-yefreitor,  so I suppose I really love field work. It's a good balance of things. Bit of this, bit of that." BasicBitchCop>>[[|BasicBitchCop]]
 <<AddOption "Uhm. I'm ... not particularly *clever*, really. Not much for people. You know what they say about gym teachers <nervous laughter>... all brawn and no brains." GymTeacherCop>>[[|GymTeacherCop]]
-<<AddOption  Well, I used to be a gym teacher, but  I've kind of let that go now. I'm into the intellectual pursuits these days, thinking between the lines and that." HotNerdCop>> [[|HotNerdCop]]
+<<AddOption "Well, I used to be a gym teacher, but  I've kind of let that go now. I'm into the intellectual pursuits these days, thinking between the lines and that." HotNerdCop>> [[|HotNerdCop]]
 <<AddOption "I'm the artistic type. Find the beauty in everything, in the weird creepy spaces and sometimes in the odd corpse. There's art in this world, and I'm out to find it." ArtCop>>[[|ArtCop]]
 <<AddOption "I don't know who I am. Maybe I'm just part of Revachol, you know? Baked into Jamrock? I am the city and the city is me. I don't know if I can walk without doing the Jamrock Shuffle any more." ChildOfTheUniverse>>[[|ChildOfTheUniverse]]
 <<AddOption "Suppose I'm a bit of nerd, really. Always been interested in radiocomputers, interisolary systems, that sort of thing. I can usually work out tech, given a bit of time to look around first." RadioBoyCop>>[[|RadioBoyCop]]
@@ -516,7 +516,7 @@ A Disco Elysium Fanwork
 
 ::ImAddict
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
-<<AddParagraph "Trying to change, is it? If you *insist*, but you know what they say: "the lady doth protest too much, methinks." No matter. You say you're changing, Lieutenant Double-Yefreitor Harrier Du Bois. So, who will you *be*? ">>
+<<AddParagraph "Trying to change, is it? If you *insist*, but you know what they say: 'the lady doth protest too much, methinks.' No matter. You say you're changing, Lieutenant Double-Yefreitor Harrier Du Bois. So, who will you *be*? ">>
 <<AddOption "I'm going to be really *average*. Nothing special. Well, I'll be a little disco, but you know... unremarkable." BasicBitchCop>>[[|BasicBitchCop]]
 <<AddOption "I'm going to play to my strengths. I might not be where I was mentally, but physically I'm better than ever. Between Vicquemare and Kim, I'll use my physical strength to my advantage." GymTeacherCop>>[[|GymTeacherCop]]
 <<AddOption "In the future, I'll use my brain. Think before I act, don't run in blind, that sort of thing. I'd rather not lose myself again." HotNerdCop>> [[|HotNerdCop]]
