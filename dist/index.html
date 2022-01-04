@@ -311,6 +311,7 @@ window.rollDice = function() {
 /*Clues*/
 &lt;&lt;set $gotPrybar to 0&gt;&gt;
 &lt;&lt;set $knowKimsPrybar to 0&gt;&gt;
+&lt;&lt;set $knowAutopsy to 0&gt;&gt;
 /*Visited Locations*/
 &lt;&lt;set $visCrimeScene to 0&gt;&gt;
 &lt;&lt;set $seenAlley to 0&gt;&gt;
@@ -408,7 +409,7 @@ if (paragraphs.length &gt; 1) {
 &lt;&lt;set _para to (_para + $currentspeaker + $args[0])&gt;&gt;
 &lt;&lt;run $paragraphs.push(_para)&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="StoryAuthor" tags="" position="268,439" size="100,100">Original story by The Kirkwall Gazette Collective
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="StoryAuthor" tags="" position="268,439" size="100,100">Story by The Kirkwall Gazette Collective
 Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="StorySubtitle" tags="" position="392,432" size="100,100">Be Gay; Solve Crimes
 A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShare" tags="" position="526,432" size="100,100">[[&quot;@ampepers on Twitter&quot;|https://twitter.com/ampepers]]
 [[&quot;Repo with the source code&quot;|https://github.com/apepers/DiscoElysiumTwineMacros/]]</tw-passagedata><tw-passagedata pid="17" name="GreenTextWidgets" tags="widget" position="400,600" size="100,100">&lt;&lt;nobr&gt;&gt;
@@ -613,7 +614,7 @@ You got: _roll
     &lt;&lt;PassiveSkill Perception&gt;&gt;
     &lt;&lt;AddParagraph &quot;No, it&#39;s gone now. It&#39;s probably just the smell of last night&#39;s clinging to his jacket.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Don&#39;t we have work to do?\&quot; He gestures toward the building.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Go inside&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="44" name="3FHall" tags="" position="475,600" size="100,100">&lt;&lt;SetSpeaker &quot;West Jamrock Apartments&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The linoleum on the floor is peeling, and the subflooring creaks with every step. It&#39;s still better than your place. One door is slightly ajar. The doors to the right and left of it are closed, as is the door across the hall.&quot;&gt;&gt;
@@ -634,7 +635,11 @@ You got: _roll
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;AddParagraph &quot;The bedroom is to your right, and what you can see in the light leaking from the living room suggests it&#39;s been trashed. The bathroom, a dingy and unwashed yellow on what probably used to be white, is in the same direction.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;Examine body&quot; FieldAutopsy&gt;&gt;[[|FieldAutopsy]]
+&lt;&lt;if $knowAutopsy &lt; 1&gt;&gt;
+    &lt;&lt;AddOption &quot;A field autopsy would be prudent.&quot; FieldAutopsy&gt;&gt;[[|FieldAutopsy]]
+&lt;&lt;else&gt;&gt;
+    &lt;&lt;AddOption &quot;Review your autopsy notes.&quot; FieldAutopsyNotes&gt;&gt;[[|FieldAutopsyNotes]]
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;AddOption &quot;Examine this room more thoroughly&quot; ExamineMainRoom&gt;&gt;[[|ExamineMainRoom]]
 &lt;&lt;if $knowKimsPrybar &lt; 1&gt;&gt;
     &lt;&lt;AddOption &quot;[Perception - Medium 10] Examine prybar&quot; ExaminePrybar&gt;&gt;[[|ExaminePrybar]]
@@ -686,6 +691,8 @@ You got: _roll
 	&lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
 	&lt;&lt;if _roll &gt;= 8&gt;&gt;
 		&lt;&lt;include &quot;PrybarConvo&quot;&gt;&gt;
+	&lt;&lt;else&gt;&gt;
+        &lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
     &lt;&lt;SkillFailure&gt;&gt;
@@ -698,11 +705,11 @@ You got: _roll
 &lt;&lt;AddOption &quot;Wait him out.&quot; StaringContest&gt;&gt; [[|StaringContest]]
 &lt;&lt;AddOption &quot;\&quot;Hey, Kim. Guess what? We found your prybar!\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]
 &lt;&lt;AddOption &quot;\&quot;I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\&quot;&quot; HideTheBody&gt;&gt; [[|HideTheBody]]
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="50" name="IsThisYourPrybar" tags="" position="1225,600" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="50" name="IsThisYourPrybar" tags="" position="1225,600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He sighs but doesn&#39;t deny it. \&quot;Yes. Good work, Detective,\&quot; he says with a desert dryness.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;Cool.\&quot; You talk about something else.&quot; PrybarConvo&gt;&gt; [[|PrybarConvo]]
 &lt;&lt;AddOption &quot;\&quot;How did it end up here?\&quot;&quot; HowDidItGetHere&gt;&gt; [[|HowDidItGetHere]]
-&lt;&lt;AddOption &quot;\&quot;I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\&quot;&quot; HideTheBody&gt;&gt; [[|HideTheBody]]</tw-passagedata><tw-passagedata pid="51" name="StaringContest" tags="" position="100,725" size="100,100">&lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\&quot;&quot; HideTheBody&gt;&gt; [[|HideTheBody]]</tw-passagedata><tw-passagedata pid="51" name="StaringContest" tags="" position="100,725" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Two can play this game. Kim watches you out of the corner of his eye, and you watch him out of the corner of yours. A covert staring contest begins. Lucky for you, the indirect line of sight protects you from the full force of his judgemental eyebrow.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;[Authority - Hard 15] You’re a decorated officer. You’ve got this.&quot; StaringContestCheck&gt;&gt;[[|StaringContestCheck]]</tw-passagedata><tw-passagedata pid="52" name="StaringContestCheck" tags="" position="1100,200" size="100,100">&lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
 You got: _roll
@@ -711,7 +718,7 @@ You got: _roll
     &lt;&lt;PassiveSkill Authority&gt;&gt;
     &lt;&lt;AddParagraph &quot;A bead of sweat forms at your hairline, but you have the upper hand. His prybar, wet with blood, next to the murder victim. He knows how this must look.&quot;&gt;&gt;
 
-    &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+    &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Finally, he deflates, his orange jacket sagging with his shoulders like an empty parachute. \&quot;I can&#39;t believe I&#39;m about to say this, but can you please say something?\&quot;&quot;&gt;&gt;
     &lt;&lt;AddOption &quot;\&quot;Something.\&quot;&quot; Something&gt;&gt; [[|Something]]
     &lt;&lt;AddOption &quot;\I mean... I don&#39;t know if it was missing, but we found your prybar.\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]
@@ -721,9 +728,9 @@ You got: _roll
 	&lt;&lt;AddParagraph &quot;You concentrate so hard that you forget to breathe. The spots gathering at the edges of your vision blot out what you can see of the lieutenant. You finally suck in a breath and forget what you were doing.&quot;&gt;&gt;
 	&lt;&lt;AddParagraph &quot;Dead body. Right. Best not to keel over into all that blood.&quot;&gt;&gt;
     &lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt; [[|PrybarConvo]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="HideTheBody" tags="" position="350,725" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="HideTheBody" tags="" position="350,725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;What?\&quot; Kim sputters, turning to give you a scandalised look. \&quot;No! Of course not!\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;Hey. No judgement, Kim. I&#39;m sure he had a very wackable face.\&quot; You pantomime bashing his head in with the prybar.&quot; WackableFace&gt;&gt; [[|WackableFace]]</tw-passagedata><tw-passagedata pid="54" name="WackableFace" tags="" position="475,725" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Hey. No judgement, Kim. I&#39;m sure he had a very wackable face.\&quot; You pantomime bashing his head in with the prybar.&quot; WackableFace&gt;&gt; [[|WackableFace]]</tw-passagedata><tw-passagedata pid="54" name="WackableFace" tags="" position="475,725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant buries his face in his hands and lets out a muffled, strangled scream.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
 &lt;&lt;if _roll &gt;= 9&gt;&gt;
@@ -735,7 +742,7 @@ You got: _roll
     &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;The lieutenant is clearly overcome with gratitude and emotion. You are a good partner.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Detective. *Harry*.\&quot; The lieutenant claps both hands on your shoulders to make sure you are paying attention. Slowly, he looks you in the eye and says, \&quot;I did not kill this man. I do not know who did or why they used my prybar, but I did not kill him.\&quot;&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He lets go of your shoulders and steps back. \&quot;That is why I called you, Harry. To do our jobs.\&quot;&quot;&gt;&gt;
 
@@ -744,9 +751,9 @@ You got: _roll
 
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;But also a little touched.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="55" name="HowDidItGetHere" tags="" position="600,725" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="55" name="HowDidItGetHere" tags="" position="600,725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;I don&#39;t know,\&quot; Kim says softly. \&quot;I was hoping you could help me find that out.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="56" name="Something" tags="" position="725,725" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="56" name="Something" tags="" position="725,725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He gives you a flat look.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\I mean... I don&#39;t know if it was missing, but we found your prybar.\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]</tw-passagedata><tw-passagedata pid="57" name="AptWindow" tags="" position="850,725" size="100,100">&lt;&lt;set $seenAlley to 1&gt;&gt;
 &lt;&lt;PassiveSkill Perception&gt;&gt;
