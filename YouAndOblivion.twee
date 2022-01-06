@@ -511,8 +511,8 @@ A Disco Elysium Fanwork
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "Lieutenant Double-Yefreitor Harrier Du Bois, of District 41, Revachol Citizen's Militia, is it? Awfully long title, for *such* a man. A sot, wasn't it? An *addict*. Such a *lot* attached to it, and all you did was drink it away. Pathetic. I suppose you'll tell me you've changed, you're not that man any more. But you are, you know. I see you. I *know* you.">>
 <<AddOption "Fine. I'm a sot. An addict. But  that doesn't mean I'm not trying to change. Be the detective I used to be." ImAddict>>[[|ImAddict]]
-<<AddOption "1.2.2): You don't know me at all. I'm a damn fine detective, if a little unorthodox. Enough with this!" ImDamnFine>>[[|ImDamnFine]]
-<<AddOption "1.2.3): You're right. I don't know who I'm trying to kid. I give up. I'll stay here, with you. It's nice and warm here." IGiveUp>>[[|IGiveUp]]
+<<AddOption "You don't know me at all. I'm a damn fine detective, if a little unorthodox. Enough with this!" ImDamnFine>>[[|ImDamnFine]]
+<<AddOption "You're right. I don't know who I'm trying to kid. I give up. I'll stay here, with you. It's nice and warm here." IGiveUp>>[[|IGiveUp]]
 
 ::ImAddict
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
