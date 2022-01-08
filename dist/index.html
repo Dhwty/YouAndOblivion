@@ -643,19 +643,19 @@ You got: _roll
 &lt;&lt;AddOption &quot;Go inside&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="44" name="3FHall" tags="" position="475,600" size="100,100">&lt;&lt;SetSpeaker &quot;West Jamrock Apartments&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The linoleum on the floor is peeling, and the subflooring creaks with every step. It&#39;s still better than your place. One door is slightly ajar. The doors to the right and left of it are closed, as is the door across the hall.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Examine crime scene&quot; CrimeScene&gt;&gt;[[|CrimeScene]]
-&lt;&lt;AddOption &quot;Test Kimfluence widgets&quot; KimfluenceTestNode&gt;&gt;[[|KimfluenceTestNode]]</tw-passagedata><tw-passagedata pid="45" name="KimfluenceTestNode" tags="" position="600,600" size="100,100">&lt;&lt;BlankSpeaker&gt;&gt;
+&lt;&lt;AddOption &quot;Test Kimfluence widgets&quot; KimfluenceTestNode&gt;&gt;[[|KimfluenceTestNode]]</tw-passagedata><tw-passagedata pid="45" name="KimfluenceTestNode" tags="" position="600,600" size="100,100">&lt;&lt;KimfluenceCheck&gt;&gt;
+&lt;&lt;BlankSpeaker&gt;&gt;
 &lt;&lt;AddParagraph &quot;This is a test of the Kimfluence Widget. There are two forks: PlusKimfluence and MinusKimfluence, and both link back here. Here is a test of KimfluenceCheck.&quot;&gt;&gt;
-&lt;&lt;KimfluenceCheck&gt;&gt;
 &lt;&lt;AddOption &quot;Add 1 Kimfluence&quot; PlusKimfluence&gt;&gt;[[|PlusKimfluence]]
 &lt;&lt;AddOption &quot;Remove 1 Kimfluence&quot; MinusKimfluence&gt;&gt;[[|MinusKimfluence]]
-&lt;&lt;AddOption &quot;Return to game&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="46" name="PlusKimfluence" tags="" position="725,600" size="100,100">&lt;&lt;BlankSpeaker&gt;&gt;
+&lt;&lt;AddOption &quot;Return to game&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="46" name="PlusKimfluence" tags="" position="725,600" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
+&lt;&lt;KimfluenceCheck&gt;&gt;
+&lt;&lt;BlankSpeaker&gt;&gt;
 &lt;&lt;AddParagraph &quot;This *should* add one Kimfluence.&quot;&gt;&gt;
-&lt;&lt;KimfluenceGained 1&gt;&gt;
+&lt;&lt;AddOption &quot;Return to Test Node&quot; KimfluenceTestNode&gt;&gt;[[|KimfluenceTestNode]]</tw-passagedata><tw-passagedata pid="47" name="MinusKimfluence" tags="" position="850,600" size="100,100">&lt;&lt;KimfluenceLost 1&gt;&gt;
 &lt;&lt;KimfluenceCheck&gt;&gt;
-&lt;&lt;AddOption &quot;Return to Test Node&quot; KimfluenceTestNode&gt;&gt;[[|KimfluenceTestNode]]</tw-passagedata><tw-passagedata pid="47" name="MinusKimfluence" tags="" position="850,600" size="100,100">&lt;&lt;BlankSpeaker&gt;&gt;
+&lt;&lt;BlankSpeaker&gt;&gt;
 &lt;&lt;AddParagraph &quot;This *should* remove one Kimfluence.&quot;&gt;&gt;
-&lt;&lt;KimfluenceLost 1&gt;&gt;
-&lt;&lt;KimfluenceCheck&gt;&gt;
 &lt;&lt;AddOption &quot;Return to Test Node&quot; KimfluenceTestNode&gt;&gt;[[|KimfluenceTestNode]]</tw-passagedata><tw-passagedata pid="48" name="CrimeScene" tags="" position="975,600" size="100,100">&lt;&lt;if $visCrimeScene &lt; 1&gt;&gt;
 	&lt;&lt;SetSpeaker &quot;Dirty One-Bedroom Apartment&quot;&gt;&gt;
 	&lt;&lt;AddParagraph &quot;The door is half-open, held in place by the crumpled body of a man fallen across its path. He&#39;s barefoot, half a chicken-skinny calf sticking out of a pair of mustard-coloured bellbottom jeans you think you recognise. You&#39;re pretty sure you own a pair like that, and probably in about his size, to judge by the bulging waist that is as far as you can see before entering the room.&quot;&gt;&gt;
@@ -789,6 +789,7 @@ You got: _roll
 
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;But also a little touched.&quot;&gt;&gt;
+
 &lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="58" name="HowDidItGetHere" tags="" position="975,725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;I don&#39;t know,\&quot; Kim says softly. \&quot;I was hoping you could help me find that out.\&quot;&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="59" name="Something" tags="" position="1100,725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;

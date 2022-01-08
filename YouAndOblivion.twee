@@ -717,25 +717,25 @@ You got: _roll
 <<AddOption "Test Kimfluence widgets" KimfluenceTestNode>>[[|KimfluenceTestNode]]
 
 ::KimfluenceTestNode
+<<KimfluenceCheck>>
 <<BlankSpeaker>>
 <<AddParagraph "This is a test of the Kimfluence Widget. There are two forks: PlusKimfluence and MinusKimfluence, and both link back here. Here is a test of KimfluenceCheck.">>
-<<KimfluenceCheck>>
 <<AddOption "Add 1 Kimfluence" PlusKimfluence>>[[|PlusKimfluence]]
 <<AddOption "Remove 1 Kimfluence" MinusKimfluence>>[[|MinusKimfluence]]
 <<AddOption "Return to game" 3FHall>>[[|3FHall]]
 
 ::PlusKimfluence
-<<BlankSpeaker>>
-<<AddParagraph "This *should* add one Kimfluence.">>
 <<KimfluenceGained 1>>
 <<KimfluenceCheck>>
+<<BlankSpeaker>>
+<<AddParagraph "This *should* add one Kimfluence.">>
 <<AddOption "Return to Test Node" KimfluenceTestNode>>[[|KimfluenceTestNode]]
 
 ::MinusKimfluence
-<<BlankSpeaker>>
-<<AddParagraph "This *should* remove one Kimfluence.">>
 <<KimfluenceLost 1>>
 <<KimfluenceCheck>>
+<<BlankSpeaker>>
+<<AddParagraph "This *should* remove one Kimfluence.">>
 <<AddOption "Return to Test Node" KimfluenceTestNode>>[[|KimfluenceTestNode]]
 
 :: CrimeScene
@@ -900,6 +900,7 @@ You got: _roll
 
 <<PassiveSkill "Empathy">>
 <<AddParagraph "But also a little touched.">>
+
 <<AddOption "Talk about something else." PrybarConvo>>[[|PrybarConvo]]
 
 ::HowDidItGetHere
