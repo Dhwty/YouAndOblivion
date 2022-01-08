@@ -427,7 +427,7 @@ A Disco Elysium Fanwork
 <</widget>>
 
 <<widget "KimfluenceLost">>
-<<run $greentext.push("@@.green;+" + $args[0] + " influence lost with Kim@@")>>
+<<run $greentext.push("@@.green;-" + $args[0] + " influence lost with Kim@@")>>
 <<set $Kimfluence -= $args[0]>>
 <<set $paraAppendMode to true>>
 <</widget>>
