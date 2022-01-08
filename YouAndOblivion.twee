@@ -441,7 +441,6 @@ A Disco Elysium Fanwork
 <<else>>
 	<<run $greentext.push("@@.green;The lieutenant is neutral toward you.@@")>>
 <</if>>
-<<set $paraAppendMode to true>>
 <</widget>>
 
 <<widget "ItemGained">>
