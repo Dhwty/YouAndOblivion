@@ -562,7 +562,8 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;AddOption &quot;Being a detective in Jamrock needs smarts. Lots of brainpower. Intellect and people skills solve cases, not punching  doors or throwing shoes through windows.&quot; HotNerdCop&gt;&gt; [[|HotNerdCop]]
 &lt;&lt;AddOption &quot;I&#39;m in tune with my body and my mind. Recovery&#39;s done me good, you&#39;ll see! I listen to the world around me.&quot; ArtCop&gt;&gt;[[|ArtCop]]
 &lt;&lt;AddOption &quot;Well, uh, the city seems to somehow speak to me? I guess losing my memories made me better at listening to the people around me now. We&#39;re in tune, Revachol and I.&quot; ChildOfTheUniverse&gt;&gt;[[|ChildOfTheUniverse]]
-&lt;&lt;AddOption &quot;All that time in Martinaise running around after radiocomputers got me thinking, especially after Kim said I should get a hobby. These days, I&#39;m a bit of a *wirehead*.&quot; RadioBoyCop&gt;&gt;[[|RadioBoyCop]]</tw-passagedata><tw-passagedata pid="35" name="BasicBitchCop" tags="" position="600,475" size="100,100">&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;All that time in Martinaise running around after radiocomputers got me thinking, especially after Kim said I should get a hobby. These days, I&#39;m a bit of a *wirehead*.&quot; RadioBoyCop&gt;&gt;[[|RadioBoyCop]]</tw-passagedata><tw-passagedata pid="35" name="BasicBitchCop" tags="" position="600,475" size="100,100">&lt;&lt;set _back to previous()&gt;&gt;
+&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You, Harry Du Bois, are a Basic Bitch cop. Well balanced and way more average now that you&#39;ve stopped the self-destructive drinking. [INT: 3 | PSY: 3 | FYS: 3 | MOT: 3]&quot;&gt;&gt;
 &lt;&lt;set $copotype to &quot;BasicBitchCop&quot;&gt;&gt;
 &lt;&lt;set $INT to 3&gt;&gt;
@@ -570,7 +571,8 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;set $FYS to 3&gt;&gt;
 &lt;&lt;set $MOT to 3&gt;&gt;
 &lt;&lt;AddOption &quot;Alright, I can live with this. I like average. Beats dead!&quot; SoItBegins&gt;&gt;[[|SoItBegins]]
-&lt;&lt;back &quot;Average? I&#39;m anything but average! Take me back!&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="GymTeacherCop" tags="" position="725,475" size="100,100">&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Average? I&#39;m anything but average! Take me back!&quot; _back&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="GymTeacherCop" tags="" position="725,475" size="100,100">&lt;&lt;set _back to previous()&gt;&gt;
+&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Lieutenant Du Bois, you retain the high-performance physique of a former gym teacher. Perhaps a few too many knocks to the head have impacted your intelligence, but you remain a fine specimen of a man. [INT: 2 | PSY: 2 | FYS: 4 | MOT: 4]&quot;&gt;&gt;
 &lt;&lt;set $copotype to &quot;GymTeacherCop&quot;&gt;&gt;
 &lt;&lt;set $INT to 2&gt;&gt;
@@ -578,7 +580,8 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;set $FYS to 4&gt;&gt;
 &lt;&lt;set $MOT to 4&gt;&gt;
 &lt;&lt;AddOption &quot;Seems reasonable. I *did* drink so hard I lost my memory, that would have definitely put a dent in the old thinker.&quot; SoItBegins&gt;&gt;[[|SoItBegins]]
-&lt;&lt;back &quot;Uh, no. I&#39;m still a clever man! Take me back.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="HotNerdCop" tags="" position="850,475" size="100,100">&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Uh, no. I&#39;m still a clever man! Take me back.&quot; _back&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="HotNerdCop" tags="" position="850,475" size="100,100">&lt;&lt;set _back to previous()&gt;&gt;
+&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Detective Du Bois, you have become a Hot Nerd. Whilst you maintain a powerful intellect, you have lost condition and physicality, requiring you to rely on your mental prowess to solve cases. [INT: 4 | PSY: 4 | FYS: 2 | MOT: 2]&quot;&gt;&gt;
 &lt;&lt;set $copotype to &quot;HotNerdCop&quot;&gt;&gt;
 &lt;&lt;set $INT to 4&gt;&gt;
@@ -586,7 +589,8 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;set $FYS to 2&gt;&gt;
 &lt;&lt;set $MOT to 2&gt;&gt;
 &lt;&lt;AddOption &quot;Of course! Brain power is the most useful thing a detective can have. Hot Nerd Cop, here I come!&quot; SoItBegins&gt;&gt;[[|SoItBegins]]
-&lt;&lt;back &quot;What? I don&#39;t think so! I&#39;m still a real beefcake - take me back. &quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="ArtCop" tags="" position="975,475" size="100,100">&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;What? I don&#39;t think so! I&#39;m still a real beefcake - take me back.&quot; _back&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="ArtCop" tags="" position="975,475" size="100,100">&lt;&lt;set _back to previous()&gt;&gt;
+&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Ah, Harrier. A true artist in your middle years, it seems. An Art Cop now, are you? Blending intellect and physicality, you neglect the outer world for your inner contemplation. [INT: 4 | PSY: 2 | FYS: 4 | MOT: 2]&quot;&gt;&gt;
 &lt;&lt;set $copotype to &quot;ArtCop&quot;&gt;&gt;
 &lt;&lt;set $INT to 4&gt;&gt;
@@ -594,7 +598,8 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;set $FYS to 4&gt;&gt;
 &lt;&lt;set $MOT to 2&gt;&gt;
 &lt;&lt;AddOption &quot;Losing my memories and rediscovering myself definitely caused my thoughts to turn inward. I&#39;m an Art Cop now.&quot; SoItBegins&gt;&gt;[[|SoItBegins]]
-&lt;&lt;back &quot;Uh, no? I wouldn&#39;t say I&#39;m anything like that. Take me back!&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="ChildOfTheUniverse" tags="" position="1100,475" size="100,100">&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Uh, no? I wouldn&#39;t say I&#39;m anything like that. Take me back!&quot; _back&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="ChildOfTheUniverse" tags="" position="1100,475" size="100,100">&lt;&lt;set _back to previous()&gt;&gt;
+&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Much in you is still man, and much in you is not yet man.\&quot; A true Child of the Universe Cop, you know what everyone is thinking, and the city&#39;s heartbeat is your own. You&#39;re in tune with your body and other&#39;s minds, but are often distracted by these revelations. [INT: 2 | PSY: 4 | FYS: 4 | MOT: 2]&quot;&gt;&gt;
 &lt;&lt;set $copotype to &quot;ChildOfTheUniverse&quot;&gt;&gt;
 &lt;&lt;set $INT to 2&gt;&gt;
@@ -602,7 +607,8 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;set $FYS to 4&gt;&gt;
 &lt;&lt;set $MOT to 2&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;When you work you are a flute through whose heart the whispering of the hours turns to music.\&quot; You&#39;re right. I&#39;m the child of this wondrous universe.&quot; SoItBegins&gt;&gt;[[|SoItBegins]]
-&lt;&lt;back &quot;Uh... sorry, *what*? I... don&#39;t think this is for me. Take me back.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="RadioBoyCop" tags="" position="1225,475" size="100,100">&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Uh... sorry, *what*? I... don&#39;t think this is for me. Take me back.&quot; _back&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="RadioBoyCop" tags="" position="1225,475" size="100,100">&lt;&lt;set _back to previous()&gt;&gt;
+&lt;&lt;SetSpeaker &quot;ANCIENT REPTILIAN BRAIN&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;A real wirehead, huh? A technocop? Harry Du Bois, a man with a hobby he can use at work. You see things and you know what to do with them, just like a radiocomputer on an interisolary network. But -- you forget to eat and sleep. [INT: 4 | PSY: 2 | FYS: 2 | MOT: 4]&quot;&gt;&gt;
 &lt;&lt;set $copotype to &quot;RadioBoyCop&quot;&gt;&gt;
 &lt;&lt;set $INT to 4&gt;&gt;
@@ -610,7 +616,7 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;set $FYS to 2&gt;&gt;
 &lt;&lt;set $MOT to 4&gt;&gt;
 &lt;&lt;AddOption &quot;Oh, that sounds like a really useful hobby! I bet it comes in handy. I&#39;ll be a Radio Boy Cop.&quot; SoItBegins&gt;&gt;[[|SoItBegins]]
-&lt;&lt;back &quot;What? No. No, I am *not* a dorky wirehead! Take me back!&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="SoItBegins" tags="" position="100,600" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;What? No. No, I am *not* a dorky wirehead! Take me back!&quot; _back&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="SoItBegins" tags="" position="100,600" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;This is the part where Harry answers the call from Kim, stops at the Station to pick up any recent calls regarding the address, and walks to the crime scene, because his dumb ass is not allowed to drive after that Jacob Irw-style stunt in Martinaise, last year. Somebody should probably write this.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Take a look around, before you greet Kim.&quot; Street&gt;&gt;[[|Street]]</tw-passagedata><tw-passagedata pid="42" name="Street" tags="nobr" position="225,600" size="100,100">&lt;&lt;PassiveSkill &quot;Shivers&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Revachol is cold, today, but the hot breath of Jamrock curls around your ankles as you stand on the street corner. An apartment building towers over you, stretching toward the sky as if it meant to thrust through the sun, itself. Somewhere on the next block, you can hear a baby screaming, wordless and confused, a familiar sensation. You can hear the wind scrape across Lt. Kitsuragi&#39;s aerostatic jacket, beside you, and the batting wings of a gull lifting off from the bins beside the building.&quot;&gt;&gt;
