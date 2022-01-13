@@ -604,6 +604,7 @@ A Disco Elysium Fanwork
 
 
 ::BasicBitchCop
+<<set _back to previous()>>
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "You, Harry Du Bois, are a Basic Bitch cop. Well balanced and way more average now that you've stopped the self-destructive drinking. [INT: 3 | PSY: 3 | FYS: 3 | MOT: 3]">>
 <<set $copotype to "BasicBitchCop">>
@@ -612,9 +613,10 @@ A Disco Elysium Fanwork
 <<set $FYS to 3>>
 <<set $MOT to 3>>
 <<AddOption "Alright, I can live with this. I like average. Beats dead!" SoItBegins>>[[|SoItBegins]]
-<<back "Average? I'm anything but average! Take me back!">>
+<<AddOption "Average? I'm anything but average! Take me back!" _back>>
 
 ::GymTeacherCop
+<<set _back to previous()>>
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "Lieutenant Du Bois, you retain the high-performance physique of a former gym teacher. Perhaps a few too many knocks to the head have impacted your intelligence, but you remain a fine specimen of a man. [INT: 2 | PSY: 2 | FYS: 4 | MOT: 4]">>
 <<set $copotype to "GymTeacherCop">>
@@ -623,9 +625,10 @@ A Disco Elysium Fanwork
 <<set $FYS to 4>>
 <<set $MOT to 4>>
 <<AddOption "Seems reasonable. I *did* drink so hard I lost my memory, that would have definitely put a dent in the old thinker." SoItBegins>>[[|SoItBegins]]
-<<back "Uh, no. I'm still a clever man! Take me back.">>
+<<AddOption "Uh, no. I'm still a clever man! Take me back." _back>>
 
 ::HotNerdCop
+<<set _back to previous()>>
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "Detective Du Bois, you have become a Hot Nerd. Whilst you maintain a powerful intellect, you have lost condition and physicality, requiring you to rely on your mental prowess to solve cases. [INT: 4 | PSY: 4 | FYS: 2 | MOT: 2]">>
 <<set $copotype to "HotNerdCop">>
@@ -634,9 +637,10 @@ A Disco Elysium Fanwork
 <<set $FYS to 2>>
 <<set $MOT to 2>>
 <<AddOption "Of course! Brain power is the most useful thing a detective can have. Hot Nerd Cop, here I come!" SoItBegins>>[[|SoItBegins]]
-<<back "What? I don't think so! I'm still a real beefcake - take me back. ">>
+<<AddOption "What? I don't think so! I'm still a real beefcake - take me back." _back>>
 
 ::ArtCop
+<<set _back to previous()>>
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "Ah, Harrier. A true artist in your middle years, it seems. An Art Cop now, are you? Blending intellect and physicality, you neglect the outer world for your inner contemplation. [INT: 4 | PSY: 2 | FYS: 4 | MOT: 2]">>
 <<set $copotype to "ArtCop">>
@@ -645,9 +649,10 @@ A Disco Elysium Fanwork
 <<set $FYS to 4>>
 <<set $MOT to 2>>
 <<AddOption "Losing my memories and rediscovering myself definitely caused my thoughts to turn inward. I'm an Art Cop now." SoItBegins>>[[|SoItBegins]]
-<<back "Uh, no? I wouldn't say I'm anything like that. Take me back!">>
+<<AddOption "Uh, no? I wouldn't say I'm anything like that. Take me back!" _back>>
 
 ::ChildOfTheUniverse
+<<set _back to previous()>>
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "\"Much in you is still man, and much in you is not yet man.\" A true Child of the Universe Cop, you know what everyone is thinking, and the city's heartbeat is your own. You're in tune with your body and other's minds, but are often distracted by these revelations. [INT: 2 | PSY: 4 | FYS: 4 | MOT: 2]">>
 <<set $copotype to "ChildOfTheUniverse">>
@@ -656,9 +661,10 @@ A Disco Elysium Fanwork
 <<set $FYS to 4>>
 <<set $MOT to 2>>
 <<AddOption "\"When you work you are a flute through whose heart the whispering of the hours turns to music.\" You're right. I'm the child of this wondrous universe." SoItBegins>>[[|SoItBegins]]
-<<back "Uh... sorry, *what*? I... don't think this is for me. Take me back.">>
+<<AddOption "Uh... sorry, *what*? I... don't think this is for me. Take me back." _back>>
 
 ::RadioBoyCop
+<<set _back to previous()>>
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "A real wirehead, huh? A technocop? Harry Du Bois, a man with a hobby he can use at work. You see things and you know what to do with them, just like a radiocomputer on an interisolary network. But -- you forget to eat and sleep. [INT: 4 | PSY: 2 | FYS: 2 | MOT: 4]">>
 <<set $copotype to "RadioBoyCop">>
@@ -667,7 +673,7 @@ A Disco Elysium Fanwork
 <<set $FYS to 2>>
 <<set $MOT to 4>>
 <<AddOption "Oh, that sounds like a really useful hobby! I bet it comes in handy. I'll be a Radio Boy Cop." SoItBegins>>[[|SoItBegins]]
-<<back "What? No. No, I am *not* a dorky wirehead! Take me back!">>
+<<AddOption "What? No. No, I am *not* a dorky wirehead! Take me back!" _back>>
 
 
 ::SoItBegins
