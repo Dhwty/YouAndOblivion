@@ -911,7 +911,7 @@ You got: _roll
 ::Something
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He gives you a flat look.">>
-<<AddOption "\I mean... I don't know if it was missing, but we found your prybar.\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
+<<AddOption "\"I mean... I don't know if it was missing, but we found your prybar.\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
 
 ::AptWindow
 <<set $seenAlley to 1>>
@@ -967,4 +967,88 @@ You got: _roll
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
 ::ExamineBedroom
-<<AddOption "Look at something else" CrimeScene>>
+<<SetSpeaker "YOU">>
+<<AddParagraph "The bedroom doorway yawns open like a black hole. You tiptoe your way around the fallen corpse to peek your head inside. Only a seam of cold light trickles in from around the curtains. The furniture form monolithic shapes in the dark.">>
+<<PassiveSkill "Hand-Eye Coordination">>
+<<AddParagraph "You press a palm to the wall, skating around until you find the light switch. You flick it on and... nothing. Hm.">>
+<<AddOption "Keep flicking the light switch. Maybe it's just taking a bit to get going." ClickClick>> [[|ClickClick]]
+<<AddOption "Open the curtains." OpenTheCurtains>> [[|OpenTheCurtains]]
+
+::ClickClick
+<<SetSpeaker "YOU">>
+<<AddParagraph "Click-click-click. There's something satisfying in the tiny sound the switch makes. Click-click-click-click. You know, you should record this. This could be the next big thing in anodic music. Click-click-click-">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The lieutenant's tired sigh interrupts you. \"What are you doing, Detective?\"">>
+<<AddOption "\"Making music. Can you hear it, Kim?\"" MakingMusic>> [[|MakingMusic]]
+<<AddOption "\"Nothing." Go and open the curtains like a normal person." OpenTheCurtains>> [[|OpenTheCurtains]]
+
+::MakingMusic
+<<SetSpeaker "YOU">>
+<<AddParagraph "You keep flicking the lightswitch. You don't need to look over your shoulder to know the lieutenant is pinching the bridge of his nose.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Please. Just go open the curtains. The light is probably busted.\"">>
+<<AddOption "Just open the damn curtains." OpenTheCurtains>> [[|OpenTheCurtains]]
+
+::OpenTheCurtains
+<<SetSpeaker "YOU">>
+<<AddParagraph "You open the curtains to grey light and rainy rivelets on a filmy window that warp and blur the city beyond. The cold light fills in the shapes of the room. A double bed eats up most of the space, sheets rumpled, pillows askew. You never really saw the point of making the bed either when you'd only be undoing it again in a few hours.">>
+<<PassiveSkill "Perception (Smell)">>
+<<AddParagraph "The tangled sheets smell of stale sweat, and you can imagine them, clammy, sticking to your skin after a fitful night.">>
+<<PassiveSkill "Perception (Sight)">>
+<<AddParagraph "Above you, a ceiling fan hangs motionless, its socket empty. A stray lightbulb rests on a cluttered dresser. The only other light is the small, shaded lamp on the nightstand.">>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "You know from experience that even grey light stings like hell when you have a hangover. Blackout curtains were one of your finer investments too.">>
+<<PassiveSkill "Visual Calculus">>
+<<AddParagraph "The room is a lived-in sort of disheveled. A robe lies on the floor where it had slithered off its hook, shoes kicked in every direction. Familiar brown bottles line the dresser, though one fallen soldier lies on the floor. About elbow height, it would be easy to have knocked it over in a disorganised stumble to the bed.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The lieutenant hovers in the doorway, the light in the hall bracketing his head like a halo. His notebook is open, pen in hand. \"Anything of note, Detective?\"">>
+<<set _roll to rollDice() + $PSY>>
+<<if _roll >=7>>
+    <<PassiveSkill "Empathy">>
+    <<AddParagraph "It soothes him, having something to do with his hands.">>
+<</if>>
+<<AddOption "\"The carpet matches the drapes.\"" Drapes>> [[|Drapes]]
+<<AddOption "\"Blackout curtains and unscrewed lightbulb point to photosensitivity.\"" Photosensitivity>> [[|Photosensitivity]]
+
+
+::Drapes
+<<SetSpeaker "YOU">>
+<<AddParagraph "You're not even lying. The curtains are a darker shade but in the same color family as the grey carpet.">>
+<<set _roll to rollDice() + $INT>>
+<<if _roll >= 11>>
+    <<PassiveSkill "Conceptualization">>
+    <<AddParagraph "How drab! You would expect a man with such colorful taste in fashion to have more dazzling drapery.">>
+    <<PassiveSkill "Logic">>
+    <<AddParagraph "The curtains look relatively new. It was a choice of necessity, not aesthetic.">>
+<</if>>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The lieutenant doesn't even crack a smile. \"I don't think your opinion on interior design will help here, Officer,\" he says, neatly side-stepping your joke.">>
+<<PassiveSkill "Empathy">>
+<<AddParagraph "This really isn't the time, Harry.">>
+<<AddOption "\"Blackout curtains and unscrewed lightbulb point to photosensitivity.\"" Photosensitivity>> [[|Photosensitivity]]
+
+::Photosensitivity
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The lieutenant blinks, processing that with a nod. \"Hangover?\" he prompts, pen poised to paper.">>
+<<SetSpeaker "YOU">>
+<<AddParagraph "\"Habitual. You don't buy blackout curtains after one night of binging. Our boy was a dedicated alcoholic.\"">>
+<<PassiveSkill "Inland Empire">>
+<<AddParagraph "It takes one to know one.">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 9>>
+    <<PassiveSkill "Reaction Speed">>
+    <<AddParagraph "The lieutenant falters in his writing. Just a moment, just the barest pause of the pen. He inhales deeply to settle himself and continues.">>
+    <<set _roll to rollDice() + $PSY>>
+    <<if _roll >= 8>>
+        <<PassiveSkill "Empathy">>
+        <<AddParagraph "You want to ask him if he's okay, except you can already tell that he isn't. What you really want to ask is *why* he isn't.">>
+    <</if>>
+<</if>>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Good observation, Detective," he says with clinical coolness. "The empty beer cans are certainly another clue to that.\"">>
+<<AddOption "\"Maybe he got into a drunken argument with someone.\"" Maybe>> [[|Maybe]]
+
+::Maybe
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Maybe,\" the lieutenant echoes. Is it the grey light that makes him look pale? \"Anything else, Detective?\"">>
+<<AddOption "\"No.\" You walk carefully back out of the bedroom." CrimeScene>> [[|CrimeScene]]
