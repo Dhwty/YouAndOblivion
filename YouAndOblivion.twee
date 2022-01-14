@@ -1058,3 +1058,14 @@ You got: _roll
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Maybe,\" the lieutenant echoes. Is it the grey light that makes him look pale? \"Anything else, Detective?\"">>
 <<AddOption "\"No.\" You walk carefully back out of the bedroom." CrimeScene>> [[|CrimeScene]]
+
+
+::Credits
+<<SetSpeaker "Writers">>
+<<AddParagraph "Maverik, Penbrydd, OverlordKye, and The Most Antipodean of Badgers">>
+<<SetSpeaker "Additional Bad Ideas">>
+<<AddParagraph "AntipodeanPixie and Nava">>
+<<SetSpeaker "Twee Editing and Git Wrangling">>
+<<AddParagraph "Dhwty">>
+<<SetSpeaker "Project Mascot">>
+<<AddParagraph "Lychee: the Glistening Mouse of Freedom">>
