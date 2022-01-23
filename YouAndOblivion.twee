@@ -234,6 +234,8 @@ window.rollDice = function() {
 <<set $gotPrybar to 0>>
 <<set $knowKimsPrybar to 0>>
 <<set $knowAutopsy to 0>>
+<<set $knowKimjury to 0>>
+<<set $knowKimsCorpseClue to 0>>
 /*Visited Locations*/
 <<set $visCrimeScene to 0>>
 <<set $seenAlley to 0>>
@@ -986,7 +988,7 @@ You got: _roll
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant's tired sigh interrupts you. \"What are you doing, Detective?\"">>
 <<AddOption "\"Making music. Can you hear it, Kim?\"" MakingMusic>> [[|MakingMusic]]
-<<AddOption "\"Nothing." Go and open the curtains like a normal person." OpenTheCurtains>> [[|OpenTheCurtains]]
+<<AddOption "\"Nothing.\" Go and open the curtains like a normal person." OpenTheCurtains>> [[|OpenTheCurtains]]
 
 ::MakingMusic
 <<SetSpeaker "YOU">>
@@ -997,7 +999,7 @@ You got: _roll
 
 ::OpenTheCurtains
 <<SetSpeaker "YOU">>
-<<AddParagraph "You open the curtains to grey light and rainy rivelets on a filmy window that warp and blur the city beyond. The cold light fills in the shapes of the room. A double bed eats up most of the space, sheets rumpled, pillows askew. You never really saw the point of making the bed either when you'd only be undoing it again in a few hours.">>
+<<AddParagraph "You open the curtains to grey light and rainy rivulets on a filmy window that warp and blur the city beyond. The cold light fills in the shapes of the room. A double bed eats up most of the space, sheets rumpled, pillows askew. You never really saw the point of making the bed either when you'd only be undoing it again in a few hours.">>
 <<PassiveSkill "Perception (Smell)">>
 <<AddParagraph "The tangled sheets smell of stale sweat, and you can imagine them, clammy, sticking to your skin after a fitful night.">>
 <<PassiveSkill "Perception (Sight)">>
