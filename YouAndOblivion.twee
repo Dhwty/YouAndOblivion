@@ -1665,7 +1665,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "Back to the rest of this mess." CrimeScene>>[[|CrimeScene]]
 
 ::ExamineMainRoom
-<<SetSpeaker "DIRTY ONE-BEDROOM FLAT ">>
+<<SetSpeaker "DIRTY ONE-BEDROOM APARTMENT">>
 <<AddParagraph "It wouldn't take a cop to know something went down here. (A lot of somethings, judging from the paraphernalia.) Broken shit against the walls, overturned vinyl player, blood absolutely everywhere... no wonder there was a noise complaint. This was a brawl.">>
 <<set _roll to rollDice() + $INT>>
 <<if _roll >=10>>
@@ -1689,7 +1689,65 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim's life. \"So it would seem.\"">>
+<<AddOption "Sniff the stain. Just to check." CumCouch>> [[|CumCouch]]
+<<AddOption "Sniff the --? No. No, let's *not*" NoSniffingDerCouch>> [[|NoSniffingDerCouch]]
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::NoSniffingDerCouch
+<<KimfluenceGained 1>>
+<<PassiveSkill "Empathy">>
+<<AddParagraph "Kim eyes you as if he is suddenly aware that a great catastrophe has been averted, even if he's not entirely sure what it would have entailed. He looks back down at his notebook, certain that he doesn't want to know.">>
+<<AddOption "Examine the rest of the scene." CrimeScene>>[[|CrimeScene]]
+
+::CumCouch
+<<AddParagraph "You crouch down before the sofa, bringing your face to within an inch of the ...stain. You're somewhat aware of Kim slightly to your left, watching your every move. There's an odd expression on his face. Disgust? Arousal?">>
+<<set _roll to rollDice() + $PSY>>
+<<if _roll >= 8>>
+    <<PassiveSkill Perception>>
+    <<AddParagraph "That's disgust. Better not sniff the stain. Who listens to a horrific necktie, anyway?">>
+	<<SetSpeaker "YOU">>
+	<<AddParagraph "I'd say that's semen, Kim. It's not quite dry yet, either. Better write it down.">>
+    <<AddOption "Stand up." CrimeScene>>[[|CrimeScene]]
+<<else>>
+    <<PassiveSkill Perception>>
+    <<AddParagraph "He's aroused. That's arousal. You make eye contact and take a deep, deep breath. Your necktie was right, that's definitely semen.">>
+    <<KimfluenceLost 1>>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "Kim's face twists, a muscle in the corner of his eye twitching. He shifts his balance and clears his throat. "
+    <<SetSpeaker "HORRIFIC NECKTIE">>
+    <<AddParagraph "\"Oh, Bratan, he liked that! Imagine how much he'll like it when you lick it off the sofa!\"">>
+    <<AddOption "Yes. Good idea!." Cumsicle>> [[|Cumsicle]]
+    <<AddOption "No, no he didn't. Why do I wear you? Why are you like this?" DoneFuckedUp>> [[|DoneFuckedUp]]
+<</if>>
+
+::Cumsicle
+<<AddParagraph "You lean closer to the cum-stain. Do you maintain eye contact and use your Seductive Face? You absolutely do. The couch is rough under your tongue, and the jizz is still not quite dry. Hmmm. Soft cheese and cucumber. Notes of white wine -- zinfandel, maybe, or a fresh riesling. Delicious. You make it your business to get it all off. That's right, Harry. Clean that sofa. ">>
+<<KimfluenceLost 2>>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Officer. Please, this is a crime scene. Do not ... contaminate the evidence.\"">>
+<<PassiveSkill "Empathy">>
+<<AddParagraph "Oof. Officer. He's angry. What have you done, Harry? ">>
+<<SetSpeaker "YOU">>
+<<AddParagraph "\"Right. Well. Moving on.\"">>
+<<AddOption "Stand up." DoneFuckedUpMore>> [[|DoneFuckedUpMore]]
+
+::DoneFuckedUp
+<<SetSpeaker "EMPATHY">>
+<<AddParagraph "It's clear the Lieutenant isn't best pleased, although you get the sense that he's aware things could have been worse. Much worse. ">>
+<<SetSpeaker "YOU">>
+<<AddParagraph "\"So, that's... semen. We should probably write that down. It's, uh, quite fresh. Not quite dried. Let's, ah, let's return to the crime scene.\"">>
+<<AddOption "Stand up." CrimeScene>>[[|CrimeScene]]
+
+::DoneFuckedUpMore
+<<SetSpeaker "YOU">>
+<<AddParagraph "The weight of Kim's displeasure feels oppressive, although he refuses to look up from the refuge of his trusty notebook. Perhaps, you think, perhaps you shouldn't have tasted the wank paste. It *was* delicious though.">>
+<<BlankSpeaker>>
+<<AddParagraph "You clear your throat.">>
+<<BlankSpeaker>>
+<<AddParagraph "\"Seminal fluid on the couch, Lieutenant. Fresh. No more than a few hours old.\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He refuses to meet your eyes. You've made a bad, bad mistake. You should return to the crime scene... and keep your mouth off the evidence. ">>
+<<AddOption "Look at something else." CrimeScene>>[[|CrimeScene]]
 
 ::GetPrybar
 <<ItemGained "Red-Handled Prybar">>
