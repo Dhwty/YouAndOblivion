@@ -765,7 +765,6 @@ A Disco Elysium Fanwork
 
 :: SmokeCheck
 <<set _roll to rollDice() + $MOT>>
-You got: _roll
 <<if _roll >= 8>>
     <<SkillSuccess>>
     <<PassiveSkill Perception>>
@@ -858,7 +857,7 @@ You got: _roll
 <</if>>
 <<AddParagraph "The bedroom is to your right, and what you can see in the light leaking from the living room suggests it's been trashed. The bathroom, a dingy and unwashed yellow on what probably used to be white, is in the same direction.">>
 <<AddOption "Examine this room more thoroughly" ExamineMainRoom>>[[|ExamineMainRoom]]
-<<if $itemPrybar <= 0>>
+<<if $gotPrybar <= 0>>
 	<<AddOption "Bag the prybar as evidence." GetPrybar>>[[|GetPrybar]]
 <<else>>
 	<<if $knowKimsPrybar < 1>>
@@ -1693,7 +1692,7 @@ KCC is now: $knowKimsCorpseClue
 
 ::GetPrybar
 <<ItemGained "Red-Handled Prybar">>
-<<set $itemPrybar to 1>>
+<<set $gotPrybar to 1>>
 <<PassiveSkill Perception>>
 <<AddParagraph "This prybar looks familiar, somehow, despite the coating of blood and other less mentionable chunks of crud. You put it into an evidence bag, and mark it for the lab. Still, something about it bothers you...">>
 <<AddOption "Take a closer look at it." ExaminePrybar>>[[|ExaminePrybar]]
