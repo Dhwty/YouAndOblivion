@@ -950,7 +950,7 @@ A Disco Elysium Fanwork
     <<PassiveSkill Authority>>
     <<AddParagraph "... Well, piss. You don't remember *at all*. So much for getting your shit together. What were you even paying attention to when the lieutenant was telling you about the report?">>
     <<SetSpeaker YOU>>
-    <<AddParagraph "You \"I don't suppose you remember the name of the tenant?\"">>
+    <<AddParagraph "\"I don't suppose you remember the name of the tenant?\"">>
     <<PassiveSkill "Reaction Speed">>
     <<AddParagraph "The pen stops its scratching abruptly; a single moment of silence before it resumes.">>
     <<SetSpeaker "KIM KITSURAGI">>
@@ -1072,7 +1072,8 @@ A Disco Elysium Fanwork
 <<else>>
     <<SkillFailure>>
     <<PassiveSkill "Interfacing">>
-    <<AddParagraph "Heavens only know why you thought it was a good idea to take a knife to a dead man. At least the poor bloke can't feel the half-centimetre laceration you've just added to his collection. Maybe best not to try the other two fingers, him?." AutCrustyRug>>[[|AutCrustyRug]]
+    <<AddParagraph "Heavens only know why you thought it was a good idea to take a knife to a dead man. At least the poor bloke can't feel the half-centimetre laceration you've just added to his collection. Maybe best not to try the other two fingers, him?.">>
+	 <<AddOption "Move on." AutCrustyRug>>[[|AutCrustyRug]]
 <</if>>
 
 ::AutReportSkin
@@ -1582,7 +1583,7 @@ KCC is now: $knowKimsCorpseClue
 ::AutMoveOn
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant's head inclines ever so slightly to the side. He eyes the victim one last time before looking back to you.">>
-<<set _roll to rollDice() + $FYS>
+<<set _roll to rollDice() + $FYS>>
 <<if _roll >= 10>>
     <<set $knowKimsCorpseClue += 1>>
     <<PassiveSkill "Half Light">>
@@ -1595,7 +1596,7 @@ KCC is now: $knowKimsCorpseClue
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Just like that.\" He hasn't stopped eyeing you.">>
 <<SetSpeaker YOU>>
-<<AddParagraph "You shrug, What else is there to say? \"Just like that. Now, let's see what else this place can tell us, hm?\">>
+<<AddParagraph "You shrug, What else is there to say? \"Just like that. Now, let's see what else this place can tell us, hm?\"">>
 <<AddParagraph "You peel off the bloody gloves one at a time before reaching to pocket the knife and penlight. You hope it reads as fastidiousness, instead of giving away that you're feeling out just how much resistance your knees are going to give you when you try to stand. The floor gets further down, every day.">>
 <<PassiveSkill Composure>>
 <<AddParagraph "Just try not to faceplant into the stiff, du Bois. And for the love of all that is good, try not to blow the ass out of your pants.">>
