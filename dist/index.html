@@ -208,6 +208,11 @@ a.macro-linkreplace {
   margin-left: -1.5em;
 }
 
+.red {
+  color: #90280f;
+  margin-left: -1.5em;
+}
+
 .CheckOverlay {
   width: 100%;
   height: 100%;
@@ -665,14 +670,12 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 		&lt;&lt;AddParagraph &quot;As you walk out onto the sidewalk, the lieutenant stuffs his hands into the pockets of his bomber jacket. His breath mists in front of his mouth. There&#39;s something... different, here. It nags at you.&quot;&gt;&gt;
 		&lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 		&lt;&lt;if _roll &gt;= 9&gt;&gt;
-			&lt;&lt;SkillSuccess&gt;&gt;
 			&lt;&lt;PassiveSkill &quot;CONCEPTUALIZATION&quot;&gt;&gt;
 			&lt;&lt;AddParagraph &quot;It&#39;s the silhouette. The lieutenant&#39;s fashion is consistent and exact. Leather gloves, orange bomber jacket open to a v-neck shirt, with sleeves rolled up to his elbows. This is the first time you&#39;ve seen those sleeves rolled down.&quot;&gt;&gt;
 			&lt;&lt;PassiveSkill &quot;COMPOSURE&quot;&gt;&gt;
 			&lt;&lt;AddParagraph &quot;Even when it&#39;s snowing out, Kim keeps the sleeves of his jacket rolled up. It&#39;s all part of his Look, his *cool* factor. You know how *cool* people don&#39;t look at explosions? *Cool* people don&#39;t worry about hypothermia, either.&quot;&gt;&gt;
 			&lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 			&lt;&lt;if _roll &gt;= 9&gt;&gt;
-				&lt;&lt;SkillSuccess&gt;&gt;
 				&lt;&lt;PassiveSkill &quot;RHETORIC&quot;&gt;&gt;
 				&lt;&lt;AddParagraph &quot;Ask him about the sleeves, but ease into it. The lieutenant is a private person.&quot;&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
@@ -686,13 +689,12 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;if $Day == 2&gt;&gt;
 	&lt;&lt;AddParagraph &quot;We ain&#39;t got a Day 2 yet.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;AddOption &quot;Go inside&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="46" name="SmokeCheck" tags="" position="1100,200" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
+&lt;&lt;AddOption &quot;Go inside&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="46" name="SmokeCheck" tags="" position="725,600" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 You got: _roll
 &lt;&lt;if _roll &gt;= 8&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Perception&gt;&gt;
     &lt;&lt;AddParagraph &quot;He has definitely been smoking, and from the smell wafting off his jacket, it&#39;s more than just one.&quot;&gt;&gt;
-
     &lt;&lt;PassiveSkill Empathy&gt;&gt;
     &lt;&lt;AddParagraph &quot;He&#39;s freaked out enough about something that he&#39;s smoking in the *morning*. This isn&#39;t the old Kitsuragi one-smoke-before-bed.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -785,7 +787,7 @@ You got: _roll
 &lt;&lt;PassiveSkill Logic&gt;&gt;
 &lt;&lt;AddParagraph &quot;Or the meat and sinew of it. Somehow, this man doesn&#39;t strike you as a potatoes type of guy.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill Electrochemistry&gt;&gt;
-&lt;&lt;AddParagraph &quot;He strikes you as a *cocaine* kind of guy. A corpse after my own heart. You need to keep an eye out, here&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He strikes you as a *cocaine* kind of guy. A corpse after my own heart.&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Lieutenant Kitsuragi&#39;s constant preparedness has somehow rubbed off on you. You find a few gloves in your inside pocket, rumpled but intact.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;No need to say anything about it. Just put the gloves on and get to work.&quot; BeginAutopsy&gt;&gt;[[|BeginAutopsy]]
@@ -805,22 +807,23 @@ You got: _roll
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;SetSpeaker YOU&gt;&gt;
 &lt;&lt;AddParagraph &quot;Your memory is not so poor anymore that you don&#39;t remember what a Field Autopsy form looks like. The lieutenant&#39;s focus is steady as he starts at the top of the page. With you performing the autopsy this time, that makes him the assistant – and this, your case.&quot;&gt;&gt;
+&lt;&lt;BlankSpeaker&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;HDB-1805-0900\&quot;&quot;&gt;&gt;
+&lt;&lt;BlankSpeaker&gt;&gt;
 &lt;&lt;AddParagraph &quot;It&#39;s true. You got out of bed for this.&quot;&gt;&gt;
 &lt;&lt;SetSpeaker YOU&gt;&gt;
 &lt;&lt;AddParagraph &quot;The name of the tenant was listed in the report of the disturbance call to the station. You may remember what an Autopsy form looks like, but do you remember *that*, super cop?&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 &lt;&lt;if _roll &gt;= 10&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Encyclopedia&gt;&gt;
     &lt;&lt;AddParagraph &quot;Of course you do. You remember the entire report, thank you very much.&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Noise complaint called in last night at approximately 23:00 hours in regards to the home of one Poulin, Jean-François, address [x]. Complainant non-specific as to the nature of the noise, unable to establish violent or non-violent; was, however, very certain that there were at least two persons involved.&quot;&gt;&gt;
-    &lt;&lt;AddParagraph &quot;Complainant: Garte, Lawrence.&quot;&gt;&gt;
-    &lt;&lt;AddParagraph &quot;Complainant contact info: n/a (not provided by complainant)&quot;&gt;&gt;
+	&lt;&lt;BlankSpeaker&gt;&gt;
+    &lt;&lt;AddParagraph &quot;Complainant: Garte, Lawrence. Contact info: n/a (not provided by complainant)&quot;&gt;&gt;
+	&lt;&lt;BlankSpeaker&gt;&gt;
     &lt;&lt;AddParagraph &quot;An addendum was also attached from a visit an hour after the complaint had been lodged. &quot;\&quot;No disturbance appreciated upon arrival. Tenant was not available for contact and physical notice of visitation was left by the officer on scene.\&quot;&quot;&gt;&gt;
     &lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
     &lt;&lt;if _roll &gt;= 8&gt;&gt;
-    	&lt;&lt;SkillSuccess&gt;&gt;
     	&lt;&lt;PassiveSkill &quot;Logic&quot;&gt;&gt;
     	&lt;&lt;AddParagraph &quot;This is boring, even for something as absolutely banal as a noise complaint. How did this case ever get escalated to homicide? How did it cross Kim&#39;s desk?&quot;&gt;&gt;
 		&lt;&lt;set $knowKimsCorpseClue +=1&gt;&gt;
@@ -828,7 +831,6 @@ You got: _roll
     &lt;&lt;PassiveSkill &quot;Physical Instrument&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Hang on a minute. Garte, the chinless man-child from the Whirling back in Martinaise? Couldn&#39;t grow a beard if his sex life depended on it, that Garte? Great. Just *great*. What do you suppose the odds are he&#39;ll like you better, this time around?&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill Encyclopedia&gt;&gt;
     &lt;&lt;AddParagraph &quot;There was some noise, and someone called to complain. At least one of the names sounded familiar...&quot;&gt;&gt;
     &lt;&lt;PassiveSkill Authority&gt;&gt;
@@ -844,13 +846,11 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;You continue running through the perfunctory introductory information. Date of Birth: N/A. Age: ... hmm.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 &lt;&lt;if _roll &gt;= 12&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Visual Calculus&quot;&gt;&gt;
-    &lt;&lt;AddParagraph &quot;This man&#39;s done some hard living. He&#39;s actually probably a couple years younger than you, though he         doesn&#39;t really look it.&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;This man&#39;s done some hard living. He&#39;s actually probably a couple years younger than you, though he doesn&#39;t really look it.&quot;&gt;&gt;
     &lt;&lt;SetSpeaker YOU&gt;&gt;
-    &lt;&lt;AddParagraph &quot;\&quot;Age ? 40.\&quot;&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;\&quot;Age? 40.\&quot;&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Visual Calculus&gt;&gt;&quot;
     &lt;&lt;AddParagraph &quot;The man looks a fair bit like you, if you&#39;re being honest with yourself. Thank heaven you don&#39;t look this old yet.&quot;&gt;&gt;
     &lt;&lt;SetSpeaker YOU&gt;&gt;
@@ -884,7 +884,6 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;You look back to see the lieutenant set aside the photo, picking up his pen to resume the report. You pull on the wrinkled gloves. Ready to begin the external investigation.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
 &lt;&lt;if _roll &gt;= 6&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Empathy&gt;&gt;
     &lt;&lt;AddParagraph &quot;You are not a religious man. Lieutenant Kitsuragi is not a religious man. A cursory examination of this well-worn flat – and its corpse – tells you that the victim probably is not, either. None of that has the first thing to do with the way you extend your right hand to the victim&#39;s bloodied chest. It&#39;s cold under your thick, warm fingers. Unmoving. This body&#39;s last breath has left the station. It shall not return.&quot;&gt;&gt;
     &lt;&lt;KimfluenceGained 1&gt;&gt;
@@ -894,7 +893,6 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;To business, then. \&quot;First item... clothing. Not bad.\&quot; The low huff of breath from Kim is definitely *not* laughter. \&quot;Pants: mustard yellow, size XL. Vintage Piqueriques.\&quot;&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 &lt;&lt;if _roll &gt;= 11&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Perception (Sight)&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Wait... no. Look at the stitching on the belt loops, along the hem. It&#39;s the right colour but it&#39;s *clumsy*, already starting to pick apart. These are knockoffs.&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;\&quot;Scratch that. Mustard yellow *knockoff* Picqueriques.\&quot;&quot;&gt;&gt;
@@ -905,11 +903,9 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;\&quot;No shirt or socks present on victim. Underwear...\&quot;&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 &lt;&lt;if _roll &gt;= 10&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Savoir Faire&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;This isn&#39;t the first time you&#39;ve had to undo a pair of Picqueriques which, you know... have shrunk in the wash.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Savoir Faire&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Okay, this would be a lot easier if the bastard could *suck it in* a little. Short of manhandling the hell out of this guy, you&#39;re not getting this button open.&quot;&gt;&gt;
 	&lt;&lt;if $knowKimsCorpseClue &gt; 0&gt;&gt;
@@ -924,7 +920,6 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;\&quot;... Nothing additional for clothing.\&quot;&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 &lt;&lt;if _roll &gt;= 8&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Conceptualization&gt;&gt;
     &lt;&lt;AddParagraph &quot;Your gloves follow the hallmarks of the dead man&#39;s life where they&#39;ve fallen on now-insensate flesh; your own aches in sympathy. Bruises bloom purple on white, violets in the window. Here, the flesh livid with pooling blood; life as it has tried to seep away. He is still in the early stages of decay, but livor mortis waits for no one.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -940,13 +935,11 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;The hand may be the easiest place to start. There&#39;s filth accumulated under all the victim&#39;s nails, but something looks decidedly off. There&#39;s something else.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 &lt;&lt;if _roll &gt;= 7&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Perception (Sight)&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;It&#39;s the first three fingers of the left hand. There&#39;s something under the nails there that isn&#39;t the same dark crud under the rest. It&#39;s almost... pale.&quot;&gt;&gt;
-    &lt;&lt;AddOption &quot;You&#39;ve got your pocketknife right there. Go on. Get a bit of it out.&quot; AutPocketKnife&gt;&gt;[[|AutPocketKnife]]
+    &lt;&lt;AddOption &quot;[Interfacing - Medium 9] You&#39;ve got your pocketknife right there. Go on. Get a bit of it out.&quot; AutPocketKnife&gt;&gt;[[|AutPocketKnife]]
     &lt;&lt;AddOption &quot;Flag it for Processing. Better to be thorough.&quot; AutReportSkin&gt;&gt;[[|AutReportSkin]]
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Perception (Sight)&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;It&#39;s a damn shame you&#39;ve got *no fucking clue* if any of the odd shit about this hand is meaningful. There are a few little pinpricks of red in the webbing next to his thumb, the fingers are knobby and a touch yellow, the crud under his nails isn&#39;t all the same colour...&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;At least the dead man gave you a little more to work with than &#39;a kind of weird hand&#39;.&quot;&gt;&gt;
@@ -988,7 +981,7 @@ You got: _roll
     &lt;&lt;PassiveSkill Electrochemistry&gt;&gt;
     &lt;&lt;AddParagraph &quot;It&#39;s a matter of angle, Harry-boy. Definitely looks like our friend&#39;s got range, too.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;AddOption &quot;Rub it between your fingers a little. See if you can get some of it out, get a better look. Might not be what it looks like.&quot; AutRubIt&gt;&gt;[[|AutRubIt]]
+&lt;&lt;AddOption &quot;[Interfacing - Medium 9] Rub it between your fingers a little. See if you can get some of it out, get a better look. Might not be what it looks like.&quot; AutRubIt&gt;&gt;[[|AutRubIt]]
 &lt;&lt;AddOption &quot;Yeah... gonna leave that one for the lab, I think.&quot; AutFP4Lab&gt;&gt;[[|AutFP4Lab]]</tw-passagedata><tw-passagedata pid="63" name="AutFP4Lab" tags="" position="350,850" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
 &lt;&lt;SetSpeaker YOU&gt;&gt;
 &lt;&lt;AddParagraph &quot;There&#39;s no sane way to know what the powder is. There are a few insane ways, but you&#39;re better than that, these days. Or you like to think you are, anyway.&quot;&gt;&gt;
@@ -1024,7 +1017,7 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;Oh, the *options*. And a bloke like this, there&#39;s no way this was all he had. Forget the stiff, Harry, we&#39;ve got better things to do! Doesn&#39;t get any cheaper than free!&quot;&gt;&gt;
 &lt;&lt;SetSpeaker YOU&gt;&gt;
 &lt;&lt;AddParagraph &quot;You rub the powder between your forefinger and thumb before bringing it close to smell. The smell, unfortunately, is barely there; not nearly enough to identify it.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;You know, there was no purge on this side of his face... you *could* taste it...&quot; AutTasteIt&gt;&gt; [[|AutTasteIt]]
+&lt;&lt;AddOption &quot;[Perception - Medium 11] You know, there was no purge on this side of his face... you *could* taste it...&quot; AutTasteIt&gt;&gt; [[|AutTasteIt]]
 &lt;&lt;AddOption &quot;Sure, you could probably ID the stuff based on taste, but are you really willing to lick something that&#39;s been on the dead guy? The lab can deal with identifying this stuff, thanks. It&#39;s almost certainly drugs, and that&#39;s really all you need to know. Let&#39;s wrap this up and move on.&quot; AutInternal&gt;&gt;[[|AutInternal]]</tw-passagedata><tw-passagedata pid="67" name="AutTasteIt" tags="" position="850,850" size="100,100">&lt;&lt;KimfluenceLost 1&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 &lt;&lt;if _roll &gt;= 11&gt;&gt;
@@ -1038,18 +1031,15 @@ You got: _roll
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $FYS&gt;&gt;
 &lt;&lt;if _roll &gt;= 8&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Electrochemistry&gt;&gt;
     &lt;&lt;AddParagraph &quot;A nasty taste for a lovely girl, but we don&#39;t hold that against her, do we. Molly&#39;s given us some of the best groping we&#39;ve ever had. Do you remember that night you spent rubbing yourself on every single article of clothing you owned? Shit, do you remember what it&#39;s like to feel *good*, Harry?  What it&#39;s like to feel... ecstatic?&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;AddOption &quot;Oh, but does that taste ever bring back memories. Good fucking memories. Too good...&quot; AutAddictComposure&gt;&gt;[[|AutAddictComposure]]</tw-passagedata><tw-passagedata pid="68" name="AutAddictComposure" tags="" position="975,850" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 &lt;&lt;if _roll &gt;= 13&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Composure&gt;&gt;
     &lt;&lt;AddParagraph &quot;There&#39;s nothing easy about addiction. It will always be there tempting you, and as they say, absence makes the heart grow fonder. But this is not the first time its siren song has called to you, and it will not be the last. You draw resolve from those things which are worth the effort, like the watermark on your trenchcoat. Like the way Vicquemare doesn&#39;t scowl every time you round the corner, anymore. Like the respect of the partner at your back. You breathe deep behind the bulwark of your will. Steady on.&quot;&gt;&gt;
     &lt;&lt;AddOption &quot;Thank goodness that&#39;s done. Now, on to the internal.&quot; AutInternal&gt;&gt;[[|AutInternal]]
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill Composure&gt;&gt;
     &lt;&lt;AddParagraph &quot;The cold sheen of sweat prickling down the back of your neck remembers, and it doesn&#39;t give half a shit about what you&#39;ve paid to know it. In the blink of an eye, it&#39;s as if the last year hasn&#39;t happened at all. The need is as powerful, as insistent as it&#39;s ever been. In this moment, it&#39;s the only thing you can think about. Corpse? Who gives a fuck about a corpse? The rest of the world is miles away, a greyscale memory hidden behind the ominous black drape of addiction, withering away in agony and inanity. And the full-body shudder that wracks your frame is enough to announce it to anyone that is watching.&quot;&gt;&gt;
     &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
@@ -1109,7 +1099,6 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;You pull down the eyelids to examine the conjunctiva (pale, boring). The eyes themselves are blank, irises completely dilated in death. Blood streaks through his straw-coloured sclerae, mainly on the side with the massive head trauma (you don&#39;t say). Next, a tiny shimmer of light directly up the nostrils (scabbed and powdery, which is to say unremarkable). Finally, the mouth...&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $FYS&gt;&gt;
 &lt;&lt;if _roll &gt;= 9&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Physical Instrument&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;There&#39;s nothing fun about fighting rigor mortis, but that doesn&#39;t make it difficult for a cop like you. You pop the end of the penlight into your own mouth as you use both hands to pry open the cadaver&#39;s with a gritty crunch. The tongue is fat and flaccid where it lolls against the bloody rug underneath. Most of the mouth is purple and yellowish-white, but there, against the cheek – dark red speckling in the meaty mucosa.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -1145,6 +1134,7 @@ You got: _roll
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;\&quot;Khm. Well. Good for him.\&quot; And just like that, he&#39;s disinterested again. May as well be talking about the outlet on the wall.&quot;&gt;&gt;
+	&lt;&lt;SetSpeaker YOU&gt;&gt;
     &lt;&lt;AddParagraph &quot;\&quot;I&#39;ve got petechial haemorrhage on the inside of the cheek, under the jaw, and down the neck. We should see if we can track down the person who gave him this... souvenir, in case they can tell us if the guy had enemies. As for the autopsy form...\&quot;&quot;&gt;&gt;
     &lt;&lt;AddOption &quot;\&quot;... we should add it.\&quot;&quot; AutHepatoRep&gt;&gt;[[|AutHepatoRep]]
     &lt;&lt;AddOption &quot;\&quot;... don&#39;t bother. Let&#39;s move on.\&quot;&quot; AutHepato&gt;&gt;[[|AutHepato]]
@@ -1220,7 +1210,8 @@ You got: _roll
     &lt;&lt;AddParagraph &quot;Not at *high* speed, mind you. You could do better than this with one arm. Hell, didn&#39;t even break a rib.&quot;&gt;&gt;
 	&lt;&lt;set $knowKiller += 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;AddParagraph &quot;Minor contusions on the chest consistent with blunt force. Based on the angle, blows struck once the victim was on the ground. Most likely postmortem.&quot;&gt;&gt;
+&lt;&lt;SetSpeaker YOU&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Minor contusions on the chest consistent with blunt force. Based on the angle, blows struck once the victim was on the ground. Most likely postmortem.\&quot;&quot;&gt;&gt;
 &lt;&lt;SetSpeaker YOU&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;re going to have to clean up that head wound a little, if you want to get a good look at it.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Use your sleeve. You&#39;re already right there, no need to track blood through the place.&quot; AutSleeve&gt;&gt;[[|AutSleeve]]
@@ -1295,7 +1286,6 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;And it is pulpy, too, not nice and clean like in those tawdry crime serials the bookshop sells. The bone has fractured along its symphyses, where the skull plates meet. There are probably hairline fractures in the plates themselves, but gentle pressure doesn&#39;t cause any of the bone to give under your fingers. What it does yield, however, are a couple of big, soft hematomas right next door. In fact...&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 &lt;&lt;if _roll &gt;= 11&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Perception (Sight)&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;You smooth as much as you can out of the way of the primary injury to get a good look at that skull fracture. The way the bone splintered tries to hide it, but you&#39;ve seen enough breaks to know the difference. This definitely wasn&#39;t one clean hit.&quot;&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Physical Instrument&quot;&gt;&gt;
@@ -1308,7 +1298,6 @@ You got: _roll
     	&lt;&lt;AddParagraph &quot;At least this should help take suspicion off the lieutenant. He&#39;s wiry, but it&#39;s deceptive; he&#39;s almost as strong as you are on your good days. And Kim wouldn&#39;t swing unless he meant it. This guy would have hit the floor on the first hit, like a sack of very bloody potatoes.&quot;&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Perception (Sight)&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Damn. There&#39;s no way to get a really good look at the actual point of fracture. Tissue&#39;s a stubborn thing, the way it clings to the bone beneath, and a mess like this is above your pay grade. Let him keep his skull fragments. You settle for sliding your fingers around the scalp, checking out the other injuries. There are just the two hematomas present – soft, bulbous mounds of blood up above the ear and temple, a pair of bloated fingers stretching towards the top of the head.&quot;&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Visual Calculus&quot;&gt;&gt;
@@ -1349,7 +1338,7 @@ You got: _roll
     &lt;&lt;AddOption &quot;\&quot;I&#39;ve had enough of being a lousy cop to last me a lifetime. We&#39;ll figure this out, Kim.\&quot;&quot; AutKnowBetter&gt;&gt;[[|AutKnowBetter]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;SetSpeaker YOU&gt;&gt;
-&lt;&lt;AddParagraph &quot;He&#39;s waiting for something. Waiting for *you*. He&#39;s seen you dive past all good sense and intuition, only to resurface with fistfuls of information. He&#39;s seen you weasel details from the tightest-lipped thugs and the slyest street peddlers. There&#39;s expectation in that eyebrow.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He&#39;s waiting for something. Waiting for *you*. He&#39;s seen you dive past all good sense and intuition in the past, only to resurface with fistfuls of information. He&#39;s seen you weasel details from the tightest-lipped thugs and the slyest street peddlers. There&#39;s expectation in that eyebrow.&quot;&gt;&gt;
 &lt;&lt;if $knowKimsCorpseClue &gt;= 3&gt;&gt;
     &lt;&lt;AddOption &quot;He&#39;s worried you&#39;re already putting it together. He knows more than he&#39;s let on.&quot; AutKimsCorpse&gt;&gt;[[|AutKimsCorpse]]
 &lt;&lt;/if&gt;&gt;
@@ -1376,11 +1365,12 @@ You got: _roll
 &lt;&lt;PassiveSkill Electrochemistry&gt;&gt;
 &lt;&lt;AddParagraph &quot;Louder, even.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Esprit de Corps&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;Lieutenant Kim Kitsuragi of the RCM&#39;s 41st precinct is investigating a new homicide, one that hasn&#39;t even been reported yet. It&#39;s going to be a rough one on him, harder than usual. He&#39;s both hopeful and afraid that his partner will figure it out before he has to admit to anything; he knows the man. He knows him *well*. And he&#39;s desperately hoping he doesn&#39;t have to give voice to this while standing over the crumpled sack of decaying flesh the man&#39;s become.&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;The lieutenant is clawing at the fraying wreckage of his professionalism, a scrabbling attempt to drag the pieces between himself and the truth. Here in a dingy Jamrock apartment, he is a loss. He&#39;s done the only two things he&#39;s felt sure about: he&#39;s started working the case, and he&#39;s called his partner.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Lieutenant Kim Kitsuragi of the RCM&#39;s 41st precinct is investigating a new homicide, one that hasn&#39;t even been reported yet. It&#39;s going to be a rough one on him, harder than usual. He&#39;s both hopeful and afraid that his partner will figure it out the truth before he has to admit to it: he knows the man. He knows him *well*. And he&#39;s desperately hoping he doesn&#39;t have to give voice to this while standing over the crumpled sack of decaying flesh the man&#39;s become.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;The lieutenant is clawing at the fraying wreckage of his professionalism, a scrabbling attempt to drag the pieces between himself and the truth. Here in a dingy Jamrock apartment, he is a loss. He&#39;s done the only two things he feels sure about right now: he&#39;s started working the case, and he&#39;s called his partner.&quot;&gt;&gt;
 &lt;&lt;SetSpeaker YOU&gt;&gt;
 &lt;&lt;AddParagraph &quot;He&#39;s called *you*.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;(DEV) Escape dead spot.&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="90" name="AutMoveOn" tags="" position="1225,1100" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;I trust you.\&quot;&quot; AutTrust&gt;&gt;[[|AutTrust]]
+&lt;&lt;AddOption &quot;\&quot;Let’s go.\&quot; Say nothing more on it.&quot; AutSayNothing&gt;&gt;[[|AutSayNothing]]</tw-passagedata><tw-passagedata pid="90" name="AutMoveOn" tags="" position="1225,1100" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant&#39;s head inclines ever so slightly to the side. He eyes the victim one last time before looking back to you.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $FYS&gt;
 &lt;&lt;if _roll &gt;= 10&gt;&gt;
@@ -1421,7 +1411,38 @@ You got: _roll
 &lt;&lt;PassiveSkill Composure&gt;&gt;
 &lt;&lt;AddParagraph &quot;Just try not to faceplant into the stiff, du Bois. And for the love of all that is good, try not to blow the ass out of your pants.&quot;&gt;&gt;
 &lt;&lt;set $knowAutopsy = 1&gt;&gt;
-&lt;&lt;AddOption &quot;Back to the rest of the scene.&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="92" name="ExamineMainRoom" tags="" position="225,1225" size="100,100">&lt;&lt;SetSpeaker &quot;DIRTY ONE-BEDROOM FLAT &quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Back to the rest of the scene.&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="92" name="AutTrust" tags="" position="225,1225" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
+&lt;&lt;SetSpeaker YOU&gt;&gt;
+&lt;&lt;AddParagraph &quot;You’ve never been the most eloquent man – or at least, you don’t have any reason to think you have. You certainly don’t feel it right now. But then, Kim’s used to your bluntness by now, right? Just... tell him.&quot;&gt;&gt;
+&lt;&lt;SetSpeaker YOU&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;I trust you.\&quot;&quot;&gt;&gt;
+&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Your partner blinks down at you slowly behind thick-rimmed lenses. \&quot;You trust me.\&quot;&quot;&gt;&gt;
+&lt;&lt;PassiveSkill Rhetoric&gt;&gt;
+&lt;&lt;AddParagraph &quot;It’s a question.&quot;&gt;&gt;
+&lt;&lt;SetSpeaker YOU&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;And you trust me, Kim, or I wouldn’t be here.\&quot; He freezes on half a breath. You shrug and blow right by him. \&quot;You’ll tell me when you’re ready.\&quot;&quot;&gt;&gt;
+&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Who says there’s anything to tell?\&quot;&quot;&gt;&gt;
+&lt;&lt;PassiveSkill Empathy&gt;&gt;
+&lt;&lt;AddParagraph &quot;He knows better.&quot;&gt;&gt;
+&lt;&lt;PassiveSkill Logic&gt;&gt;
+&lt;&lt;AddParagraph &quot;You know better.&quot;&gt;&gt;
+&lt;&lt;SetSpeaker YOU&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Call it a hunch. In the meantime, Kim...\&quot; Oh, this part you’re not so good at. \&quot;... we’ve got this. We’ll catch the prick.\&quot;&quot;&gt;&gt;
+&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He does not smile, but some colour comes back to his cheeks, and the nod he gives you is certain. Yes, he thinks to himself. We will.&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Time to get up, coppo. The rest of the scene awaits.&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="93" name="AutSayNothing" tags="" position="350,1225" size="100,100">&lt;&lt;AddParagraph &quot;You peel off the bloody gloves one at a time before pocketing the knife and penlight. Kim is stock-still behind you.&quot;&gt;&gt;
+&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Just like that?\&quot;&quot;&gt;&gt;
+&lt;&lt;PassiveSkill Composure&gt;&gt;
+&lt;&lt;AddParagraph &quot;The agitation does not want to let him go.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;But this is not your story to tell – it’s his. It would take a stronger man than you to make him tell it before he’s ready.&quot;&gt;&gt;
+&lt;&lt;SetSpeaker YOU&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Why? Is there something else to say?\&quot; You give him a one-sided shrug and look away. It’s as close to an admission as he’s getting. If he wants to play silent, you’ll let him. \&quot;Come on. There’s still plenty of crime scene waiting for us. Let’s go catch this prick.\&quot;&quot;&gt;&gt;
+&lt;&lt;PassiveSkill Endurance&gt;&gt;
+&lt;&lt;AddParagraph &quot;And maybe you could spend less time crouching while you do it, hm?&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Back to the rest of this mess.&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="94" name="ExamineMainRoom" tags="" position="475,1225" size="100,100">&lt;&lt;SetSpeaker &quot;DIRTY ONE-BEDROOM FLAT &quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;It wouldn&#39;t take a cop to know something went down here. (A lot of somethings, judging from the paraphernalia.) Broken shit against the walls, overturned vinyl player, blood absolutely everywhere... no wonder there was a noise complaint. This was a brawl.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 &lt;&lt;if _roll &gt;=10&gt;&gt;
@@ -1445,9 +1466,8 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;\&quot;Well, at least he knew how to have a good time.\&quot;&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim&#39;s life. \&quot;So it would seem.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="93" name="ExaminePrybar" tags="" position="350,1225" size="100,100">&lt;&lt;ItemGained &quot;Red-Handled Prybar&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="95" name="ExaminePrybar" tags="" position="600,1225" size="100,100">&lt;&lt;ItemGained &quot;Red-Handled Prybar&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
-You got: _roll
 &lt;&lt;if _roll &gt;= 10&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
 	&lt;&lt;set $knowKimsPrybar to 1&gt;&gt;
@@ -1466,19 +1486,19 @@ You got: _roll
     &lt;&lt;PassiveSkill Perception&gt;&gt;
     &lt;&lt;AddParagraph  &quot;It&#39;s definitely an RCM-issue prybar. You can see the property number branded into the rubber of the handle. In fact, it reminds you of the one you borrowed from Kim, back in Martinaise, on your first case together.&quot;&gt;&gt;
 	&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="94" name="PrybarConvo" tags="" position="475,1225" size="100,100">&lt;&lt;PassiveSkill &quot;Esprit de Corps&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="96" name="PrybarConvo" tags="" position="725,1225" size="100,100">&lt;&lt;PassiveSkill &quot;Esprit de Corps&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;While you study the familiar edges of the prybar, your partner studies you. He watches you from the corner of his eye, his expression carved from stone. He&#39;s holding his breath but saying nothing.&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He&#39;s waiting for you to say something first.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Wait him out.&quot; StaringContest&gt;&gt; [[|StaringContest]]
 &lt;&lt;AddOption &quot;\&quot;Hey, Kim. Guess what? We found your prybar!\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]
 &lt;&lt;AddOption &quot;\&quot;I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\&quot;&quot; HideTheBody&gt;&gt; [[|HideTheBody]]
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="95" name="IsThisYourPrybar" tags="" position="600,1225" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="97" name="IsThisYourPrybar" tags="" position="850,1225" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He sighs but doesn&#39;t deny it. \&quot;Yes. Good work, Detective,\&quot; he says with a desert dryness.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;Cool.\&quot; You talk about something else.&quot; PrybarConvo&gt;&gt; [[|PrybarConvo]]
 &lt;&lt;AddOption &quot;\&quot;How did it end up here?\&quot;&quot; HowDidItGetHere&gt;&gt; [[|HowDidItGetHere]]
-&lt;&lt;AddOption &quot;\&quot;I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\&quot;&quot; HideTheBody&gt;&gt; [[|HideTheBody]]</tw-passagedata><tw-passagedata pid="96" name="StaringContest" tags="" position="725,1225" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\&quot;&quot; HideTheBody&gt;&gt; [[|HideTheBody]]</tw-passagedata><tw-passagedata pid="98" name="StaringContest" tags="" position="975,1225" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Two can play this game. Kim watches you out of the corner of his eye, and you watch him out of the corner of yours. A covert staring contest begins. Lucky for you, the indirect line of sight protects you from the full force of his judgemental eyebrow.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;[Authority - Hard 15] You&#39;re a decorated officer. You&#39;ve got this.&quot; StaringContestCheck&gt;&gt;[[|StaringContestCheck]]</tw-passagedata><tw-passagedata pid="97" name="StaringContestCheck" tags="" position="1100,200" size="100,100">&lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
+&lt;&lt;AddOption &quot;[Authority - Hard 15] You&#39;re a decorated officer. You&#39;ve got this.&quot; StaringContestCheck&gt;&gt;[[|StaringContestCheck]]</tw-passagedata><tw-passagedata pid="99" name="StaringContestCheck" tags="" position="1100,1225" size="100,100">&lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
 &lt;&lt;if _roll &gt;= 15&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Authority&gt;&gt;
@@ -1494,46 +1514,39 @@ You got: _roll
 	&lt;&lt;AddParagraph &quot;You concentrate so hard that you forget to breathe. The spots gathering at the edges of your vision blot out what you can see of the lieutenant. You finally suck in a breath and forget what you were doing.&quot;&gt;&gt;
 	&lt;&lt;AddParagraph &quot;Dead body. Right. Best not to keel over into all that blood.&quot;&gt;&gt;
     &lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt; [[|PrybarConvo]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="98" name="HideTheBody" tags="" position="975,1225" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="100" name="HideTheBody" tags="" position="1225,1225" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;What?\&quot; Kim sputters, turning to give you a scandalised look. \&quot;No! Of course not!\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;Hey. No judgement, Kim. I&#39;m sure he had a very wackable face.\&quot; You pantomime bashing his head in with the prybar.&quot; WackableFace&gt;&gt; [[|WackableFace]]</tw-passagedata><tw-passagedata pid="99" name="WackableFace" tags="" position="1100,1225" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Hey. No judgement, Kim. I&#39;m sure he had a very wackable face.\&quot; You pantomime bashing his head in with the prybar.&quot; WackableFace&gt;&gt; [[|WackableFace]]</tw-passagedata><tw-passagedata pid="101" name="WackableFace" tags="" position="100,1350" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant buries his face in his hands and lets out a muffled, strangled scream.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
 &lt;&lt;if _roll &gt;= 9&gt;&gt;
-    &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;The lieutenant is frustrated, tired, and itching for another cigarette to calm his nerves. You see it now in the way his fingers shake. He&#39;d hoped you knew him better than this.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
-    &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;The lieutenant is clearly overcome with gratitude and emotion. You are a good partner.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Detective. *Harry*.\&quot; The lieutenant claps both hands on your shoulders to make sure you are paying attention. Slowly, he looks you in the eye and says, \&quot;I did not kill this man. I do not know who did or why they used my prybar, but I did not kill him.\&quot;&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He lets go of your shoulders and steps back. \&quot;That is why I called you, Harry. To do our jobs.\&quot;&quot;&gt;&gt;
-
 &lt;&lt;PassiveSkill &quot;HalfLife&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He&#39;s a little unsettled by how quickly you were willing to help him destroy evidence of a murder.&quot;&gt;&gt;
-
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;But also a little touched.&quot;&gt;&gt;
-
-&lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="100" name="HowDidItGetHere" tags="" position="1225,1225" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="102" name="HowDidItGetHere" tags="" position="225,1350" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;I don&#39;t know,\&quot; Kim says softly. \&quot;I was hoping you could help me find that out.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="101" name="Something" tags="" position="100,1350" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Talk about something else.&quot; PrybarConvo&gt;&gt;[[|PrybarConvo]]</tw-passagedata><tw-passagedata pid="103" name="Something" tags="" position="350,1350" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He gives you a flat look.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;I mean... I don&#39;t know if it was missing, but we found your prybar.\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]</tw-passagedata><tw-passagedata pid="102" name="AptWindow" tags="" position="225,1350" size="100,100">&lt;&lt;set $seenAlley to 1&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;I mean... I don&#39;t know if it was missing, but we found your prybar.\&quot;&quot; IsThisYourPrybar&gt;&gt; [[|IsThisYourPrybar]]</tw-passagedata><tw-passagedata pid="104" name="AptWindow" tags="" position="475,1350" size="100,100">&lt;&lt;set $seenAlley to 1&gt;&gt;
 &lt;&lt;PassiveSkill Perception&gt;&gt;
 &lt;&lt;AddParagraph  &quot;Behind the hanging, there&#39;s a window that looks like it hasn&#39;t been washed since the Revolution, and it looks down on an alley that almost looks cleaner than the apartment you&#39;re standing in. You spot two ginger-haired people digging through an unlocked skip.&quot;&gt;&gt;
-
 &lt;&lt;PassiveSkill Logic&gt;&gt;
 &lt;&lt;AddParagraph &quot;This apartment may not be representative of the state of the rest of the building, given that the alley looks like it&#39;s sprayed down fairly regularly. The floor in the hall is old and peeling, but it is clean. This place looks like it hasn&#39;t been cleaned since before the tenant moved in, at least.&quot;&gt;&gt;
-
 &lt;&lt;PassiveSkill Perception&gt;&gt;
 &lt;&lt;AddParagraph &quot;As you turn away from the window, you notice a smear on the glass that looks as if something twice rounded was pressed against the glass, clearing some of the grime. You wonder, for a moment, if the tenant was mooning someone in the next building, but something bothers you about the angle.&quot;&gt;&gt;
 /*Add Kim&#39;s ass checks*/
 &lt;&lt;AddOption &quot;[Perception - Legendary 15] Examine the ass-print.&quot; KimsAssPrint&gt;&gt;[[|KimsAssPrint]]
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="103" name="KimsAssPrint" tags="" position="350,1350" size="100,100">&lt;&lt;if $thoughtKimsAss == 2&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="105" name="KimsAssPrint" tags="" position="600,1350" size="100,100">&lt;&lt;if $thoughtKimsAss == 2&gt;&gt;
     &lt;&lt;set _bonus to 10&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $MOT + _bonus&gt;&gt;
@@ -1548,7 +1561,6 @@ You got: _roll
     &lt;&lt;AddParagraph &quot;In fact, maybe you should start with Kim&#39;s. He&#39;s right there. And for all his well-tailored pants don&#39;t show it at all, you&#39;re sure he must have an ass. You&#39;ve seen him sit. You&#39;ve seen him bend. And no man is truly assless, is he?&quot;&gt;&gt;
 	&lt;&lt;ThoughtGained &quot;This Man Has No Ass!&quot;&gt;&gt;
     &lt;&lt;set $thoughtKimsAss to 1&gt;&gt;
-
     &lt;&lt;PassiveSkill &quot;Perception&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;You look more closely and realise that there are drip and smear marks below the ass print.&quot;&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
@@ -1557,25 +1569,24 @@ You got: _roll
     &lt;&lt;AddParagraph &quot;--on the freezing cold glass. That&#39;s not going to be enjoyable in this weather.&quot;&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;You should still do it with Kim&#39;s ass, when you find it. I bet he&#39;d be hot for it.&quot;&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;</tw-passagedata><tw-passagedata pid="104" name="ExamineBathroom" tags="" position="475,1350" size="100,100">&lt;&lt;PassiveSkill Perception&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;</tw-passagedata><tw-passagedata pid="106" name="ExamineBathroom" tags="" position="725,1350" size="100,100">&lt;&lt;PassiveSkill Perception&gt;&gt;
 &lt;&lt;AddParagraph &quot;You don&#39;t really want to search this. It&#39;s worse than your bathroom. You&#39;re pretty sure you at least bleached the sink, last month. This place has a filthy yellow film on every surface in it. A wet towel is wadded up under the bar it should be hung on. A crusty strand of large beads lies in the sink. The mirror is so blurry, your face looks like pastel paints thrown at the wall. The toilet seat is up and the bowl is brown with yellow water.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="105" name="ExamineBedroom" tags="" position="600,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="107" name="ExamineBedroom" tags="" position="850,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The bedroom doorway yawns open like a black hole. You tiptoe your way around the fallen corpse to peek your head inside. Only a seam of cold light trickles in from around the curtains. The furniture form monolithic shapes in the dark.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Hand-Eye Coordination&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You press a palm to the wall, skating around until you find the light switch. You flick it on and... nothing. Hm.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Keep flicking the light switch. Maybe it&#39;s just taking a bit to get going.&quot; ClickClick&gt;&gt; [[|ClickClick]]
-&lt;&lt;AddOption &quot;Open the curtains.&quot; OpenTheCurtains&gt;&gt; [[|OpenTheCurtains]]</tw-passagedata><tw-passagedata pid="106" name="ClickClick" tags="" position="725,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Open the curtains.&quot; OpenTheCurtains&gt;&gt; [[|OpenTheCurtains]]</tw-passagedata><tw-passagedata pid="108" name="ClickClick" tags="" position="975,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Click-click-click. There&#39;s something satisfying in the tiny sound the switch makes. Click-click-click-click. You know, you should record this. This could be the next big thing in anodic music. Click-click-click-&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant&#39;s tired sigh interrupts you. \&quot;What are you doing, Detective?\&quot;&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;Making music. Can you hear it, Kim?\&quot;&quot; MakingMusic&gt;&gt; [[|MakingMusic]]
-&lt;&lt;AddOption &quot;\&quot;Nothing.\&quot; Go and open the curtains like a normal person.&quot; OpenTheCurtains&gt;&gt; [[|OpenTheCurtains]]</tw-passagedata><tw-passagedata pid="107" name="MakingMusic" tags="" position="850,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Nothing.\&quot; Go and open the curtains like a normal person.&quot; OpenTheCurtains&gt;&gt; [[|OpenTheCurtains]]</tw-passagedata><tw-passagedata pid="109" name="MakingMusic" tags="" position="1100,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You keep flicking the lightswitch. You don&#39;t need to look over your shoulder to know the lieutenant is pinching the bridge of his nose.&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Please. Just go open the curtains. The light is probably busted.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Just open the damn curtains.&quot; OpenTheCurtains&gt;&gt; [[|OpenTheCurtains]]</tw-passagedata><tw-passagedata pid="108" name="OpenTheCurtains" tags="" position="975,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Just open the damn curtains.&quot; OpenTheCurtains&gt;&gt; [[|OpenTheCurtains]]</tw-passagedata><tw-passagedata pid="110" name="OpenTheCurtains" tags="" position="1225,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You open the curtains to grey light and rainy rivulets on a filmy window that warp and blur the city beyond. The cold light fills in the shapes of the room. A double bed eats up most of the space, sheets rumpled, pillows askew. You never really saw the point of making the bed either when you&#39;d only be undoing it again in a few hours.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Perception (Smell)&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The tangled sheets smell of stale sweat, and you can imagine them, clammy, sticking to your skin after a fitful night.&quot;&gt;&gt;
@@ -1593,7 +1604,7 @@ You got: _roll
     &lt;&lt;AddParagraph &quot;It soothes him, having something to do with his hands.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;The carpet matches the drapes.\&quot;&quot; Drapes&gt;&gt; [[|Drapes]]
-&lt;&lt;AddOption &quot;\&quot;Blackout curtains and unscrewed lightbulb point to photosensitivity.\&quot;&quot; Photosensitivity&gt;&gt; [[|Photosensitivity]]</tw-passagedata><tw-passagedata pid="109" name="Drapes" tags="" position="1100,1350" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Blackout curtains and unscrewed lightbulb point to photosensitivity.\&quot;&quot; Photosensitivity&gt;&gt; [[|Photosensitivity]]</tw-passagedata><tw-passagedata pid="111" name="Drapes" tags="" position="100,1475" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;re not even lying. The curtains are a darker shade but in the same color family as the grey carpet.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 &lt;&lt;if _roll &gt;= 11&gt;&gt;
@@ -1606,7 +1617,7 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;The lieutenant doesn&#39;t even crack a smile. \&quot;I don&#39;t think your opinion on interior design will help here, Officer,\&quot; he says, neatly side-stepping your joke.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;This really isn&#39;t the time, Harry.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;Blackout curtains and unscrewed lightbulb point to photosensitivity.\&quot;&quot; Photosensitivity&gt;&gt; [[|Photosensitivity]]</tw-passagedata><tw-passagedata pid="110" name="Photosensitivity" tags="" position="1225,1350" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Blackout curtains and unscrewed lightbulb point to photosensitivity.\&quot;&quot; Photosensitivity&gt;&gt; [[|Photosensitivity]]</tw-passagedata><tw-passagedata pid="112" name="Photosensitivity" tags="" position="225,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant blinks, processing that with a nod. \&quot;Hangover?\&quot; he prompts, pen poised to paper.&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Habitual. You don&#39;t buy blackout curtains after one night of binging. Our boy was a dedicated alcoholic.\&quot;&quot;&gt;&gt;
@@ -1624,18 +1635,18 @@ You got: _roll
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Good observation, Detective,&quot; he says with clinical coolness. &quot;The empty beer cans are certainly another clue to that.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;Maybe he got into a drunken argument with someone.\&quot;&quot; Maybe&gt;&gt; [[|Maybe]]</tw-passagedata><tw-passagedata pid="111" name="Maybe" tags="" position="100,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Maybe he got into a drunken argument with someone.\&quot;&quot; Maybe&gt;&gt; [[|Maybe]]</tw-passagedata><tw-passagedata pid="113" name="Maybe" tags="" position="350,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Maybe,\&quot; the lieutenant echoes. Is it the grey light that makes him look pale? \&quot;Anything else, Detective?\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;No.\&quot; You walk carefully back out of the bedroom.&quot; CrimeScene&gt;&gt; [[|CrimeScene]]</tw-passagedata><tw-passagedata pid="112" name="ColdOut" tags="" position="225,1475" size="100,100">&lt;&lt;PassiveSkill &quot;LOGIC&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;No.\&quot; You walk carefully back out of the bedroom.&quot; CrimeScene&gt;&gt; [[|CrimeScene]]</tw-passagedata><tw-passagedata pid="114" name="ColdOut" tags="" position="475,1475" size="100,100">&lt;&lt;PassiveSkill &quot;LOGIC&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Oh. Well. Excuse *me*, Mr. Normal Cop. Detective Ordinary. Lieutenant Expected. You are *clearly* an expert on what *normal people* do.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;It is too fucking early to be sassed by my own brain.&quot; ??????????&gt;&gt; [[|??????????]]
-&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="113" name="RolledDown" tags="" position="350,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="115" name="RolledDown" tags="" position="600,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant looks at you, surprise quickly smoothing over to guarded curiosity. \&quot;Well, Detective,\&quot; he says, speaking slowly. \&quot;It&#39;s cold out. Sleeves were invented to protect against the cold, you see. As were pants.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;Yes, I am familiar with pants. The sleeves of the leg.\&quot;&quot; LegSleeves&gt;&gt; [[|LegSleeves]]</tw-passagedata><tw-passagedata pid="114" name="LegSleeves" tags="" position="475,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Yes, I am familiar with pants. The sleeves of the leg.\&quot;&quot; LegSleeves&gt;&gt; [[|LegSleeves]]</tw-passagedata><tw-passagedata pid="116" name="LegSleeves" tags="" position="725,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant hums in agreement with this pearl of wisom.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;But you see, sleeves, like pants, can also be used to conceal things. You&#39;re hiding something.\&quot;&quot; HidingSomething&gt;&gt; [[|HidingSomething]]</tw-passagedata><tw-passagedata pid="115" name="CoolKim" tags="" position="600,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;But you see, sleeves, like pants, can also be used to conceal things. You&#39;re hiding something.\&quot;&quot; HidingSomething&gt;&gt; [[|HidingSomething]]</tw-passagedata><tw-passagedata pid="117" name="CoolKim" tags="" position="850,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Mm?\&quot; He blinks at you through his round glasses.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;You. You&#39;re cool. Smoking, not smoking. Sleeves rolled up, sleeves rolled down. Doesn&#39;t matter. You make it cool.\&quot;&quot; SleevesDown&gt;&gt; [[|SleevesDown]]</tw-passagedata><tw-passagedata pid="116" name="SleevesDown" tags="" position="725,1475" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;You. You&#39;re cool. Smoking, not smoking. Sleeves rolled up, sleeves rolled down. Doesn&#39;t matter. You make it cool.\&quot;&quot; SleevesDown&gt;&gt; [[|SleevesDown]]</tw-passagedata><tw-passagedata pid="118" name="SleevesDown" tags="" position="975,1475" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 &lt;&lt;if _roll &gt;= 7&gt;&gt;
 	&lt;&lt;SkillSuccess&gt;&gt;
 	&lt;&lt;PassiveSkill &quot;REACTION SPEED&quot;&gt;&gt;
@@ -1652,11 +1663,11 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;And it makes your dick swell in your--&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;VOLITION&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Seriously? Is nothing sacred? Just enjoy the damn man&#39;s smile.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;It&#39;s not about eyesight. It&#39;s about having a sense of taste.\&quot;&quot; Taste&gt;&gt; [[|Taste]]</tw-passagedata><tw-passagedata pid="117" name="Taste" tags="" position="850,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;It&#39;s not about eyesight. It&#39;s about having a sense of taste.\&quot;&quot; Taste&gt;&gt; [[|Taste]]</tw-passagedata><tw-passagedata pid="119" name="Taste" tags="" position="1100,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant arches an eyebrow and gives your outfit a long, slow once-over, lingering on your tie. \&quot;Mmm. I&#39;m not sure if that&#39;s the compliment you think it is, Detective.\&quot; His eyes gleam with amusement.&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;((WE NEED SOME INDIGNANT NECKTIE UP IN HEREEEE))&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;Anyway. All that to say, I&#39;m sure the reason you have your sleeves rolled down is because of Fashion and not because you&#39;re hiding something.\&quot;&quot; HidingSomething&gt;&gt; [[|HidingSomething]]</tw-passagedata><tw-passagedata pid="118" name="HidingSomething" tags="" position="975,1475" size="100,100">&lt;&lt;set $knowKimjury to 1&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Anyway. All that to say, I&#39;m sure the reason you have your sleeves rolled down is because of Fashion and not because you&#39;re hiding something.\&quot;&quot; HidingSomething&gt;&gt; [[|HidingSomething]]</tw-passagedata><tw-passagedata pid="120" name="HidingSomething" tags="" position="1225,1475" size="100,100">&lt;&lt;set $knowKimjury to 1&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant&#39;s back goes ramrod straight. The smiling gleam in his eye is gone. He *is* hiding something, and that reaction confirmed it.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;EMPATHY&quot;&gt;&gt;
@@ -1665,13 +1676,11 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;With a resigned sigh, the lieutenant rolls up his right sleeve, revealing the pale skin and corded forearm you are used to seeing. Blotchy bruises mar the skin above his wrist, the livid sort of red and purple that says they&#39;re recent. \&quot;Before you say anything,\&quot; he says, showing more teeth than usual as he speaks, \&quot;it&#39;s fine. *I&#39;m* fine. I took care of it.\&quot;&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
 &lt;&lt;if _roll &gt;= 9&gt;&gt;
-	&lt;&lt;SkillSuccess&gt;&gt;
 	&lt;&lt;PassiveSkill &quot;EMPATHY&quot;&gt;&gt;
 	&lt;&lt;AddParagraph &quot;He wants to make it clear that he handled it himself. He doesn&#39;t want you to see him as a victim, here.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 &lt;&lt;if _roll &gt;= 8&gt;&gt;
-	&lt;&lt;SkillSuccess&gt;&gt;
 	&lt;&lt;PassiveSkill &quot;VISUAL CALCULUS&quot;&gt;&gt;
 	&lt;&lt;AddParagraph &quot;The bruises form a familiar shape, the imprint of someone&#39;s hand. You&#39;ve seen it often enough on domestic abuse victims. An argument escalates, someone tries to retreat, but the second interlocutor grabs them by the arm and drags them back. Instinctively, you search the rest of Kim&#39;s bare skin for obvious marks. There is no bruised cheek, no split lip or bloodied nose. If the grabber inflicted any other damage onto your partner, it isn&#39;t physically obvious.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -1681,19 +1690,19 @@ You got: _roll
 &lt;&lt;AddOption &quot;\&quot;Are you okay?\&quot;&quot; YouOkay&gt;&gt; [[|YouOkay]]
 &lt;&lt;AddOption &quot;\&quot;Who fucking hurt you?\&quot;&quot; WhoFucking&gt;&gt; [[|WhoFucking]]
 &lt;&lt;AddOption &quot;Don&#39;t talk. Words are overrated. Just let out a weird, feral growl to show your displeasure.&quot; Growl&gt;&gt; [[|Growl]]
-&lt;&lt;AddOption &quot;Poke at the bruises.&quot; PokeBruises&gt;&gt; [[|PokeBruises]]</tw-passagedata><tw-passagedata pid="119" name="Tattoo" tags="" position="1100,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Poke at the bruises.&quot; PokeBruises&gt;&gt; [[|PokeBruises]]</tw-passagedata><tw-passagedata pid="121" name="Tattoo" tags="" position="100,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Sorry to disappoint you,&quot; he says dryly, &quot;but my only tattoo is the Insulindian Phasmid on my lower back.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;Wait, really?\&quot;&quot; WaitReally&gt;&gt; [[|WaitReally]]</tw-passagedata><tw-passagedata pid="120" name="WaitReally" tags="" position="1225,1475" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Wait, really?\&quot;&quot; WaitReally&gt;&gt; [[|WaitReally]]</tw-passagedata><tw-passagedata pid="122" name="WaitReally" tags="" position="225,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Of course not.\&quot;&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;You disappoint me, Kim.\&quot;&quot; Disappointed&gt;&gt; [[|Disappointed]]
-&lt;&lt;AddOption &quot;\&quot;Well, I know what *my* first tattoo is going to be!\&quot;&quot; FirstTattoo&gt;&gt; [[|FirstTattoo]]</tw-passagedata><tw-passagedata pid="121" name="Disappointed" tags="" position="100,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Well, I know what *my* first tattoo is going to be!\&quot;&quot; FirstTattoo&gt;&gt; [[|FirstTattoo]]</tw-passagedata><tw-passagedata pid="123" name="Disappointed" tags="" position="350,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant smirks and pats your shoulder with one gloved hand. \&quot;We all must learn to live with our disappointments, Detective. You&#39;ll manage. Regardless, thank you for not making a big fuss about the bruises. They were nothing, as I told you.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;I know you can handle yourself, Kim.\&quot;&quot; HandleYourself&gt;&gt; [[|HandleYourself]]\&quot;&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="FirstTattoo" tags="" position="225,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;I know you can handle yourself, Kim.\&quot;&quot; HandleYourself&gt;&gt; [[|HandleYourself]]\&quot;&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="124" name="FirstTattoo" tags="" position="475,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant sighs and rubs the bridge of his nose, right where the glasses have left a crease. \&quot;I&#39;m honestly more surprised that you don&#39;t already have one. Regardless, thank you for not making a big fuss about the bruises. They were nothing, as I told you.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;I know you can handle yourself, Kim.\&quot;&quot; HandleYourself&gt;&gt; [[|HandleYourself]]</tw-passagedata><tw-passagedata pid="123" name="PokeBruises" tags="" position="350,1600" size="100,100">&lt;&lt;KimfluenceLost 1&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;I know you can handle yourself, Kim.\&quot;&quot; HandleYourself&gt;&gt; [[|HandleYourself]]</tw-passagedata><tw-passagedata pid="125" name="PokeBruises" tags="" position="600,1600" size="100,100">&lt;&lt;KimfluenceLost 1&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant immediately snatches his arm away, freezing you with a baleful look. He yanks the sleeve back down with finality. \&quot;There. Now you&#39;ve seen them. Shall we move on, Officer?\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="124" name="Growl" tags="" position="475,1600" size="100,100">&lt;&lt;set _roll to rollDice() + $FYS&gt;&gt;
+&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="126" name="Growl" tags="" position="725,1600" size="100,100">&lt;&lt;set _roll to rollDice() + $FYS&gt;&gt;
 &lt;&lt;if _roll &gt;=8&gt;&gt;
 	&lt;&lt;SkillSuccess&gt;&gt;
 	&lt;&lt;PassiveSkill &quot;HALF LIGHT&quot;&gt;&gt;
@@ -1715,32 +1724,30 @@ You got: _roll
 	&lt;&lt;AddParagraph &quot;\&quot;Are... you alright, Detective?\&quot;&quot;&gt;&gt;
 	&lt;&lt;AddOption &quot;\&quot;I should be asking *you* that. Are you okay?\&quot;&quot; YouOkay&gt;&gt; [[|YouOkay]]
 	&lt;&lt;AddOption &quot;\&quot;Sorry. I was choking on my rage. Who fucking hurt you?\&quot;&quot; WhoFucking&gt;&gt; [[|WhoFucking]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="125" name="WhoFucking" tags="" position="600,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="127" name="WhoFucking" tags="" position="850,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant pulls his sleeve back down, his back straight and shoulders stiff. \&quot;I have suffered worse injuries from worse people, Detective,\&quot; he says, his voice calm, even dispassionate.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;Yeah, and whoever hurt you is going to suffer even worse injuries once I know who it is.\&quot;&quot; WorseInjuries&gt;&gt; [[|WorseInjuries]]
 &lt;&lt;AddOption &quot;\&quot;I know. I&#39;ve *also* gotten worse bruises trying to put on pants, but at least the pants didn&#39;t hurt me *on purpose*.\&quot;&quot; PantsInjury&gt;&gt; [[|PantsInjury]]
 &lt;&lt;AddOption &quot;\&quot;I know you can handle yourself, Kim.\&quot;&quot; HandleYourself&gt;&gt; [[|HandleYourself]]
-&lt;&lt;AddOption &quot;\&quot;NEVER AGAIN. I WILL GUARD YOUR BODY WITH MY LIFE.\&quot;&quot; GuardYourBody&gt;&gt; [[|GuardYourBody]]</tw-passagedata><tw-passagedata pid="126" name="GuardYourBody" tags="" position="725,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;NEVER AGAIN. I WILL GUARD YOUR BODY WITH MY LIFE.\&quot;&quot; GuardYourBody&gt;&gt; [[|GuardYourBody]]</tw-passagedata><tw-passagedata pid="128" name="GuardYourBody" tags="" position="975,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant blinks at you in confusion. \&quot;Why are you shouting?\&quot; he asks, looking up and down the empty street to make sure no one else heard you.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;DRAMA&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You are his knight, sire! Tell him you are honourbound to protect him from harm! Kneel to show him your dedication!&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Get down on one knee in front of Kim.&quot; OneKnee&gt;&gt; [[|OneKnee]]</tw-passagedata><tw-passagedata pid="127" name="OneKnee" tags="" position="850,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Get down on one knee in front of Kim.&quot; OneKnee&gt;&gt; [[|OneKnee]]</tw-passagedata><tw-passagedata pid="129" name="OneKnee" tags="" position="1100,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant&#39;s eyes go nearly as round as his glasses. His ears are a nearly fluorescent shade of pink. \&quot;*Now* what are you doing?\&quot; he asks, exasperated.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;SUGGESTION&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He does not seem convinced. Perhaps, if you shared with him some small physical token to represent your promise to honor and protect him? Perhaps the cheap ring on your finger?&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $INT&gt;&gt;
 &lt;&lt;if _roll &gt;=11&gt;&gt;
-	&lt;&lt;SkillSuccess&gt;&gt;
 	&lt;&lt;PassiveSkill &quot;LOGIC&quot;&gt;&gt;
 	&lt;&lt;AddParagraph &quot;Hold on. Something isn&#39;t-- Oh. *Oh*, now you see it.&quot;&gt;&gt;
 	&lt;&lt;AddOption &quot;Fuck it. Might as well roll with it. Propose to Kim.&quot; Propose&gt;&gt; [[|Propose]]
-	&lt;&lt;AddOption &quot;\&quot;I had a whole speech planned about keeping you safe, but now I&#39;m not sure I can get back up from this position.\&quot;&quot; GetBackUp&gt;&gt; [[|GetBackUp]]
+	&lt;&lt;AddOption &quot;[Savoir Faire - Easy 8] \&quot;I had a whole speech planned about keeping you safe, but now I&#39;m not sure I can get back up from this position.\&quot;&quot; GetBackUp&gt;&gt; [[|GetBackUp]]
 &lt;&lt;else&gt;&gt;
-	&lt;&lt;SkillFailure&gt;&gt;
 	&lt;&lt;PassiveSkill &quot;LOGIC&quot;&gt;&gt;
 	&lt;&lt;AddParagraph &quot;That sounds like a great idea! What could go wrong?&quot;&gt;&gt;
 	&lt;&lt;AddOption &quot;Pull the cheap novelty ring off your finger and offer it to Kim. \&quot;Kim Kitsuragi, I promise to honor and protect you as my partner for the rest of our lives...\&quot;&quot; Propose&gt;&gt; [[|Propose]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="128" name="GetBackUp" tags="" position="975,1600" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="130" name="GetBackUp" tags="" position="1225,1600" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 &lt;&lt;if _roll &gt;= 8&gt;&gt;
 	&lt;&lt;SkillSuccess&gt;&gt;
 	&lt;&lt;PassiveSkill &quot;SAVOIR FAIRE&quot;&gt;&gt;
@@ -1751,25 +1758,25 @@ You got: _roll
 	&lt;&lt;PassiveSkill &quot;SAVOIR FAIRE&quot;&gt;&gt;
 	&lt;&lt;AddParagraph &quot;You were shot in the leg about a year ago. The wound has healed, sure, but your hip joint has never forgiven you for the damage. It is doing its damnest now to make its displeasure known.&quot;&gt;&gt;
 	&lt;&lt;AddOption &quot;\&quot;Kim? Can you give me a hand?\&quot;&quot; Help&gt;&gt; [[|Help]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="129" name="Help" tags="" position="1100,1600" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="131" name="Help" tags="" position="100,1725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;No.\&quot; The unimpressed lieutenant heads for the Kineema, leaving you to roll around ungracefully in the street.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="130" name="Propose" tags="" position="1225,1600" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="132" name="Propose" tags="" position="225,1725" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The rain is starting to pick up again, tasting cold and metallic. Your right pantleg is thoroughly soaked. You ignore it all as you wax poetic about how important Kim is to you, about how you will always be by his side.&quot;&gt;&gt;
 &lt;&lt;KimfluenceLost 1&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant folds his arms across his chest as he listens to your speech. He does not look amused. \&quot;Harrier du Bois, this might be the one point in my life where I really, really hope you are drunk,\&quot; he drawls. \&quot;Get up.\&quot;&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;EMPATHY&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He&#39;s not sure where the joke is supposed to be here, but he&#39;s fairly certain you&#39;re making one at his expense. That&#39;s hurt and embarrassment in his voice. Not anger.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;[Savoir Faire - Easy 8] Put the ring away and get back up.&quot; GetBackUp&gt;&gt; [[|GetBackUp]]</tw-passagedata><tw-passagedata pid="131" name="HandleYourself" tags="" position="100,1725" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
+&lt;&lt;AddOption &quot;[Savoir Faire - Easy 8] Put the ring away and get back up.&quot; GetBackUp&gt;&gt; [[|GetBackUp]]</tw-passagedata><tw-passagedata pid="133" name="HandleYourself" tags="" position="350,1725" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Something softens in his posture, in the plastic tightness of his expression. He nods in appreciation. \&quot;Good. Then you will believe me when I say again that I *handled* it.\&quot;&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;Can you tell me what happened?\&quot;&quot; TellMe&gt;&gt; [[|TellMe]]
-&lt;&lt;AddOption &quot;\&quot;Gotcha. I should be more worried about the other guy.\&quot;&quot; OtherGuy&gt;&gt; [[|OtherGuy]]</tw-passagedata><tw-passagedata pid="132" name="OtherGuy" tags="" position="225,1725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Gotcha. I should be more worried about the other guy.\&quot;&quot; OtherGuy&gt;&gt; [[|OtherGuy]]</tw-passagedata><tw-passagedata pid="134" name="OtherGuy" tags="" position="475,1725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant&#39;s face twists in an expression between a smile and a grimace. \&quot;Yes, Detective,\&quot; he says softly. \&quot;You probably should.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="133" name="TellMe" tags="" position="350,1725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="135" name="TellMe" tags="" position="600,1725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant stares at you for a long moment, thinking. The cold rain is starting to pick up again, sticking his hair to his head and drowning the lenses of his glasses. It is difficult to read him like this.&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Eventually, he nods, his lips pressed into a grim line. \&quot;Maybe. But not here. I need a drink first.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="134" name="PantsInjury" tags="" position="475,1725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="136" name="PantsInjury" tags="" position="725,1725" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant looks down at the pants in question. \&quot;No, I imagine the pain caused by those pants was self-inflicted,\&quot; he says dryly.\&quot;Any tighter, and they would cut off the blood supply to your extremities.\&quot;&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Don&#39;t worry, baby. There&#39;s plenty of blood supply for the extremity that matters.&quot;&gt;&gt;
@@ -1777,7 +1784,7 @@ You got: _roll
 &lt;&lt;AddParagraph &quot;Can you *not* right now? We really don&#39;t need to be thinking of erections while Kim is staring right at our crotch!&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Are you joking? That&#39;s the perfect time!&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;[Electrochemistry - Medium 10] Make sure you don&#39;t have a boner.&quot; Boner&gt;&gt; [[|Boner]]</tw-passagedata><tw-passagedata pid="135" name="Boner" tags="" position="600,1725" size="100,100">&lt;&lt;set _roll to rollDice() + $FYS&gt;&gt;
+&lt;&lt;AddOption &quot;[Electrochemistry - Medium 10] Make sure you don&#39;t have a boner.&quot; Boner&gt;&gt; [[|Boner]]</tw-passagedata><tw-passagedata pid="137" name="Boner" tags="" position="850,1725" size="100,100">&lt;&lt;set _roll to rollDice() + $FYS&gt;&gt;
 &lt;&lt;if _roll &gt;= 10&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot;&gt;&gt;
@@ -1793,21 +1800,21 @@ You got: _roll
     &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;If the lieutenant notices your growing giggle-stick, he&#39;s classy enough not to comment.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;The pants were a metaphor. I just meant... are you okay?\&quot;&quot; YouOkay&gt;&gt; [[|YouOkay]]</tw-passagedata><tw-passagedata pid="136" name="WorseInjuries" tags="" position="725,1725" size="100,100">&lt;&lt;KimfluenceLost 1&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;The pants were a metaphor. I just meant... are you okay?\&quot;&quot; YouOkay&gt;&gt; [[|YouOkay]]</tw-passagedata><tw-passagedata pid="138" name="WorseInjuries" tags="" position="975,1725" size="100,100">&lt;&lt;KimfluenceLost 1&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Enough,\&quot; Kim says firmly. \&quot;I understand the impulse to protect your partner, but this is getting a little insulting. I am not a child in need of protection, and threatening violent revenge is dangerous, unprofessional behavior in a police officer. If I need your help, please trust that I will ask you for it. What I need your help with, here, *now*, is finding the killer.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;\&quot;Can you at least tell me what happened?\&quot;&quot; TellMe&gt;&gt; [[|TellMe]]</tw-passagedata><tw-passagedata pid="137" name="YouOkay" tags="" position="850,1725" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Can you at least tell me what happened?\&quot;&quot; TellMe&gt;&gt; [[|TellMe]]</tw-passagedata><tw-passagedata pid="139" name="YouOkay" tags="" position="1100,1725" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Yes, I&#39;m okay,\&quot; the lieutenant says quickly, only to pause and genuinely consider the question. \&quot;Well, mostly.\&quot; Idly, he turns his arm over, inspecting the bruises himself before looking back up at you with a wry smile. \&quot;It was... not a pleasant situation, but this was as far as I let it get.\&quot; He holds up his bruised arm. \&quot;It won&#39;t happen again. Trust me.\&quot; His smile turns brittle.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;I&#39;m glad you&#39;re okay.\&quot;&quot; GladOkay&gt;&gt; [[|GladOkay]]
-&lt;&lt;AddOption &quot;\&quot;Would you be willing to tell me what happened?\&quot;&quot; TellMe&gt;&gt; [[|TellMe]]</tw-passagedata><tw-passagedata pid="138" name="GladOkay" tags="" position="975,1725" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Would you be willing to tell me what happened?\&quot;&quot; TellMe&gt;&gt; [[|TellMe]]</tw-passagedata><tw-passagedata pid="140" name="GladOkay" tags="" position="1225,1725" size="100,100">&lt;&lt;KimfluenceGained 1&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant offers you a soft smile and a nod. \&quot;Well. I can&#39;t leave you running around unattended. We all know how that usually plays out.\&quot;&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;EMPATHY&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He is not used to people worrying about him like this. He is equal parts touched and made uncomfortable by your show of concern.&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant clears his throat and pulls his sleeve down back around his wrist. \&quot;Shall we, Detective?\&quot;&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="139" name="Credits" tags="" position="1100,1725" size="100,100">&lt;&lt;SetSpeaker &quot;Writers&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;This goes to the car/bar. But there&#39;s no there yet.&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="141" name="Credits" tags="" position="100,1850" size="100,100">&lt;&lt;SetSpeaker &quot;Writers&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Maverik, Penbrydd, OverlordKye, and The Most Antipodean of Badgers&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;Additional Bad Ideas&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;AntipodeanPixie and Nava&quot;&gt;&gt;
