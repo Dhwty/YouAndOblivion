@@ -858,8 +858,12 @@ You got: _roll
 <</if>>
 <<AddParagraph "The bedroom is to your right, and what you can see in the light leaking from the living room suggests it's been trashed. The bathroom, a dingy and unwashed yellow on what probably used to be white, is in the same direction.">>
 <<AddOption "Examine this room more thoroughly" ExamineMainRoom>>[[|ExamineMainRoom]]
-<<if $knowKimsPrybar < 1>>
-    <<AddOption "[Perception - Medium 10] Examine prybar" ExaminePrybar>>[[|ExaminePrybar]]
+<<if $itemPrybar <= 0>>
+	<<AddOption "Bag the prybar as evidence." GetPrybar>>[[|GetPrybar]]
+<<else>>
+	<<if $knowKimsPrybar < 1>>
+    	<<AddOption "[Perception - Medium 10] Examine the prybar again." ExaminePrybar>>[[|ExaminePrybar]]
+	<</if>>
 <</if>>
 <<AddOption "Look out window" AptWindow>>[[|AptWindow]]
 <<if $knowAutopsy < 1>>
@@ -1687,8 +1691,14 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim's life. \"So it would seem.\"">>
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
-::ExaminePrybar
+::GetPrybar
 <<ItemGained "Red-Handled Prybar">>
+<<set $itemPrybar to 1>>
+<<PassiveSkill Perception>>
+<<AddParagraph "This prybar looks familiar, somehow, despite the coating of blood and other less mentionable chunks of crud. You put it into an evidence bag, and mark it for the lab. Still, something about it bothers you...">>
+<<AddOption "Take a closer look at it." ExaminePrybar>>[[|ExaminePrybar]]
+
+::ExaminePrybar
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 10>>
     <<SkillSuccess>>
