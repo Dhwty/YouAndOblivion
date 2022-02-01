@@ -690,7 +690,6 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 	&lt;&lt;AddParagraph &quot;We ain&#39;t got a Day 2 yet.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;AddOption &quot;Go inside&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="46" name="SmokeCheck" tags="" position="725,600" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
-You got: _roll
 &lt;&lt;if _roll &gt;= 8&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Perception&gt;&gt;
@@ -756,7 +755,7 @@ You got: _roll
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;AddParagraph &quot;The bedroom is to your right, and what you can see in the light leaking from the living room suggests it&#39;s been trashed. The bathroom, a dingy and unwashed yellow on what probably used to be white, is in the same direction.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Examine this room more thoroughly&quot; ExamineMainRoom&gt;&gt;[[|ExamineMainRoom]]
-&lt;&lt;if $itemPrybar &lt;= 0&gt;&gt;
+&lt;&lt;if $gotPrybar &lt;= 0&gt;&gt;
 	&lt;&lt;AddOption &quot;Bag the prybar as evidence.&quot; GetPrybar&gt;&gt;[[|GetPrybar]]
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;if $knowKimsPrybar &lt; 1&gt;&gt;
@@ -1471,7 +1470,7 @@ You got: _roll
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim&#39;s life. \&quot;So it would seem.\&quot;&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="95" name="GetPrybar" tags="" position="600,1225" size="100,100">&lt;&lt;ItemGained &quot;Red-Handled Prybar&quot;&gt;&gt;
-&lt;&lt;set $itemPrybar to 1&gt;&gt;
+&lt;&lt;set $gotPrybar to 1&gt;&gt;
 &lt;&lt;PassiveSkill Perception&gt;&gt;
 &lt;&lt;AddParagraph &quot;This prybar looks familiar, somehow, despite the coating of blood and other less mentionable chunks of crud. You put it into an evidence bag, and mark it for the lab. Still, something about it bothers you...&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Take a closer look at it.&quot; ExaminePrybar&gt;&gt;[[|ExaminePrybar]]</tw-passagedata><tw-passagedata pid="96" name="ExaminePrybar" tags="" position="725,1225" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
