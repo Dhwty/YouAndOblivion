@@ -1109,12 +1109,12 @@ A Disco Elysium Fanwork
     <<AddParagraph "It's a matter of angle, Harry-boy. Definitely looks like our friend's got range, too.">>
 <</if>>
 <<AddOption "[Interfacing - Medium 9] Rub it between your fingers a little. See if you can get some of it out, get a better look. Might not be what it looks like." AutRubIt>>[[|AutRubIt]]
-<<AddOption "Yeah... gonna leave that one for the lab, I think." AutFP4Lab>>[[|AutFP4Lab]]
+<<AddOption "Yeah... gonna leave that one for the lab, I think." AutJizz4Lab>>[[|AutJizz4Lab]]
 
-::AutFP4Lab
+::AutJizz4Lab
 <<KimfluenceGained 1>>
 <<SetSpeaker YOU>>
-<<AddParagraph "There's no sane way to know what the powder is. There are a few insane ways, but you're better than that, these days. Or you like to think you are, anyway.">>
+<<AddParagraph "You're not touching the crusty funk in this corpse's chest hair. You're pretty sure you know what it is, and the lab can confirm it.">>
 <<AddOption "Move on" AutFacePowder>>[[|AutFacePowder]]
 
 ::AutRubIt
@@ -1574,7 +1574,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "Louder, even.">>
 <<PassiveSkill "Esprit de Corps">>
 <<AddParagraph "Lieutenant Kim Kitsuragi of the RCM's 41st precinct is investigating a new homicide, one that hasn't even been reported yet. It's going to be a rough one on him, harder than usual. He's both hopeful and afraid that his partner will figure it out the truth before he has to admit to it: he knows the man. He knows him *well*. And he's desperately hoping he doesn't have to give voice to this while standing over the crumpled sack of decaying flesh the man's become.">>
-<<AddParagraph "The lieutenant is clawing at the fraying wreckage of his professionalism, a scrabbling attempt to drag the pieces between himself and the truth. Here in a dingy Jamrock apartment, he is a loss. He's done the only two things he feels sure about right now: he's started working the case, and he's called his partner.">>
+<<AddParagraph "The lieutenant is clawing at the fraying wreckage of his professionalism, a scrabbling attempt to drag the pieces between himself and the truth. Here in a dingy Jamrock apartment, he is at a loss. He's done the only two things he feels sure about right now: he's started working the case, and he's called his partner.">>
 <<SetSpeaker YOU>>
 <<AddParagraph "He's called *you*.">>
 <<AddOption "\"I trust you.\"" AutTrust>>[[|AutTrust]]
@@ -1713,7 +1713,7 @@ KCC is now: $knowKimsCorpseClue
     <<AddParagraph "He's aroused. That's arousal. You make eye contact and take a deep, deep breath. Your necktie was right, that's definitely semen.">>
     <<KimfluenceLost 1>>
     <<SetSpeaker "KIM KITSURAGI">>
-    <<AddParagraph "Kim's face twists, a muscle in the corner of his eye twitching. He shifts his balance and clears his throat. "
+    <<AddParagraph "Kim's face twists, a muscle in the corner of his eye twitching. He shifts his balance and clears his throat.">>
     <<SetSpeaker "HORRIFIC NECKTIE">>
     <<AddParagraph "\"Oh, Bratan, he liked that! Imagine how much he'll like it when you lick it off the sofa!\"">>
     <<AddOption "Yes. Good idea!." Cumsicle>> [[|Cumsicle]]
@@ -2028,7 +2028,7 @@ KCC is now: $knowKimsCorpseClue
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant arches an eyebrow and gives your outfit a long, slow once-over, lingering on your tie. \"Mmm. I'm not sure if that's the compliment you think it is, Detective.\" His eyes gleam with amusement.">>
 <<SetSpeaker "HORRIFIC NECKTIE">>
-<<AddParagraph "((WE NEED SOME INDIGNANT NECKTIE UP IN HEREEEE))">>
+<<AddParagraph "\"NOT A COMPLIMENT? YOU'RE ONE TO TALK, BINOCLARD. ORANGE IS NOT YOUR COLOUR!\"">>
 <<AddOption "\"Anyway. All that to say, I'm sure the reason you have your sleeves rolled down is because of Fashion and not because you're hiding something.\"" HidingSomething>> [[|HidingSomething]]
 
 ::HidingSomething
