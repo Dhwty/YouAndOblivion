@@ -260,6 +260,8 @@ window.rollDice = function() {
 /*Thoughts*/
 <<set $thoughtKimsAss to 0>>
 <<set $thoughtCunoDoesntCare to 0>>
+/*Misc*/
+<<set $cumsicle to 0>>
 
 
 :: PassageHeader {"position":"407,27","size":"100,100"}
@@ -1718,11 +1720,24 @@ KCC is now: $knowKimsCorpseClue
 <<PassiveSkill "Inland Empire">>
 <<AddParagraph "This reminds you of something. Something about this ashtray is familiar. The recollection tugs sharply at you.">>
 <<PassiveSkill "ELECTROCHEMISTRY">>
-<<AddParagraph "It reminds you of that great big pile of hopelessly-broken half-smoked cigs, on the upstairs balcony at the Whirling, when all you wanted was a smoke. Miss Oranje Disco Dancer smoking like she had all the time and money in the world. Her lips on the filter, when you were sure the filter should be on your lips and her mouth should have been somewhere else entirely.">>
+<<AddParagraph "It reminds you of that great big pile of hopelessly-broken half-smoked cigs on the upstairs balcony at the Whirling, when all you wanted was a smoke, or a fuck. Miss Oranje Disco Dancer smoking like she had all the time and money in the world. Her lips on the filter, when you were sure the filter should be on your lips and her mouth should have been somewhere else entirely. Kim's concentration as he takes another drag, savouring the tobacco like he savours your cock in his dreams. Like you'd savour his. Dedicated to the task.">>
+<<BlankSpeaker>>
+<<AddParagraph "You wonder if his cock would taste like he smells - leather and chestnut cigarettes, a whiff of motor oil, and that faint hint of something so essentially Kim. His come would taste ...">>
+<<if $cumsicle == 1>>
+    <<PassiveSkill "ELECTROCHEMISTRY">>
+    <<AddParagraph "better than the stuff you licked off the couch, although you're not quite sure that's possible. Would the leather have seeped into him, and be part of his jism? Would you know it was his just by the taste? However Kim tastes, you know you'd clean him off just as carefully as you cleaned the upholstery.">>
+<<else>>
+    <<PassiveSkill "ELECTROCHEMISTRY">>
+    <<AddParagraph "...you don't actually know what spunk tastes like, but you're pretty sure that if it came from him you'd find it appealing. Perhaps later, when you get a minute, you should try some.">>
+<</if>>
 <<PassiveSkill "Empathy">>
-<<AddParagraph "On the other hand, you smelled like day-old vomit, and you didn't stand a chance.">>
+<<AddParagraph "On the other hand, you smelled like day-old vomit and beer sweat, and you didn't stand a chance. With either of them.">>
 <<PassiveSkill "Inland Empire">>
-<<AddParagraph "Never mind Klaasje. This is deeper than Klaasje. This is more important than Klaasje. What do you not remember?">>
+<<AddParagraph "Never mind Klaasje. This is deeper than Klaasje. This is more important than Klaasje. Or Kim. What do you not remember?">>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "More important than Klaasje, maybe. More important than Kim? I doubt it..">>
+<<PassiveSkill "Inland Empire">>
+<<AddParagraph "Yes, Harry, there are more important things than getting your dick wet. Focus.">>
 <<set $knowAshtray = 1>>
 <<AddOption "It can't be that important." ExamineMainRoom>>[[|ExamineMainRoom]]
 <<AddOption "[Encyclopedia - Medium 10] Look closer at the ashtray. What are you remembering?" MainAshtray>>[[|MainAshtray]]
@@ -1794,6 +1809,7 @@ KCC is now: $knowKimsCorpseClue
 ::Cumsicle
 <<AddParagraph "You lean closer to the cum-stain. Do you maintain eye contact and use your Seductive Face? You absolutely do. The couch is rough under your tongue, and the jizz is still not quite dry. Hmmm. Soft cheese and cucumber. Notes of white wine -- zinfandel, maybe, or a fresh riesling. Delicious. You make it your business to get it all off. That's right, Harry. Clean that sofa. ">>
 <<KimfluenceLost 2>>
+<<set $cumsicle = 1>>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Officer. Please, this is a crime scene. Do not ... contaminate the evidence.\"">>
 <<PassiveSkill "Empathy">>
