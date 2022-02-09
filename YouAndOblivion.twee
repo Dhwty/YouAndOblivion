@@ -245,6 +245,8 @@ window.rollDice = function() {
 <<set $knowJizz to 0>>
 <<set $knowKiller to 0>>
 <<set $knowPoisoner to 0>>
+<<set $knowAshtray to 0>>
+<<set $knowKimsBrand to 0>>
 /*Visited Locations*/
 <<set $Day to 1>>
 <<set $visCrimeScene to 0>>
@@ -1682,16 +1684,75 @@ KCC is now: $knowKimsCorpseClue
     <<PassiveSkill "Inland Empire">>
     <<AddParagraph "It's not just blood that's staining this place; there are older sins here, too. Ash ground into the rug. Open bottles, unmarked and overturned, capsules of heaven slipped one by one into the abyss until all that remains are empty plastic carcasses. And there, on the upholstery, one you know all too well: the remains of the fallen, lost on their way to a glory that did not truly await them.">>
 	<<set $knowJizz = 1>>
+	<<SetSpeaker "HORRIFIC NECKTIE">>
+	<<AddParagraph "THAT'S NOT AN OIL STAIN! THAT'S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!">>
+	<<SetSpeaker "YOU">>
+	<<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
+	<<SetSpeaker "KIM KITSURAGI">>
+	<<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim's life. \"So it would seem.\"">>
+	<<AddOption "Sniff the stain. Just to check." CumCouch>> [[|CumCouch]]
+	<<AddOption "Sniff the --? No. No, let's *not*" NoSniffingDerCouch>> [[|NoSniffingDerCouch]]
 <</if>>
-<<SetSpeaker "HORRIFIC NECKTIE">>
-<<AddParagraph "THAT'S NOT AN OIL STAIN! THAT'S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!">>
-<<SetSpeaker "YOU">>
-<<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
-<<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim's life. \"So it would seem.\"">>
-<<AddOption "Sniff the stain. Just to check." CumCouch>> [[|CumCouch]]
-<<AddOption "Sniff the --? No. No, let's *not*" NoSniffingDerCouch>> [[|NoSniffingDerCouch]]
+<<if $knowAshtray < 1>>
+	<<AddOption "Examine the assortment of detritus." MainDetritus>>[[|MainDetritus]]
+<<else>>
+	<<if $knowKimsBrand < 1>>
+		<<AddOption "Have another look at the ashtray." MainAshtray>>[[|MainAshtray]]
+	<</if>>
+<</if>>
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::MainDetritus
+<<PassiveSkill "Perception (Sight)">>
+<<AddParagraph "Among the assortment of almost-empty bottles, glued into the rug by their spilled contents, you find an assortment of useless things. Crushed pills, too far gone to identify; half-melted capsules, long since emptied; what might once have been magazines, now too booze-soaked and vomit stained to open. Here's what was once a bowl of cereal, to judge by the lightly-mouldy milk-ring around the inside, the spoon still with it. As you place it on the table, grateful to find it was finished before it fell on the rug, your hand bumps an overfull ashtray, and the ashes spill across your fingers, butts rolling across the table.">>
+<<PassiveSkill "Inland Empire">>
+<<AddParagraph "This reminds you of something. Something about this ashtray is familiar. The recollection tugs sharply at you.">>
+<<PassiveSkill "ELECTROCHEMISTRY">>
+<<AddParagraph "It reminds you of that great big pile of hopelessly-broken half-smoked cigs, on the upstairs balcony at the Whirling, when all you wanted was a smoke. Miss Oranje Disco Dancer smoking like she had all the time and money in the world. Her lips on the filter, when you were sure the filter should be on your lips and her mouth should have been somewhere else entirely.">>
+<<PassiveSkill "Empathy">>
+<<AddParagraph "On the other hand, you smelled like day-old vomit, and you didn't stand a chance.">>
+<<PassiveSkill "Inland Empire">>
+<<AddParagraph "Never mind Klaasje. This is deeper than Klaasje. This is more important than Klaasje. What do you not remember?">>
+<<set $knowAshtray = 1>>
+<<AddOption "It can't be that important." ExamineMainRoom>>[[|ExamineMainRoom]]
+<<AddOption "[Encyclopedia - Medium 10] Look closer at the ashtray. What are you remembering?" MainAshtray>>[[|MainAshtray]]
+
+::MainAshtray
+<<PassiveSkill "Perception (Sight)">>
+<<AddParagraph "The butts are Astras. You'd know that logo anywhere.">>
+<<set _roll to rollDice() + $INT>>
+<<if _roll >=10>>
+	<<PassiveSkill "Encyclopedia">>
+	<<AddParagraph "They're the most popular brand among the working class. Almost every cop, dockworker, and fisherman who smokes smokes Astras. In fact, you're pretty sure Kim smokes Astras. Astra Yellows...">>
+	<<PassiveSkill "Perception (Smell)">>
+	<<AddParagraph "On the off chance, you smell a handful of cigarette butts. Ashes and burnt smells assault your nostrils, but you pick up the faint hint of roasted chestnut.">>
+	<<PassiveSkill "Encyclopedia">>
+	<<AddParagraph "Astras may be the most common cigarette in Revachol, by brand, but by type, Astra Yellows -- the chestnut scented kind -- are a tiny percentage of the market.">>
+	<<AddOption "\"Hey, Kim? Don't you smoke Astras?\"" MainKimSmokes>>[[|MainKimSmokes]]
+<<else>>
+	<<PassiveSkill "Encyclopedia">>
+	<<AddParagraph "They're the most popular brand among the working class. Almost every cop, dockworker, and fisherman who smokes smokes Astras. It doesn't tell you much that you didn't know about the guy, just looking around the apartment.">>
+	<<PassiveSkill "InlandEmpire">>
+	<<AddParagraph "You smoke Astras, too, when you smoke. So why does this bother you?">>
+<</if>>
+<<AddOption "It's not that important. Look at something else." ExamineMainRoom>>[[|ExamineMainRoom]]
+
+::MainKimSmokes
+<<set $knowKimsBrand = 1>>
+<<set $knowKimsCorpseClue += 1>>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Doesn't everyone?\" he asks, looking like he wonders where you're going with that line of thought.">>
+<<AddOption "\"Yeah, you're right. Nevermind.\"" ExamineMainRoom>>[[|ExamineMainRoom]]
+<<AddOption "\"Yeah, but not everyone smokes Yellows, like you. I think our victim did.\" Hold out a cigarette butt for Kim to see." MainKimSmokesYellows>> [[|MainKimSmokesYellows]]
+
+::MainKimSmokesYellows
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He looks at the butt in your hand, without touching it. \"How do you know they're Yellows?\"">>
+<<SetSpeaker "YOU">>
+<<AddParagraph "\"Because I smelled them, and they smell like roasted chestnut.\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He makes an unconvinced sound, but his lips thin. \"I'm not sure it helps us to know what the victim smoked, unless you plan to smell every cigarette butt in the room, to see if they're someone else's. They're Astras. Everyone smokes Astras.\"">>
+<<AddOption "Look at something else." ExamineMainRoom>>[[|ExamineMainRoom]]
 
 ::NoSniffingDerCouch
 <<KimfluenceGained 1>>
