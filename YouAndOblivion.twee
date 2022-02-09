@@ -243,6 +243,7 @@ window.rollDice = function() {
 <<set $knowKimsCorpseClue to 0>>
 <<set $knowKimBite to 0>>
 <<set $knowJizz to 0>>
+<<set $knowSofaJizz to 0>>
 <<set $knowKiller to 0>>
 <<set $knowPoisoner to 0>>
 <<set $knowAshtray to 0>>
@@ -1684,14 +1685,17 @@ KCC is now: $knowKimsCorpseClue
     <<PassiveSkill "Inland Empire">>
     <<AddParagraph "It's not just blood that's staining this place; there are older sins here, too. Ash ground into the rug. Open bottles, unmarked and overturned, capsules of heaven slipped one by one into the abyss until all that remains are empty plastic carcasses. And there, on the upholstery, one you know all too well: the remains of the fallen, lost on their way to a glory that did not truly await them.">>
 	<<set $knowJizz = 1>>
-	<<SetSpeaker "HORRIFIC NECKTIE">>
-	<<AddParagraph "THAT'S NOT AN OIL STAIN! THAT'S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!">>
-	<<SetSpeaker "YOU">>
-	<<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
-	<<SetSpeaker "KIM KITSURAGI">>
-	<<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim's life. \"So it would seem.\"">>
-	<<AddOption "Sniff the stain. Just to check." CumCouch>> [[|CumCouch]]
-	<<AddOption "Sniff the --? No. No, let's *not*" NoSniffingDerCouch>> [[|NoSniffingDerCouch]]
+	<<if $knowSofaJizz < 1>>
+		<<SetSpeaker "HORRIFIC NECKTIE">>
+		<<AddParagraph "THAT'S NOT AN OIL STAIN! THAT'S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!">>
+		<<SetSpeaker "YOU">>
+		<<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
+		<<SetSpeaker "KIM KITSURAGI">>
+		<<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim's life. \"So it would seem.\"">>
+		<<set $knowSofaJizz = 1>>
+		<<AddOption "Sniff the stain. Just to check." CumCouch>> [[|CumCouch]]
+		<<AddOption "Sniff the --? No. No, let's *not*" NoSniffingDerCouch>> [[|NoSniffingDerCouch]]
+	<</if>>
 <</if>>
 <<if $knowAshtray < 1>>
 	<<AddOption "Examine the assortment of detritus." MainDetritus>>[[|MainDetritus]]
