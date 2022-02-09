@@ -251,6 +251,7 @@ window.rollDice = function() {
 /*Visited Locations*/
 <<set $Day to 1>>
 <<set $visCrimeScene to 0>>
+<<set $visMainRoom to 0>>
 <<set $visStreet to 0>>
 <<set $seenAlley to 0>>
 /*Reputation*/
@@ -1668,34 +1669,39 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "Back to the rest of this mess." CrimeScene>>[[|CrimeScene]]
 
 ::ExamineMainRoom
-<<SetSpeaker "DIRTY ONE-BEDROOM APARTMENT">>
-<<AddParagraph "It wouldn't take a cop to know something went down here. (A lot of somethings, judging from the paraphernalia.) Broken shit against the walls, overturned vinyl player, blood absolutely everywhere... no wonder there was a noise complaint. This was a brawl.">>
-<<set _roll to rollDice() + $INT>>
-<<if _roll >=10>>
-    <<PassiveSkill "Visual Calculus">>
-    <<AddParagraph "Once you get past the obvious detritus, smaller elements of the scene begin to dance for you, yielding secrets your eyes have long been trained to see. An overturned end table, the trajectory of thrown décor – the victim was surprised in the bathroom doorway. And here, the way the rug is rumpled under the overturned sofa – unlikely it was deliberate. The assailant didn't plan a bit of this.">>
-<</if>>
-<<set _roll to rollDice() + $MOT>>
-<<if _roll >=12>>
-    <<PassiveSkill "Perception (Sight)">>
-    <<AddParagraph "The couch itself is stylishly retro; it's old, but the stains on it are not. Nor is this tear that goes straight through them. A clean cut, too.">>
-<</if>>
-<<set _roll to rollDice() + $INT>>
-<<if _roll >=7>>
-    <<PassiveSkill "Inland Empire">>
-    <<AddParagraph "It's not just blood that's staining this place; there are older sins here, too. Ash ground into the rug. Open bottles, unmarked and overturned, capsules of heaven slipped one by one into the abyss until all that remains are empty plastic carcasses. And there, on the upholstery, one you know all too well: the remains of the fallen, lost on their way to a glory that did not truly await them.">>
-	<<set $knowJizz = 1>>
-	<<if $knowSofaJizz < 1>>
-		<<SetSpeaker "HORRIFIC NECKTIE">>
-		<<AddParagraph "THAT'S NOT AN OIL STAIN! THAT'S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!">>
-		<<SetSpeaker "YOU">>
-		<<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
-		<<SetSpeaker "KIM KITSURAGI">>
-		<<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim's life. \"So it would seem.\"">>
-		<<set $knowSofaJizz = 1>>
-		<<AddOption "Sniff the stain. Just to check." CumCouch>> [[|CumCouch]]
-		<<AddOption "Sniff the --? No. No, let's *not*" NoSniffingDerCouch>> [[|NoSniffingDerCouch]]
+<<if $visMainRoom < 1>>
+	<<SetSpeaker "DIRTY ONE-BEDROOM APARTMENT">>
+	<<AddParagraph "It wouldn't take a cop to know something went down here. (A lot of somethings, judging from the paraphernalia.) Broken shit against the walls, overturned vinyl player, blood absolutely everywhere... no wonder there was a noise complaint. This was a brawl.">>
+	<<set _roll to rollDice() + $INT>>
+	<<if _roll >=10>>
+    	<<PassiveSkill "Visual Calculus">>
+    	<<AddParagraph "Once you get past the obvious detritus, smaller elements of the scene begin to dance for you, yielding secrets your eyes have long been trained to see. An overturned end table, the trajectory of thrown décor – the victim was surprised in the bathroom doorway. And here, the way the rug is rumpled under the overturned sofa – unlikely it was deliberate. The assailant didn't plan a bit of this.">>
 	<</if>>
+	<<set _roll to rollDice() + $MOT>>
+	<<if _roll >=12>>
+	    <<PassiveSkill "Perception (Sight)">>
+	    <<AddParagraph "The couch itself is stylishly retro; it's old, but the stains on it are not. Nor is this tear that goes straight through them. A clean cut, too.">>
+	<</if>>
+	<<set _roll to rollDice() + $INT>>
+	<<if _roll >=7>>
+	    <<PassiveSkill "Inland Empire">>
+	    <<AddParagraph "It's not just blood that's staining this place; there are older sins here, too. Ash ground into the rug. Open bottles, unmarked and overturned, capsules of heaven slipped one by one into the abyss until all that remains are empty plastic carcasses. And there, on the upholstery, one you know all too well: the remains of the fallen, lost on their way to a glory that did not truly await them.">>
+		<<set $knowJizz = 1>>
+		<<if $knowSofaJizz < 1>>
+			<<SetSpeaker "HORRIFIC NECKTIE">>
+			<<AddParagraph "THAT'S NOT AN OIL STAIN! THAT'S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!">>
+			<<SetSpeaker "YOU">>
+			<<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
+			<<SetSpeaker "KIM KITSURAGI">>
+			<<AddParagraph "The smallest of sighs escapes the lieutenant, eyes skating over the remains of the victim's life. \"So it would seem.\"">>
+			<<set $knowSofaJizz = 1>>
+			<<AddOption "Sniff the stain. Just to check." CumCouch>> [[|CumCouch]]
+			<<AddOption "Sniff the --? No. No, let's *not*" NoSniffingDerCouch>> [[|NoSniffingDerCouch]]
+		<</if>>
+	<</if>>
+<<else>>
+	<<SetSpeaker "DIRTY ONE-BEDROOM APARTMENT">>
+	<<AddParagraph "The main room is trashed, under the blood, and it looks like it has been for quite a while. Empty and half-empty bottles litter the floor around the couch, and an overflowing ashtray on the coffee table isn't the only one in the room, some apparently flipped onto the floor recently, to judge by the drift of ash on top of other things. You recognise this sort of trashed. It reminds you of the room you woke up in, at the Whirling, last year, in Martinaise.">>
 <</if>>
 <<if $knowAshtray < 1>>
 	<<AddOption "Examine the assortment of detritus." MainDetritus>>[[|MainDetritus]]
