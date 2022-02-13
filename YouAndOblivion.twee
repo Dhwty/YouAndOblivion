@@ -1010,7 +1010,7 @@ A Disco Elysium Fanwork
     <<AddParagraph "Kim is quiet behind you. His words say nothing. His long, quiet breath, the slight dip of his eyes to the page, tell you he is grateful for this small act of respect.">>
 <</if>>
 <<SetSpeaker YOU>>
-<<AddParagraph "To business, then. \"First item... clothing. Not bad.\" The low huff of breath from Kim is definitely *not* laughter. \"Pants: mustard yellow, size XL. Vintage Piqueriques.\"">>
+<<AddParagraph "To business, then. \"First item... clothing. Not bad.\" The low huff of breath from Kim is definitely *not* laughter. \"Pants: mustard yellow, size large. Vintage Piqueriques.\"">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 11>>
     <<PassiveSkill "Perception (Sight)">>
@@ -1078,7 +1078,7 @@ A Disco Elysium Fanwork
 <<else>>
     <<SkillFailure>>
     <<PassiveSkill "Interfacing">>
-    <<AddParagraph "Heavens only know why you thought it was a good idea to take a knife to a dead man. At least the poor bloke can't feel the half-centimetre laceration you've just added to his collection. Maybe best not to try the other two fingers, him?.">>
+    <<AddParagraph "Heavens only know why you thought it was a good idea to take a knife to a dead man. At least the poor bloke can't feel the half-centimetre laceration you've just added to his collection. Maybe best not to try the other two fingers, hmm?.">>
 	 <<AddOption "Move on." AutCrustyRug>>[[|AutCrustyRug]]
 <</if>>
 
@@ -1445,8 +1445,8 @@ A Disco Elysium Fanwork
     <<AddParagraph "As if there were some world in which Kim Kitsuragi weren't stoic enough.  As if he's not the toughest sonofabitch you know.">>
     <<PassiveSkill Authority "The *second* toughest, thank you.">>
     <<PassiveSkill Endurance "And just who *would* be the toughest, Minot? If all Kim did was put up with your shit, Harry, that'd still make him tougher than you.">>
+	<<AddOption "At this point, it's not so surprising." AutTwoAndTwo>>[[|AutTwoAndTwo]]
 <</if>>
-<<AddOption "At this point, it's not so surprising" AutTwoAndTwo>>[[|AutTwoAndTwo]]
 
 ::AutKimposure
 <<set _roll to rollDice() + $MOT>>
@@ -1982,6 +1982,35 @@ KCC is now: $knowKimsCorpseClue
 ::ExamineBathroom
 <<PassiveSkill Perception>>
 <<AddParagraph "You don't really want to search this. It's worse than your bathroom. You're pretty sure you at least bleached the sink, last month. This place has a filthy yellow film on every surface in it. A wet towel is wadded up under the bar it should be hung on. A crusty strand of large beads lies in the sink. The mirror is so blurry, your face looks like pastel paints thrown at the wall. The toilet seat is up and the bowl is brown with yellow water.">>
+<<if $seenMedCab == 0>>
+	<<AddOption "[Electrochemistry - Medium 11] Check the medicine cabinet." BathMedCab>>[[|BathMedCab]]
+<<else>>
+	<<AddOption "[Electrochemistry - Medium 11] Check for drugs again." BathMedCab>>[[|BathMedCab]]
+<</if>>
+<<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+
+::BathMedCab
+<<set $seenMedCab = 0>>
+<<PassiveSkill "Perception (Sight)">>
+<<AddParagraph "The Nosaphed and Drouamine are immediately recognisable. A few other easy things in there that you could pick up at any Frittte, but the cabinet is overflowing with bottles and pill packs, half of them with foreign labels.">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll > 10>>
+    <<PassiveSkill "Perception (Sight)">>
+    <<AddParagraph "... And no tax stamps. They're black market, if nothing else.">>
+<</if>>
+<<set _roll to rollDice() + $FYS>>
+<<if _roll >= 11>>
+    <<SkillSuccess>>
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "There's more than just shit from the Frittte in here. That pack, there? You know that logo on the pills. Those are sildenafil. This guy was into a good time. You could probably use that kind of good time, too. Oh, and the low jars of purple in the back? Pyrholidon. Pure magic. You could see through time. [???] ">>
+    <<PassiveSkill "Volition">>
+    <<AddParagraph "No, you should not take the drugs, Harry. You should send them to the lab, so they can check against what's in the corpse's system. Even if you were going to take the drugs, you shouldn't do it while Kim is watching you.">>
+    <<PassiveSkill "Logic">>
+    <<AddParagraph "There's a good chance the less legal of these drugs played a role in this man's death, whether directly or in the means of acquisition. They should definitely go to Processing.">>
+	<<AddOption "Steal the drugs." BathSteal>>[[|BathSteal]]
+	<<AddOption "Leave the drugs where they are." BathLeave>>[[|BathLeave]]
+	<<AddOption "Bag the drugs for Processing." BathBag>>[[|BathBag]]
+<</if>>
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
 ::ExamineBedroom
