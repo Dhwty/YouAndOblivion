@@ -726,23 +726,205 @@ A Disco Elysium Fanwork
 
 
 ::SoItBegins
-<<SetSpeaker "YOU">>
-<<AddParagraph "This is the part where Harry answers the call from Kim, stops at the Station to pick up any recent calls regarding the address, and walks to the crime scene, because his dumb ass is not allowed to drive after that Jacob Irw-style stunt in Martinaise, last year. Somebody should probably write this.">>
-<<AddOption "Take a look around, before you greet Kim." Street>>[[|Street]]
+<<PassiveSkill "Perception">>
+<<AddParagraph "A ringing in your ears drowns out the voices, and you surface out of the usual dreams like breaking through water. Your eyes open the same time your lungs do, drinking in air and the world around you.">>
+<<PassiveSkill "Reaction Speed">>
+<<AddParagraph "You've reached across the sidetable and cupped the phone receiver to your ear before the rest of you even registers it was the phone ringing. You squint at the clock on the wall, only to remember that it's been stuck at \"8:20\" for months now.">>
+<<PassiveSkill "Inland Empire">>
+<<Add Paragraph "It's one of many broken things in your apartment you keep telling yourself you'll fix, but, first thing in the morning, the minute and hour hands form an all too relatable frown.">>
+<<AddOption "\"Hello?\"" Hello>> [[|PhoneHello]]
+<<AddOption "\"Do you know what time it is?\"" PhoneWhatTime>> [[|PhoneWhatTime]]
+
+::PhoneHello
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Hello, Detective. I hope I did not wake you.\"">>
+<<AddParagraph "The lieutenant doesn't bother to introduce himself. You'd recognize each other's voices anywhere, and, really, who else would be calling you, Harry?">>
+<<PassiveSkill "Inland Empire">>
+<<AddParagraph "You don't feel that bad about that last part, though. Even after being his partner a year, you *like* hearing his voice. There are worse things to wake up to.">>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "And a few better things...">>
+<<PassiveSkill "Volition">>
+<<AddParagraph "Coffee. He means coffee.">>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "No, I don't.">>
+<<AddOption "\"I'm as awake as I ever am. Which is not at all. What's going on?\"" PhoneWhatUp>> [[|PhoneWhatUp]]
+
+::PhoneWhatTime
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Khm. I will remind you, Officer, that you have called me at more godforsaken hours than this.\" Kim's voice in your ear is tinny and dry, and the unsteady connection adds a shake that isn't usually there.">>
+   <<set _roll to rollDice() + $FYS>>
+        <<if _roll >= 12>>
+            <<SkillSuccess>>
+            <<PassiveSkill "Half Light">>
+        <<Add Paragraph "Are you sure it's the connection doing that?">>
+        <</if>>
+<<AddOption "\"No, really, I have no idea what time it actually is. I just woke up, and my clock is frowning at me.\"" PhoneWhatTime2>> [[|PhoneWhatTime2]]
+
+::PhoneWhatTime2
+<<SetSpeaker "Kim Kitsuragi">>
+<<Add Paragraph "\"Your clock is... frowning at you.\" From the pause, you think the clock isn't the only thing frowning at you.">>
+   <<set _roll to rollDice() + $PSY>>
+        <<if _roll >= 9>>
+            <<SkillSuccess>>
+<<PassiveSkill "Esprit de Corps">>
+<<AddParagraph "Negative, Detective. At Precinct 41, Lt. Kim Kitsuragi stands by the phone, one gloved hand holding the receiver to his ear, the other gripping a file hard enough to crease the paper. Stress similarly creases his face, but at that comment, at the image of you staring down a frowning clock, his lips twitch into the barest smile, even if only a moment.">>
+    <</if>>
+<<AddOption "\"Yeah, but time is a human construct anyway. What's going on, Kim?" PhoneWhatUp>> [[|PhoneWhatUp]]
+
+::PhoneWhatUp
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"We have a new case, Detective,\" Kim informs you, the consummate professional. "\"A murder. I have the files and will be outside your apartment in fifteen minutes. Please try to at least have pants on by then.\"">>
+<<AddOption "\"My loins will be girded. No promise about the rest of me, though.\"" PhoneLoins>> [[|PhoneLoins]]
+
+::PhoneLoins
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I will keep my expectations suitably low,\" Kim drawls out with a subtle warmth. There is a pause, a soft breath of sound like he's about to say something else, only for him to hang up with a heavy clang.">>
+<<PassiveSkill "Empathy">>
+<<AddParagraph "He didn't mean for that to come across as abrupt as it did. He just wants to get this over with.">>
+<<AddOption "Get dressed and wait for Kim." PhoneGetDressed>> [[|PhoneGetDressed]]
+<<AddOption "Roll over and try to go back to sleep." PhoneNo>> [[|PhoneNo]]
+
+::PhoneNo
+<<PassiveSkill "Authority">>
+<<AddParagraph "Ex*cuse* me, Detective? Is this how you expect to keep up that \"Two cases a week\" pace? By sleeping in? Forcing your *lieutenant* to do all the work for you? Sleep is for the weak! Now get up, soldier, and put on some pants!">>
+<<AddOption "Fine. But for the record, I am doing this with great reluctance." PhoneGetDressed>> [[|PhoneGetDressed]]
+
+::PhoneGetDressed
+<<SetSpeaker "You">>
+<<AddParagraph "You pull on clothing that smells clean and splash some water onto your face. No time to make coffee, and rubbing at your eyes doesn't erase the bags under them. You wait at the window, and the Kineema roars up your street twelve minutes after the lieutenant had hung up, splashing through a shallow puddle and coming to a sharp stop just outside your apartment. The lieutenant is always aggressively punctual.">>
+<<PassiveSkill "Savoir Faire">>
+<<AddParagraph "You, on the other hand, prefer to be fashionably late. And it's always been obvious which of you two is more fashionable.">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant pulls the lever to put the Kineema in park, the engine idling with a rumbling purr. He spots your shadow in the window and arches an eyebrow at you. You are helpless to obey its pull.">>
+<<AddParagraph "When he sees you approaching, the lieutenant gets out of the driver's basket to let you into the back. He digs his hands into his pockets and tips his head towards the open door. \"Get in,\" he says. \"We'll talk on the way.\"">>
+<<PassiveSkill "Rhetoric">>
+<<AddParagraph "Not even a hello? Be on your guard, Detective.">>
+<<AddOption "[Savoir Faire - Medium] Shimmy gracefully into the back seat." ShimmyBackSeat>> [[|ShimmyBackSeat]]
+<<AddOption "[Authority - Impossible] Insist on driving." FuckingLOL>> [[|FuckingLOL]]
+
+::FuckingLOL
+<<set _roll to rollDice() + $PSY>>
+You got: _roll
+<<if _roll >= 100>>
+    <<SkillSuccess>>
+    <<PassiveSkill "Authority">>
+    <<AddParagraph "You are *joking*, right? You couldn't pull that off even if you were the next Innocence! Get in the fucking back seat, Detective!">>
+<<else>>
+    <<KimfluenceLost 1>>
+    <<SkillFailure>>
+    <<PassiveSkill "Authority">>
+    <<AddParagraph "You barely get two words out before the lieutenant's eyebrow commands you to silence. *Drive my Kineema?* that face says. It's like asking if you could fuck his wife. Husband. Spouse. Exhaust pipe? You don't know. You just know that you will be taking your life into your own hands if you ask that again.">>
+    <</if>>
+    <<AddOption "[Savoir Faire - Medium] Obey the eyebrow and slink into the backseat like the naughty boy you are." ShimmyBackSeat>> [[|ShimmyBackSeat]]
+
+::ShimmyBackSeat
+<<set _roll to rollDice() + $MOT>>
+You got: _roll
+<<if _roll >= 10>>
+    <<SkillSuccess>>
+    <<PassiveSkill "Savoir Faire">>
+    <<AddParagraph "The space between the one front seat and the back is narrow and awkward for someone of your... meatiness, but you know your body. You suck in your gut and embrace your inner noodle. You bend in ways no human should be able to and slither your way through the space, sliding into a graceful sit. If Kim is impressed, it doesn't show on his face as he climbs back into the driver's seat.">>
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Savoir Faire">>
+    <<AddParagraph "This car hates you. That must be why, no matter how many times you climb into the back, your gut gets stuck. You aim for a graceful slither and end up with a woeful wobble, not so much sliding into the seat as falling onto it. Thankfully, Kim doesn't comment as he climbs back into the driver's seat.">>
+    <</if>>
+<<PassiveSkill "Reaction Speed">>
+<<AddParagraph "The lieutenant drops a folder into your lap. You catch it before its contents can spill onto the floor.">>
+<<PassiveSkill "Perception (Smell)">>
+<<AddParagraph "Stale smoke fills your lungs, and you realise the back of the motor carriage -- and the lieutenant's jacket -- smell like a dive bar ashtray, like he had spent all night in a smoky bar. Or maybe like he had started started smoking early, today, and in the Kineema...">>
+ <<AddOption "[Perception - Easy 8] \"Have you been smoking, this early?\"" SmokeCheck>>[[|SmokeCheck]]
+
+::SmokeCheck
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 8>>
+    <<SkillSuccess>>
+    <<PassiveSkill Perception>>
+    <<AddParagraph "He has definitely been smoking, and from the smell wafting off his jacket, it's more than just one.">>
+    <<PassiveSkill Empathy>>
+    <<AddParagraph "He's freaked out enough about something that he's smoking in the *morning*. This isn't the old Kitsuragi one-smoke-before-bed.">>
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill Perception>>
+    <<AddParagraph "No, it's gone now. It's probably just the smell of last night's clinging to his jacket.">>
+<</if>>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The slam of the door shut is punctuation to the answer he doesn't give. \"I'll keep the windows open,\" is all he says, and you realise that they *are* already open, despite the scattered rain the gray light and wet pavement suggest. He puts the motor carriage into drive, and you feel it move away from the curb. \"The crime scene isn't far from here.\"">>
+<<PassiveSkill "Electrochemistry">>
+<<Add Paragraph "The lieutenant's gloved hands grip the steering levers with the easy command of someone who has mastered the art. It shouldn't have an effect on you, the flex of his thumb on the lever or that barest sliver of skin between his sleeve and his glove, but it makes your collar feel hot and tight around your throat. You're grateful that he can't see you staring at his hands.">>
+<<PassiveSkill "Conceptualization">>
+<<Add Paragraph "You've been doing this more often, lately. Staring at him when you think he can't see it. It's the way some people look at paintings.">>
+   <<set _roll to rollDice() + $MOT>>
+        <<if _roll >= 12>>
+        <<SkillSuccess>>
+    <<PassiveSkill "Reaction Speed">>
+    <<AddParagraph "You almost forgot about the mirrors. Your eyes catch Kim's in one before you both glance at something else. Oops.">>
+    <</if>>
+<<AddOption "[Composure - Hard] Try to focus on the case." TryToFocus>> [[|TryToFocus]]
+
+::TryToFocus
+<<set _roll to rollDice() + $MOT>>
+You got: _roll
+<<if _roll >= 13>>
+    <<SkillSuccess>>
+    <<PassiveSkill "Composure">>
+    <<AddParagraph "You can compartmentalise. The lieutenant stays a warm, orange-tinted presence at the edge of your vision as you open the case file.">>
+    <<AddOption "Skim the notes inside. CarLookAtFile>> [[|CarLookAtFile]]
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Composure">>
+    <<AddParagraph "Don't stare at Kim's hands. Don't think about how the leather gloves would feel against your skin. Don't think about his long fingers and the way they grip the steering levers. Don't think about--">>
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "I'm thinking about it">>
+    <<PassiveSkill "Composure">>
+    <<AddParagraph "Goddammit.">>
+    <<AddOption "\"SO ABOUT THAT MURDER,\" you say loudly, burying your face in the open file." AboutThisCase>> [[|AboutThisCase]]
+    <</if>>
+
+::AboutThisCase
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant jumps as you shout the words in his ear. The Kineema fishtails as he throws you a startled look in the mirror. Your shoulder bumps into the side as the lieutenant recovers, grip tight on the levers as the motor carriage straightens out.">>
+<<PassiveSkill "Reaction Speed">>
+<<AddParagraph "Sorry. I thought shouting about murder would help.">>
+<<PassiveSkill "Composure">>
+<<AddParagraph "*With what?*">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant clears his throat, still looking a bit flustered in the glimpses you catch of his mirror self. \"Khm. Yes. I am... glad to hear you're enthusiastic about the case, Detective, but perhaps you should not scream while I am driving.\"">>
+<<AddOption "Actually look at the file you've buried your nose in." CarLookAtFile>> [[|CarLookAtFile]]
+
+::CarLookAtFile
+<<SetSpeaker "You">>
+<<AddParagraph "The file is surprisingly thin. A noise complaint from eight hours ago lists the presumed address and residence owner. You check the floor to make sure you haven't dropped any paperwork. Nope.">>
+<<SetSpeaker "You">>
+<<AddParagraph "\"All I see is a noise complaint from last night. How do we know there's a murder?\"">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "There's a coiling of tension in the lieutenant's shoulders. You can only see a sliver of his face in the mirror, but his eyes are focused on the road. \"The noise complaint is hours old. There's no noise, now.\" He realises that would be normal for a noise complaint and makes a frustrated gesture. \"There was an anonymous tip. It's ... I have a bad feeling about this one.\"">>
+<<set _roll to rollDice() + $INT>>
+<<if _roll >= 8>>
+    <<SkillSuccess>>
+    <<PassiveSkill "Drama">>
+    <<AddParagraph "Odd that there's no report or transcript of the anonymous call. Usually the lieutenant is more meticulous than that. You should ask him about it.">>
+    <<PassiveSkill "Rhetoric">>
+    <<AddParagraph "Later. Ask him later, when you can see his face.">>
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Drama">>
+    <<AddParagraph "Everything checks out here, sire!">>
+<</if>>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant steers the Kineema down a side street, tapping the horn impatiently to disperse a cluster of pedestrians clogging the road. Rain starts to fall again, smearing signs and streetlights into electric blurs. The lieutenant steers the motor carriage to a stop, and you step out into the rain.">>
+<<PassiveSkill "Shivers">>
+<<AddParagraph "Revachol is cold, today, but the hot breath of Jamrock curls around your ankles as you stand on the street corner. An apartment building towers over you, stretching toward the sky as if it meant to thrust through the sun itself. Somewhere on the next block, you can hear a baby screaming, wordless and confused, a familiar sensation. You can hear the wind scrape across Lt. Kitsuragi's aerostatic jacket beside you, and the batting wings of a gull lifting off from the bins beside the building.">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Shall we?\" He gestures toward the building.">>
+<<AddOption "Go inside" 3FHall>>[[|3FHall]]
 
 ::Street [nobr]
 <<if $Day == 1>>
 	<<if $visStreet == 0>>
 		<<PassiveSkill "Shivers">>
 		<<AddParagraph "Revachol is cold, today, but the hot breath of Jamrock curls around your ankles as you stand on the street corner. An apartment building towers over you, stretching toward the sky as if it meant to thrust through the sun, itself. Somewhere on the next block, you can hear a baby screaming, wordless and confused, a familiar sensation. You can hear the wind scrape across Lt. Kitsuragi's aerostatic jacket, beside you, and the batting wings of a gull lifting off from the bins beside the building.">>
-		<<PassiveSkill "Perception (Smell)">>
-		<<AddParagraph "The smell of rain soaks up from the concrete under your feet, cut with the waft of wet garbage from an open skip, nearby. The air around Lt Kitsuragi smells like he's spent all night in a smoky bar. Or maybe like he started smoking early, today...">>
-		<<SetSpeaker "YOU">>
-		<<AddParagraph "\"So, how do you know there's a murder? I didn't get that in the report. I looked up the address at the station, before I came, just to make sure we'd actually get the case, just to keep Vic from picking up the stack and coming down for nothing. There's just a noise complaint from about eight hours ago.\" You study Kim's face in the hazy light that radiates from above the door. He looks tense.">>
-		<<SetSpeaker "KIM KITSURAGI">>
-		<<AddParagraph "\"The noise complaint is hours old. There's no noise, now.\" He realises that would be normal for a noise complaint, and makes a frustrated gesture. \"It's ... I have a bad feeling about this one.\"">>
 		<<set $visStreet = 1>>
-		<<AddOption "[Perception - Easy 8] \"Have you been smoking, this early?\"" SmokeCheck>>[[|SmokeCheck]]
 	<<else>>
 		<<SetSpeaker "KIM KITSURAGI">>
 		<<AddParagraph "As you walk out onto the sidewalk, the lieutenant stuffs his hands into the pockets of his bomber jacket. His breath mists in front of his mouth. There's something... different, here. It nags at you.">>
@@ -769,7 +951,7 @@ A Disco Elysium Fanwork
 <</if>>
 <<AddOption "Go inside" 3FHall>>[[|3FHall]]
 
-:: SmokeCheck
+::SmokeCheck
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 8>>
     <<SkillSuccess>>
