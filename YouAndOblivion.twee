@@ -872,11 +872,11 @@ A Disco Elysium Fanwork
     <<PassiveSkill "Composure">>
     <<AddParagraph "Don't stare at Kim's hands. Don't think about how the leather gloves would feel against your skin. Don't think about his long fingers and the way they grip the steering levers. Don't think about--">>
     <<PassiveSkill "Electrochemistry">>
-    <<AddParagraph "I'm thinking about it">>
+    <<AddParagraph "I'm thinking about it.">>
     <<PassiveSkill "Composure">>
     <<AddParagraph "Goddammit.">>
     <<AddOption "\"SO ABOUT THAT MURDER,\" you say loudly, burying your face in the open file." AboutThisCase>> [[|AboutThisCase]]
-    <</if>>
+<</if>>
 
 ::AboutThisCase
 <<SetSpeaker "Kim Kitsuragi">>
@@ -974,7 +974,7 @@ A Disco Elysium Fanwork
 
 ::Door301
 <<if $Day < 2>>
-    <<SetSpeaker "Apartment 305">>
+    <<SetSpeaker "Apartment 301">>
     <<AddParagraph "The door reverberates with your cop knock, and after a long moment, it swings open partway to reveal the face of someone you were not expecting to see, here.">>
     <<SetSpeaker "Garte">>
     <<AddParagraph "If that's not the same shirt he was wearing the last time you saw him at the Whirling, then he's got a closet full of them. Garte looks at you in barely-contained horror, and his eyes widen in surprise when he sees Kim, but they drift back to you, no less horrified. \"You. Again. At my home, this time. I can promise you there are no dead men hanging from trees, here.\"">>
@@ -2210,6 +2210,17 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "You know from experience that even grey light stings like hell when you have a hangover. Blackout curtains were one of your finer investments too.">>
 <<PassiveSkill "Visual Calculus">>
 <<AddParagraph "The room is a lived-in sort of disheveled. A robe lies on the floor where it had slithered off its hook, shoes kicked in every direction. Familiar brown bottles line the dresser, though one fallen soldier lies on the floor. About elbow height, it would be easy to have knocked it over in a disorganised stumble to the bed.">>
+<<PassiveSkill "Perception (Sight)">>
+<<AddParagraph "On the bedside table sits a bottle of wine, a rich claret. It's not the *good* stuff, maybe ten real at most. Half empty, two glasses...
+You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distracted, itemising the scene in his notebook. He won't see. He won't know.">>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Take it! Bring it with you! You're going to need all the help you can get! It's been too long since we had a real *party*, and this right here is an excellent start.">>
+<<PassiveSkill "Volition">>
+<<AddParagraph "Or you could not. This *is* an active crime scene and you have no idea if this bottle is relevant. There's also the matter of Lieutenant Kitsuragi. Do you really want that eyebrow raised at you? He sees more than you think he does.">>
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "Especially for a *binoclard*.">>
+<<PassiveSkill "Volition">>
+<<AddParagraph "Don't call him that. And *don't* touch that wine bottle.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant hovers in the doorway, the light in the hall bracketing his head like a halo. His notebook is open, pen in hand. \"Anything of note, Detective?\"">>
 <<set _roll to rollDice() + $PSY>>
@@ -2217,6 +2228,38 @@ KCC is now: $knowKimsCorpseClue
     <<PassiveSkill "Empathy">>
     <<AddParagraph "It soothes him, having something to do with his hands.">>
 <</if>>
+<<AddOption "\"The carpet matches the drapes.\"" Drapes>> [[|Drapes]]
+<<AddOption "\"Blackout curtains and unscrewed lightbulb point to photosensitivity.\"" Photosensitivity>> [[|Photosensitivity]]
+<<AddOption "[Savoir Faire - Hard 15] \"Look! A distraction!\" Make a grab for the half-empty bottle of wine." BedDistraction>> [[|BedDistraction]]
+
+::BedDistraction
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 15>>
+    <<SkillSuccess>>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "\"Hmm?\" The lieutenant blinks and half turns to where you're pointing over his shoulder before it registers. He turns back to you with a scowl.">>
+    <<PassiveSkill "Savoir Faire>>
+    <<AddParagraph "That moment of distraction was just enough time for you to shove the bottle of wine under your jacket. You cannot believe that actually worked.">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "The lieutenant sighs and adjusts his glasses. \"Officer. You know that I can see you're hiding something under your jacket, right?\"">>
+    <<PassiveSkill "Savoir Faire>>
+    <<AddParagraph "Damn. Spoke too soon.">>
+<<else>>
+    <<SkillFailure>>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "Oh no. There it is. The dreaded Eyebrow. He's arching it at you and not so much as glancing in the direction you are pointing.">>
+    <<PassiveSkill "Savoir Faire">>
+    <<AddParagraph "Fuck it. You make full eye-contact as you take the wine bottle and shove it under your jacket. \"You see nothing,\" you say, waving a hand in front of his face as though psychically compelling him to ignore what he is seeing.">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "The lieutenant's expression is stiff as stone. \"My vision is not quite *that* poor, Officer,\" he drawls. \"If you wish to drink yourself half to death again, be my guest, but *not* with evidence from our crime scene.">>
+<</if>>
+    <<KimfluenceLost 1>>
+    <<SetSpeaker "YOU">>
+    <<AddParagraph "Chastised, you replace the wine bottle on the nightstand.">>
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "There's always later...">>
+    <<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Now that that's settled... Did you notice anything else, Detective?\"">
 <<AddOption "\"The carpet matches the drapes.\"" Drapes>> [[|Drapes]]
 <<AddOption "\"Blackout curtains and unscrewed lightbulb point to photosensitivity.\"" Photosensitivity>> [[|Photosensitivity]]
 
@@ -2265,7 +2308,12 @@ KCC is now: $knowKimsCorpseClue
 ::ColdOut
 <<PassiveSkill "LOGIC">>
 <<AddParagraph "Oh. Well. Excuse *me*, Mr. Normal Cop. Detective Ordinary. Lieutenant Expected. You are *clearly* an expert on what *normal people* do.">>
-<<AddOption "It is too fucking early to be sassed by my own brain." ??????????>> [[|??????????]]
+<<AddOption "It is too fucking early to be sassed by my own brain." BrainSass>> [[|BrainSass]]
+
+::BrainSass
+<<SetSpeaker "Electrochemistry">>
+<<AddParagraph "You know what else *normal people* do? They tell people when they *like* them. And you *like* Kim. You want to hug him, you want to kiss him, you want him to bend you over that bench over there and -">>
+<<AddOption "That's quite enough from you, thanks.">> ToTheAlcohol[[|??????????]]
 <<AddOption "This goes to the car/bar. But there's no there yet." Credits>>[[|Credits]]
 
 ::RolledDown
