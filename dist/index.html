@@ -722,7 +722,6 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
     &lt;&lt;AddParagraph &quot;You barely get two words out before the lieutenant&#39;s eyebrow commands you to silence. *Drive my Kineema?* that face says. It&#39;s like asking if you could fuck his wife. Husband. Spouse. Exhaust pipe? You don&#39;t know. You just know that you will be taking your life into your own hands if you ask that again.&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;AddOption &quot;[Savoir Faire - Medium] Obey the eyebrow and slink into the backseat like the naughty boy you are.&quot; ShimmyBackSeat&gt;&gt; [[|ShimmyBackSeat]]</tw-passagedata><tw-passagedata pid="53" name="ShimmyBackSeat" tags="" position="350,725" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
-You got: _roll
 &lt;&lt;if _roll &gt;= 10&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Savoir Faire&quot;&gt;&gt;
@@ -761,12 +760,11 @@ You got: _roll
     &lt;&lt;AddParagraph &quot;You almost forgot about the mirrors. Your eyes catch Kim&#39;s in one before you both glance at something else. Oops.&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;AddOption &quot;[Composure - Hard] Try to focus on the case.&quot; TryToFocus&gt;&gt; [[|TryToFocus]]</tw-passagedata><tw-passagedata pid="55" name="TryToFocus" tags="" position="600,725" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
-You got: _roll
 &lt;&lt;if _roll &gt;= 13&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Composure&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;You can compartmentalise. The lieutenant stays a warm, orange-tinted presence at the edge of your vision as you open the case file.&quot;&gt;&gt;
-    &lt;&lt;AddOption &quot;Skim the notes inside. CarLookAtFile&gt;&gt; [[|CarLookAtFile]]
+    &lt;&lt;AddOption &quot;Skim the notes inside.&quot; CarLookAtFile&gt;&gt; [[|CarLookAtFile]]
 &lt;&lt;else&gt;&gt;
     &lt;&lt;SkillFailure&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Composure&quot;&gt;&gt;
