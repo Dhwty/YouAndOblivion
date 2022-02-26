@@ -731,7 +731,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Reaction Speed">>
 <<AddParagraph "You've reached across the sidetable and cupped the phone receiver to your ear before the rest of you even registers it was the phone ringing. You squint at the clock on the wall, only to remember that it's been stuck at \"8:20\" for months now.">>
 <<PassiveSkill "Inland Empire">>
-<<Add Paragraph "It's one of many broken things in your apartment you keep telling yourself you'll fix, but, first thing in the morning, the minute and hour hands form an all too relatable frown.">>
+<<AddParagraph "It's one of many broken things in your apartment you keep telling yourself you'll fix, but, first thing in the morning, the minute and hour hands form an all too relatable frown.">>
 <<AddOption "\"Hello?\"" Hello>> [[|PhoneHello]]
 <<AddOption "\"Do you know what time it is?\"" PhoneWhatTime>> [[|PhoneWhatTime]]
 
@@ -756,13 +756,13 @@ A Disco Elysium Fanwork
         <<if _roll >= 12>>
             <<SkillSuccess>>
             <<PassiveSkill "Half Light">>
-        <<Add Paragraph "Are you sure it's the connection doing that?">>
+        <<AddParagraph "Are you sure it's the connection doing that?">>
         <</if>>
 <<AddOption "\"No, really, I have no idea what time it actually is. I just woke up, and my clock is frowning at me.\"" PhoneWhatTime2>> [[|PhoneWhatTime2]]
 
 ::PhoneWhatTime2
 <<SetSpeaker "Kim Kitsuragi">>
-<<Add Paragraph "\"Your clock is... frowning at you.\" From the pause, you think the clock isn't the only thing frowning at you.">>
+<<AddParagraph "\"Your clock is... frowning at you.\" From the pause, you think the clock isn't the only thing frowning at you.">>
    <<set _roll to rollDice() + $PSY>>
         <<if _roll >= 9>>
             <<SkillSuccess>>
@@ -804,7 +804,6 @@ A Disco Elysium Fanwork
 
 ::FuckingLOL
 <<set _roll to rollDice() + $PSY>>
-You got: _roll
 <<if _roll >= 100>>
     <<SkillSuccess>>
     <<PassiveSkill "Authority">>
@@ -851,9 +850,9 @@ You got: _roll
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "The slam of the door shut is punctuation to the answer he doesn't give. \"I'll keep the windows open,\" is all he says, and you realise that they *are* already open, despite the scattered rain the gray light and wet pavement suggest. He puts the motor carriage into drive, and you feel it move away from the curb. \"The crime scene isn't far from here.\"">>
 <<PassiveSkill "Electrochemistry">>
-<<Add Paragraph "The lieutenant's gloved hands grip the steering levers with the easy command of someone who has mastered the art. It shouldn't have an effect on you, the flex of his thumb on the lever or that barest sliver of skin between his sleeve and his glove, but it makes your collar feel hot and tight around your throat. You're grateful that he can't see you staring at his hands.">>
+<<AddParagraph "The lieutenant's gloved hands grip the steering levers with the easy command of someone who has mastered the art. It shouldn't have an effect on you, the flex of his thumb on the lever or that barest sliver of skin between his sleeve and his glove, but it makes your collar feel hot and tight around your throat. You're grateful that he can't see you staring at his hands.">>
 <<PassiveSkill "Conceptualization">>
-<<Add Paragraph "You've been doing this more often, lately. Staring at him when you think he can't see it. It's the way some people look at paintings.">>
+<<AddParagraph "You've been doing this more often, lately. Staring at him when you think he can't see it. It's the way some people look at paintings.">>
    <<set _roll to rollDice() + $MOT>>
         <<if _roll >= 12>>
         <<SkillSuccess>>
@@ -951,22 +950,6 @@ You got: _roll
 <</if>>
 <<AddOption "Go inside" 3FHall>>[[|3FHall]]
 
-::SmokeCheck
-<<set _roll to rollDice() + $MOT>>
-<<if _roll >= 8>>
-    <<SkillSuccess>>
-    <<PassiveSkill Perception>>
-    <<AddParagraph "He has definitely been smoking, and from the smell wafting off his jacket, it's more than just one.">>
-    <<PassiveSkill Empathy>>
-    <<AddParagraph "He's freaked out enough about something that he's smoking in the *morning*. This isn't the old Kitsuragi one-smoke-before-bed.">>
-<<else>>
-    <<SkillFailure>>
-    <<PassiveSkill Perception>>
-    <<AddParagraph "No, it's gone now. It's probably just the smell of last night's clinging to his jacket.">>
-<</if>>
-<<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "\"Don't we have work to do?\" He gestures toward the building.">>
-<<AddOption "Go inside" 3FHall>>[[|3FHall]]
 
 :: 3FHall
 <<SetSpeaker "West Jamrock Apartments">>
