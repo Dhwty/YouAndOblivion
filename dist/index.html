@@ -662,7 +662,7 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;PassiveSkill &quot;Reaction Speed&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;ve reached across the sidetable and cupped the phone receiver to your ear before the rest of you even registers it was the phone ringing. You squint at the clock on the wall, only to remember that it&#39;s been stuck at \&quot;8:20\&quot; for months now.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Inland Empire&quot;&gt;&gt;
-&lt;&lt;Add Paragraph &quot;It&#39;s one of many broken things in your apartment you keep telling yourself you&#39;ll fix, but, first thing in the morning, the minute and hour hands form an all too relatable frown.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;It&#39;s one of many broken things in your apartment you keep telling yourself you&#39;ll fix, but, first thing in the morning, the minute and hour hands form an all too relatable frown.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;Hello?\&quot;&quot; Hello&gt;&gt; [[|PhoneHello]]
 &lt;&lt;AddOption &quot;\&quot;Do you know what time it is?\&quot;&quot; PhoneWhatTime&gt;&gt; [[|PhoneWhatTime]]</tw-passagedata><tw-passagedata pid="45" name="PhoneHello" tags="" position="600,600" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Hello, Detective. I hope I did not wake you.\&quot;&quot;&gt;&gt;
@@ -681,10 +681,10 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
         &lt;&lt;if _roll &gt;= 12&gt;&gt;
             &lt;&lt;SkillSuccess&gt;&gt;
             &lt;&lt;PassiveSkill &quot;Half Light&quot;&gt;&gt;
-        &lt;&lt;Add Paragraph &quot;Are you sure it&#39;s the connection doing that?&quot;&gt;&gt;
+        &lt;&lt;AddParagraph &quot;Are you sure it&#39;s the connection doing that?&quot;&gt;&gt;
         &lt;&lt;/if&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;No, really, I have no idea what time it actually is. I just woke up, and my clock is frowning at me.\&quot;&quot; PhoneWhatTime2&gt;&gt; [[|PhoneWhatTime2]]</tw-passagedata><tw-passagedata pid="47" name="PhoneWhatTime2" tags="" position="850,600" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
-&lt;&lt;Add Paragraph &quot;\&quot;Your clock is... frowning at you.\&quot; From the pause, you think the clock isn&#39;t the only thing frowning at you.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Your clock is... frowning at you.\&quot; From the pause, you think the clock isn&#39;t the only thing frowning at you.&quot;&gt;&gt;
    &lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
         &lt;&lt;if _roll &gt;= 9&gt;&gt;
             &lt;&lt;SkillSuccess&gt;&gt;
@@ -711,7 +711,6 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;AddParagraph &quot;Not even a hello? Be on your guard, Detective.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;[Savoir Faire - Medium] Shimmy gracefully into the back seat.&quot; ShimmyBackSeat&gt;&gt; [[|ShimmyBackSeat]]
 &lt;&lt;AddOption &quot;[Authority - Impossible] Insist on driving.&quot; FuckingLOL&gt;&gt; [[|FuckingLOL]]</tw-passagedata><tw-passagedata pid="52" name="FuckingLOL" tags="" position="225,725" size="100,100">&lt;&lt;set _roll to rollDice() + $PSY&gt;&gt;
-You got: _roll
 &lt;&lt;if _roll &gt;= 100&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Authority&quot;&gt;&gt;
@@ -749,9 +748,19 @@ You got: _roll
     &lt;&lt;PassiveSkill Perception&gt;&gt;
     &lt;&lt;AddParagraph &quot;No, it&#39;s gone now. It&#39;s probably just the smell of last night&#39;s clinging to his jacket.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;\&quot;Don&#39;t we have work to do?\&quot; He gestures toward the building.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Go inside&quot; 3FHall&gt;&gt;[[|3FHall]]</tw-passagedata><tw-passagedata pid="55" name="TryToFocus" tags="" position="600,725" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;The slam of the door shut is punctuation to the answer he doesn&#39;t give. \&quot;I&#39;ll keep the windows open,\&quot; is all he says, and you realise that they *are* already open, despite the scattered rain the gray light and wet pavement suggest. He puts the motor carriage into drive, and you feel it move away from the curb. \&quot;The crime scene isn&#39;t far from here.\&quot;&quot;&gt;&gt;
+&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;The lieutenant&#39;s gloved hands grip the steering levers with the easy command of someone who has mastered the art. It shouldn&#39;t have an effect on you, the flex of his thumb on the lever or that barest sliver of skin between his sleeve and his glove, but it makes your collar feel hot and tight around your throat. You&#39;re grateful that he can&#39;t see you staring at his hands.&quot;&gt;&gt;
+&lt;&lt;PassiveSkill &quot;Conceptualization&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;You&#39;ve been doing this more often, lately. Staring at him when you think he can&#39;t see it. It&#39;s the way some people look at paintings.&quot;&gt;&gt;
+   &lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
+        &lt;&lt;if _roll &gt;= 12&gt;&gt;
+        &lt;&lt;SkillSuccess&gt;&gt;
+    &lt;&lt;PassiveSkill &quot;Reaction Speed&quot;&gt;&gt;
+    &lt;&lt;AddParagraph &quot;You almost forgot about the mirrors. Your eyes catch Kim&#39;s in one before you both glance at something else. Oops.&quot;&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;&lt;AddOption &quot;[Composure - Hard] Try to focus on the case.&quot; TryToFocus&gt;&gt; [[|TryToFocus]]</tw-passagedata><tw-passagedata pid="55" name="TryToFocus" tags="" position="600,725" size="100,100">&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
 You got: _roll
 &lt;&lt;if _roll &gt;= 13&gt;&gt;
     &lt;&lt;SkillSuccess&gt;&gt;
