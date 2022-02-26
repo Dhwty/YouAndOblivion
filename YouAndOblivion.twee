@@ -2313,7 +2313,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 ::BrainSass
 <<SetSpeaker "Electrochemistry">>
 <<AddParagraph "You know what else *normal people* do? They tell people when they *like* them. And you *like* Kim. You want to hug him, you want to kiss him, you want him to bend you over that bench over there and -">>
-<<AddOption "That's quite enough from you, thanks.">> ToTheAlcohol[[|??????????]]
+<<AddOption "That's quite enough from you, thanks." ToTheAlcohol>>[[|??????????]]
 <<AddOption "This goes to the car/bar. But there's no there yet." Credits>>[[|Credits]]
 
 ::RolledDown
