@@ -732,7 +732,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "You've reached across the sidetable and cupped the phone receiver to your ear before the rest of you even registers it was the phone ringing. You squint at the clock on the wall, only to remember that it's been stuck at \"8:20\" for months now.">>
 <<PassiveSkill "Inland Empire">>
 <<AddParagraph "It's one of many broken things in your apartment you keep telling yourself you'll fix, but, first thing in the morning, the minute and hour hands form an all too relatable frown.">>
-<<AddOption "\"Hello?\"" Hello>> [[|PhoneHello]]
+<<AddOption "\"Hello?\"" PhoneHello>> [[|PhoneHello]]
 <<AddOption "\"Do you know what time it is?\"" PhoneWhatTime>> [[|PhoneWhatTime]]
 
 ::PhoneHello
@@ -818,7 +818,6 @@ A Disco Elysium Fanwork
 
 ::ShimmyBackSeat
 <<set _roll to rollDice() + $MOT>>
-You got: _roll
 <<if _roll >= 10>>
     <<SkillSuccess>>
     <<PassiveSkill "Savoir Faire">>
@@ -863,12 +862,11 @@ You got: _roll
 
 ::TryToFocus
 <<set _roll to rollDice() + $MOT>>
-You got: _roll
 <<if _roll >= 13>>
     <<SkillSuccess>>
     <<PassiveSkill "Composure">>
     <<AddParagraph "You can compartmentalise. The lieutenant stays a warm, orange-tinted presence at the edge of your vision as you open the case file.">>
-    <<AddOption "Skim the notes inside. CarLookAtFile>> [[|CarLookAtFile]]
+    <<AddOption "Skim the notes inside." CarLookAtFile>> [[|CarLookAtFile]]
 <<else>>
     <<SkillFailure>>
     <<PassiveSkill "Composure">>
