@@ -732,7 +732,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "You've reached across the sidetable and cupped the phone receiver to your ear before the rest of you even registers it was the phone ringing. You squint at the clock on the wall, only to remember that it's been stuck at \"8:20\" for months now.">>
 <<PassiveSkill "Inland Empire">>
 <<AddParagraph "It's one of many broken things in your apartment you keep telling yourself you'll fix, but, first thing in the morning, the minute and hour hands form an all too relatable frown.">>
-<<AddOption "\"Hello?\"" Hello>> [[|PhoneHello]]
+<<AddOption "\"Hello?\"" PhoneHello>> [[|PhoneHello]]
 <<AddOption "\"Do you know what time it is?\"" PhoneWhatTime>> [[|PhoneWhatTime]]
 
 ::PhoneHello
