@@ -1,8 +1,8 @@
-:: StoryTitle
+::StoryTitle
 You and Oblivion
 
 
-:: StoryData
+::StoryData
 {
 	"ifid": "B1E46906-738D-4617-BD15-CEF422C96FD8",
 	"format": "SugarCube",
@@ -12,7 +12,7 @@ You and Oblivion
 }
 
 
-:: Story Stylesheet [stylesheet]
+::Story Stylesheet [stylesheet]
 @import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
 
@@ -189,7 +189,7 @@ a.macro-linkreplace {
 }
 
 
-:: Story JavaScript [script]
+::Story JavaScript [script]
 $(document).click(function(e) {
 	if($("span.continueblock").length) {
 		$("span.continueblock").first().removeClass('continueblock');
@@ -221,7 +221,7 @@ window.rollDice = function() {
 	return total;
 };
 
-:: StoryInit {"position":"268,25","size":"100,100"}
+::StoryInit {"position":"268,25","size":"100,100"}
 <<set $optionmap to new Map()>>
 <<set $greentext to []>>
 <<set $paraAppendMode to false>>
@@ -237,17 +237,33 @@ window.rollDice = function() {
 <<set $MOT to 3>>
 /*Clues*/
 <<set $gotPrybar to 0>>
-<<set $knowKimsPrybar to 0>>
+<<set $knowAshtray to 0>>
 <<set $knowAutopsy to 0>>
+<<set $knowCuno to 0>>
+<<set $knowJizz to 0>>
+<<set $knowKimsPrybar to 0>>
 <<set $knowKimjury to 0>>
 <<set $knowKimsCorpseClue to 0>>
 <<set $knowKimBite to 0>>
-<<set $knowJizz to 0>>
-<<set $knowSofaJizz to 0>>
+<<set $knowKimsBrand to 0>>
 <<set $knowKiller to 0>>
 <<set $knowPoisoner to 0>>
-<<set $knowAshtray to 0>>
-<<set $knowKimsBrand to 0>>
+<<set $knowSofaJizz to 0>>
+/*Autopsy*/
+<<set $autVKnockoffs  to 0>>
+<<set $autVSkin to 0>>
+<<set $autVNoSkin to 0>>
+<<set $autVJizz to 0>>
+<<set $autVDrugs to 0>>
+<<set $autVSkipInternal to 0>>
+<<set $autVPetechia to 0>>
+<<set $autVBite to 0>>
+<<set $knowKimBite to 0>>
+<<set $autVJaundice to 0>>
+<<set $autVClotting to 0>>
+<<set $autVSlowBar to 0>>
+<<set $autVWeakBar to 0>>
+<<set $autVShortBar to 0>>
 /*Visited Locations*/
 <<set $Day to 1>>
 <<set $visCrimeScene to 0>>
@@ -264,7 +280,7 @@ window.rollDice = function() {
 <<set $cumsicle to 0>>
 
 
-:: PassageHeader {"position":"407,27","size":"100,100"}
+::PassageHeader {"position":"407,27","size":"100,100"}
 <<set $paragraphs to []>>
 <<if $lastoption>>
 @@.speaker.pastchoice;You@@ @@.pastchoice;- $lastoption@@
@@ -272,11 +288,11 @@ window.rollDice = function() {
 <</if>>
 
 
-:: PassageFooter {"position":"547,28","size":"100,100"}
+::PassageFooter {"position":"547,28","size":"100,100"}
 <<DisplayParagraphs>>\
 
 
-:: DisplayOptions [nobr] {"position":"546,144","size":"100,100"}
+::DisplayOptions [nobr] {"position":"546,144","size":"100,100"}
 <ol id="OptionList">
 <<for _optiontext, _optionpassage range $optionmap>>
   <<capture _optionpassage, _optiontext>>
@@ -289,7 +305,7 @@ window.rollDice = function() {
 <<set $optionmap to new Map()>>
 
 
-:: SkillSuccess [Widget widget] {"position":"600,100","size":"100,100"}
+::SkillSuccess [Widget widget] {"position":"600,100","size":"100,100"}
 <<nobr>>
 <<widget "SkillSuccess">>
 <div id="SuccessImg" class="CheckOverlay"></div>
@@ -300,7 +316,7 @@ window.rollDice = function() {
 <</nobr>>
 
 
-:: SkillFailure [Widget widget] {"position":"725,100","size":"100,100"}
+::SkillFailure [Widget widget] {"position":"725,100","size":"100,100"}
 <<nobr>>
 <<widget "SkillFailure">>
 <div id="FailureImg" class="CheckOverlay"></div>
@@ -311,7 +327,7 @@ window.rollDice = function() {
 <</nobr>>
 
 
-:: PassiveSkill [Widget widget] {"position":"403,146","size":"100,100"}
+::PassiveSkill [Widget widget] {"position":"403,146","size":"100,100"}
 <<nobr>>
 <<widget "PassiveSkill">>
 <<set _skillname to ($args[0].toLowerCase())>>
@@ -344,7 +360,7 @@ _skillname +
 <</nobr>>
 
 
-:: Speaker [widget] {"position":"272,152","size":"100,100"}
+::Speaker [widget] {"position":"272,152","size":"100,100"}
 <<nobr>>
 <<widget "speaker">>
 @@.speaker;
@@ -354,11 +370,11 @@ $args[0] -
 <</nobr>>
 
 
-:: AddOption [widget] {"position":"273,265","size":"100,100"}
+::AddOption [widget] {"position":"273,265","size":"100,100"}
 \<<widget "AddOption">>\<<run $optionmap.set($args[0], $args[1])>>\<</widget>>\
 
 
-:: DisplayParagraphs [widget] {"position":"401,262","size":"100,100"}
+::DisplayParagraphs [widget] {"position":"401,262","size":"100,100"}
 <<widget "DisplayParagraphs">><<set _paragraph to $paragraphs[0]>>\
 <<run $paragraphs.deleteAt(0)>>\
 <span class="paragraph"><<print _paragraph>></span>
@@ -376,15 +392,15 @@ if (paragraphs.length > 1) {
 <</widget>>
 
 
-:: SetSpeaker [widget] {"position":"674,151","size":"100,100"}
+::SetSpeaker [widget] {"position":"674,151","size":"100,100"}
 <<widget "SetSpeaker">><<set $currentspeaker to ("@@.speaker;" + $args[0] + "@@ - ")>><</widget>>
 
 
-:: BlankSpeaker [widget] {"position":"1225,100","size":"100,100"}
+::BlankSpeaker [widget] {"position":"1225,100","size":"100,100"}
 <<widget "BlankSpeaker">><<set $currentspeaker to "">><</widget>>
 
 
-:: AddParagraph [widget] {"position":"546,268","size":"100,100"}
+::AddParagraph [widget] {"position":"546,268","size":"100,100"}
 <<nobr>>
 <<widget "AddParagraph">>
 <<set _para to "">>
@@ -401,22 +417,22 @@ if (paragraphs.length > 1) {
 <</nobr>>
 
 
-:: StoryAuthor {"position":"268,439","size":"100,100"}
+::StoryAuthor {"position":"268,439","size":"100,100"}
 Story by The Kirkwall Gazette Collective
 Twine framework by Pikalex88
 
 
-:: StorySubtitle {"position":"392,432","size":"100,100"}
+::StorySubtitle {"position":"392,432","size":"100,100"}
 Be Gay; Solve Crimes
 A Disco Elysium Fanwork
 
 
-:: StoryShare {"position":"526,432","size":"100,100"}
+::StoryShare {"position":"526,432","size":"100,100"}
 [["@ampepers on Twitter"|https://twitter.com/ampepers]]
 [["Repo with the source code"|https://github.com/apepers/DiscoElysiumTwineMacros/]]
 
 
-:: GreenTextWidgets [widget] {"position":"400,600","size":"100,100"}
+::GreenTextWidgets [widget] {"position":"400,600","size":"100,100"}
 <<nobr>>
 <<widget "TaskComplete">>
 <<run $greentext.push("@@.green;Task complete: " + $args[0] + "@@")>>
@@ -491,7 +507,7 @@ A Disco Elysium Fanwork
 <</nobr>>
 
 
-:: Start [nobr] {"position":"1100,50","size":"100,100"}
+::Start [nobr] {"position":"1100,50","size":"100,100"}
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "Ah. We meet again. Just you, and me, floating in the deep, deep dark. Who are you?">>
 <<AddOption "I'm Harry Du Bois. We...worked this out last time." ImHDB>>[[|ImHDB]]
@@ -949,7 +965,7 @@ A Disco Elysium Fanwork
 <<AddOption "Go inside" 3FHall>>[[|3FHall]]
 
 
-:: 3FHall
+::3FHall
 <<SetSpeaker "West Jamrock Apartments">>
 <<AddParagraph "The linoleum on the floor is peeling, and the subflooring creaks with every step. It's still better than your place. One door is slightly ajar. The doors to the right and left of it are closed, as is the door across the hall.">>
 <<AddOption "Examine crime scene" CrimeScene>>[[|CrimeScene]]
@@ -1010,7 +1026,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "This *should* remove one Kimfluence.">>
 <<AddOption "Return to Test Node" KimfluenceTestNode>>[[|KimfluenceTestNode]]
 
-:: CrimeScene
+::CrimeScene
 <<if $visCrimeScene < 1>>
 	<<SetSpeaker "Dirty One-Bedroom Apartment">>
 	<<AddParagraph "The door is half-open, blocked from behind by the crumpled body of a man fallen across its path. He's barefoot, half a chicken-skinny calf sticking out of a pair of mustard-coloured bellbottom jeans you think you recognise. You're pretty sure you own a pair like that, and probably in about his size, to judge by the bulging waist that is as far as you can see before entering the room.">>
@@ -2304,6 +2320,367 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Maybe,\" the lieutenant echoes. Is it the grey light that makes him look pale? \"Anything else, Detective?\"">>
 <<AddOption "\"No.\" You walk carefully back out of the bedroom." CrimeScene>> [[|CrimeScene]]
+
+
+::4FHall
+<<SetSpeaker "UPSTAIRS HALLWAY">>
+<<AddParagraph "The fourth storey hall is not much better than the third. Patches of linoleum have been worn bare in front of sagging doorframes. The white walls are grey-brown, the woodwork notched and dented, and the light fixtures almost as old as you are. It’s quiet, though, and fairly clean. Perhaps most importantly, it doesn’t smell of corpse.">>
+<<PassiveSkill Empathy>>
+<<AddParagraph "The owner of this place feels generous for providing a home free of roaches, and for not using overly carcinogenic sanitizers. They bleed their tenants for just as much as they think they can pay, downright magnanimous not to ask more.">>
+<<PassiveSkill "Inland Empire">>
+<<AddParagraph "You doubt any of that money has gone into updating the building’s infrastructure.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "There’s only one apartment up here likely to have heard anything of value – the one immediately above the victim’s. Kim falls into step behind you as you approach the door.">>
+<<AddOption "Knock." 4FKnock>>[[|4FKnock]]
+<<AddOption "[Perception 9 – Medium] Listen." 4FListen>>[[|4FListen]]
+<<AddOption "[Physical Instrument 11 – Challenging] KICK IT IN, SUPERCOP!" 4FKickAsshole>>[[|4FKickAsshole]]
+<<AddOption "Never mind. Back downstairs." 3FHall>>[[|3FHall]]
+
+::4FListen
+<<SetSpeaker YOU>>
+<<AddParagraph "It’s relatively quiet in this hallway, given how thin the walls are. Someone’s listening to the radio. (Someone’s never going to make it big, if that’s the best they can sing.) You put your ear to the door in question.">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 9>>
+    <<SkillSuccess>
+    <<PassiveSkill "Perception (Hearing)">>
+    <<AddParagraph "The clink of dishes in a drying rack is the only accompaniment to a thin, tinny voice belting out a tune from yesteryear. It’s the same radio station from down the hall, albeit at a more... *neighbour-friendly* volume. At least one person is definitely home.">>
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Perception (Hearing)">>
+    <<AddParagraph "If someone’s in there, you’d never know it. The only thing you hear is the echoes of the radio.">>
+<</if>>
+<<AddOption "Knock." 4FKnock>>[[|4FKnock]]
+<<AddOption "[Physical Instrument 11 – Challenging] KICK IT IN, SUPERCOP!" 4FKickAsshole>>[[|4FKickAsshole]]
+<<AddOption "Never mind. Back downstairs." 3FHall>>[[|3FHall]]
+
+::4FKickAsshole
+<<KimfluenceLost 1>>
+<<set $StationRep -=1>>
+<<set _roll to rollDice() + $FYS>>
+<<if _roll >= 11>>
+    <<SkillSuccess>>
+    <<PassiveSkill "Physical Instrument">>
+    <<AddParagraph "You’re not just a man, you’re a *machine*, an absolute powerhouse. You’re also not a dunce who thinks kicking the middle of this door is going to do anything besides make an ugly fucking hole in the fibreboard. You broaden your stance, rock your weight back onto one heel...">>
+    <<SetSpeaker “KIM KITSURAGI">>
+    <<AddParagraph "\"... Lieutenant? Wait, what are you – \"">>
+    <<PassiveSkill "Physical Instrument">>
+    <<AddParagraph " – and you boot that motherfucker right below the knob.">>
+    <<PassiveSkill "Perception (Hearing)">>
+    <<AddParagraph "There’s the unmistakable *crunch* of splintering wood. You almost miss it under the sudden shrieking from inside the apartment.">>
+    <<PassiveSkill "Physical Instrument">>
+    <<AddParagraph "One more good hit and this thing’ll crumple, no question. Line it up...">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "The lieutenant grabs your bicep, shoving you off-balance. \"What the hell are you doing??\"">>
+    <<SetSpeaker "The knob rattles as the door to apartment 403 is yanked open. A blond man wielding a steak knife stands before you, wild-eyed, flecks of water and dish soap saturating the lower part of his shirt. He is *not* having a good day.">>
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Physical Instrument">>
+    <<AddParagraph "In your defence, it’s been a long time since you’ve had to kick in a door. Or at least, you think it has. The heel of your shoe cracks against the fibreboard door, kicking in a few inches worth of splinters but leaving it otherwise intact.">>
+    <<PassiveSkill "Perception (Hearing)">>
+    <<AddParagraph "At least it sounds like it was enough to get someone’s attention inside.">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "\"*Officer*,\" he hisses at you. Uh oh. \"What the hell are you doing??\"">>
+    <<SetSpeaker "APARTMENT 403">>
+    <<AddParagraph "The knob rattles as the door whips open, cutting off any further potential chastisement. A blond man wielding a steak knife stands before you, wild-eyed, flecks of water and dish soap saturating the lower part of his shirt. He is *not* having a good day.">>
+<</if>>
+<<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+<<AddParagraph "\"I don’t know who you think lives here, motherfuckers, but I’m warning you...\"">>
+<<BlankSpeaker>>
+<<AddParagraph "Or at least, he was about to warn you. The way his eyes fixate on the RCM watermark on Kim’s jacket, you suspect that you were not what he was expecting to find behind that door.">>
+<<AddOption "\"We’re with the RCM. May we come in?\"" 4FFuckNo>>[[|4FFuckNo]]
+<<AddOption "\"Shit, sorry. Wrong apartment. Have a nice day.\"" 4FRetreat>>[[|4FRetreat]]
+
+::4FFuckNo
+<<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+<<AddParagraph "\"I’m sorry, can you what? The fuck you may *not*.\" The man’s exceedingly confused features curl into a sneer.">>
+<<PassiveSkill "Half Light">>
+<<AddParagraph "Two RCM officers show up to kick in his door in the light of day, and he’s talking back to you? This idiot’s got more guts than sense.">>
+<<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+<<AddParagraph "\"What is this, fucking Martinaise? You can’t just go around kicking in people’s doors like you own the place. I’m calling your boss. You have to replace my door!\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Of course. We apologize. This was *most* uncalled-for.\" You get the distinct impression Kim is not merely addressing the tenant.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "Two gloved hands are applying a rather uncompromising pressure against your person, forcing you back toward the stairwell – and perhaps most importantly, away from the door. This interview, such as it is, is over.">>
+<<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+<<AddParagraph "The lieutenant doesn’t give the tenant any more option in that matter than he gives you. The man manages a couple more obscenities before Kim cuts him a single look over his shoulder. You’d almost feel bad for the guy, if it didn’t settle the screaming civilian issue so easily. Mercifully, the knob does not fall out of the door as it clatters shut.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "Uh, Kim – ">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"No.\"
+<<SetSpeaker YOU>>
+<<AddParagraph "But – ">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"You’ve done enough here, Officer.\" He points. \"Now.\"">>
+<<AddOption "Looks like we’re going back downstairs. Well, shit." 3FHall>>[[|3FHall]]
+
+::4FRetreat
+<<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+<<AddParagraph "The man flicks his eyes back and forth between you and the lieutenant. With little more than a short, very confused nod, he opts to swing his injured door shut.">>
+<<PassiveSkill Drama>>
+<<AddParagraph "Perhaps he has heard it said that discretion is the better part of valour.">>
+<<PassiveSkill Volition>>
+<<AddParagraph "Perhaps he knows better than get in the middle of whatever the fuck has the RCM kicking down doors at 9 in the morning.">>
+<<PassiveSkill Authority>>
+<<AddParagraph "When will you stop letting your partner push you around with a single look? You haven’t even noticed yet, but you’re about to crumple like cheap tin.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The look said partner is currently wearing is almost flat, save for the tension in the jaw and the small flare to his nostrils. This one’s never a good sign.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "No one makes him wear it more easily than you do. That’s... hang on. What does that mean, exactly?">>
+<<PassiveSkill Composure>>
+<<AddParagraph "That you get under his skin. That you slide under his defences in a way most can’t. !!! If we want a Thought Cabinet for ‘Kim Might Be DTF’, this may be somewhere we could drop a potential trigger for it. Not the only one of course, because this option will probably never see the light of day lol. !!!">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Are we quite done here, Officer?\"">
+<<PassiveSkill Empathy>>
+<<AddParagraph "Yeah... he’s pissed.">>
+<<AddOption "Let’s go, then." 3FHall>>[[|3FHall]]
+
+::4FKnock
+<<SetSpeaker YOU>>
+<<AddParagraph "You give a few sharp raps dead centre – your cop knock. It doesn’t take long for heavy footsteps to torture a few creaks out of the floor inside the apartment. The door swings open to reveal a blond man in his mid-thirties, wiping water of his forearms with a dishtowel.">>
+<<AddParagraph "\"Oh, for – look. I don’t want any, I don’t need any, I’ve heard the good news, I’m happy with my service. Have a good day.\" He moves to swing the door shut.">>
+<<AddOption "Stick your foot in the way." 4FInterview>>[[|4FInterview]]
+
+::4FInterview
+<<SetSpeaker YOU>>
+<<AddParagraph "The cheap fibreboard echoes helplessly as it connects with green snakeskin.">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 9>>
+    <<PassiveSkill "Savoir Faire">>
+    <<AddParagraph "\"I’ll have a better day if you can give us some information. RCM.\"">>
+    <<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+    <<AddParagraph "The door opens wide enough for the tenant to peer around it, actually taking a moment to take you both in.">>
+    <<PassiveSkill "Esprit de Corps">>
+    <<AddParagraph "If you’re being honest with yourself, you know which one of you screams cop, and which one of you just... screams. It’s times like this you’re relieved to have your badge back. You pull it out to show him, and just for good measure, step to the side so he can appreciate the lieutenant’s... posture.">>
+    <<PassiveSkill Electrochemistry>>
+    <<AddParagraph "He’d have to be *dead* not to appreciate the lieutenant’s ‘posture’.">>
+    <<PassiveSkill Volition>>
+    <<AddParagraph "The man’s a consummate professional. His bearing absolutely screams ‘cop’, that’s all. It sends the right message.">>
+    <<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+    <<AddParagraph "Whatever that message may be, it does appear to be the right one. The tenant opens the door all the way, gesturing you inside.">>
+<<else>>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "\"I’ll have a better day if you just let me in.\" Okay, that didn’t come out right. \"Because I want something.\"">>
+    <<PassiveSkill "Savoir Faire">>
+    <<AddParagraph "Really not better.">>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "\"Well, *we* want something. From you.\"">>
+    <<PassiveSkill "Savoir Faire">>>
+    <<AddParagraph "Please, just shut up. I’m begging you.">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "The lieutenant clears his throat behind you. \"What my partner is trying to say is that we’re hoping you can give us some information related to an investigation. We’re RCM.\"">>
+    <<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+    <<AddParagraph "The man widens the door enough to peer around it at you with a smirk. \"Your partner, eh? Didn’t realize the RCM condoned that sort of thing.\"">>
+	<<set $HahaPartners += 1>>
+	<<set _roll to rollDice() + $FYS + $HahaPartners>>
+    <<if success on Partners thing>>
+    	<<PassiveSkill Electrochemistry>>
+    	<<AddParagraph "Oh, he definitely means fuck-partners. He’s suggesting you and Kim do the business, as it were. !!! Rolling EC for this. Do we want to roll Reaction Speed? !!!">>
+    	<<SetSpeaker YOU>>
+    	<<AddParagraph "\"Pretty well all cops are partnered,\" you assure him, perhaps a touch quicker than necessary. \"For work purposes.\"">>
+    	<<SetSpeaker "KIM KITSURAGI">>
+    	<<AddParagraph "There’s a sigh from behind you. \"Very smooth, detective.\" The lieutenant steps around you to give the man his most professional eyebrow. \"May we come in? This shouldn’t take long.\"">>
+    <<else>>
+    	<<SetSpeaker YOU>>
+    	<<AddParagraph "\"Pretty well all cops are partnered,\" you assure him. \"At least, anyone who does field work has a partner. It’s both for safety and to hopefully improve accountability.\"">>
+    <</if>>
+    <<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+    <<AddParagraph "He’s still smirking at you, but at least he doesn’t seem to think you’re trying to sell him something anymore. He opens the door and gestures you both inside.">>
+<</if>>
+<<SetSpeaker "APARTMENT 403">>
+<<AddParagraph "A family lived here during the Revolution, and they died here too. In the kitchen walls tiles are replaced with mortar, smooth and solid plugs smattered across the wall to fill where the shells came in during dinner. The survivor stood where you are now, and did not remain for the repairs. The apartment breathes slowly. It remembers how to keep a family safe, even if it failed once. It likes its current occupant, uncomplicated and simple, as close to a good man as one gets in this building.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Thank you for agreeing to speak with us.\" The soothing cadence of Revacholian speech pulls you from your {reverie? Reflection?}. \"I am Lieutenant Kitsuragi. This is Lieutenant-yefreitor du Bois. Are you this unit’s regular tenant?\"">>
+<<SetSpeaker "UPSTAIRS NEIGHBOUR">>
+<<AddParagraph "The man nods. \"I am. André Svoboda, pleased to make your acquaintance.\" He gestures you to his modest dining table. \"My grandfather was Graadian,\" he adds, as if his surname is a matter of some concern.">>
+<<PassiveSkill Logic>>
+<<AddParagraph "Why would the RCM give a shit about who his grandfather was? We’re looking into murders, not dynasties.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "It’s a modest apartment, nothing unusual for the area or the building. Bits of clutter here and there. The radio swings into another upbeat ditty from the late ‘30s. A dining chair creaks under your weight as you sit, mercifully louder than your bones do.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim pulls out his latest notebook, a quiet *clak-clak* as it falls open to the newest clean page. He pulls out his pen and looks to you.">>
+<<AddOption "Take the lead on the interview" 4FHarryTalks>>[[|4FHarryTalks]]
+<<AddOption "Sit back and let Kim do the talking." 4FKimTalks>>[[4FKimTalks]]
+
+::4FHarryTalks
+<<KimfluenceGained 1>>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"Ok, my post-Graadian friend! Tell us what you know.\" You lean back into the seat and shoot him a grin. Make the man feel at ease.">>
+<<set _roll to rollDice() + $PSY>>
+<<if _roll >= 10>>
+    <<PassiveSkill Suggestion>>
+    <<AddParagraph "You’ve always been good at getting people to talk, but this part you’re getting better at. It helps that your features aren’t so distorted, these days. You open up your body language as you smile, and here, now – don’t stare the man down.">>
+    <<SetSpeaker "ANDRÉ SVOBODA">>
+    <<AddParagraph "\"Certainly, officer. Whatever helps. I assume this is about the altercation I heard last night?\"">>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "\"Could be. What did you hear? When did you hear it?\" Beside you, the lieutenant’s pen begins its meticulous record-keeping.">>
+    <<set _roll to rollDice() + $MOT>>
+    <<if _roll >= 9>>
+    	<<PassiveSkill "Composure">>
+    	<<AddParagraph "His leg absolutely does not begin to bounce on the spot. At least, not after the initial clench of muscle. It is as still as he can make it.">>
+        <<set $knowKimsCorpseClue +=1>>
+    <</if>>
+<<else>>
+    <<PassiveSkill Electrochemisty>>
+    <<AddParagraph "Stand back, and watch how it’s done.">>
+    <<BlankSpeaker>>
+    <<AddParagraph "Your lips curl out further and further, unfurling like a particularly suggestive flower. Your eyes widen, two luscious little points of intensity bearing down on him, driving it home. Finally, your head – tip it just so, yes, that’s it! The Expression!">>
+    <<PassiveSkill Suggestion>>
+    <<AddParagraph "That was absolutely, completely, without question, *not* what I had in mind.">>
+    <<SetSpeaker "ANDRÉ SVOBODA">>
+    <<AddParagraph "The Expression has all the subtlety of a freight train, and judging by the face of the man across from you, it has about the same effect. His nose curls as if he’s smelled something rank, and a bit alarming. He looks back and forth between you and the lieutenant.">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "\"Detective.\" Your partner has put a gloved hand on your forearm. He does not wince when you turn to look him dead in the eye.">>
+    <<SetSpeaker "ANDRÉ SVOBODA">>
+    <<AddParagraph "\"Look, I’ll tell you whatever you want, ok? Just...\" He waves a hand in your general direction.">>
+    <<PassiveSkill Electrochemistry>>
+    <<AddParagraph "Excuse me, are you suggesting there’s something wrong with all of this?">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "Kim pats your arm a couple times. \"Please forgive my partner, Mister Svoboda,\" he tells the man. \"He suffers from a sort of... facial palsy. Please, continue.\"">>
+    <<PassiveSkill Electrochemistry>>
+    <<AddParagraph "Excuse me? *Facial palsy*? That may be one of the least fuckable things he’s ever said about you! Take that back!">>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "Fortunately for those assembled, not least of which yourself, the Expression is no longer a fixed compulsion on your features. Your brow furrows in indignation, your upper lip pulls down over your teeth again and just like that – the spell is broken.">>
+    <<SetSpeaker "ANDRÉ SVOBODA">>
+    <<AddParagraph "\"Right.\" He’s watching you as you turn back from looking at Kim, but he holds his tongue. Perhaps wisely so. \"Okay, then. What was it you wanted, again?\"">>
+    <<SetSpeaker "YOU">>
+    <<AddParagraph "\"There was an incident that took place last night in your building. Did you see or hear anything at all between about 21:00 last night and 7:00 this morning?\"">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 8>>
+    <<PassiveSkill "Reaction Speed">>
+    <<AddParagraph "Beside you, the lieutenant’s leg bounces precisely twice before the muscle stiffens, forcing it completely still. Agitation.">>
+    <<set $knowKimsCorpseClue +=1>>
+<</if>>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "The man nods, eyes seeking upward as he thinks. \"It was shortly after midnight... maybe half twelve? The people in the flat below mine were really getting into one. Woke me out of a dead sleep, they did.\"">>
+<<PassiveSkill Suggestion>>
+<<AddParagraph "He wasn’t pleased at the time. Now, it makes him feel important. He’ll tell you anything you want to know.">>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"Honestly, they weren’t at it very long, but it must have been one hell of a fight. He finally smartened up enough to shut up, but it didn’t make his wife any happier. Sounded like she ripped him a new asshole.\"">>
+<<AddOption "Hang on a minute. Wife?" 4FWrong>>[[|4FWrong]]
+
+
+::4FKimTalks
+<<KimfluenceLost 1>>
+<<SetSpeaker YOU>>
+<<AddParagraph "You lean back slowly, letting the back of the seat take your weight. The apartment doesn’t really tell you much as your eyes begin to wander over it. Admittedly, it’s probably not relevant to the investigation – why would it? A small television is visible but sleeping in the living area. One sofa, two end tables. A couple more dishes in the drying rack than you’d expect for a single man living alone. Maybe – ">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Khm.\" Oh, right. \"Mister Svoboda. We are investigating an incident that took place overnight last night in the unit immediately below yours. Were you home between 23:00 last night and 7:00 this morning?\"">>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"I was.\" He gives a perfunctory nod. \"I bet you’re wondering if I heard it, too.\"">>
+<<set _roll to rollDice() + $PSY>>
+<<if _roll >= 8>>
+    <<PassiveSkill Drama>>
+    <<AddParagraph "He’s not concerned at all. If anything, he’s smug.">>
+<<else>>
+    <<PassiveSkill "Perception (Hearing)">>
+    <<AddParagraph "It would be hard *not* to hear something, given the description in the noise complaint.">>
+<</if>>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"We have received reports on the... *khm*. The noises. Between what times did you hear them?\"">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 12>>
+    <<PassiveSkill "Reaction Speed">>
+    <<AddParagraph "Is that... is that *pink* in the lieutenant’s complexion? No, not quite...">>
+    <<PassiveSkill "Inland Empire">>
+    <<AddParagraph "But it’s where pink would be, were he the blushing sort.">>
+    <<PassiveSkill "Composure">>
+    <<AddParagraph "This man’s got so much self-control, he can will his own bloody capillaries to mind their manners. Why does he care, though? Kim would barely blink at a full-blown orgy.">>
+    <<set $knowKimsCorpseClue +=1>>
+<</if>>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"Half twelve, maybe? Not long after midnight. Woke me out of a dead sleep, they did.\"">>
+<<PassiveSkill Suggestion>>
+<<AddParagraph "He wasn’t pleased at the time. Now, it makes him feel important. He’ll tell you anything you want to know.">>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"Honestly, they weren’t at it very long, but it must have been one hell of a fight. He finally smartened up enough to shut up, but his wife wasn’t having it. Sounded like she ripped him a new asshole.\"">>
+<<AddOption "Hang on a minute. Wife?" 4FWrong>>[[|4FWrong]]
+
+:4FWrong
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"I mean, I assume wife. Whoever she was, she was a lady and they were definitely having a domestic of some kind in the middle of the night. Maybe a mistress or something. Though now that you say it, I don’t know that she was his usual, you know what I mean?\" He inclines a very meaningful eyebrow at you. It suggests you should *definitely* know what he means.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "Unfortunately, police reports require something a little more explicit than an eyebrow. \"Could you be specific?\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"I don’t know that we need you to be too specific,\" the lieutenant is quick to add.">>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"Oh no, I don’t mind!\" He’s really getting into this, now. \"He wasn’t bad when I first moved in, but the past year or so he’s caused some real disturbance. He likes to bring company home – *loud* company.\"">>
+<<PassiveSkill Electrochemistry>>
+<<AddParagraph "He’s saying our boy *fucked*.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"You’re certain he was not the ‘loud company’ himself?\" He’s still scratching away in his notebook. The corner of his mouth absolutely does not curl up by the faintest hairsbreadth.">>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"I mean... maybe sometimes. Couldn’t have been him every time, though. Point being, maybe the missus caught him in his game. If you find her, she can definitely tell you more.\">>
+<<AddParagraph "He leans back, arms crossed as if he’s done. His features look very smug for a man who’s given you precious little.">>
+<<PassiveSkill Logic>>
+<<AddParagraph "It’s not like you didn’t already know there was a second person in the apartment. At best, he’s told you the second person had a high-pitched voice. You found no evidence of a wife in your initial search.">>
+<<if $autVBite >=1>>
+    <<PassiveSkill Logic>>
+    <<AddParagraph "That said, it’s possible this second person is the one involved in the antemortem sexcapades. Here’s hoping the lab can pull some info off the body. Which, of course, they were already going to attempt anyway.">>
+<</if>>
+<<if $knowKimBite >=1>>
+    <<PassiveSkill "Esprit de Corps">>
+    <<AddParagraph "Whoever this ‘woman’ was, she wasn’t his wife. Or, if she was, she’s not the type to get mad about him having sexual encounters with other people. Whatever sort of person the victim may have been, it’s not the sort Kim is.">>
+<</if>>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"Okay, so the person living below you got into a brief fight with a... womanly-sounding person.\" You gesture for him to go on. \"Can you tell us anything else about them? Have you seen any of this man’s guests, women or otherwise?\"">>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"Look, I dunno. There was a bunch of banging, some yelling, and then no yelling. I was trying to sleep.\" He really doesn’t seem to care. \"I do have something you’ll want to know about, though.\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Could you make out what they were yelling about?\" The lieutenant’s pen is at the ready, waiting for something, anything useful.">>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"Not really. But come here, I’ll show you something.\" He stands up, gesturing you over to the small window overlooking the alleyway.">>
+<<PassiveSkill "Savoir Faire">>
+<<AddParagraph "There better be a big sign with the victim’s name down there. This guy’s useless.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He’s a good man, Kim. Good enough you can barely hear the small sigh he gives before standing up to follow the man over.">>
+<<AddParagraph "!!! If someone else introduces the fact that Cuno and C are here, we should make it a variable and I’ll add something here for if you’ve already figured it out. !!!">>
+<<AddParagraph "\"... Detective.\" He’s not even looking at you. His eyes are fixated on something below, in the alley.">>
+<<set $seenAlley = 1>>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"Now this, this is what I’m talking about.\" The man begins to flap his gums again as you join Kim at the window. You narrow your eyes, squinting around the warping in the glass at some movement down below.">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 10>>
+    <<PassiveSkill "Perception (Sight)">>
+    <<AddParagraph "[this check is set to 10. edit this later.] They may be four stories down, but there’s no mistaking the two little ginger-haired figures in the alley below. You spent way too much time with those little shits in Martinaise during your formative... weeks to ever be able to forget them. Rooting around through an open skip, flinging rubbish about and screeching at each other, are Cuno and Cunoesse.">>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "\"... Well no shit.\"">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "\"I’m compelled to disagree, detective.\" His voice lilts up, amused. \"It definitely looks like shit down there, to me.\"">>
+    <<set $knowCuno = 1>>
+<<else>>
+    <<PassiveSkill "Perception (Sight)">>
+    <<AddParagraph "It’s a long way down from here, and the whorls are distorting the scene below just a little too much. Or at least, that’s what you’re going with. You can make out two small figures rooting about through an open skip, but beyond that, it’s mostly just a blur of grunge and motion.">>
+    <<PassiveSkill "Physical Instrument">>
+    <<AddParagraph "This doesn’t have a damn thing to do with your eyesight. There’s nothing wrong with it. You’ve never been some noodle-armed little binoclard, and you’re not about to start now.">>
+    <<PassiveSkill Logic>>
+    <<AddParagraph "Kim wears glasses.">>
+    <<PassiveSkill Electrochemistry>>
+    <<AddParagraph "How do you suppose he looks without them? You should find out.">>
+    <<PassiveSkill "Perception (Hearing)">>
+    <<AddParagraph "Hold on a minute. You may not be able to see them, but those sounds... they’re strangely familiar. On some basic, formative level, you know these sounds.">>
+    <<SetSpeaker "KIM KITSURAGI">>
+    <<AddParagraph "\"Sunlight in your eyes, detective?\" Is he – is Kim teasing you?? \"Well. I suppose I’d almost rather be blinded by the glare.\"">>
+<</if>>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "\"... a real public menace, you know? Constantly in and out of the bins, they reek to high heaven, probably into drugs – \"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Thank you for your help today, Mr Svoboda.\" Kim turns from the window with the smallest of tactful smiles. \"If you think of anything else related to the disturbance last night, please don’t hesitate to contact the RCM.\"">>
+<<SetSpeaker "ANDRÉ SVOBODA">>
+<<AddParagraph "The man is gobsmacked. He’s being blown off, and he knows it.">>
+<<AddParagraph "\"But the kids in the alley – you have to do something about them! They – \"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"We’re part of the Major Crimes unit, sir. Juvenile offenders and petty disturbances are outside our purview.\" He catches your eye, sparing you a private grin as he does. \"Coming, detective?\"">>
+<<AddParagraph "\"Mr Svoboda.\" You give the tenant a wink and a perfunctory nod before following Kim to the door. \"Real pleasure. Nice place.\"">>
+<<if $knowCuno == 0>>
+	<<AddOption "Head back down." 4FCunoTalk>>[[|4FCunoTalk]]
+<<else>>
+	<<AddOption "Back to the third floor." 3FHall>>[[|3FHall]]
+<</if>>
+
+::4FCunoTalk
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "And I thought I was the one who needed glasses. That red smear trashing the skip was *Cuno*. !!!Filler line.!!!">>
+<<AddOption "Back to the third floor." 3FHall>>[[|3FHall]]
 
 ::ColdOut
 <<PassiveSkill "LOGIC">>
