@@ -278,6 +278,7 @@ window.rollDice = function() {
 <<set $thoughtCunoDoesntCare to 0>>
 /*Misc*/
 <<set $cumsicle to 0>>
+<<set $seenMedCab = 0>>
 
 
 ::PassageHeader {"position":"407,27","size":"100,100"}
@@ -2164,14 +2165,14 @@ KCC is now: $knowKimsCorpseClue
 <<PassiveSkill Perception>>
 <<AddParagraph "You don't really want to search this. It's worse than your bathroom. You're pretty sure you at least bleached the sink, last month. This place has a filthy yellow film on every surface in it. A wet towel is wadded up under the bar it should be hung on. A crusty strand of large beads lies in the sink. The mirror is so blurry, your face looks like pastel paints thrown at the wall. The toilet seat is up and the bowl is brown with yellow water.">>
 <<if $seenMedCab == 0>>
-	<<AddOption "[Electrochemistry - Medium 11] Check the medicine cabinet." BathMedCab>>[[|BathMedCab]]
+    <<AddOption "[Electrochemistry - Medium 11] Check the medicine cabinet." BathMedCab>>[[|BathMedCab]]
 <<else>>
-	<<AddOption "[Electrochemistry - Medium 11] Check for drugs again." BathMedCab>>[[|BathMedCab]]
+    <<AddOption "[Electrochemistry - Medium 11] Check for drugs again." BathMedCab>>[[|BathMedCab]]
 <</if>>
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
 ::BathMedCab
-<<set $seenMedCab = 0>>
+<<set $seenMedCab = 1>>
 <<PassiveSkill "Perception (Sight)">>
 <<AddParagraph "The Nosaphed and Drouamine are immediately recognisable. A few other easy things in there that you could pick up at any Frittte, but the cabinet is overflowing with bottles and pill packs, half of them with foreign labels.">>
 <<set _roll to rollDice() + $MOT>>
@@ -2183,16 +2184,45 @@ KCC is now: $knowKimsCorpseClue
 <<if _roll >= 11>>
     <<SkillSuccess>>
     <<PassiveSkill "Electrochemistry">>
-    <<AddParagraph "There's more than just shit from the Frittte in here. That pack, there? You know that logo on the pills. Those are sildenafil. This guy was into a good time. You could probably use that kind of good time, too. Oh, and the low jars of purple in the back? Pyrholidon. Pure magic. You could see through time. [???] ">>
+    <<AddParagraph "There's more than just shit from the Frittte in here. That pack, there? You know that logo on the pills. Those are sildenafil. This guy was into a good time. You could probably use that kind of good time, too. Oh, and the low jars of purple in the back? Pyrholidon. Pure magic. You could see through time.">>
     <<PassiveSkill "Volition">>
     <<AddParagraph "No, you should not take the drugs, Harry. You should send them to the lab, so they can check against what's in the corpse's system. Even if you were going to take the drugs, you shouldn't do it while Kim is watching you.">>
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "And give those neanderthals in Processing a good time on us? Don't pretend you don't know what goes on there! You can't have forgotten the incident with Torson's evidence? Either way, someone's going to dip smoke papers in it and stick them under their tongue and it might as well be you. There's more than one jar! Send them one, keep the rest! Simple!">>
     <<PassiveSkill "Logic">>
-    <<AddParagraph "There's a good chance the less legal of these drugs played a role in this man's death, whether directly or in the means of acquisition. They should definitely go to Processing.">>
-	<<AddOption "Steal the drugs." BathSteal>>[[|BathSteal]]
-	<<AddOption "Leave the drugs where they are." BathLeave>>[[|BathLeave]]
-	<<AddOption "Bag the drugs for Processing." BathBag>>[[|BathBag]]
+    <<AddParagraph "There's a good chance the less legal of these drugs played a role in this man's death, whether directly or in the means of acquisition. They should definitely all go to Processing">>
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "Oh, shut up, fussypants. Nobody asked *you*.">>
+    <<PassiveSkill "Volition">>
+    <<AddParagraph "Just because Processing is at times less than professional does not mean Detectives in the field can behave as they do. Besides, even were it not the moral path,  Kim is still watching you, Detective.">>
+    <<PassiveSkill "Logic">>
+    <<AddParagraph "And if Processing ask if there were drugs found on the premises to which his toxicology can be linked? What then, hm? Send them to Processing. Avoid the awkward questions.">>
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "If they don't have sildenafil and pyrholidon on file in the office, they're even more incompetent than I thought. C'mon, think about it - clear, uncluttered thoughts; warm, soft glow; probably won't drive anyone's Kineema into the ocean; and did I mention seeing through time? You'd be a chump to pass it up, Harry. Kim can't watch forever. Into the pocket!">>
+    <<PassiveSkill "Volition">>
+    <<AddParagraph "What happened to that new leaf you were turning, hm? Clean yourself up? Or are you once again going to make a liar of yourself? You can't possibly tell me you're going to throw it all away for one measly pyrholidon trip. You *know* your Ancient Reptilian Brain will have many somethings to say about it. Kim will disapprove. Vicquemare will take his pound of flesh. You can't keep this quiet, the whole station has their eyes on you.">>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "Oh, god. Not the Ancient Reptilian brain. Alright, alright, I won't -">>
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "One pyrholidon trip? *One?* You stuffy git, one jar of liquid sunshine and you're flying for weeks. *Weeks!* Imagine how fast you'll solve this case, when you can think at the speed of light, while your corporeal form stands for perhaps an hour at most. You know who'll agree with me? Your tie will, and since when is your tie wrong? OI! OI, TIE.">>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "And you want to bring -">>
+    <<SetSpeaker "HORRIFIC NECKTIE">>
+    <<AddParagraph "DID I HEAR PYRHOLIDON, BRATAN? IT WILL BE BEAUTIFUL, BEAUUUUTIFUL. SOME WINE, A SUNSET, PYRHOLIDON... BRING KIM TOO! IMAGINE IT! HE COULD DRAPE YOU OVER A ROCK AND IT WOULD LAST FOREVER!">>
+    <<PassiveSkill "Volition">>
+    <<AddParagraph "Oh, shut *up*">>
+    <<PassiveSkill "Logic">>
+    <<AddParagraph "Oh, shut *up*">>
+    <<SetSpeaker "HORRIFIC NECKTIE">>
+    <<AddParagraph "(Your tie gives off a particular sensation you can only describe as \"miffed\")">>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "I'm seriously done with you. I made my decision while you were squabbling.">>
+    <<AddOption "Steal the drugs." BathSteal>>[[|BathSteal]]
+    <<AddOption "Leave the drugs where they are." BathLeave>>[[|BathLeave]]
+    <<AddOption "Bag the drugs for Processing." BathBag>>[[|BathBag]]
+<<else>>
+    <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 <</if>>
-<<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
 ::ExamineBedroom
 <<SetSpeaker "YOU">>
