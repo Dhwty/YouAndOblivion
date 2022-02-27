@@ -972,6 +972,8 @@ A Disco Elysium Fanwork
 <<AddOption "Knock on 305 (to the right)" Door305>>[[|Door305]]
 <<AddOption "Knock on 301 (to the left)" Door301>>[[|Door301]]
 <<AddOption "Knock on 304 (across the hall)" Door304>>[[|Door304]]
+<<AddOption "Talk to the upstairs neighbour" 4FHall>>[[|4FHall]]
+<<AddOption "Talk to the downstairs neighbour" 2FHall>>[[|2FHall]]
 <<AddOption "Test Kimfluence widgets" KimfluenceTestNode>>[[|KimfluenceTestNode]]
 <<AddOption "Go back outside" Street>> [[|Street]]
 
