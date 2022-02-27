@@ -2501,7 +2501,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "Kim pulls out his latest notebook, a quiet *clak-clak* as it falls open to the newest clean page. He pulls out his pen and looks to you.">>
 <<AddOption "Take the lead on the interview" 4FHarryTalks>>[[|4FHarryTalks]]
-<<AddOption "Sit back and let Kim do the talking." 4FKimTalks>>[[4FKimTalks]]
+<<AddOption "Sit back and let Kim do the talking." 4FKimTalks>>[[|4FKimTalks]]
 
 ::4FHarryTalks
 <<KimfluenceGained 1>>
@@ -2597,7 +2597,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<AddParagraph "\"Honestly, they weren’t at it very long, but it must have been one hell of a fight. He finally smartened up enough to shut up, but his wife wasn’t having it. Sounded like she ripped him a new asshole.\"">>
 <<AddOption "Hang on a minute. Wife?" 4FWrong>>[[|4FWrong]]
 
-:4FWrong
+::4FWrong
 <<SetSpeaker "ANDRÉ SVOBODA">>
 <<AddParagraph "\"I mean, I assume wife. Whoever she was, she was a lady and they were definitely having a domestic of some kind in the middle of the night. Maybe a mistress or something. Though now that you say it, I don’t know that she was his usual, you know what I mean?\" He inclines a very meaningful eyebrow at you. It suggests you should *definitely* know what he means.">>
 <<SetSpeaker YOU>>
