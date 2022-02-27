@@ -1,8 +1,8 @@
-:: StoryTitle
+::StoryTitle
 You and Oblivion
 
 
-:: StoryData
+::StoryData
 {
 	"ifid": "B1E46906-738D-4617-BD15-CEF422C96FD8",
 	"format": "SugarCube",
@@ -12,7 +12,7 @@ You and Oblivion
 }
 
 
-:: Story Stylesheet [stylesheet]
+::Story Stylesheet [stylesheet]
 @import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
 
@@ -189,7 +189,7 @@ a.macro-linkreplace {
 }
 
 
-:: Story JavaScript [script]
+::Story JavaScript [script]
 $(document).click(function(e) {
 	if($("span.continueblock").length) {
 		$("span.continueblock").first().removeClass('continueblock');
@@ -221,7 +221,7 @@ window.rollDice = function() {
 	return total;
 };
 
-:: StoryInit {"position":"268,25","size":"100,100"}
+::StoryInit {"position":"268,25","size":"100,100"}
 <<set $optionmap to new Map()>>
 <<set $greentext to []>>
 <<set $paraAppendMode to false>>
@@ -237,17 +237,33 @@ window.rollDice = function() {
 <<set $MOT to 3>>
 /*Clues*/
 <<set $gotPrybar to 0>>
-<<set $knowKimsPrybar to 0>>
+<<set $knowAshtray to 0>>
 <<set $knowAutopsy to 0>>
+<<set $knowCuno to 0>>
+<<set $knowJizz to 0>>
+<<set $knowKimsPrybar to 0>>
 <<set $knowKimjury to 0>>
 <<set $knowKimsCorpseClue to 0>>
 <<set $knowKimBite to 0>>
-<<set $knowJizz to 0>>
-<<set $knowSofaJizz to 0>>
+<<set $knowKimsBrand to 0>>
 <<set $knowKiller to 0>>
 <<set $knowPoisoner to 0>>
-<<set $knowAshtray to 0>>
-<<set $knowKimsBrand to 0>>
+<<set $knowSofaJizz to 0>>
+/*Autopsy*/
+<<set $autVKnockoffs  to 0>>
+<<set $autVSkin to 0>>
+<<set $autVNoSkin to 0>>
+<<set $autVJizz to 0>>
+<<set $autVDrugs to 0>>
+<<set $autVSkipInternal to 0>>
+<<set $autVPetechia to 0>>
+<<set $autVBite to 0>>
+<<set $knowKimBite to 0>>
+<<set $autVJaundice to 0>>
+<<set $autVClotting to 0>>
+<<set $autVSlowBar to 0>>
+<<set $autVWeakBar to 0>>
+<<set $autVShortBar to 0>>
 /*Visited Locations*/
 <<set $Day to 1>>
 <<set $visCrimeScene to 0>>
@@ -264,7 +280,7 @@ window.rollDice = function() {
 <<set $cumsicle to 0>>
 
 
-:: PassageHeader {"position":"407,27","size":"100,100"}
+::PassageHeader {"position":"407,27","size":"100,100"}
 <<set $paragraphs to []>>
 <<if $lastoption>>
 @@.speaker.pastchoice;You@@ @@.pastchoice;- $lastoption@@
@@ -272,11 +288,11 @@ window.rollDice = function() {
 <</if>>
 
 
-:: PassageFooter {"position":"547,28","size":"100,100"}
+::PassageFooter {"position":"547,28","size":"100,100"}
 <<DisplayParagraphs>>\
 
 
-:: DisplayOptions [nobr] {"position":"546,144","size":"100,100"}
+::DisplayOptions [nobr] {"position":"546,144","size":"100,100"}
 <ol id="OptionList">
 <<for _optiontext, _optionpassage range $optionmap>>
   <<capture _optionpassage, _optiontext>>
@@ -289,7 +305,7 @@ window.rollDice = function() {
 <<set $optionmap to new Map()>>
 
 
-:: SkillSuccess [Widget widget] {"position":"600,100","size":"100,100"}
+::SkillSuccess [Widget widget] {"position":"600,100","size":"100,100"}
 <<nobr>>
 <<widget "SkillSuccess">>
 <div id="SuccessImg" class="CheckOverlay"></div>
@@ -300,7 +316,7 @@ window.rollDice = function() {
 <</nobr>>
 
 
-:: SkillFailure [Widget widget] {"position":"725,100","size":"100,100"}
+::SkillFailure [Widget widget] {"position":"725,100","size":"100,100"}
 <<nobr>>
 <<widget "SkillFailure">>
 <div id="FailureImg" class="CheckOverlay"></div>
@@ -311,7 +327,7 @@ window.rollDice = function() {
 <</nobr>>
 
 
-:: PassiveSkill [Widget widget] {"position":"403,146","size":"100,100"}
+::PassiveSkill [Widget widget] {"position":"403,146","size":"100,100"}
 <<nobr>>
 <<widget "PassiveSkill">>
 <<set _skillname to ($args[0].toLowerCase())>>
@@ -344,7 +360,7 @@ _skillname +
 <</nobr>>
 
 
-:: Speaker [widget] {"position":"272,152","size":"100,100"}
+::Speaker [widget] {"position":"272,152","size":"100,100"}
 <<nobr>>
 <<widget "speaker">>
 @@.speaker;
@@ -354,11 +370,11 @@ $args[0] -
 <</nobr>>
 
 
-:: AddOption [widget] {"position":"273,265","size":"100,100"}
+::AddOption [widget] {"position":"273,265","size":"100,100"}
 \<<widget "AddOption">>\<<run $optionmap.set($args[0], $args[1])>>\<</widget>>\
 
 
-:: DisplayParagraphs [widget] {"position":"401,262","size":"100,100"}
+::DisplayParagraphs [widget] {"position":"401,262","size":"100,100"}
 <<widget "DisplayParagraphs">><<set _paragraph to $paragraphs[0]>>\
 <<run $paragraphs.deleteAt(0)>>\
 <span class="paragraph"><<print _paragraph>></span>
@@ -376,15 +392,15 @@ if (paragraphs.length > 1) {
 <</widget>>
 
 
-:: SetSpeaker [widget] {"position":"674,151","size":"100,100"}
+::SetSpeaker [widget] {"position":"674,151","size":"100,100"}
 <<widget "SetSpeaker">><<set $currentspeaker to ("@@.speaker;" + $args[0] + "@@ - ")>><</widget>>
 
 
-:: BlankSpeaker [widget] {"position":"1225,100","size":"100,100"}
+::BlankSpeaker [widget] {"position":"1225,100","size":"100,100"}
 <<widget "BlankSpeaker">><<set $currentspeaker to "">><</widget>>
 
 
-:: AddParagraph [widget] {"position":"546,268","size":"100,100"}
+::AddParagraph [widget] {"position":"546,268","size":"100,100"}
 <<nobr>>
 <<widget "AddParagraph">>
 <<set _para to "">>
@@ -401,22 +417,22 @@ if (paragraphs.length > 1) {
 <</nobr>>
 
 
-:: StoryAuthor {"position":"268,439","size":"100,100"}
+::StoryAuthor {"position":"268,439","size":"100,100"}
 Story by The Kirkwall Gazette Collective
 Twine framework by Pikalex88
 
 
-:: StorySubtitle {"position":"392,432","size":"100,100"}
+::StorySubtitle {"position":"392,432","size":"100,100"}
 Be Gay; Solve Crimes
 A Disco Elysium Fanwork
 
 
-:: StoryShare {"position":"526,432","size":"100,100"}
+::StoryShare {"position":"526,432","size":"100,100"}
 [["@ampepers on Twitter"|https://twitter.com/ampepers]]
 [["Repo with the source code"|https://github.com/apepers/DiscoElysiumTwineMacros/]]
 
 
-:: GreenTextWidgets [widget] {"position":"400,600","size":"100,100"}
+::GreenTextWidgets [widget] {"position":"400,600","size":"100,100"}
 <<nobr>>
 <<widget "TaskComplete">>
 <<run $greentext.push("@@.green;Task complete: " + $args[0] + "@@")>>
@@ -491,7 +507,7 @@ A Disco Elysium Fanwork
 <</nobr>>
 
 
-:: Start [nobr] {"position":"1100,50","size":"100,100"}
+::Start [nobr] {"position":"1100,50","size":"100,100"}
 <<SetSpeaker "ANCIENT REPTILIAN BRAIN">>
 <<AddParagraph "Ah. We meet again. Just you, and me, floating in the deep, deep dark. Who are you?">>
 <<AddOption "I'm Harry Du Bois. We...worked this out last time." ImHDB>>[[|ImHDB]]
@@ -949,7 +965,7 @@ A Disco Elysium Fanwork
 <<AddOption "Go inside" 3FHall>>[[|3FHall]]
 
 
-:: 3FHall
+::3FHall
 <<SetSpeaker "West Jamrock Apartments">>
 <<AddParagraph "The linoleum on the floor is peeling, and the subflooring creaks with every step. It's still better than your place. One door is slightly ajar. The doors to the right and left of it are closed, as is the door across the hall.">>
 <<AddOption "Examine crime scene" CrimeScene>>[[|CrimeScene]]
@@ -1010,7 +1026,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "This *should* remove one Kimfluence.">>
 <<AddOption "Return to Test Node" KimfluenceTestNode>>[[|KimfluenceTestNode]]
 
-:: CrimeScene
+::CrimeScene
 <<if $visCrimeScene < 1>>
 	<<SetSpeaker "Dirty One-Bedroom Apartment">>
 	<<AddParagraph "The door is half-open, blocked from behind by the crumpled body of a man fallen across its path. He's barefoot, half a chicken-skinny calf sticking out of a pair of mustard-coloured bellbottom jeans you think you recognise. You're pretty sure you own a pair like that, and probably in about his size, to judge by the bulging waist that is as far as you can see before entering the room.">>
@@ -2471,8 +2487,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
     <<AddParagraph "He’s still smirking at you, but at least he doesn’t seem to think you’re trying to sell him something anymore. He opens the door and gestures you both inside.">>
 <</if>>
 <<SetSpeaker "APARTMENT 403">>
-<<AddParagraph " **Shivers???**">>
-
+<<AddParagraph "A family lived here during the Revolution, and they died here too. In the kitchen walls tiles are replaced with mortar, smooth and solid plugs smattered across the wall to fill where the shells came in during dinner. The survivor stood where you are now, and did not remain for the repairs. The apartment breathes slowly. It remembers how to keep a family safe, even if it failed once. It likes its current occupant, uncomplicated and simple, as close to a good man as one gets in this building.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Thank you for agreeing to speak with us.\" The soothing cadence of Revacholian speech pulls you from your {reverie? Reflection?}. \"I am Lieutenant Kitsuragi. This is Lieutenant-yefreitor du Bois. Are you this unit’s regular tenant?\"">>
 <<SetSpeaker "UPSTAIRS NEIGHBOUR">>
@@ -2598,7 +2613,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<AddParagraph "He leans back, arms crossed as if he’s done. His features look very smug for a man who’s given you precious little.">>
 <<PassiveSkill Logic>>
 <<AddParagraph "It’s not like you didn’t already know there was a second person in the apartment. At best, he’s told you the second person had a high-pitched voice. You found no evidence of a wife in your initial search.">>
-<<if $knowVBite >=1>>
+<<if $autVBite >=1>>
     <<PassiveSkill Logic>>
     <<AddParagraph "That said, it’s possible this second person is the one involved in the antemortem sexcapades. Here’s hoping the lab can pull some info off the body. Which, of course, they were already going to attempt anyway.">>
 <</if>>
@@ -2606,7 +2621,6 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
     <<PassiveSkill "Esprit de Corps">>
     <<AddParagraph "Whoever this ‘woman’ was, she wasn’t his wife. Or, if she was, she’s not the type to get mad about him having sexual encounters with other people. Whatever sort of person the victim may have been, it’s not the sort Kim is.">>
 <</if>>
-
 <<SetSpeaker YOU>>
 <<AddParagraph "\"Okay, so the person living below you got into a brief fight with a... womanly-sounding person.\" You gesture for him to go on. \"Can you tell us anything else about them? Have you seen any of this man’s guests, women or otherwise?\"">>
 <<SetSpeaker "ANDRÉ SVOBODA">>
@@ -2621,6 +2635,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<AddParagraph "He’s a good man, Kim. Good enough you can barely hear the small sigh he gives before standing up to follow the man over.">>
 <<AddParagraph "!!! If someone else introduces the fact that Cuno and C are here, we should make it a variable and I’ll add something here for if you’ve already figured it out. !!!">>
 <<AddParagraph "\"... Detective.\" He’s not even looking at you. His eyes are fixated on something below, in the alley.">>
+<<set $seenAlley = 1>>
 <<SetSpeaker "ANDRÉ SVOBODA">>
 <<AddParagraph "\"Now this, this is what I’m talking about.\" The man begins to flap his gums again as you join Kim at the window. You narrow your eyes, squinting around the warping in the glass at some movement down below.">>
 <<set _roll to rollDice() + $MOT>>
@@ -2656,6 +2671,15 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"We’re part of the Major Crimes unit, sir. Juvenile offenders and petty disturbances are outside our purview.\" He catches your eye, sparing you a private grin as he does. \"Coming, detective?\"">>
 <<AddParagraph "\"Mr Svoboda.\" You give the tenant a wink and a perfunctory nod before following Kim to the door. \"Real pleasure. Nice place.\"">>
+<<if $knowCuno == 0>>
+	<<AddOption "Head back down." 4FCunoTalk>>[[|4FCunoTalk]]
+<<else>>
+	<<AddOption "Back to the third floor." 3FHall>>[[|3FHall]]
+<</if>>
+
+::4FCunoTalk
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "And I thought I was the one who needed glasses. That red smear trashing the skip was *Cuno*. !!!Filler line.!!!">>
 <<AddOption "Back to the third floor." 3FHall>>[[|3FHall]]
 
 ::ColdOut
