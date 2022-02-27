@@ -2214,15 +2214,35 @@ KCC is now: $knowKimsCorpseClue
     <<PassiveSkill "Logic">>
     <<AddParagraph "Oh, shut *up*">>
     <<SetSpeaker "HORRIFIC NECKTIE">>
-    <<AddParagraph "(Your tie gives off a particular sensation you can only describe as \"miffed\")">>
+    <<AddParagraph "(Your tie gives off a particular sensation you can only describe as \"miffed\".)">>
     <<SetSpeaker YOU>>
     <<AddParagraph "I'm seriously done with you. I made my decision while you were squabbling.">>
     <<AddOption "Steal the drugs." BathSteal>>[[|BathSteal]]
     <<AddOption "Leave the drugs where they are." BathLeave>>[[|BathLeave]]
     <<AddOption "Bag the drugs for Processing." BathBag>>[[|BathBag]]
 <<else>>
-    <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
+    <<AddOption "Return to the main room." CrimeScene>>[[|CrimeScene]]
 <</if>>
+
+::BathSteal
+<<KimfluenceLost 1>>
+<<set $gotDrugs = 1>>
+<<PassiveSkill "Esprit de Corps">>
+<<AddParagraph "You can feel Kim's eyes boring into your back, as you remove the pyrholidon from the cabinet. <!--This needs more copy. '$gotDrugs' tracks what you did with the drugs. This sets it to 1, bagging them sets it to 2.-->">>
+<<AddOption "Return to the main room." CrimeScene>>[[|CrimeScene]]
+
+::BathLeave
+<<SetSpeaker YOU>>
+<<AddParagraph "You decide to leave the drugs where they are. Processing probably doesn't need them, and maybe you can come back for them later. It's not a decision that needs to be made right now.">>
+<<AddOption "Return to the main room." CrimeScene>>[[|CrimeScene]]
+
+::BathBag
+<<KimfluenceGained 1>>
+<<set $StationRep += 1>>
+<<set $gotDrugs = 2>>
+<<PassiveSkill "Esprit de Corps">>
+<<AddParagraph "You can feel Kim's eyes boring into your back, as you remove the pyrholidon from the cabinet... and you can feel him relax as you deposit it into an evidence envelope, and follow the procedure with the other drugs in the medicine cabinet. <!--This needs more copy. '$gotDrugs' tracks what you did with the drugs. This sets it to 2, stealing them sets it to 1.-->">>
+<<AddOption "Return to the main room." CrimeScene>>[[|CrimeScene]]
 
 ::ExamineBedroom
 <<SetSpeaker "YOU">>
