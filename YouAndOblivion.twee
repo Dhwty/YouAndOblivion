@@ -278,6 +278,7 @@ window.rollDice = function() {
 <<set $thoughtCunoDoesntCare to 0>>
 /*Misc*/
 <<set $cumsicle to 0>>
+<<set $seenMedCab = 0>>
 
 
 ::PassageHeader {"position":"407,27","size":"100,100"}
@@ -2171,7 +2172,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "Look at something else" CrimeScene>>[[|CrimeScene]]
 
 ::BathMedCab
-<<set $seenMedCab = 0>>
+<<set $seenMedCab = 1>>
 <<PassiveSkill "Perception (Sight)">>
 <<AddParagraph "The Nosaphed and Drouamine are immediately recognisable. A few other easy things in there that you could pick up at any Frittte, but the cabinet is overflowing with bottles and pill packs, half of them with foreign labels.">>
 <<set _roll to rollDice() + $MOT>>

@@ -355,7 +355,8 @@ window.rollDice = function() {
 &lt;&lt;set $thoughtKimsAss to 0&gt;&gt;
 &lt;&lt;set $thoughtCunoDoesntCare to 0&gt;&gt;
 /*Misc*/
-&lt;&lt;set $cumsicle to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="PassageHeader" tags="" position="407,27" size="100,100">&lt;&lt;set $paragraphs to []&gt;&gt;
+&lt;&lt;set $cumsicle to 0&gt;&gt;
+&lt;&lt;set $seenMedCab = 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="PassageHeader" tags="" position="407,27" size="100,100">&lt;&lt;set $paragraphs to []&gt;&gt;
 &lt;&lt;if $lastoption&gt;&gt;
 @@.speaker.pastchoice;You@@ @@.pastchoice;- $lastoption@@
 
@@ -1846,7 +1847,7 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;else&gt;&gt;
     &lt;&lt;AddOption &quot;[Electrochemistry - Medium 11] Check for drugs again.&quot; BathMedCab&gt;&gt;[[|BathMedCab]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="129" name="BathMedCab" tags="" position="1100,1600" size="100,100">&lt;&lt;set $seenMedCab = 0&gt;&gt;
+&lt;&lt;AddOption &quot;Look at something else&quot; CrimeScene&gt;&gt;[[|CrimeScene]]</tw-passagedata><tw-passagedata pid="129" name="BathMedCab" tags="" position="1100,1600" size="100,100">&lt;&lt;set $seenMedCab = 1&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Perception (Sight)&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The Nosaphed and Drouamine are immediately recognisable. A few other easy things in there that you could pick up at any Frittte, but the cabinet is overflowing with bottles and pill packs, half of them with foreign labels.&quot;&gt;&gt;
 &lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
