@@ -2103,9 +2103,9 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim&#39;s dis
     &lt;&lt;AddParagraph &quot;The man widens the door enough to peer around it at you with a smirk. \&quot;Your partner, eh? Didn’t realize the RCM condoned that sort of thing.\&quot;&quot;&gt;&gt;
 	&lt;&lt;set $HahaPartners += 1&gt;&gt;
 	&lt;&lt;set _roll to rollDice() + $FYS + $HahaPartners&gt;&gt;
-    &lt;&lt;if success on Partners thing&gt;&gt;
+    &lt;&lt;if _roll &gt;= 12&gt;&gt;
     	&lt;&lt;PassiveSkill Electrochemistry&gt;&gt;
-    	&lt;&lt;AddParagraph &quot;Oh, he definitely means fuck-partners. He’s suggesting you and Kim do the business, as it were. !!! Rolling EC for this. Do we want to roll Reaction Speed? !!!&quot;&gt;&gt;
+    	&lt;&lt;AddParagraph &quot;Oh, he definitely means fuck-partners. He’s suggesting you and Kim do the business, as it were. !!! Rolling EC for this. Do we want to roll Reaction Speed? [check set to 12?]!!!&quot;&gt;&gt;
     	&lt;&lt;SetSpeaker YOU&gt;&gt;
     	&lt;&lt;AddParagraph &quot;\&quot;Pretty well all cops are partnered,\&quot; you assure him, perhaps a touch quicker than necessary. \&quot;For work purposes.\&quot;&quot;&gt;&gt;
     	&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;

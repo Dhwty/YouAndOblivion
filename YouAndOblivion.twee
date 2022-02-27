@@ -2474,9 +2474,9 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
     <<AddParagraph "The man widens the door enough to peer around it at you with a smirk. \"Your partner, eh? Didn’t realize the RCM condoned that sort of thing.\"">>
 	<<set $HahaPartners += 1>>
 	<<set _roll to rollDice() + $FYS + $HahaPartners>>
-    <<if success on Partners thing>>
+    <<if _roll >= 12>>
     	<<PassiveSkill Electrochemistry>>
-    	<<AddParagraph "Oh, he definitely means fuck-partners. He’s suggesting you and Kim do the business, as it were. !!! Rolling EC for this. Do we want to roll Reaction Speed? !!!">>
+    	<<AddParagraph "Oh, he definitely means fuck-partners. He’s suggesting you and Kim do the business, as it were. !!! Rolling EC for this. Do we want to roll Reaction Speed? [check set to 12?]!!!">>
     	<<SetSpeaker YOU>>
     	<<AddParagraph "\"Pretty well all cops are partnered,\" you assure him, perhaps a touch quicker than necessary. \"For work purposes.\"">>
     	<<SetSpeaker "KIM KITSURAGI">>
