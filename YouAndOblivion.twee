@@ -2466,7 +2466,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
     <<AddParagraph "Really not better.">>
     <<SetSpeaker YOU>>
     <<AddParagraph "\"Well, *we* want something. From you.\"">>
-    <<PassiveSkill "Savoir Faire">>>
+    <<PassiveSkill "Savoir Faire">>
     <<AddParagraph "Please, just shut up. I’m begging you.">>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "The lieutenant clears his throat behind you. \"What my partner is trying to say is that we’re hoping you can give us some information related to an investigation. We’re RCM.\"">>
