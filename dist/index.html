@@ -2172,11 +2172,12 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim&#39;s dis
     &lt;&lt;AddParagraph &quot;\&quot;Right.\&quot; He’s watching you as you turn back from looking at Kim, but he holds his tongue. Perhaps wisely so. \&quot;Okay, then. What was it you wanted, again?\&quot;&quot;&gt;&gt;
     &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;\&quot;There was an incident that took place last night in your building. Did you see or hear anything at all between about 21:00 last night and 7:00 this morning?\&quot;&quot;&gt;&gt;
-&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
-&lt;&lt;if _roll &gt;= 8&gt;&gt;
-    &lt;&lt;PassiveSkill &quot;Reaction Speed&quot;&gt;&gt;
-    &lt;&lt;AddParagraph &quot;Beside you, the lieutenant’s leg bounces precisely twice before the muscle stiffens, forcing it completely still. Agitation.&quot;&gt;&gt;
-    &lt;&lt;set $knowKimsCorpseClue +=1&gt;&gt;
+	&lt;&lt;set _roll to rollDice() + $MOT&gt;&gt;
+	&lt;&lt;if _roll &gt;= 8&gt;&gt;
+    	&lt;&lt;PassiveSkill &quot;Reaction Speed&quot;&gt;&gt;
+    	&lt;&lt;AddParagraph &quot;Beside you, the lieutenant’s leg bounces precisely twice before the muscle stiffens, forcing it completely still. Agitation.&quot;&gt;&gt;
+    	&lt;&lt;set $knowKimsCorpseClue +=1&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;SetSpeaker &quot;ANDRÉ SVOBODA&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The man nods, eyes seeking upward as he thinks. \&quot;It was shortly after midnight... maybe half twelve? The people in the flat below mine were really getting into one. Woke me out of a dead sleep, they did.\&quot;&quot;&gt;&gt;

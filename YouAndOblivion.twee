@@ -2546,11 +2546,12 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
     <<AddParagraph "\"Right.\" He’s watching you as you turn back from looking at Kim, but he holds his tongue. Perhaps wisely so. \"Okay, then. What was it you wanted, again?\"">>
     <<SetSpeaker "YOU">>
     <<AddParagraph "\"There was an incident that took place last night in your building. Did you see or hear anything at all between about 21:00 last night and 7:00 this morning?\"">>
-<<set _roll to rollDice() + $MOT>>
-<<if _roll >= 8>>
-    <<PassiveSkill "Reaction Speed">>
-    <<AddParagraph "Beside you, the lieutenant’s leg bounces precisely twice before the muscle stiffens, forcing it completely still. Agitation.">>
-    <<set $knowKimsCorpseClue +=1>>
+	<<set _roll to rollDice() + $MOT>>
+	<<if _roll >= 8>>
+    	<<PassiveSkill "Reaction Speed">>
+    	<<AddParagraph "Beside you, the lieutenant’s leg bounces precisely twice before the muscle stiffens, forcing it completely still. Agitation.">>
+    	<<set $knowKimsCorpseClue +=1>>
+	<</if>>
 <</if>>
 <<SetSpeaker "ANDRÉ SVOBODA">>
 <<AddParagraph "The man nods, eyes seeking upward as he thinks. \"It was shortly after midnight... maybe half twelve? The people in the flat below mine were really getting into one. Woke me out of a dead sleep, they did.\"">>
