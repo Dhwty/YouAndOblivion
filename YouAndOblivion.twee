@@ -982,7 +982,7 @@ A Disco Elysium Fanwork
 
 ::Door301
 <<if $Day < 2>>
-<<set $SpokeToGarte = 1>>
+	<<set $SpokeToGarte = 1>>
     <<SetSpeaker "Apartment 301">>
     <<AddParagraph "The door reverberates with your cop knock, and after a long moment, it swings open partway to reveal the face of someone you were not expecting to see, here.">>
     <<SetSpeaker "Garte">>
@@ -1022,8 +1022,8 @@ A Disco Elysium Fanwork
 <<AddParagraph "You unwind your arms and release Garte, who teeters, red-face and frazzled.">>
 <<SetSpeaker "Garte">>
 <<AddParagraph "\"Erm. Yes. Hello, Detective. It certainly is... something to see you again. At my door. Again.\" He smooths a palm down his vest, trying to straighten the wrinkles you put there. \"Is... Is this about the noise complaint? You're a little late for it.\"">>
-    <<AddOption "\"Yes. The noise complaint. The complaint about noise.\"" GarteYes>> [[|GarteYes]]
-    <<AddOption "\"Actually, I was hoping you could tell me about your dead neighbour.\"" GarteNo>> [[|GarteNo]]
+<<AddOption "\"Yes. The noise complaint. The complaint about noise.\"" GarteYes>> [[|GarteYes]]
+<<AddOption "\"Actually, I was hoping you could tell me about your dead neighbour.\"" GarteNo>> [[|GarteNo]]
 
 ::GarteYes
 <<SetSpeaker "Garte">>
@@ -1041,36 +1041,36 @@ A Disco Elysium Fanwork
 ::GarteNeighbourDead
 <<set $GarteKnowsDead to 1>>
 <<set _roll to rollDice() + $INT>>
-    <<if _roll >= 8>>
-        <<SkillSuccess>>
-        <<PassiveSkill "Rhetoric">>
-        <<AddParagraph "It's best to handle this professionally. Straight to the point.">>
-        <<SetSpeaker "You">>
-        <<AddParagraph "\"Actually,\" you say, mimicking the lieutenant's calm, smooth way of speaking, \"we regret to inform you that your neighbour, Jean-François Poulin, was murdered sometime last night. Your noise complaint helps us set up a timeline and could potentially give us clues as to who else was in the apartment last night.\"">>
+<<if _roll >= 8>>
+    <<SkillSuccess>>
+    <<PassiveSkill "Rhetoric">>
+    <<AddParagraph "It's best to handle this professionally. Straight to the point.">>
+    <<SetSpeaker "You">>
+    <<AddParagraph "\"Actually,\" you say, mimicking the lieutenant's calm, smooth way of speaking, \"we regret to inform you that your neighbour, Jean-François Poulin, was murdered sometime last night. Your noise complaint helps us set up a timeline and could potentially give us clues as to who else was in the apartment last night.\"">>
     <<SetSpeaker "Garte">>
     <<AddParagraph "\"What?\" he chokes. \"*Murdered*?\" His wide-eyed stare darts to the lieutenant for confirmation.">>
     <<SetSpeaker "Kim Kitsuragi">>
     <<AddParagraph "\"I am afraid so, Mr. Garte,\" the lieutenant adds. \"Our condolences.\"">>
-    <<else>>
-        <<SkillFailure>>
-        <<PassiveSkill "Rhetoric">>
-        <<AddParagraph "It's usually best to cushion bad news with some good news. You can put a positive spin on anything!">>
-        <<SetSpeaker "You">>
-        <<AddParagraph "\"Well, Garte, I've got good news and bad news,\" you say. \"The good news is that your neighbour won't be making noise any more. The bad news is that it's because he's dead. Unless you didn't like him, in which case, more good news!\"">>
-        <<SetSpeaker "Garte">>
-        <<AddParagraph "\"*What*?\" Garte chokes, eyes and mouth going round. \"You're joking, right? Please tell me you're joking...\"">>
-        <<SetSpeaker "Kim Kitsuragi">>
-        <<AddParagraph "The lieutenant sighs, wiping a hand over his face. \"That is... not exactly how I would have put it, but Detective DuBois is not joking. Or... at least not about the fact that your neighbour is dead. My condolences.\"">>
-    <</if>>
-        <<SetSpeaker "Garte">>
-        <<AddParagraph "The man stares at you both as the colour drains from his face. \"Oh my God,\" he breathes, eyes going vacant. \"I'm a corpse magnet.\"">>
-        <<SetSpeaker "Kim Kitsuragi">>
-        <<AddParagraph "The lieutenant's lips twist in a grim approximation of a smile. \"No more than we are, Mr. Garte,\" he says.">>
-        <<SetSpeaker "Garte">>
-        <<AddParagraph "Garte chokes out a shrill laugh. \"I'm a cafeteria manager. *You're* an officer of the RCM. There's a big fucking difference.\" He purses his lips and looks away as though to stop himself from saying something else. \"Look, I don't know what to tell you about the noise complaint that you don't already know. What I heard didn't exactly sound like someone *dying*, or I would have reported something worse.\"">>
-    <<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Rhetoric">>
+    <<AddParagraph "It's usually best to cushion bad news with some good news. You can put a positive spin on anything!">>
+    <<SetSpeaker "You">>
+    <<AddParagraph "\"Well, Garte, I've got good news and bad news,\" you say. \"The good news is that your neighbour won't be making noise any more. The bad news is that it's because he's dead. Unless you didn't like him, in which case, more good news!\"">>
+    <<SetSpeaker "Garte">>
+    <<AddParagraph "\"*What*?\" Garte chokes, eyes and mouth going round. \"You're joking, right? Please tell me you're joking...\"">>
+    <<SetSpeaker "Kim Kitsuragi">>
+    <<AddParagraph "The lieutenant sighs, wiping a hand over his face. \"That is... not exactly how I would have put it, but Detective DuBois is not joking. Or... at least not about the fact that your neighbour is dead. My condolences.\"">>
+<</if>>
+<<SetSpeaker "Garte">>
+<<AddParagraph "The man stares at you both as the colour drains from his face. \"Oh my God,\" he breathes, eyes going vacant. \"I'm a corpse magnet.\"">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant's lips twist in a grim approximation of a smile. \"No more than we are, Mr. Garte,\" he says.">>
+<<SetSpeaker "Garte">>
+<<AddParagraph "Garte chokes out a shrill laugh. \"I'm a cafeteria manager. *You're* an officer of the RCM. There's a big fucking difference.\" He purses his lips and looks away as though to stop himself from saying something else. \"Look, I don't know what to tell you about the noise complaint that you don't already know. What I heard didn't exactly sound like someone *dying*, or I would have reported something worse.\"">>
+<<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
 
-::GartNoiseAgain
+::GarteNoiseAgain
 <<SetSpeaker "Garte">>
 <<AddParagraph "The man's face screws up like he's tasted something sour. \"Yes. This noise has a tendency to... come. And go.\" He shoots an uncomfortable look at the lieutenant before focusing on your shoulder.">>
 <<set _roll to rollDice() + $MOT>>
@@ -1102,10 +1102,10 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Garte">>
 <<AddParagraph "Garte stares at the lieutenant owlishly for a long moment, his throat making abortive, confused sounds, like a chewed-up cassette tape stuck in its player.">>
 <<set _roll to rollDice() + $MOT>>
-    <<if _roll >= 8>>
-        <<PassiveSkill "Composure">>
+<<if _roll >= 8>>
+    <<PassiveSkill "Composure">>
     <<AddParagraph "Garte's gaze flits to you, an assessing look, like he's waiting to see how you react to the lieutenant's words. He leans back, ever so slightly. A desire to retreat.">>
-    <</if>>
+<</if>>
 <<SetSpeaker "Garte">>
 <<AddParagraph "\"Right,\" the man chokes out. \"That is... correct. It sounded...\" He clears his throat awkwardly. \"Well, it didn't sound like anyone *dying*.\"">>
 <<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
@@ -1204,12 +1204,12 @@ A Disco Elysium Fanwork
 ::GartePushDoor
 <<set _roll to rollDice() + $FYS>>
 <<if _roll >= 8>>
-    <<SkillSucess>>
+    <<SkillSuccess>>
     <<PassiveSkill "Physical Instrument">>
     <<AddParagraph "You plant your palm against the wood and lock your elbow. The door doesn't close, and a push from you sends it swinging back open.">>
     <<SetSpeaker "Garte">>
     <<AddParagraph "Garte looks up at you in surprise.">>
-	<<if $GarteKnowsDead = 1>>
+	<<if $GarteKnowsDead == 1>>
     	<<PassiveSkill "Empathy">>
     	<<AddParagraph "More than surprise. *Fear*">>
         <<set _roll to rollDice() + $FYS>>
