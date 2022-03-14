@@ -1209,7 +1209,7 @@ A Disco Elysium Fanwork
 ::GartePushDoor
 <<set _roll to rollDice() + $FYS>>
 <<if _roll >= 8>>
-    <<SkillSucess>>
+    <<SkillSuccess>>
     <<PassiveSkill "Physical Instrument">>
     <<AddParagraph "You plant your palm against the wood and lock your elbow. The door doesn't close, and a push from you sends it swinging back open.">>
     <<SetSpeaker "Garte">>
