@@ -249,6 +249,8 @@ window.rollDice = function() {
 <<set $knowKiller to 0>>
 <<set $knowPoisoner to 0>>
 <<set $knowSofaJizz to 0>>
+<<set $GarteKnowsDead to 0>>
+<<set $SpokeToGarte to 0>>
 /*Autopsy*/
 <<set $autVKnockoffs  to 0>>
 <<set $autVSkin to 0>>
@@ -278,7 +280,7 @@ window.rollDice = function() {
 <<set $thoughtCunoDoesntCare to 0>>
 /*Misc*/
 <<set $cumsicle to 0>>
-<<set $seenMedCab = 0>>
+<<set $seenMedCab to 0>>
 
 
 ::PassageHeader {"position":"407,27","size":"100,100"}
