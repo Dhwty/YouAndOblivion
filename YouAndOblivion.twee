@@ -1038,11 +1038,6 @@ A Disco Elysium Fanwork
 <<AddOption "\"Noise is funny like that. Sometimes it's there, sometimes it isn't. Best you tell us more about the *kind* of noise you heard, in case it happens again.\"" GarteNoiseAgain>> [[|GarteNoiseAgain]]
 <<AddOption "[Rhetoric - Easy] Inform Garte of his neighbour's passing. Tactfully." GarteNeighbourDead>> [[|GarteNeighbourDead]]
 
-::GarteNoiseAgain
-<<BlankSpeaker>>
-<<AddParagraph "::GarteNoiseAgain is missing, and this is a placeholder. The option below is the one you didn't pick to get here.">>
-<<AddOption "[Rhetoric - Easy] Inform Garte of his neighbour's passing. Tactfully." GarteNeighbourDead>> [[|GarteNeighbourDead]]
-
 ::GarteNeighbourDead
 <<set $GarteKnowsDead to 1>>
 <<set _roll to rollDice() + $INT>>
@@ -1075,7 +1070,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "Garte chokes out a shrill laugh. \"I'm a cafeteria manager. *You're* an officer of the RCM. There's a big fucking difference.\" He purses his lips and looks away as though to stop himself from saying something else. \"Look, I don't know what to tell you about the noise complaint that you don't already know. What I heard didn't exactly sound like someone *dying*, or I would have reported something worse.\"">>
 <<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
 
-::GartNoiseAgain
+::GarteNoiseAgain
 <<SetSpeaker "Garte">>
 <<AddParagraph "The man's face screws up like he's tasted something sour. \"Yes. This noise has a tendency to... come. And go.\" He shoots an uncomfortable look at the lieutenant before focusing on your shoulder.">>
 <<set _roll to rollDice() + $MOT>>
