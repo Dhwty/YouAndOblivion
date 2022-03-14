@@ -970,18 +970,299 @@ A Disco Elysium Fanwork
 <<SetSpeaker "West Jamrock Apartments">>
 <<AddParagraph "The linoleum on the floor is peeling, and the subflooring creaks with every step. It's still better than your place. One door is slightly ajar. The doors to the right and left of it are closed, as is the door across the hall.">>
 <<AddOption "Examine crime scene" CrimeScene>>[[|CrimeScene]]
-<<AddOption "Knock on 305 (to the right)" Door305>>[[|Door305]]
 <<AddOption "Knock on 301 (to the left)" Door301>>[[|Door301]]
 <<AddOption "Knock on 304 (across the hall)" Door304>>[[|Door304]]
+<<AddOption "Knock on 305 (to the right)" Door305>>[[|Door305]]
 <<AddOption "Talk to the upstairs neighbour" 4FHall>>[[|4FHall]]
 <<AddOption "Talk to the downstairs neighbour" 2FHall>>[[|2FHall]]
 <<AddOption "Test Kimfluence widgets" KimfluenceTestNode>>[[|KimfluenceTestNode]]
 <<AddOption "Go back outside" Street>> [[|Street]]
 
+::Door301
+<<if $Day < 2>>
+<<set $SpokeToGarte = 1>>
+    <<SetSpeaker "Apartment 301">>
+    <<AddParagraph "The door reverberates with your cop knock, and after a long moment, it swings open partway to reveal the face of someone you were not expecting to see, here.">>
+    <<SetSpeaker "Garte">>
+    <<AddParagraph "If that's not the same shirt he was wearing the last time you saw him at the Whirling, then he's got a closet full of them. Garte looks at you in barely-contained horror, and his eyes widen in surprise when he sees Kim, but they drift back to you, no less horrified. \"You. Again. At my home, this time. I can promise you there are no dead men hanging from trees, here.\"">>
+    <<PassiveSkill "Half Light">>
+    <<AddParagraph "Can he, though? When's the last time he looked outside? Maybe he should check.">>
+    <<AddOption "\"Are you sure about that?\"" GarteHangingMen>> [[|GarteHangingMen]]
+    <<AddOption "\"Just dead men lying in their living rooms, right? Heh. It just occurred to me how ironic the name *living room* is in this instance.\"" GarteLivingRoom>> [[|GarteLivingRoom]]
+    <<AddOption "Hold your arms out wide and yell, \"GARTE! How wonderful to see you!\"" GarteGreeting>> [[|GarteGreeting]]
+<</if>>
+<<AddOption "Come back later" 3FHall>> [[|3FHall]]
+
+::GarteGreeting
+<<SetSpeaker "Garte">>
+<<AddParagraph "The cafeteria manager meets your enthusiasm with wide-eyed concern. He eyes your outstretched arms and inches back as you inch forward, leaning back on his heels and shaking his head.">>
+<<SetSpeaker "You">>
+<<AddParagraph "It's too late. You've pulled him into a tight hug before he can retreat.">>
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "A perfectly manly hug, that is, squeezing him tight so that he can feel the strength and girth of your biceps.">>
+<<SetSpeaker "Garte">>
+<<AddParagraph "The man lets out a strangled sort of *hrrrk* sound, his lungs struggling to expand under the constriction of your arms.">>
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "Your very strong, very *manly* arms--">>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "--while you're pressed chest-to-chest with the warm body against you, his aftershave fresh and citrusy--">>
+<<PassiveSkill "Volition">>
+<<AddParagraph "Oh no. I do *not* need you two joining up, here.">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"*Khm*.\" The lieutenant pointedly clears his throat. \"Detective. Please do not suffocate our witness.\"">>
+<<PassiveSkill "Volition">>
+<<AddParagraph "Yes. Please listen to Kim. He is always a source of reason.">>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "See? Even *you* like him.">>
+<<PassiveSkill "Volition">>
+<<AddParagraph "...shut up.">>
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "You unwind your arms and release Garte, who teeters, red-face and frazzled.">>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"Erm. Yes. Hello, Detective. It certainly is... something to see you again. At my door. Again.\" He smooths a palm down his vest, trying to straighten the wrinkles you put there. \"Is... Is this about the noise complaint? You're a little late for it.\"">>
+    <<AddOption "\"Yes. The noise complaint. The complaint about noise.\"" GarteYes>> [[|GarteYes]]
+    <<AddOption "\"Actually, I was hoping you could tell me about your dead neighbour.\"" GarteNo>> [[|GarteNo]]
+
+::GarteYes
+<<SetSpeaker "Garte">>
+<<AddParagraph "Garte gives you a funny look but shrugs. \"Well, it's quiet now. I appreciate you checking in, though. Is there anything else, or can I get to work, please?\"">>
+<<set _roll to rollDice() + $MOT>>
+    <<if _roll >= 8>>
+    <<PassiveSkill "Reaction Speed">>
+    <<AddParagraph "Garte's gaze doesn't seem to know where to land, fixing on the lieutenant, then you, then up at the ceiling, then back at the lieutenant. His hands are just as fidgety, drumming against the door, then fiddling with a sleeve.">>
+    <<PassiveSkill "Empathy">>
+    <<AddParagraph "The man radiates supreme discomfort. He wants this conversation over with as quickly as possible.">>
+<</if>>
+<<AddOption "\"Noise is funny like that. Sometimes it's there, sometimes it isn't. Best you tell us more about the *kind* of noise you heard, in case it happens again.\"" GarteNoiseAgain>> [[|GarteNoiseAgain]]
+<<AddOption "[Rhetoric - Easy] Inform Garte of his neighbour's passing. Tactfully." GarteNeighbourDead>> [[|GarteNeighbourDead]]
+
+::GarteNeighbourDead
+<<set $GarteKnowsDead to 1>>
+<<set _roll to rollDice() + $INT>>
+    <<if _roll >= 8>>
+        <<SkillSuccess>>
+        <<PassiveSkill "Rhetoric">>
+        <<AddParagraph "It's best to handle this professionally. Straight to the point.">>
+        <<SetSpeaker "You">>
+        <<AddParagraph "\"Actually,\" you say, mimicking the lieutenant's calm, smooth way of speaking, \"we regret to inform you that your neighbour, Jean-François Poulin, was murdered sometime last night. Your noise complaint helps us set up a timeline and could potentially give us clues as to who else was in the apartment last night.\"">>
+    <<SetSpeaker "Garte">>
+    <<AddParagraph "\"What?\" he chokes. \"*Murdered*?\" His wide-eyed stare darts to the lieutenant for confirmation.">>
+    <<SetSpeaker "Kim Kitsuragi">>
+    <<AddParagraph "\"I am afraid so, Mr. Garte,\" the lieutenant adds. \"Our condolences.\"">>
+    <<else>>
+        <<SkillFailure>>
+        <<PassiveSkill "Rhetoric">>
+        <<AddParagraph "It's usually best to cushion bad news with some good news. You can put a positive spin on anything!">>
+        <<SetSpeaker "You">>
+        <<AddParagraph "\"Well, Garte, I've got good news and bad news,\" you say. \"The good news is that your neighbour won't be making noise any more. The bad news is that it's because he's dead. Unless you didn't like him, in which case, more good news!\"">>
+        <<SetSpeaker "Garte">>
+        <<AddParagraph "\"*What*?\" Garte chokes, eyes and mouth going round. \"You're joking, right? Please tell me you're joking...\"">>
+        <<SetSpeaker "Kim Kitsuragi">>
+        <<AddParagraph "The lieutenant sighs, wiping a hand over his face. \"That is... not exactly how I would have put it, but Detective DuBois is not joking. Or... at least not about the fact that your neighbour is dead. My condolences.\"">>
+    <</if>>
+        <<SetSpeaker "Garte">>
+        <<AddParagraph "The man stares at you both as the colour drains from his face. \"Oh my God,\" he breathes, eyes going vacant. \"I'm a corpse magnet.\"">>
+        <<SetSpeaker "Kim Kitsuragi">>
+        <<AddParagraph "The lieutenant's lips twist in a grim approximation of a smile. \"No more than we are, Mr. Garte,\" he says.">>
+        <<SetSpeaker "Garte">>
+        <<AddParagraph "Garte chokes out a shrill laugh. \"I'm a cafeteria manager. *You're* an officer of the RCM. There's a big fucking difference.\" He purses his lips and looks away as though to stop himself from saying something else. \"Look, I don't know what to tell you about the noise complaint that you don't already know. What I heard didn't exactly sound like someone *dying*, or I would have reported something worse.\"">>
+    <<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
+
+::GartNoiseAgain
+<<SetSpeaker "Garte">>
+<<AddParagraph "The man's face screws up like he's tasted something sour. \"Yes. This noise has a tendency to... come. And go.\" He shoots an uncomfortable look at the lieutenant before focusing on your shoulder.">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 16>>
+    <<PassiveSkill "Reaction Speed">>
+    <<AddParagraph "Is he avoiding eye-contact?">>
+    <<set _roll to rollDice() + $PSY>>
+    <<if _roll >= 15>>
+        <<PassiveSkill "Eprit de Corps">>
+        <<AddParagraph "Yes, but not with you. At your shoulder, the lieutenant studiously examines his notebook, or at least, he makes a good show of it. You realise his eyes are not moving over the page. *He's* avoiding eye-contact, too.">>
+        <<PassiveSkill "Inland Empire">>
+        <<AddParagraph "Suddenly, you feel like the only one not getting a joke.">>
+    <<else>>
+        <<PassiveSkill "Empathy">>
+        <<AddParagraph "That's a guilty look. Does he have something to with the dead man next door?">>
+    <</if>>
+<</if>>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"Listen, it's... it's not a big deal.\" He holds his hands up in surrender. \"I was just tired after a long week, and I couldn't sleep. I shouldn't have called. It was lovely to see you, officers, but if you'll excuse me...\" He starts to shut the door.">>
+<<AddOption "[Physical Instrument - Easy] Shoulder the door back open." GartePushDoor>> [[|GartePushDoor]]
+<<AddOption "Back off for now. You can question him later." GarteBackOff>> [[|GarteBackOff]]
+
+::GarteNo
+<<set $GarteKnowsDead to 1>>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"M-My dead...?\" Garte sputters, stumbling over the words. He inclines one ear towards you, like he thinks he misheard. He darts a look at the lieutenant, who nods. \"Who?\"">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"A Mr...\" The lieutenant makes a show of examing his notes. \"Jean-François Poulin. I understand the noise complaint you called in was coming from his apartment, at around 23:00 last night. Is that correct?\"">>
+<<SetSpeaker "Garte">>
+<<AddParagraph "Garte stares at the lieutenant owlishly for a long moment, his throat making abortive, confused sounds, like a chewed-up cassette tape stuck in its player.">>
+<<set _roll to rollDice() + $MOT>>
+    <<if _roll >= 8>>
+        <<PassiveSkill "Composure">>
+    <<AddParagraph "Garte's gaze flits to you, an assessing look, like he's waiting to see how you react to the lieutenant's words. He leans back, ever so slightly. A desire to retreat.">>
+    <</if>>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"Right,\" the man chokes out. \"That is... correct. It sounded...\" He clears his throat awkwardly. \"Well, it didn't sound like anyone *dying*.\"">>
+<<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
+
+::GarteHangingMen
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"What?\" The man's face twists in confusion and a little horror. \"What... what does that mean? Did you...? Oh my God, please tell me you didn't *put* a body in the tree!\"">>
+<<PassiveSkill "Half Light">>
+<<AddParagraph "Well, that wasn't what you meant at all. Rude.">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant inserts himself into the conversation to keep it from derailing. \"Mr. Garte, I can assure you there are no bodies in trees, this time.\"">>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"Then why are you here?\" he asks sharply. \"Is this about the noise complaint? You could have just said so, without making me think someone's been murdered *again*! You about gave me a heart attack!\"">>
+<<AddOption "\"So about that...\" [Rhetoric - Easy] Inform Garte of his neighbour's passing. Tactfully." GarteNeighbourDead>> [[|GarteNeighbourDead]]
+<<AddOption "\"Haaaha. Ha. Right. Yes. No murders here!\"" GarteNoMurder>> [[|GarteNoMurder]]
+
+::GarteNoMurder
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Khm.\" The lieutenant shoots you a *look* over his notebook. \"Unfortunately, that is not quite accurate, Officer. Mr. Garte, I regret to inform you that your neighbour, Jean-François Poulin, was murdered sometime last night or early morning.\"">>
+<<set $GarteKnowsDead = 1>>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"What?\" You watch his face drain of colour.">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"You see why we are interested in hearing whatever you might have heard last night.\" The lieutenant watches him through his glasses, pen poised to paper.">>
+<<SetSpeaker "Garte">>
+<<AddParagraph "Garte stares at the lieutenant owlishly for a long moment, his throat making abortive, confused sounds, like a chewed-up cassette tape stuck in its player.">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 8>>
+    <<PassiveSkill "Composure">>
+    <<AddParagraph "Garte's gaze flits to you, an assessing look, like he's waiting to see how you react to the lieutenant's words. He leans back, ever so slightly. A desire to retreat.">>
+<</if>>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"Right,\" the man chokes out. \"Well, I'm not sure what to tell you. It sounded...\" He clears his throat awkwardly. \"Well, it didn't sound like anyone *dying*.\"">>
+<<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
+
+::GarteLivingRoom
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant leans in and softly admonishes you. \"Detective,\" he says with gentle reproach. A subtle nudge to keep on topic.">>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Instead, you're distracted by the shiver of his voice in your ear.">>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"What?\" the man croaks, turning several shades whiter. \"Someone is dead? Who?\"">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Your neighbour. A Mr...\" The lieutenant makes a show of examing his notes. \"Jean-François Poulin. I understand you were the one who called in the noise complaint at around 23:00 last night. Is that correct?\"">>
+<<SetSpeaker "Garte">>
+<<AddParagraph "Garte stares at the lieutenant owlishly for a long moment, his throat making abortive, confused sounds, like a chewed-up cassette tape stuck in its player.">>
+<<set _roll to rollDice() + $MOT>>
+<<if _roll >= 8>>
+    <<PassiveSkill "Composure">>
+    <<AddParagraph "Garte's gaze flits to you, an assessing look, like he's waiting to see how you react to the lieutenant's words. He leans back, ever so slightly. A desire to retreat.">>
+<</if>>
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"Right,\" the man chokes out. \"That is... correct. It sounded...\" He clears his throat awkwardly. \"Well, it didn't sound like anyone *dying*.\"">>
+<<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
+
+::GarteSound
+<<SetSpeaker "Garte">>
+<<AddParagraph "Garte closes his eyes in a full-body cringe at that question. \"Look, just... It was late, okay? I don't really remember. It was just *loud*. Music, maybe?\"">>
+<<set _roll to rollDice() + $PSY>>
+<<if _roll >= 10>>
+    <<PassiveSkill "Empathy">>
+    <<AddParagraph "Garte is *supremely* uncomfortable with this line of questioning. In your experience, only one topic can make people this supremely uncomfortable.">>
+    <<PassiveSkill "Rhetoric">>
+    <<AddParagraph "Politics?">>
+    <<PassiveSkill "Inland Empire">>
+    <<AddParagraph "Karaoke?">>
+    <<PassiveSkill "Savoir Faire">>
+    <<AddParagraph "Your trailblazing sense of fashion?">>
+    <<PassiveSkill "Electrochemistry">>
+    <<AddParagraph "*Sex*.">>
+    <<PassiveSkill "Volition">>
+    <<AddParagraph "For once, *that* one is correct. Sex. Though the karaoke was a close second, in Garte's case.">>
+<<else>>
+    <<PassiveSkill "Inland Empire">>
+    <<AddParagraph "You know that feeling. Sometimes you hear strange noises at night too. Sometimes you're the one making the strange noises.">>
+    <<PassiveSkill "Volition">>
+    <<AddParagraph "Can you file a noise complaint against yourself?">>
+<</if>>
+<<AddOption "\"Music, maybe? You called the RCM in the middle of the night because of \'music maybe\'?\"" GarteMusicMaybe>> [[|GarteMusicMaybe]]
+
+::GarteMusicMaybe
+<<SetSpeaker "Garte">>
+<<AddParagraph "\"L-Look, I really need to leave for work. I already told the man on the phone everything I know. Please don't drag me into whatever this is!\" He's already closing the door in your face.">>
+<<AddOption "[Physical Instrument - Easy] Shoulder the door back open." GartePushDoor>> [[|GartePushDoor]]
+<<AddOption "Back off for now. You can question him later." GarteBackOff>> [[|GarteBackOff]]
+
+::GarteBackOff
+<<SetSpeaker "You">>
+<<AddParagraph "Garte's door doesn't close neatly. The wooden frame is weathered and warped, and it takes a couple of awkward shoves before it closes with an unsatisying *shwomp*. You are left staring at a closed door, questions dying on your lips.">>
+<<PassiveSkill "Inland Empire">>
+<<AddParagraph "You've been here before. Not this door, not this building, but this feeling. Your thoughts dangle with frayed edges.">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant clears his throat softly. You turn to see he's already watching you through the sheen on his glasses. \"We can always talk to him later,\" he reminds you gently. \"He might be more amenable when he isn't late to work.\"">>
+<<AddOption "Come back later" 3FHall>> [[|3FHall]]
+
+::GartePushDoor
+<<set _roll to rollDice() + $FYS>>
+<<if _roll >= 8>>
+    <<SkillSucess>>
+    <<PassiveSkill "Physical Instrument">>
+    <<AddParagraph "You plant your palm against the wood and lock your elbow. The door doesn't close, and a push from you sends it swinging back open.">>
+    <<SetSpeaker "Garte">>
+    <<AddParagraph "Garte looks up at you in surprise.">>
+	<<if $GarteKnowsDead = 1>>
+    	<<PassiveSkill "Empathy">>
+    	<<AddParagraph "More than surprise. *Fear*">>
+        <<set _roll to rollDice() + $FYS>>
+        <<if _roll >= 14>>
+        	<<PassiveSkill "Half Light">>
+        	<<AddParagraph "Good. Press your advantage. He knows you could snap him like a twig.">>
+        <</if>>
+    	<<SetSpeaker "You">>
+    	<<AddParagraph "\"We're not done.\"">>
+	<<else>>
+    	<<SetSpeaker "You">>
+    	<<AddParagraph "\"We're not done.\"">>
+    	<<SetSpeaker "Garte">>
+    	<<AddParagraph "\"We... aren't?\" Garte furrows his brows. \"Look, if you want more information on the noise complaint, go ask the man yourselves.\" He indicates Poulin's residence with a jerk of his thumb.">>
+    	<<SetSpeaker "Kim Kitsuragi">>
+    	<<AddParagraph "At your shoulder, the lieutenant takes a fortifying breath. \"Mr. Garte, I regret to inform you that your neighbour, Jean-François Poulin, was murdered sometime last night or early morning.\"">>
+		<<set $GarteKnowsDead = 1>>
+    	<<SetSpeaker "Garte">>
+    	<<AddParagraph "\"What?\" You watch the colour drain from the man's face as his stare shifts between you and the lieutenant. \"So *that's* why you're here...\"">>
+	<</if>>
+	<<SetSpeaker "Kim Kitsuragi">>
+	<<AddParagraph "The lieutenant's gloved grips your shoulder, more a warning than a restraint, a reminder not to lose your cool. You can feel the heat of his hand through your layers of clothing. \"We understand this may have come as a shock,\" he says, his voice carefully measured. \"But we need--\"">>
+	<<SetSpeaker "Garte">>
+	<<AddParagraph "\"What do you want me to say?\" Garte snaps, his voice pitched higher than usual. \"That I didn't see or hear anything? Sure! Fine! I won't tell a soul! Just, please, leave me out of it!\"">>
+	<<set _roll to rollDice() + $INT>>
+    <<if _roll >= 14>>
+    	<<PassiveSkill "Drama">>
+    	<<AddParagraph "\'Won't tell a soul\'? A curious choice of words, sire.">>
+    <</if>>
+	<<SetSpeaker "Garte">>
+	<<AddParagraph "Before you can say anything else or stop him, Garte retreats deeper into his apartment and locks himself in his bedroom. !!!Could use some Shivers in here, maybe?!!!">>
+	<<AddOption "\"He seems upset.\"" GarteUpset>> [[|GarteUpset]]
+<<else>>
+    <<SkillFailure>>
+    <<PassiveSkill "Physical Instrument">>
+    <<AddParagraph "Pitiful. Just pitiful. You try to hold the door open, but all you get for your effort is a blood blister on your thumb where the door pinches your skin.">>
+    <<AddOption "\"Wait!\"" GarteBackOff>> [[|GarteBackOff]]
+<</if>>
+
+::GarteUpset
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant hums, his hand finally slipping from your shoulder. \"I think this murder hits more close to home. Literally. This isn't like the Hanged Man or the Tribunal. He shared a wall with this man and didn't even know he'd been killed.\"">>
+<<set _roll to rollDice() + $PSY>>
+<<if _roll >= 8>>
+    <<PassiveSkill "Esprit de Corps">>
+    <<AddParagraph "The lieutenant's eyebrows pinch together. He hides it well, but he is unsettled.">>
+<</if>>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"We can come back later, when he has returned from work or has had a chance to process. Let's go.\"">>
+<<AddOption "Come back later" 3FHall>> [[|3FHall]]
+
 ::Door305
 <<if $Day < 2>>
     <<SetSpeaker "Apartment 305">>
-    <<AddParagraph "The door reverberates with your cop knock, but no one answers it.">>
+	<<AddParagraph "The door reverberates with your cop knock, but no one answers it.">>
     <<AddOption "Knock harder" KnockHarder305>> [[|KnockHarder305]]
 <</if>>
 <<AddOption "Come back later" 3FHall>> [[|3FHall]]
@@ -989,22 +1270,6 @@ A Disco Elysium Fanwork
 ::KnockHarder305
 <<SetSpeaker "Apartment 305">>
 <<AddParagraph "Your pounding could wake the dead, but no one answers. You'll probably have to come back later.">>
-<<AddOption "Come back later" 3FHall>> [[|3FHall]]
-
-::Door301
-<<if $Day < 2>>
-    <<SetSpeaker "Apartment 301">>
-    <<AddParagraph "The door reverberates with your cop knock, and after a long moment, it swings open partway to reveal the face of someone you were not expecting to see, here.">>
-    <<SetSpeaker "Garte">>
-    <<AddParagraph "If that's not the same shirt he was wearing the last time you saw him at the Whirling, then he's got a closet full of them. Garte looks at you in barely-contained horror, and his eyes widen in surprise when he sees Kim, but they drift back to you, no less horrified. \"You. Again. At my home, this time. I can promise you there are no dead men hanging from trees, here.\"">>
-<</if>>
-<<AddOption "Come back later" 3FHall>> [[|3FHall]]
-
-::TalkToGarteD1
-<<SetSpeaker "Garte">>
-<<AddParagraph "What do you want, now?">>
-<<AddOption "Ask about the noise complaint. It's got his apartment number." GarteNoise>> [[|GarteNoise]]
-<<AddOption "Ask what he knows about the guy next door." GarteNextDoor>> [[|GarteNextDoor]]
 <<AddOption "Come back later" 3FHall>> [[|3FHall]]
 
 ::KimfluenceTestNode
