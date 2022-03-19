@@ -3384,6 +3384,116 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<AddParagraph "The lieutenant clears his throat and pulls his sleeve down back around his wrist. \"Shall we, Detective?\"">>
 <<AddOption "This goes to the car/bar. But there's no there yet." Credits>>[[|Credits]]
 
+::FieldAutopsyNotes
+<<set _back to previous()>>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The lieutenant grabs his ledger, flipping it open to reveal the completed Field Autopsy form on the top of the stack.">>
+<<BlankSpeaker>>
+<<AddParagraph "One might think to look at him that he’d be delicate or fragile, but he’s lived a working life and plays with car parts for fun. His forearms are defined, his hands strong. The grip is easy and sure as he extends the clipboard to you, pale skin disappearing into supple brown leather...">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Lieutenant?\"">>
+<<PassiveSkill Volition>>
+<<AddParagraph "*ahem*">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"Thank you, yes! The form! For the autopsy. The autopsy form.\"">>
+<<PassiveSkill "Savoir Faire">>
+<<AddParagraph "You couldn’t be any less smooth if he dragged you around behind his Coupris.">>
+<<PassiveSkill Logic>>
+<<AddParagraph "For how controlled and careful Kim is in the rest of his life, his handwriting is so bad it borders on anarchic. The man should have been a doctor or something. Good thing you’re are least somewhat used to it.">>
+<<SetSpeaker "FIELD AUTOPSY FORM">>
+<<AddParagraph "Subject name: Poulin, Jean-François.  Date of Birth: N/A.  Age: 40-45. Race: Occidental. Sex: male.  Height: 176 cm.  Weight: 84 kg.  Date of death: May 18th, ‘52.  Case number: HDB-1805-0900. Evidence of treatment: None prior to examination.">>
+<<SetSpeaker "FIELD AUTOPSY FORM, EXTERNAL SUMMARY">>
+<<if $autVKnockoffs >= 1>>
+<<AddParagraph "Single article of clothing – Flared-cuff trousers, mustard yellow, imitation Picquerique.">>
+    <<PassiveSkill Rhetoric>>
+    <<AddParagraph "He trusts you.">>
+    <<PassiveSkill "Esprit de Corps">>
+    <<AddParagraph "It is 09:00 in a shitty Jamrock apartment, and Lieutenant double-yefreitor Harry du Bois does not cry.">>
+<<else>>
+    <<AddParagraph "Single article of clothing – Flared-cuff Picquerique trousers, mustard yellow.">>
+<</if>>
+<<if $autVJizz >= 1>>
+    <<BlankSpeaker>>
+    <<AddParagraph "Dried blood covering chest and abdomen, presumed from victim’s own head wound. Additional material in same area consistent w/ dried seminal fluid.">>
+<<else>>
+    <<AddParagraph "Dried blood covering chest and abdomen, presumed from victim’s own head wound. Additional dried material in same area – min colouration, unidentified. Possible seminal fluid?">>
+<</if>>
+<<if $autVDrugs >= 1>>
+    <<BlankSpeaker>>
+    <<AddParagraph "Powdered residue on cheek, immediately adjacent to nose. Suspect illicit recreational substance.">>
+<<else>>
+<<AddParagraph "Powdered residue on cheek, immediately adjacent to nose. Suspect MDMA.">>
+    <<SetSpeaker YOU>>
+    <<AddParagraph "Can’t help but notice he didn’t include how you came to said conclusion. That’s probably for the best. It’s certainly for the kindest, anyway.">>
+<</if>>
+<<if $autVSkin == 1>>
+    <<BlankSpeaker>>
+    <<AddParagraph "Debris under fingernails of left hand; suspect skin. Relevance TBD.">>
+<</if>>
+<<if $autVSkin == 2>>
+    <<BlankSpeaker>>
+    <<AddParagraph "... There’s not a word here about the hand. You don’t regret that choice one bit.">>
+<</if>>
+<<if $autVSkipInternal == 1>>
+    <<SetSpeaker "FIELD AUTOPSY FORM, INTERNAL SUMMARY">>
+    <<AddParagraph "My god, it’s true. There’s only a single thing written in this field. And it does not look pleased with you.">>
+    <<BlankSpeaker>>
+    <<AddParagraph " °???° ">>
+<<else>>
+    <<if $autVPetechia == 1>>
+    	<<SetSpeaker "FIELD AUTOPSY FORM, INTERNAL SUMMARY">>
+    	<<AddParagraph "Oral Cavity: petechiae, buccal mucosa. Exertion? Drugs? Medical?">>
+    <<else>>
+    	<<SetSpeaker "FIELD AUTOPSY FORM, INTERNAL SUMMARY">>
+    	<<AddParagraph "Oral Cavity:  pinpoints of suspect bleeding on inside of the cheek. Origin unknown.">>
+    <</if>>
+    <<if $autVBite >= 1>>
+    	<<if $knowKimBite >= 1>>
+    		<<PassiveSkill Drama>>
+    		<<AddParagraph "... holy shit. He’s even got the bite on here. The bite which you’re almost positive he himself left.">>
+    	<<else>>
+    		<<SetSpeaker "FIELD AUTOPSY FORM, INTERNAL SUMMARY">>
+    		<<AddParagraph "Purple half-moon contusion on trapezius. Relevance TBD.">>
+    	<</if>>
+	<</if>>
+    <<if $autVJaundice == 1>>
+    	<<SetSpeaker "FIELD AUTOPSY FORM, INTERNAL SUMMARY">>
+    	<<AddParagraph "Hepatobiliary: possible jaundice. (Consistent with liver damage.)">>
+    <</if>>
+    <<if $autVClotting == 1>>
+    	<<SetSpeaker "FIELD AUTOPSY FORM, INTERNAL SUMMARY">>
+    	<<AddParagraph "Cardiovascular: unusually high amount of bruising on victim. Multifocal. Origin not immediately appreciable.">>
+    <</if>>
+<</if>>
+<<SetSpeaker "REQUESTED TESTING">>
+<<AddParagraph "A series of small boxes litter the bottom of the section, below a typed admonishment against unnecessary wastage of resources. A crooked checkmark is in the box adjacent to ‘Toxicology’.">>
+<<SetSpeaker "FIELD AUTOPSY FORM, DESCRIPTION OF INJURIES">>
+<<AddParagraph "Minor contusions on the chest consistent with blunt force, likely postmortem.">>
+<<BlankSpeaker>>
+<<AddParagraph "Hematomas on the cranium, superior/posterior to skull fracture. Non-fatal.">>
+<<BlankSpeaker>>
+<<AddParagraph "Blunt force trauma to the skull and brain, applied at the temple. Skull fractured, brain matter exposed and badly traumatized. Fatal injury.">>
+<<if $autVWeakBar == 1>>
+<<SetSpeaker YOU>>
+<<AddParagraph "Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. That head wound took a few swings, at least. You’re likely looking for someone lacking in upper body strength.">>
+<</if>>
+<<if $autVShortBar == 1>>
+<<SetSpeaker YOU>>
+<<AddParagraph "Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. Based on the angle of those hematomas, that prybar was swung upward at quite an angle. You’re likely looking for someone significantly shorter than your victim.">>
+<</if>>
+<<if $autVSlowBar== 1>>
+If $autVSlowBar:
+<<BlankSpeaker>>
+<<AddParagraph "And of course there was the spatter on the chest, and the bruising where the victim was struck again with the murder weapon. Along the ribs. Without breaking a single one. Either the attacker was running out of steam, or they got lucky with the tip of the prybar against the head, because it wouldn’t take much for someone like you or Kim to bust a few ribs with that kind of weapon.">>
+<</if>>
+<<SetSpeaker "CRIME SCENE PHOTOGRAPH">>
+<<AddParagraph "Finally, the photograph is clipped to the back of the report. Kim was standing to the side when he took it, near the victim’s legs. It depicts the man in an awkward sprawl behind his front door, head facing away from the camera. Between the angle and the bloody head wounds, the face is unidentifiable. A red-brown pool has surrounded his body. His chest hair is thick and matted. His arms and torso are marked by a life lived at speed, decorated in bruises and old scars.">>
+<<BlankSpeaker>>
+<<AddParagraph "He looks a disturbing amount like *you*.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "There’s not much more that can be gleaned from this. You flip the ledger closed and hand it back to the lieutenant.">>
+<<AddOption "Back to business." _back>>
+
 ::Credits
 <<SetSpeaker "Writers">>
 <<AddParagraph "Maverik, Penbrydd, OverlordKye, and The Most Antipodean of Badgers">>
