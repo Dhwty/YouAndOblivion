@@ -2940,7 +2940,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"You’re certain he was not the ‘loud company’ himself?\" He’s still scratching away in his notebook. The corner of his mouth absolutely does not curl up by the faintest hairsbreadth.">>
 <<SetSpeaker "ANDRÉ SVOBODA">>
-<<AddParagraph "\"I mean... maybe sometimes. Couldn’t have been him every time, though. Point being, maybe the missus caught him in his game. If you find her, she can definitely tell you more.\">>
+<<AddParagraph "\"I mean... maybe sometimes. Couldn’t have been him every time, though. Point being, maybe the missus caught him in his game. If you find her, she can definitely tell you more.\"">>
 <<AddParagraph "He leans back, arms crossed as if he’s done. His features look very smug for a man who’s given you precious little.">>
 <<PassiveSkill Logic>>
 <<AddParagraph "It’s not like you didn’t already know there was a second person in the apartment. At best, he’s told you the second person had a high-pitched voice. You found no evidence of a wife in your initial search.">>
@@ -2964,7 +2964,6 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<AddParagraph "There better be a big sign with the victim’s name down there. This guy’s useless.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He’s a good man, Kim. Good enough you can barely hear the small sigh he gives before standing up to follow the man over.">>
-<<AddParagraph "!!! If someone else introduces the fact that Cuno and C are here, we should make it a variable and I’ll add something here for if you’ve already figured it out. !!!">>
 <<AddParagraph "\"... Detective.\" He’s not even looking at you. His eyes are fixated on something below, in the alley.">>
 <<set $seenAlley = 1>>
 <<SetSpeaker "ANDRÉ SVOBODA">>
@@ -3017,7 +3016,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 	<<AddOption "Back to the third floor." 3FHall>>[[|3FHall]]
 <</if>>
 
-::4FCunoTalk 
+::4FCunoTalk
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"You know, aging can be hard for some men.\"">>
 <<SetSpeaker YOU>>
@@ -3044,7 +3043,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Me? Oh, no.\" His face is neutral. His tone is downright jovial as he reaches up to very pointedly adjust his glasses. \"*I* made peace with it a long time ago.\"">>
 <<SetSpeaker YOU>>
-<<AddParagraph "\"Are you suggesting I need glasses??\">>
+<<AddParagraph "\"Are you suggesting I need glasses??\"">>
 <<PassiveSkill  "Physical Instrument">>
 <<AddParagraph "You most definitely do *not* need glasses.">>
 <<PassiveSkill Volition>>
