@@ -2969,28 +2969,37 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<set $seenAlley = 1>>
 <<SetSpeaker "ANDRÉ SVOBODA">>
 <<AddParagraph "\"Now this, this is what I’m talking about.\" The man begins to flap his gums again as you join Kim at the window. You narrow your eyes, squinting around the warping in the glass at some movement down below.">>
-<<set _roll to rollDice() + $MOT>>
-<<if _roll >= 10>>
-    <<PassiveSkill "Perception (Sight)">>
-    <<AddParagraph "[this check is set to 10. edit this later.] They may be four stories down, but there’s no mistaking the two little ginger-haired figures in the alley below. You spent way too much time with those little shits in Martinaise during your formative... weeks to ever be able to forget them. Rooting around through an open skip, flinging rubbish about and screeching at each other, are Cuno and Cunoesse.">>
-    <<SetSpeaker YOU>>
-    <<AddParagraph "\"... Well no shit.\"">>
-    <<SetSpeaker "KIM KITSURAGI">>
-    <<AddParagraph "\"I’m compelled to disagree, detective.\" His voice lilts up, amused. \"It definitely looks like shit down there, to me.\"">>
-    <<set $knowCuno = 1>>
+<<if $knowCuno == 0>>
+	<<set _roll to rollDice() + $MOT>>
+	<<if _roll >= 10>>
+	    <<PassiveSkill "Perception (Sight)">>
+	    <<AddParagraph "[this check is set to 10. edit this later.] They may be four stories down, but there’s no mistaking the two little ginger-haired figures in the alley below. You spent way too much time with those little shits in Martinaise during your formative... weeks to ever be able to forget them. Rooting around through an open skip, flinging rubbish about and screeching at each other, are Cuno and Cunoesse.">>
+	    <<SetSpeaker YOU>>
+	    <<AddParagraph "\"... Well no shit.\"">>
+	    <<SetSpeaker "KIM KITSURAGI">>
+	    <<AddParagraph "\"I’m compelled to disagree, detective.\" His voice lilts up, amused. \"It definitely looks like shit down there, to me.\"">>
+	    <<set $knowCuno = 1>>
+	<<else>>
+	    <<PassiveSkill "Perception (Sight)">>
+	    <<AddParagraph "It’s a long way down from here, and the whorls are distorting the scene below just a little too much. Or at least, that’s what you’re going with. You can make out two small figures rooting about through an open skip, but beyond that, it’s mostly just a blur of grunge and motion.">>
+	    <<PassiveSkill "Physical Instrument">>
+	    <<AddParagraph "This doesn’t have a damn thing to do with your eyesight. There’s nothing wrong with it. You’ve never been some noodle-armed little binoclard, and you’re not about to start now.">>
+	    <<PassiveSkill Logic>>
+	    <<AddParagraph "Kim wears glasses.">>
+	    <<PassiveSkill Electrochemistry>>
+	    <<AddParagraph "How do you suppose he looks without them? You should find out.">>
+	    <<PassiveSkill "Perception (Hearing)">>
+	    <<AddParagraph "Hold on a minute. You may not be able to see them, but those sounds... they’re strangely familiar. On some basic, formative level, you know these sounds.">>
+	    <<SetSpeaker "KIM KITSURAGI">>
+	    <<AddParagraph "\"Sunlight in your eyes, detective?\" Is he – is Kim teasing you?? \"Well. I suppose I’d almost rather be blinded by the glare.\"">>
+	<</if>>
 <<else>>
-    <<PassiveSkill "Perception (Sight)">>
-    <<AddParagraph "It’s a long way down from here, and the whorls are distorting the scene below just a little too much. Or at least, that’s what you’re going with. You can make out two small figures rooting about through an open skip, but beyond that, it’s mostly just a blur of grunge and motion.">>
-    <<PassiveSkill "Physical Instrument">>
-    <<AddParagraph "This doesn’t have a damn thing to do with your eyesight. There’s nothing wrong with it. You’ve never been some noodle-armed little binoclard, and you’re not about to start now.">>
-    <<PassiveSkill Logic>>
-    <<AddParagraph "Kim wears glasses.">>
-    <<PassiveSkill Electrochemistry>>
-    <<AddParagraph "How do you suppose he looks without them? You should find out.">>
-    <<PassiveSkill "Perception (Hearing)">>
-    <<AddParagraph "Hold on a minute. You may not be able to see them, but those sounds... they’re strangely familiar. On some basic, formative level, you know these sounds.">>
-    <<SetSpeaker "KIM KITSURAGI">>
-    <<AddParagraph "\"Sunlight in your eyes, detective?\" Is he – is Kim teasing you?? \"Well. I suppose I’d almost rather be blinded by the glare.\"">>
+	<<PassiveSkill "Perception (Sight)">>
+	<<AddParagraph "The alley looks exactly as you expect it to look. Rubbish, brick and cobble, and two screechy ginger adolescents. Nothing suspicious about it.">>
+	<<SetSpeaker YOU>>
+	<<AddParagraph "It takes a moment of scanning the area before you realize that Cuno and Cunoesse are the reason the tenant's dragged you over.">>
+	<<SetSpeaker "KIM KITSURAGI">>
+	<<AddParagraph "The expression on the lieutenant’s face next to you is placid, calm. He’s done here.">>
 <</if>>
 <<SetSpeaker "ANDRÉ SVOBODA">>
 <<AddParagraph "\"... a real public menace, you know? Constantly in and out of the bins, they reek to high heaven, probably into drugs – \"">>
@@ -3008,10 +3017,110 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 	<<AddOption "Back to the third floor." 3FHall>>[[|3FHall]]
 <</if>>
 
-::4FCunoTalk
+::4FCunoTalk 
 <<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "And I thought I was the one who needed glasses. That red smear trashing the skip was *Cuno*. !!!Filler line.!!!">>
-<<AddOption "Back to the third floor." 3FHall>>[[|3FHall]]
+<<AddParagraph "\"You know, aging can be hard for some men.\"">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"... Oh?\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The lieutenant pushes the door shut behind you as you enter the stairwell. \"Mm. The body begins to go through some changes, you know. It’s perfectly natural, though. Very normal.\"">>
+<<SetSpeaker YOU>>
+<<AddParagraph "Oh, he’s definitely giving you shit.">>
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "Who’s he think you are, anyway? Changes?? You’re every bit the beefcake you’ve ever been. You could take him any day.">>
+<<PassiveSkill Electrochemistry>>
+<<AddParagraph "You could try. Tell him so. Tell him you want to take him. Do it.">>
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "Yes, do it! You tell him, supercop!">>
+<<PassiveSkill Electrochemistry>>
+<<AddParagraph "Oh, this is an excellent idea.">>
+<<AddOption "Do it." 4FDoIt>>[[|4FDoIt]]
+<<AddOption "You’re reckless, but you’re not *that* reckless." 4FDoNot>>[[|4FDoNot]]
+
+::4FDoNot
+<<SetSpeaker YOU>>
+<<AddParagraph "Focus, focus. What was he saying? Right, aging.">>
+<<AddParagraph "\"If you’re trying to tell me you’re having a hard time with it, I’m here for you, buddy.\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Me? Oh, no.\" His face is neutral. His tone is downright jovial as he reaches up to very pointedly adjust his glasses. \"*I* made peace with it a long time ago.\"">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"Are you suggesting I need glasses??\">>
+<<PassiveSkill  "Physical Instrument">>
+<<AddParagraph "You most definitely do *not* need glasses.">>
+<<PassiveSkill Volition>>
+<<AddParagraph "Mmm... how sure are you about that?">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Oh, right. I suppose the sun was just in your eyes, hm?\"">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"... Maybe.\"">>
+<<PassiveSkill Logic>>
+<<AddParagraph "Actually, though it has stopped raining, it’s still quite overcast.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"At least this time you weren’t missing out on much. Just a couple of... well. Painfully familiar youths.\" He almost wrinkles his nose at that.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "Hang on. Painfully familiar? You’re not familiar with any kids, not really; they’re usually more under Counter-Truancy or Juvenile Crimes. In fact, the only kids you can think of off the top of your head are...">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"No.\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The lieutenant reaches past you to open the door to the third floor as you stutter to a halt. \"Oh yes, Detective. Unfortunately so.\"">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"... Cuno.\"">>
+<<AddOption "Somehow, I’d rather talk to the dead guy." 3FHall>>[[|3FHall]]
+
+::4FDoIt
+<<SetSpeaker YOU>>
+<<AddParagraph "You spin on the spot as your foot hits the first landing, giving the lieutenant a challenging grin. \"You say that, but I think I could take you.\"">>
+<<PassiveSkill "Reaction Speed">>
+<<AddParagraph "He froze. Just for a second, did you see that?">>
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "Because he knows it’s true! Just look at you!">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Oh you think so, do you?\" He pushes his way onto the landing using nothing but his personal space and a sharp look. It’s enough to back you up a step to let him.">>
+<<PassiveSkill Electrochemistry>>
+<<AddParagraph "You should elaborate.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"Damn right. I’ll show you my perfectly natural ‘changes’ up close and personal. What, don’t think I would?\"">>
+<<PassiveSkill Composure>>
+<<AddParagraph "Is it hot in this stairwell??">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Don’t think you would what, Detective? Take me?\" He lets out a small huff, almost a laugh.">>
+<<PassiveSkill Authority>>
+<<AddParagraph "Almost a challenge.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"You know, I don’t know if you could.\"">>
+<<PassiveSkill Authority>>
+<<AddParagraph "*Definitely* a challenge. Does he think – ">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"At any rate, no one is taking anyone at the top of a flight of stairs.\" Oh. Right. He points one gloved hand downward, toward the next landing.">>
+<<PassiveSkill "Pain Threshold">>
+<<AddParagraph "Man’s got a point.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"... Fine,\" you grumble. He can have this one. You turn to make your way down again.">>
+<<PassiveSkill Authority>>
+<<AddParagraph "It absolutely does not mean you agree.">>
+<<PassiveSkill Electrochemistry>>
+<<AddParagraph "... Did you catch that tone, though?">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Now, if you’re quite through, I’m afraid I have to break some bad news to you. About that alley.\"">>
+<<SetSpeaker YOU>>
+<<AddParagraph "Uh oh.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"I’m desperately hoping it won’t become relevant, but the two little reprobates down there...\" He breathes a resigned sigh out through his nose. \"I recognized them.\"">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"From your juvie days?\" He hates that time. It’s understandable.">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"No, Detective. You will, too.\" He allows himself a smirk. \"Well, if you get close enough to see them, of course.\"">>
+<<PassiveSkill Encyclopedia>>
+<<AddParagraph "Statistically unlikely. You still remember so few people from before your attempt at self-obliteration in Martinaise, and given that you’re not Juvenile Crimes, very few of your cases actually involve children in any meaningful capacity. There have been nine over the past year in which youth were involved, of which only three were teenagers. Of those three, the two most notable would unquestionably have to be – ">>
+<<PassiveSkill Composure>>
+<<AddParagraph "Ah, fuck.">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"Ah, fuck.\"">>
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"Indeed.\"">>
+<<SetSpeaker YOU>>
+<<AddParagraph "\"... Cuno.\"">>
+<<AddOption "I’d almost rather talk to the stiff." 3FHall>>[[|3FHall]]
 
 ::ColdOut
 <<PassiveSkill "LOGIC">>
