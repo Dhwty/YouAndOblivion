@@ -1462,6 +1462,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "To business, then. \"First item... clothing. Not bad.\" The low huff of breath from Kim is definitely *not* laughter. \"Pants: mustard yellow, size large. Vintage Piqueriques.\"">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 11>>
+	<<set $autVKnockoffs = 1>>
     <<PassiveSkill "Perception (Sight)">>
     <<AddParagraph "Wait... no. Look at the stitching on the belt loops, along the hem. It's the right colour but it's *clumsy*, already starting to pick apart. These are knockoffs.">>
     <<AddParagraph "\"Scratch that. Mustard yellow *knockoff* Picqueriques.\"">>
@@ -1518,6 +1519,7 @@ A Disco Elysium Fanwork
 ::AutPocketKnife
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 9>>
+	<<set $autVSkin = 1>>
     <<SkillSuccess>>
     <<PassiveSkill "Interfacing">>
     <<AddParagraph "You're not the first cop to run a blade tip under a fingernail, and you won't be the last. A small bit of *something* catches on the metal, sliding out smooth as you please.">>
@@ -1544,6 +1546,7 @@ A Disco Elysium Fanwork
 <<AddOption "Listen to your partner. Omit it from the report." AutL2Kim>>[[|AutL2Kim]]
 
 ::AutL2Kim
+<<set $autVSkin = 2>>
 <<SetSpeaker "YOU">>
 <<AddParagraph "Kim's right. It's probably not relevant with the state of the apartment.">>
 <<KimfluenceGained 1>>
@@ -1573,6 +1576,7 @@ A Disco Elysium Fanwork
 <<AddOption "Move on" AutFacePowder>>[[|AutFacePowder]]
 
 ::AutRubIt
+<<set $autVJizz = 1>>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 9>>
     <<SkillSuccess>>
@@ -1618,6 +1622,7 @@ A Disco Elysium Fanwork
 <<KimfluenceLost 1>>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 11>>
+	<<set $autVDrugs = 1>>
     <<SkillSuccess>>
     <<PassiveSkill "Perception (Taste)">>
     <<AddParagraph "There's no pretending there's anything pleasant about this decision. Lieutenant Kitsuragi's sigh of protest is the dinner music, notes of bitterness and a faintly unnatural flavour the main course – something other than just the taste of latex on the tip of your tongue, that is. At least it told you what you wanted to know: you've met this one before.  It's almost certainly the amphetamine derivative MDMA, the active ingredient in ecstasy.">>
@@ -1628,6 +1633,7 @@ A Disco Elysium Fanwork
 <</if>>
 <<set _roll to rollDice() + $FYS>>
 <<if _roll >= 8>>
+	<<set $autVDrugs = 1>>
     <<PassiveSkill Electrochemistry>>
     <<AddParagraph "A nasty taste for a lovely girl, but we don't hold that against her, do we. Molly's given us some of the best groping we've ever had. Do you remember that night you spent rubbing yourself on every single article of clothing you owned? Shit, do you remember what it's like to feel *good*, Harry?  What it's like to feel... ecstatic?">>
 <</if>>
@@ -1700,6 +1706,7 @@ A Disco Elysium Fanwork
 <<AddOption "That just means it should be quick. May as well start at the top." AutManagement>>[[|AutManagement]]
 
 ::AutNotPatho
+<<set $autVSkipInternal = 1>>
 <<KimfluenceLost 1>>
 <<set $StationRep -=1>>
 <<SetSpeaker "KIM KITSURAGI">>
@@ -1715,13 +1722,12 @@ A Disco Elysium Fanwork
 <<SetSpeaker YOU>>
 <<AddParagraph "You fish a small pen light out of your pocket – clean hand again, you've gotten good at this – and pretend it's not the one Lieutenant Kitsuragi loaned you last week. Slowly now, you try to rotate the head for a better look. It does not work. Tacky blood pulls apart from itself, clinging like a grisly halo to the cheek and jaw, the only thing resembling salvation in this whole flat.">>
 <<AddParagraph "You pull down the eyelids to examine the conjunctiva (pale, boring). The eyes themselves are blank, irises completely dilated in death. Blood streaks through his straw-coloured sclerae, mainly on the side with the massive head trauma (you don't say). Next, a tiny shimmer of light directly up the nostrils (scabbed and powdery, which is to say unremarkable). Finally, the mouth...">>
-<<set _roll to rollDice() + $FYS>>
-<<if _roll >= 9>>
-    <<PassiveSkill "Physical Instrument">>
-    <<AddParagraph "There's nothing fun about fighting rigor mortis, but that doesn't make it difficult for a cop like you. You pop the end of the penlight into your own mouth as you use both hands to pry open the cadaver's with a gritty crunch. The tongue is fat and flaccid where it lolls against the bloody rug underneath. Most of the mouth is purple and yellowish-white, but there, against the cheek – dark red speckling in the meaty mucosa.">>
-<</if>>
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "There's nothing fun about fighting rigor mortis, but that doesn't make it difficult for a cop like you. You pop the end of the penlight into your own mouth as you use both hands to pry open the cadaver's with a gritty crunch. The tongue is fat and flaccid where it lolls against the bloody rug underneath. Most of the mouth is purple and yellowish-white, but there, against the cheek – dark red speckling in the meaty mucosa.">>
 <<set _roll to rollDice() + $INT>>
 <<if _roll >= 8>>
+	<<set $autVPetechia = 1>>
+	<<set $autVBite = 1>>
     <<PassiveSkill Encyclopedia>>
     <<AddParagraph "Petechiae occur where capillaries have broken, creating tiny red pinpricks against the skin. They are typically found in small clusters where an injury has occurred, but can also be caused in greater quantity or broader pattern by some types of medications, illnesses, and generally straining like hell.">>
     <<SetSpeaker YOU>>
@@ -1766,6 +1772,7 @@ A Disco Elysium Fanwork
 <</if>>
 
 ::AutKimSpots
+<<set $autVPetechia = 1>>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant pauses only a moment before stepping behind you. And then, in a single handsbreadth, the world narrows. There's leather on your scapula, strong fingers curling slowly into the muscle of your shoulder. He's *close* behind you, close enough for a hint of pine to tickle your senses. He's...">>
 <<AddParagraph "He's leaning on you. The bastard's using you as a post, so he doesn't have to get his shoes bloody.">>
@@ -1792,6 +1799,7 @@ A Disco Elysium Fanwork
 <<AddOption "You don't want to look like an idiot if you're wrong. Leave this one to the pathologists." AutCVS>>[[|AutCVS]]
 
 ::AutKimHepato
+<<set $autVJaundice = 1>>
 <<set $StationRep += 1>>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"He was overweight and drinking himself to death. Hardly surprising.\"">>
@@ -1810,6 +1818,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "Well it's leaky, that's for damn sure. It's spilled absolutely everywhere. It's pooling in the backs of his arms and the side of his face, where they've lain for hours against the dirty floor. You know if you took off his pants, you'd see the same on the backs of his legs and the cheeks of his ass. And frankly, the number of bruises this guy's sporting is impressive, both old and new.">>
 <<set _roll to rollDice() + $INT>>
 <<if _roll >= 10>>
+	<<set $autVClotting = 1>>
     <<PassiveSkill "Visual Calculus">>
     <<AddParagraph "Actually, now that you're thinking about it, it's not just impressive. It's *odd*. Some of them look normal, but others are a bright, livid purple, and in unusual places. Here, on the inside of a wrist – judging by the cigarette stains on his fingers, the wrist of his dominant hand. More on an upper arm, another around a nipple, a couple on the belly, that one right under his waistband...">>
     <<set _roll to rollDice() + $PSY>>
@@ -1842,6 +1851,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "It isn't so hard to parse which injuries are relevant and which ones aren't. There are really only a few that seem to be involved with the actual homicide. Here on the chest for example, a short smear of blood, with spatter flying the wrong way. As if from a bloodied prybar, for example, swung at speed.">>
 <<set _roll to rollDice() + $FYS>>
 <<if _roll >= 9>>
+	<<set $autVSlowBar = 1>>
     <<PassiveSkill "Physical Instrument">>
     <<AddParagraph "Not at *high* speed, mind you. You could do better than this with one arm. Hell, didn't even break a rib.">>
 	<<set $knowKiller += 1>>
@@ -1940,6 +1950,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "And it is pulpy, too, not nice and clean like in those tawdry crime serials the bookshop sells. The bone has fractured along its symphyses, where the skull plates meet. There are probably hairline fractures in the plates themselves, but gentle pressure doesn't cause any of the bone to give under your fingers. What it does yield, however, are a couple of big, soft hematomas right next door. In fact...">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 11>>
+	<<set $autVWeakBar = 1>>
     <<PassiveSkill "Perception (Sight)">>
     <<AddParagraph "You smooth as much as you can out of the way of the primary injury to get a good look at that skull fracture. The way the bone splintered tries to hide it, but you've seen enough breaks to know the difference. This definitely wasn't one clean hit.">>
     <<PassiveSkill "Physical Instrument">>
@@ -1952,6 +1963,7 @@ KCC is now: $knowKimsCorpseClue
     	<<AddParagraph "At least this should help take suspicion off the lieutenant. He's wiry, but it's deceptive; he's almost as strong as you are on your good days. And Kim wouldn't swing unless he meant it. This guy would have hit the floor on the first hit, like a sack of very bloody potatoes.">>
 	<</if>>
 <<else>>
+	<<set $autVShortBar = 1>>
     <<PassiveSkill "Perception (Sight)">>
     <<AddParagraph "Damn. There's no way to get a really good look at the actual point of fracture. Tissue's a stubborn thing, the way it clings to the bone beneath, and a mess like this is above your pay grade. Let him keep his skull fragments. You settle for sliding your fingers around the scalp, checking out the other injuries. There are just the two hematomas present – soft, bulbous mounds of blood up above the ear and temple, a pair of bloated fingers stretching towards the top of the head.">>
     <<PassiveSkill "Visual Calculus">>
@@ -2341,11 +2353,10 @@ KCC is now: $knowKimsCorpseClue
     <<SkillSuccess>>
     <<PassiveSkill Authority>>
     <<AddParagraph "A bead of sweat forms at your hairline, but you have the upper hand. His prybar, wet with blood, next to the murder victim. He knows how this must look.">>
-
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "Finally, he deflates, his orange jacket sagging with his shoulders like an empty parachute. \"I can't believe I'm about to say this, but can you please say something?\"">>
     <<AddOption "\"Something.\"" Something>> [[|Something]]
-    <<AddOption "\I mean... I don't know if it was missing, but we found your prybar.\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
+    <<AddOption "\"I mean... I don't know if it was missing, but we found your prybar.\"" IsThisYourPrybar>> [[|IsThisYourPrybar]]
 <<else>>
     <<SkillFailure>>
     <<PassiveSkill Authority>>
