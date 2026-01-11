@@ -2557,8 +2557,7 @@ KCC is now: $knowKimsCorpseClue
 <<PassiveSkill "Visual Calculus">>
 <<AddParagraph "The room is a lived-in sort of disheveled. A robe lies on the floor where it had slithered off its hook, shoes kicked in every direction. Familiar brown bottles line the dresser, though one fallen soldier lies on the floor. About elbow height, it would be easy to have knocked it over in a disorganised stumble to the bed.">>
 <<PassiveSkill "Perception (Sight)">>
-<<AddParagraph "On the bedside table sits a bottle of wine, a rich claret. It's not the *good* stuff, maybe ten real at most. Half empty, two glasses...
-You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distracted, itemising the scene in his notebook. He won't see. He won't know.">>
+<<AddParagraph "On the bedside table sits a bottle of wine, a rich claret. It's not the *good* stuff, maybe ten real at most. Half empty, two glasses... You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distracted, itemising the scene in his notebook. He won't see. He won't know.">>
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "Take it! Bring it with you! You're going to need all the help you can get! It's been too long since we had a real *party*, and this right here is an excellent start.">>
 <<PassiveSkill "Volition">>
@@ -2824,7 +2823,7 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<AddParagraph "The man nods. \"I am. André Svoboda, pleased to make your acquaintance.\" He gestures you to his modest dining table. \"My grandfather was Graadian,\" he adds, as if his surname is a matter of some concern.">>
 <<PassiveSkill Logic>>
 <<AddParagraph "Why would the RCM give a shit about who his grandfather was? We’re looking into murders, not dynasties.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "APARTMENT 403">>
 <<AddParagraph "It’s a modest apartment, nothing unusual for the area or the building. Bits of clutter here and there. The radio swings into another upbeat ditty from the late ‘30s. A dining chair creaks under your weight as you sit, mercifully louder than your bones do.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "Kim pulls out his latest notebook, a quiet *clak-clak* as it falls open to the newest clean page. He pulls out his pen and looks to you.">>
