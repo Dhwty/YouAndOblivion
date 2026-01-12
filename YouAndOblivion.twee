@@ -79,6 +79,12 @@ a:active {
   color: #e4b934;
 }
 
+.disco {
+	background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+	background-clip: text;
+	color: transparent;
+}
+
 .speaker {
   text-transform: uppercase;
   margin-left: -1.5em;
@@ -229,6 +235,7 @@ window.rollDice = function() {
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
 <<set $fysique to ["electrochemistry", "endurance", "half light", "pain threshold", "physical instrument", "shivers"]>>
 <<set $psyche to ["authority", "empathy", "esprit de corps", "inland empire", "suggestion", "volition"]>>
+<<set $disco to ["HORRIFIC NECKTIE"]>>
 /*Basic Bitch Harry*/
 <<set $copotype to "BasicBitchCop">>
 <<set $INT to 3>>
@@ -352,6 +359,10 @@ _skillname +
 "@@")>>
 <<elseif $psyche.includes(_skillname)>>
 <<set $currentspeaker to ("@@.psyche.speaker;" +
+_skillname +
+"@@")>>
+<<elseif $disco.includes(_skillname)>>
+<<set $currentspeaker to ("@@.disco.speaker;" +
 _skillname +
 "@@")>>
 <</if>>
@@ -1582,7 +1593,7 @@ A Disco Elysium Fanwork
     <<SkillSuccess>>
     <<PassiveSkill Interfacing>>
     <<AddParagraph "You pick a decent-sized web of yellow-white flaking, something filmy tanned and dried on a rack of dark brown hair. It rubs out easily enough – no pun intended. Unfortunately, you're pretty sure this is *exactly* what it looks like.">>
-    <<SetSpeaker "HORRIBLE NECKTIE">>
+    <<PassiveSkill "HORRIFIC NECKTIE">>
     <<AddParagraph "YOU KNOW WHAT THIS IS, DON'T YOU, HARRY! LOOKS JUST LIKE YOURS, DOESN'T IT? SPUNK! ERECTOPLASM! DONG SAUCE! SOMEONE BLEW A MAGNIFICENT LOAD ON HIS CHEST!">>
 	<<set $knowJizz = 1>>
 <<else>>
@@ -2151,7 +2162,7 @@ KCC is now: $knowKimsCorpseClue
 	    <<AddParagraph "It's not just blood that's staining this place; there are older sins here, too. Ash ground into the rug. Open bottles, unmarked and overturned, capsules of heaven slipped one by one into the abyss until all that remains are empty plastic carcasses. And there, on the upholstery, one you know all too well: the remains of the fallen, lost on their way to a glory that did not truly await them.">>
 		<<set $knowJizz = 1>>
 		<<if $knowSofaJizz < 1>>
-			<<SetSpeaker "HORRIFIC NECKTIE">>
+			<<PassiveSkill "HORRIFIC NECKTIE">>
 			<<AddParagraph "THAT'S NOT AN OIL STAIN! THAT'S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!">>
 			<<SetSpeaker "YOU">>
 			<<AddParagraph "\"Well, at least he knew how to have a good time.\"">>
@@ -2261,7 +2272,7 @@ KCC is now: $knowKimsCorpseClue
     <<KimfluenceLost 1>>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "Kim's face twists, a muscle in the corner of his eye twitching. He shifts his balance and clears his throat.">>
-    <<SetSpeaker "HORRIFIC NECKTIE">>
+    <<PassiveSkill "HORRIFIC NECKTIE">>
     <<AddParagraph "\"Oh, Bratan, he liked that! Imagine how much he'll like it when you lick it off the sofa!\"">>
     <<AddOption "Yes. Good idea!." Cumsicle>> [[|Cumsicle]]
     <<AddOption "No, no he didn't. Why do I wear you? Why are you like this?" DoneFuckedUp>> [[|DoneFuckedUp]]
@@ -2485,13 +2496,13 @@ KCC is now: $knowKimsCorpseClue
     <<AddParagraph "One pyrholidon trip? *One?* You stuffy git, one jar of liquid sunshine and you're flying for weeks. *Weeks!* Imagine how fast you'll solve this case, when you can think at the speed of light, while your corporeal form stands for perhaps an hour at most. You know who'll agree with me? Your tie will, and since when is your tie wrong? OI! OI, TIE.">>
     <<SetSpeaker "YOU">>
     <<AddParagraph "And you want to bring -">>
-    <<SetSpeaker "HORRIFIC NECKTIE">>
+    <<PassiveSkill "HORRIFIC NECKTIE">>
     <<AddParagraph "DID I HEAR PYRHOLIDON, BRATAN? IT WILL BE BEAUTIFUL, BEAUUUUTIFUL. SOME WINE, A SUNSET, PYRHOLIDON... BRING KIM TOO! IMAGINE IT! HE COULD DRAPE YOU OVER A ROCK AND IT WOULD LAST FOREVER!">>
     <<PassiveSkill "Volition">>
     <<AddParagraph "Oh, shut *up*">>
     <<PassiveSkill "Logic">>
     <<AddParagraph "Oh, shut *up*">>
-    <<SetSpeaker "HORRIFIC NECKTIE">>
+    <<PassiveSkill "HORRIFIC NECKTIE">>
     <<AddParagraph "(Your tie gives off a particular sensation you can only describe as \"miffed\".)">>
     <<SetSpeaker "YOU">>
     <<AddParagraph "I'm seriously done with you. I made my decision while you were squabbling.">>
@@ -3169,7 +3180,7 @@ KCC is now: $knowKimsCorpseClue
 ::Taste
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant arches an eyebrow and gives your outfit a long, slow once-over, lingering on your tie. \"Mmm. I'm not sure if that's the compliment you think it is, Detective.\" His eyes gleam with amusement.">>
-<<SetSpeaker "HORRIFIC NECKTIE">>
+<<PassiveSkill "HORRIFIC NECKTIE">>
 <<AddParagraph "\"NOT A COMPLIMENT? YOU'RE ONE TO TALK, BINOCLARD. ORANGE IS NOT YOUR COLOUR!\"">>
 <<AddOption "\"Anyway. All that to say, I'm sure the reason you have your sleeves rolled down is because of Fashion and not because you're hiding something.\"" HidingSomething>> [[|HidingSomething]]
 
