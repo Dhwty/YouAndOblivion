@@ -861,7 +861,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Reaction Speed">>
 <<AddParagraph "The lieutenant drops a folder into your lap. You catch it before its contents can spill onto the floor.">>
 <<PassiveSkill "Perception (Smell)">>
-<<AddParagraph "Stale smoke fills your lungs, and you realise the back of the motor carriage -- and the lieutenant's jacket -- smell like a dive bar ashtray, like he had spent all night in a smoky bar. Or maybe like he had started started smoking early, today, and in the Kineema...">>
+<<AddParagraph "Stale smoke fills your lungs, and you realise the back of the motor carriage -- and the lieutenant's jacket -- smell like a dive bar ashtray, like he had spent all night in a smoky bar. Or maybe like he had started smoking early, today, and in the Kineema...">>
  <<AddOption "[Perception - Easy 8] \"Have you been smoking, this early?\"" SmokeCheck>>[[|SmokeCheck]]
 
 ::SmokeCheck
@@ -1252,7 +1252,7 @@ A Disco Elysium Fanwork
     	<<AddParagraph "\"What?\" You watch the colour drain from the man's face as his stare shifts between you and the lieutenant. \"So *that's* why you're here...\"">>
 	<</if>>
 	<<SetSpeaker "KIM KITSURAGI">>
-	<<AddParagraph "The lieutenant's gloved grips your shoulder, more a warning than a restraint, a reminder not to lose your cool. You can feel the heat of his hand through your layers of clothing. \"We understand this may have come as a shock,\" he says, his voice carefully measured. \"But we need--\"">>
+	<<AddParagraph "The lieutenant's gloved hand grips your shoulder, more a warning than a restraint, a reminder not to lose your cool. You can feel the heat of his hand through your layers of clothing. \"We understand this may have come as a shock,\" he says, his voice carefully measured. \"But we need--\"">>
 	<<SetSpeaker "GARTE">>
 	<<AddParagraph "\"What do you want me to say?\" Garte snaps, his voice pitched higher than usual. \"That I didn't see or hear anything? Sure! Fine! I won't tell a soul! Just, please, leave me out of it!\"">>
 	<<set _roll to rollDice() + $INT>>
@@ -1502,7 +1502,7 @@ A Disco Elysium Fanwork
 	<<if $knowKimsCorpseClue > 0>>
 		<<if $Kimfluence > 0>>
     		<<AddParagraph "And regardless of how you'd feel about it, you get the distinct impression it would sit poorly with the lieutenant.">>
-    		<<AddParagraph "Fuck the Picqueriques. You produce a pocketknife from your coat – with your *clean* hand, thank you – and slide the thin blade through the eyehole where the button sits. It's not hard. It's already been stretched halfway to ruin. The button pops before the fabric gives, but the end result is the same: you can open them now.">>
+    		<<AddParagraph "Fuck the Picqueriques. You produce a pocketknife from your coat – with your *clean* hand, thank you – and slide the thin blade through the eyehole where the button sits. It's not hard. It's already been stretched halfway to ruin. The button pops before the fabric gives, but the end result is the same: you can open them now. <!-- Need to amend this; it needs to be able to trigger before you get the pants open on failure. -->">>
 		<</if>>
 	<</if>>
 <</if>>
@@ -1515,7 +1515,7 @@ A Disco Elysium Fanwork
     <<AddParagraph "Your gloves follow the hallmarks of the dead man's life where they've fallen on now-insensate flesh; your own aches in sympathy. Bruises bloom purple on white, violets in the window. Here, the flesh livid with pooling blood; life as it has tried to seep away. He is still in the early stages of decay, but livor mortis waits for no one.">>
 <</if>>
 <<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "The lieutenant copies dutifully as you list details. Hair. Freckles. Birth marks. Estimates on height and weight. A laundry list of contusions and injuries – some old, some to be expanded on at the end. The scratching of his pen is rhythmic. You know if you could see it from here, the henscratch would be sharp, angular, and precise. Just like him.">>
+<<AddParagraph "The lieutenant copies dutifully as you list details. Hair. Freckles. Birth marks. Estimates on height and weight. A laundry list of contusions and injuries – some old, some to be expanded on at the end. The scratching of his pen is rhythmic. You know if you could see it from here, the henscratch would be sharp, angular, and precise. Just like him. <!-- Have to change this, apparently lol -->">>
 <<SetSpeaker "YOU">>
 <<AddParagraph "There's only one thing left to establish before you move on to the next section of the autopsy: to decide what the hell is all over this man. Something off-colour under a few of the fingernails, blunted and short as they are. Residue on the cheek, a streak small but damning, and fortunate to have escaped the burble of purge coming from the nostrils. And the centrepiece: a marbled garnish of red and off-white crusted in through the thick pelt adorning the man's naked chest and belly.">>
 <<PassiveSkill Electrochemistry>>
@@ -1550,7 +1550,7 @@ A Disco Elysium Fanwork
 <<else>>
     <<SkillFailure>>
     <<PassiveSkill "Interfacing">>
-    <<AddParagraph "Heavens only know why you thought it was a good idea to take a knife to a dead man. At least the poor bloke can't feel the half-centimetre laceration you've just added to his collection. Maybe best not to try the other two fingers, hmm?.">>
+    <<AddParagraph "Heavens only know why you thought it was a good idea to take a knife to a dead man. At least the poor bloke can't feel the half-centimetre laceration you've just added to his collection. Maybe best not to try the other two fingers, hmm?">>
 	 <<AddOption "Move on." AutCrustyRug>>[[|AutCrustyRug]]
 <</if>>
 
@@ -1780,7 +1780,7 @@ A Disco Elysium Fanwork
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "\"Khm. Well. Good for him.\" And just like that, he's disinterested again. May as well be talking about the outlet on the wall.">>
 	<<SetSpeaker "YOU">>
-    <<AddParagraph "\"I've got petechial haemorrhage on the inside of the cheek, under the jaw, and down the neck. We should see if we can track down the person who gave him this... souvenir, in case they can tell us if the guy had enemies. As for the autopsy form...\"">>
+    <<AddParagraph "\"I've got petechial haemorrhage on the inside of the cheek, under the jaw, and down the neck. We should see if we can track down the person who gave him this... souvenir, in case they can tell us if the guy had enemies. As for the autopsy form...\"[!!! I have to fix this; if you didn't find the bite, it makes no sense. I need to smooth out the transition from here to AutHepatoRep, too. Phrasing feels clunky !!!]">>
     <<AddOption "\"... we should add it.\"" AutHepatoRep>>[[|AutHepatoRep]]
     <<AddOption "\"... don't bother. Let's move on.\"" AutHepato>>[[|AutHepato]]
 <<else>>
@@ -1951,6 +1951,8 @@ A Disco Elysium Fanwork
 
 ::AutTwoAndTwo
 KCC is now: $knowKimsCorpseClue
+<<SetSpeaker "DEVNOTE">>
+<<AddParagraph "!!! Also need to smooth this out. This branching dialogue stuff is hard! !!!">>
 <<if $knowKimsCorpseClue >=5>>
 	<<if $knowKimsPrybar < 1>>
 		<<PassiveSkill Empathy>>
@@ -2359,7 +2361,7 @@ KCC is now: $knowKimsCorpseClue
 ::IsThisYourPrybar
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He sighs but doesn't deny it. \"Yes. Good work, Detective,\" he says with a desert dryness.">>
-<<AddOption "\"Cool.\" You talk about something else." PrybarConvo>> [[|PrybarConvo]]
+<<AddOption "\"Cool.\" You talk about something else. [!!! Cycles back up to restart prybar talk !!!]" PrybarConvo>> [[|PrybarConvo]]
 <<AddOption "\"How did it end up here?\"" HowDidItGetHere>> [[|HowDidItGetHere]]
 <<AddOption "\"I see what this is. You killed this man, and now you need me to help you hide his incredibly fashionable body. Say no more.\"" HideTheBody>> [[|HideTheBody]]
 
@@ -2383,7 +2385,7 @@ KCC is now: $knowKimsCorpseClue
     <<PassiveSkill Authority>>
 	<<AddParagraph "You concentrate so hard that you forget to breathe. The spots gathering at the edges of your vision blot out what you can see of the lieutenant. You finally suck in a breath and forget what you were doing.">>
 	<<AddParagraph "Dead body. Right. Best not to keel over into all that blood.">>
-    <<AddOption "Talk about something else." PrybarConvo>> [[|PrybarConvo]]
+    <<AddOption "Talk about something else. [!!! Cycles back up to restart prybar talk !!!]" PrybarConvo>> [[|PrybarConvo]]
 <</if>>
 
 ::HideTheBody
@@ -2409,12 +2411,12 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "He's a little unsettled by how quickly you were willing to help him destroy evidence of a murder.">>
 <<PassiveSkill "Empathy">>
 <<AddParagraph "But also a little touched.">>
-<<AddOption "Talk about something else." PrybarConvo>>[[|PrybarConvo]]
+<<AddOption "Talk about something else. [!!! Cycles back up to restart prybar talk !!!]" PrybarConvo>>[[|PrybarConvo]]
 
 ::HowDidItGetHere
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"I don't know,\" Kim says softly. \"I was hoping you could help me find that out.\"">>
-<<AddOption "Talk about something else." PrybarConvo>>[[|PrybarConvo]]
+<<AddOption "Talk about something else. [!!! Cycles back up to restart prybar talk !!!]" PrybarConvo>>[[|PrybarConvo]]
 
 ::Something
 <<SetSpeaker "KIM KITSURAGI">>
@@ -2578,7 +2580,7 @@ KCC is now: $knowKimsCorpseClue
 <<PassiveSkill "Visual Calculus">>
 <<AddParagraph "The room is a lived-in sort of disheveled. A robe lies on the floor where it had slithered off its hook, shoes kicked in every direction. Familiar brown bottles line the dresser, though one fallen soldier lies on the floor. About elbow height, it would be easy to have knocked it over in a disorganised stumble to the bed.">>
 <<PassiveSkill "Perception (Sight)">>
-<<AddParagraph "On the bedside table sits a bottle of wine, a rich claret. It's not the *good* stuff, maybe ten real at most. Half empty, two glasses... You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distracted, itemising the scene in his notebook. He won't see. He won't know.">>
+<<AddParagraph "On the bedside table sits a bottle of wine, a rich claret. It's not the *good* stuff, maybe ten real at most. Half empty, two glasses... You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distracted, itemising the scene in his notebook. He won't see. He won't know. <!-- BEDROOM needs a hook added for a half-empty wine bottle. Badger has written Electrochemistry's opinion. Already added for Day 1. Kim prevents Harry from stealing it either way. When it's hammered out, Day 2 should come with the option to steal the thing -->>">>
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "Take it! Bring it with you! You're going to need all the help you can get! It's been too long since we had a real *party*, and this right here is an excellent start.">>
 <<PassiveSkill "Volition">>
