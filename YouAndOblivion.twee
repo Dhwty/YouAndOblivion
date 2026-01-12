@@ -2557,8 +2557,7 @@ KCC is now: $knowKimsCorpseClue
 <<PassiveSkill "Visual Calculus">>
 <<AddParagraph "The room is a lived-in sort of disheveled. A robe lies on the floor where it had slithered off its hook, shoes kicked in every direction. Familiar brown bottles line the dresser, though one fallen soldier lies on the floor. About elbow height, it would be easy to have knocked it over in a disorganised stumble to the bed.">>
 <<PassiveSkill "Perception (Sight)">>
-<<AddParagraph "On the bedside table sits a bottle of wine, a rich claret. It's not the *good* stuff, maybe ten real at most. Half empty, two glasses...
-You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distracted, itemising the scene in his notebook. He won't see. He won't know.">>
+<<AddParagraph "On the bedside table sits a bottle of wine, a rich claret. It's not the *good* stuff, maybe ten real at most. Half empty, two glasses... You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distracted, itemising the scene in his notebook. He won't see. He won't know.">>
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "Take it! Bring it with you! You're going to need all the help you can get! It's been too long since we had a real *party*, and this right here is an excellent start.">>
 <<PassiveSkill "Volition">>
@@ -3474,17 +3473,16 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim's distrac
 <<BlankSpeaker>>
 <<AddParagraph "Blunt force trauma to the skull and brain, applied at the temple. Skull fractured, brain matter exposed and badly traumatized. Fatal injury.">>
 <<if $autVWeakBar == 1>>
-<<SetSpeaker YOU>>
-<<AddParagraph "Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. That head wound took a few swings, at least. You’re likely looking for someone lacking in upper body strength.">>
+	<<SetSpeaker YOU>>
+	<<AddParagraph "Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. That head wound took a few swings, at least. You’re likely looking for someone lacking in upper body strength.">>
 <</if>>
 <<if $autVShortBar == 1>>
-<<SetSpeaker YOU>>
-<<AddParagraph "Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. Based on the angle of those hematomas, that prybar was swung upward at quite an angle. You’re likely looking for someone significantly shorter than your victim.">>
+	<<SetSpeaker YOU>>
+	<<AddParagraph "Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. Based on the angle of those hematomas, that prybar was swung upward at quite an angle. You’re likely looking for someone significantly shorter than your victim.">>
 <</if>>
 <<if $autVSlowBar== 1>>
-If $autVSlowBar:
-<<BlankSpeaker>>
-<<AddParagraph "And of course there was the spatter on the chest, and the bruising where the victim was struck again with the murder weapon. Along the ribs. Without breaking a single one. Either the attacker was running out of steam, or they got lucky with the tip of the prybar against the head, because it wouldn’t take much for someone like you or Kim to bust a few ribs with that kind of weapon.">>
+	<<BlankSpeaker>>
+	<<AddParagraph "And of course there was the spatter on the chest, and the bruising where the victim was struck again with the murder weapon. Along the ribs. Without breaking a single one. Either the attacker was running out of steam, or they got lucky with the tip of the prybar against the head, because it wouldn’t take much for someone like you or Kim to bust a few ribs with that kind of weapon.">>
 <</if>>
 <<SetSpeaker "CRIME SCENE PHOTOGRAPH">>
 <<AddParagraph "Finally, the photograph is clipped to the back of the report. Kim was standing to the side when he took it, near the victim’s legs. It depicts the man in an awkward sprawl behind his front door, head facing away from the camera. Between the angle and the bloody head wounds, the face is unidentifiable. A red-brown pool has surrounded his body. His chest hair is thick and matted. His arms and torso are marked by a life lived at speed, decorated in bruises and old scars.">>
