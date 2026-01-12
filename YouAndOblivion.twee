@@ -275,6 +275,7 @@ window.rollDice = function() {
 <<set $autVShortBar to 0>>
 /*Visited Locations*/
 <<set $Day to 1>>
+<<set $seenStairs3 to 0>>
 <<set $visCrimeScene to 0>>
 <<set $visMainRoom to 0>>
 <<set $visStreet to 0>>
