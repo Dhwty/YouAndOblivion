@@ -20,7 +20,7 @@ jobs:
         with:
           repo: tmedwards/tweego
           chmod: 0775
-      - run : tweego story -o index.html
+      - run : tweego YouAndOblivion.twee -o dist/index.html
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
