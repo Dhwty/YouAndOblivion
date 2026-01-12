@@ -10,6 +10,14 @@
 *   The necktie is still talking to him.
 *   Keeps calling himself Kim's partner. People assume they're dating.
 
+#### Copotypes
+* BasicBitchCop: {INT: 3 | PSY: 3 | FYS: 3 | MOT: 3}
+* GymTeacherCop: {INT: 2 | PSY: 2 | FYS: 4 | MOT: 4}
+* HotNerdCop: {INT: 4 | PSY: 4 | FYS: 2 | MOT: 2}
+* ArtCop: {INT: 4 | PSY: 2 | FYS: 4 | MOT: 2}
+* ChildOfTheUniverse: {INT: 2 | PSY: 4 | FYS: 4 | MOT: 2}
+* RadioBoyCop: {INT: 4 | PSY: 2 | FYS: 2 | MOT: 4}
+
 ### Cuno
 *   doesn't fucking care
 *   Martinaise is a very small island, controlled by the Union, and it most likely doesn't have a school. If it ever had one, it's likely it was closed due to lack of students. But, Cuno's desk canonically has homework on it. He most likely goes to school over the bridge, in Jamrock, but the bridge is closed during the events of DE, which is why he's CONSTANTLY THERE.
