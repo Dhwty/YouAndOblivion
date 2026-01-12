@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://B1E46906-738D-4617-BD15-CEF422C96FD8// --><tw-storydata name="You and Oblivion" startnode="18" creator="Tweego" creator-version="2.1.1" ifid="B1E46906-738D-4617-BD15-CEF422C96FD8" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
+	<!-- UUID://B1E46906-738D-4617-BD15-CEF422C96FD8// --><tw-storydata name="You and Oblivion" startnode="18" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="B1E46906-738D-4617-BD15-CEF422C96FD8" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
 
 html {
@@ -2175,8 +2175,7 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;PassiveSkill &quot;Visual Calculus&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The room is a lived-in sort of disheveled. A robe lies on the floor where it had slithered off its hook, shoes kicked in every direction. Familiar brown bottles line the dresser, though one fallen soldier lies on the floor. About elbow height, it would be easy to have knocked it over in a disorganised stumble to the bed.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Perception (Sight)&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;On the bedside table sits a bottle of wine, a rich claret. It&#39;s not the *good* stuff, maybe ten real at most. Half empty, two glasses...
-You could pocket it, you know. Take it. Nobody would be the wiser. Kim&#39;s distracted, itemising the scene in his notebook. He won&#39;t see. He won&#39;t know.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;On the bedside table sits a bottle of wine, a rich claret. It&#39;s not the *good* stuff, maybe ten real at most. Half empty, two glasses... You could pocket it, you know. Take it. Nobody would be the wiser. Kim&#39;s distracted, itemising the scene in his notebook. He won&#39;t see. He won&#39;t know.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Take it! Bring it with you! You&#39;re going to need all the help you can get! It&#39;s been too long since we had a real *party*, and this right here is an excellent start.&quot;&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Volition&quot;&gt;&gt;
@@ -2952,17 +2951,16 @@ You could pocket it, you know. Take it. Nobody would be the wiser. Kim&#39;s dis
 &lt;&lt;BlankSpeaker&gt;&gt;
 &lt;&lt;AddParagraph &quot;Blunt force trauma to the skull and brain, applied at the temple. Skull fractured, brain matter exposed and badly traumatized. Fatal injury.&quot;&gt;&gt;
 &lt;&lt;if $autVWeakBar == 1&gt;&gt;
-&lt;&lt;SetSpeaker YOU&gt;&gt;
-&lt;&lt;AddParagraph &quot;Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. That head wound took a few swings, at least. You’re likely looking for someone lacking in upper body strength.&quot;&gt;&gt;
+	&lt;&lt;SetSpeaker YOU&gt;&gt;
+	&lt;&lt;AddParagraph &quot;Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. That head wound took a few swings, at least. You’re likely looking for someone lacking in upper body strength.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $autVShortBar == 1&gt;&gt;
-&lt;&lt;SetSpeaker YOU&gt;&gt;
-&lt;&lt;AddParagraph &quot;Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. Based on the angle of those hematomas, that prybar was swung upward at quite an angle. You’re likely looking for someone significantly shorter than your victim.&quot;&gt;&gt;
+	&lt;&lt;SetSpeaker YOU&gt;&gt;
+	&lt;&lt;AddParagraph &quot;Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. Based on the angle of those hematomas, that prybar was swung upward at quite an angle. You’re likely looking for someone significantly shorter than your victim.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $autVSlowBar== 1&gt;&gt;
-If $autVSlowBar:
-&lt;&lt;BlankSpeaker&gt;&gt;
-&lt;&lt;AddParagraph &quot;And of course there was the spatter on the chest, and the bruising where the victim was struck again with the murder weapon. Along the ribs. Without breaking a single one. Either the attacker was running out of steam, or they got lucky with the tip of the prybar against the head, because it wouldn’t take much for someone like you or Kim to bust a few ribs with that kind of weapon.&quot;&gt;&gt;
+	&lt;&lt;BlankSpeaker&gt;&gt;
+	&lt;&lt;AddParagraph &quot;And of course there was the spatter on the chest, and the bruising where the victim was struck again with the murder weapon. Along the ribs. Without breaking a single one. Either the attacker was running out of steam, or they got lucky with the tip of the prybar against the head, because it wouldn’t take much for someone like you or Kim to bust a few ribs with that kind of weapon.&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;SetSpeaker &quot;CRIME SCENE PHOTOGRAPH&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Finally, the photograph is clipped to the back of the report. Kim was standing to the side when he took it, near the victim’s legs. It depicts the man in an awkward sprawl behind his front door, head facing away from the camera. Between the angle and the bloody head wounds, the face is unidentifiable. A red-brown pool has surrounded his body. His chest hair is thick and matted. His arms and torso are marked by a life lived at speed, decorated in bruises and old scars.&quot;&gt;&gt;
