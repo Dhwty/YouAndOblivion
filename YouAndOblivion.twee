@@ -980,6 +980,15 @@ A Disco Elysium Fanwork
 
 
 ::3FHall
+<<if $seenStairs3 == 0>>
+	<<SetSpeaker "West Jamrock Apartments">>
+	<<AddParagraph "The front door swings easily on its worn hinges, but the door to the stairway creaks in violent protest as you pull it open. The lightweight door has been hit enough times that it hangs lopsided once it's open.">>
+	<<PassiveSkill "Shivers">>
+	<<AddParagraph "Downstairs an aging generator sits in the basement. The spaghetti wires that link the building to electricity are unreliable, patched into by decades of residents looking to circumvent power bills and restrictions alike. The ancient workhorse patiently waits for when it's called on. Sputtering on foul diesel fumes it keeps the building ticking, like the lungs of a lifetime smoker that refuses to die. This is part of the landlord's generosity. They live more securely now, but they remember brownouts and the comfort of a bedside lamp capable of turning on. The fumes waft up from below, but it's not where you're going. Thankfully, you're headed up.">>
+	<<PassiveSkill "Shivers">>
+	<<AddParagraph "The stairway smells stale, a foetid musk of humanity and waste. A strange smear drips its way down the wall to pool on the step by your foot - it's dried now, but not so old. Blood? You'd wonder why nobody reported it to the RCM, but this is Jamrock. The *wrong* side of Jamrock, where you hear nothing, you say nothing, you see nothing. In all truth, it's a miracle someone called in a noise complaint. Somewhere above you, on the upper floors, you hear a faint crashing. The neighbours won't hear. They never hear.">>
+	<<set $seenStairs3 = 1>>
+<</if>>
 <<SetSpeaker "West Jamrock Apartments">>
 <<AddParagraph "The linoleum on the floor is peeling, and the subflooring creaks with every step. It's still better than your place. One door is slightly ajar. The doors to the right and left of it are closed, as is the door across the hall.">>
 <<AddOption "Examine crime scene" CrimeScene>>[[|CrimeScene]]
