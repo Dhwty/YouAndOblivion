@@ -164,6 +164,12 @@ a:active {
   color: #e4b934;
 }
 
+.disco {
+	background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+	background-clip: text;
+	color: transparent;
+}
+
 .speaker {
   text-transform: uppercase;
   margin-left: -1.5em;
@@ -307,6 +313,7 @@ window.rollDice = function() {
 &lt;&lt;set $intellect to [&quot;conceptualization&quot;, &quot;drama&quot;, &quot;encyclopedia&quot;, &quot;logic&quot;, &quot;rhetoric&quot;, &quot;visual calculus&quot;]&gt;&gt;
 &lt;&lt;set $fysique to [&quot;electrochemistry&quot;, &quot;endurance&quot;, &quot;half light&quot;, &quot;pain threshold&quot;, &quot;physical instrument&quot;, &quot;shivers&quot;]&gt;&gt;
 &lt;&lt;set $psyche to [&quot;authority&quot;, &quot;empathy&quot;, &quot;esprit de corps&quot;, &quot;inland empire&quot;, &quot;suggestion&quot;, &quot;volition&quot;]&gt;&gt;
+&lt;&lt;set $disco to [&quot;HORRIFIC NECKTIE&quot;]&gt;&gt;
 /*Basic Bitch Harry*/
 &lt;&lt;set $copotype to &quot;BasicBitchCop&quot;&gt;&gt;
 &lt;&lt;set $INT to 3&gt;&gt;
@@ -406,6 +413,10 @@ _skillname +
 &quot;@@&quot;)&gt;&gt;
 &lt;&lt;elseif $psyche.includes(_skillname)&gt;&gt;
 &lt;&lt;set $currentspeaker to (&quot;@@.psyche.speaker;&quot; +
+_skillname +
+&quot;@@&quot;)&gt;&gt;
+&lt;&lt;elseif $disco.includes(_skillname)&gt;&gt;
+&lt;&lt;set $currentspeaker to (&quot;@@.disco.speaker;&quot; +
 _skillname +
 &quot;@@&quot;)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -1380,7 +1391,7 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
     &lt;&lt;SkillSuccess&gt;&gt;
     &lt;&lt;PassiveSkill Interfacing&gt;&gt;
     &lt;&lt;AddParagraph &quot;You pick a decent-sized web of yellow-white flaking, something filmy tanned and dried on a rack of dark brown hair. It rubs out easily enough – no pun intended. Unfortunately, you&#39;re pretty sure this is *exactly* what it looks like.&quot;&gt;&gt;
-    &lt;&lt;SetSpeaker &quot;HORRIBLE NECKTIE&quot;&gt;&gt;
+    &lt;&lt;PassiveSkill &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;YOU KNOW WHAT THIS IS, DON&#39;T YOU, HARRY! LOOKS JUST LIKE YOURS, DOESN&#39;T IT? SPUNK! ERECTOPLASM! DONG SAUCE! SOMEONE BLEW A MAGNIFICENT LOAD ON HIS CHEST!&quot;&gt;&gt;
 	&lt;&lt;set $knowJizz = 1&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -1859,7 +1870,7 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 	    &lt;&lt;AddParagraph &quot;It&#39;s not just blood that&#39;s staining this place; there are older sins here, too. Ash ground into the rug. Open bottles, unmarked and overturned, capsules of heaven slipped one by one into the abyss until all that remains are empty plastic carcasses. And there, on the upholstery, one you know all too well: the remains of the fallen, lost on their way to a glory that did not truly await them.&quot;&gt;&gt;
 		&lt;&lt;set $knowJizz = 1&gt;&gt;
 		&lt;&lt;if $knowSofaJizz &lt; 1&gt;&gt;
-			&lt;&lt;SetSpeaker &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
+			&lt;&lt;PassiveSkill &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
 			&lt;&lt;AddParagraph &quot;THAT&#39;S NOT AN OIL STAIN! THAT&#39;S JISM! SPOOGE! MANJUICE! SOMEONE WANKED ON THE SOFA! SNIFF IT, GO ON. SNIFF IT!&quot;&gt;&gt;
 			&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 			&lt;&lt;AddParagraph &quot;\&quot;Well, at least he knew how to have a good time.\&quot;&quot;&gt;&gt;
@@ -1951,7 +1962,7 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
     &lt;&lt;KimfluenceLost 1&gt;&gt;
     &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Kim&#39;s face twists, a muscle in the corner of his eye twitching. He shifts his balance and clears his throat.&quot;&gt;&gt;
-    &lt;&lt;SetSpeaker &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
+    &lt;&lt;PassiveSkill &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;\&quot;Oh, Bratan, he liked that! Imagine how much he&#39;ll like it when you lick it off the sofa!\&quot;&quot;&gt;&gt;
     &lt;&lt;AddOption &quot;Yes. Good idea!.&quot; Cumsicle&gt;&gt; [[|Cumsicle]]
     &lt;&lt;AddOption &quot;No, no he didn&#39;t. Why do I wear you? Why are you like this?&quot; DoneFuckedUp&gt;&gt; [[|DoneFuckedUp]]
@@ -2124,13 +2135,13 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
     &lt;&lt;AddParagraph &quot;One pyrholidon trip? *One?* You stuffy git, one jar of liquid sunshine and you&#39;re flying for weeks. *Weeks!* Imagine how fast you&#39;ll solve this case, when you can think at the speed of light, while your corporeal form stands for perhaps an hour at most. You know who&#39;ll agree with me? Your tie will, and since when is your tie wrong? OI! OI, TIE.&quot;&gt;&gt;
     &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;And you want to bring -&quot;&gt;&gt;
-    &lt;&lt;SetSpeaker &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
+    &lt;&lt;PassiveSkill &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;DID I HEAR PYRHOLIDON, BRATAN? IT WILL BE BEAUTIFUL, BEAUUUUTIFUL. SOME WINE, A SUNSET, PYRHOLIDON... BRING KIM TOO! IMAGINE IT! HE COULD DRAPE YOU OVER A ROCK AND IT WOULD LAST FOREVER!&quot;&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Volition&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Oh, shut *up*&quot;&gt;&gt;
     &lt;&lt;PassiveSkill &quot;Logic&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;Oh, shut *up*&quot;&gt;&gt;
-    &lt;&lt;SetSpeaker &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
+    &lt;&lt;PassiveSkill &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;(Your tie gives off a particular sensation you can only describe as \&quot;miffed\&quot;.)&quot;&gt;&gt;
     &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
     &lt;&lt;AddParagraph &quot;I&#39;m seriously done with you. I made my decision while you were squabbling.&quot;&gt;&gt;
@@ -2713,7 +2724,7 @@ A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShar
 &lt;&lt;AddParagraph &quot;Seriously? Is nothing sacred? Just enjoy the damn man&#39;s smile.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;It&#39;s not about eyesight. It&#39;s about having a sense of taste.\&quot;&quot; Taste&gt;&gt; [[|Taste]]</tw-passagedata><tw-passagedata pid="172" name="Taste" tags="" position="225,2225" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The lieutenant arches an eyebrow and gives your outfit a long, slow once-over, lingering on your tie. \&quot;Mmm. I&#39;m not sure if that&#39;s the compliment you think it is, Detective.\&quot; His eyes gleam with amusement.&quot;&gt;&gt;
-&lt;&lt;SetSpeaker &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
+&lt;&lt;PassiveSkill &quot;HORRIFIC NECKTIE&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;NOT A COMPLIMENT? YOU&#39;RE ONE TO TALK, BINOCLARD. ORANGE IS NOT YOUR COLOUR!\&quot;&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;\&quot;Anyway. All that to say, I&#39;m sure the reason you have your sleeves rolled down is because of Fashion and not because you&#39;re hiding something.\&quot;&quot; HidingSomething&gt;&gt; [[|HidingSomething]]</tw-passagedata><tw-passagedata pid="173" name="HidingSomething" tags="" position="350,2225" size="100,100">&lt;&lt;set $knowKimjury to 1&gt;&gt;
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
