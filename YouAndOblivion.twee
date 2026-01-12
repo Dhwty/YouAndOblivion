@@ -80,7 +80,7 @@ a:active {
 }
 
 .disco {
-	background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+	background: linear-gradient(45deg, red, orange, yellow, limegreen, steelblue, mediumslateblue, mediumorchid, red);
 	background-clip: text;
 	color: transparent;
 }
@@ -235,7 +235,7 @@ window.rollDice = function() {
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
 <<set $fysique to ["electrochemistry", "endurance", "half light", "pain threshold", "physical instrument", "shivers"]>>
 <<set $psyche to ["authority", "empathy", "esprit de corps", "inland empire", "suggestion", "volition"]>>
-<<set $disco to ["HORRIFIC NECKTIE"]>>
+<<set $disco to ["horrific necktie"]>>
 /*Basic Bitch Harry*/
 <<set $copotype to "BasicBitchCop">>
 <<set $INT to 3>>
