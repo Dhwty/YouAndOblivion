@@ -13,7 +13,7 @@ You and Oblivion
 
 
 ::Story Stylesheet [stylesheet]
-@import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
+@import url('https://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
 
 html {
@@ -755,7 +755,7 @@ A Disco Elysium Fanwork
 <<AddOption "\"Do you know what time it is?\"" PhoneWhatTime>> [[|PhoneWhatTime]]
 
 ::PhoneHello
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Hello, Detective. I hope I did not wake you.\"">>
 <<AddParagraph "The lieutenant doesn't bother to introduce himself. You'd recognize each other's voices anywhere, and, really, who else would be calling you, Harry?">>
 <<PassiveSkill "Inland Empire">>
@@ -769,7 +769,7 @@ A Disco Elysium Fanwork
 <<AddOption "\"I'm as awake as I ever am. Which is not at all. What's going on?\"" PhoneWhatUp>> [[|PhoneWhatUp]]
 
 ::PhoneWhatTime
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Khm. I will remind you, Officer, that you have called me at more godforsaken hours than this.\" Kim's voice in your ear is tinny and dry, and the unsteady connection adds a shake that isn't usually there.">>
    <<set _roll to rollDice() + $FYS>>
         <<if _roll >= 12>>
@@ -780,23 +780,23 @@ A Disco Elysium Fanwork
 <<AddOption "\"No, really, I have no idea what time it actually is. I just woke up, and my clock is frowning at me.\"" PhoneWhatTime2>> [[|PhoneWhatTime2]]
 
 ::PhoneWhatTime2
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Your clock is... frowning at you.\" From the pause, you think the clock isn't the only thing frowning at you.">>
    <<set _roll to rollDice() + $PSY>>
         <<if _roll >= 9>>
             <<SkillSuccess>>
 <<PassiveSkill "Esprit de Corps">>
-<<AddParagraph "Negative, Detective. At Precinct 41, Lt. Kim Kitsuragi stands by the phone, one gloved hand holding the receiver to his ear, the other gripping a file hard enough to crease the paper. Stress similarly creases his face, but at that comment, at the image of you staring down a frowning clock, his lips twitch into the barest smile, even if only a moment.">>
+<<AddParagraph "Negative, Detective. At Precinct 41, Lt. KIM KITSURAGI stands by the phone, one gloved hand holding the receiver to his ear, the other gripping a file hard enough to crease the paper. Stress similarly creases his face, but at that comment, at the image of you staring down a frowning clock, his lips twitch into the barest smile, even if only a moment.">>
     <</if>>
 <<AddOption "\"Yeah, but time is a human construct anyway. What's going on, Kim?" PhoneWhatUp>> [[|PhoneWhatUp]]
 
 ::PhoneWhatUp
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"We have a new case, Detective,\" Kim informs you, the consummate professional. "\"A murder. I have the files and will be outside your apartment in fifteen minutes. Please try to at least have pants on by then.\"">>
 <<AddOption "\"My loins will be girded. No promise about the rest of me, though.\"" PhoneLoins>> [[|PhoneLoins]]
 
 ::PhoneLoins
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"I will keep my expectations suitably low,\" Kim drawls out with a subtle warmth. There is a pause, a soft breath of sound like he's about to say something else, only for him to hang up with a heavy clang.">>
 <<PassiveSkill "Empathy">>
 <<AddParagraph "He didn't mean for that to come across as abrupt as it did. He just wants to get this over with.">>
@@ -809,11 +809,11 @@ A Disco Elysium Fanwork
 <<AddOption "Fine. But for the record, I am doing this with great reluctance." PhoneGetDressed>> [[|PhoneGetDressed]]
 
 ::PhoneGetDressed
-<<SetSpeaker "You">>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You pull on clothing that smells clean and splash some water onto your face. No time to make coffee, and rubbing at your eyes doesn't erase the bags under them. You wait at the window, and the Kineema roars up your street twelve minutes after the lieutenant had hung up, splashing through a shallow puddle and coming to a sharp stop just outside your apartment. The lieutenant is always aggressively punctual.">>
 <<PassiveSkill "Savoir Faire">>
 <<AddParagraph "You, on the other hand, prefer to be fashionably late. And it's always been obvious which of you two is more fashionable.">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant pulls the lever to put the Kineema in park, the engine idling with a rumbling purr. He spots your shadow in the window and arches an eyebrow at you. You are helpless to obey its pull.">>
 <<AddParagraph "When he sees you approaching, the lieutenant gets out of the driver's basket to let you into the back. He digs his hands into his pockets and tips his head towards the open door. \"Get in,\" he says. \"We'll talk on the way.\"">>
 <<PassiveSkill "Rhetoric">>
@@ -865,7 +865,7 @@ A Disco Elysium Fanwork
     <<PassiveSkill Perception>>
     <<AddParagraph "No, it's gone now. It's probably just the smell of last night's clinging to his jacket.">>
 <</if>>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The slam of the door shut is punctuation to the answer he doesn't give. \"I'll keep the windows open,\" is all he says, and you realise that they *are* already open, despite the scattered rain the gray light and wet pavement suggest. He puts the motor carriage into drive, and you feel it move away from the curb. \"The crime scene isn't far from here.\"">>
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "The lieutenant's gloved hands grip the steering levers with the easy command of someone who has mastered the art. It shouldn't have an effect on you, the flex of his thumb on the lever or that barest sliver of skin between his sleeve and his glove, but it makes your collar feel hot and tight around your throat. You're grateful that he can't see you staring at his hands.">>
@@ -898,22 +898,22 @@ A Disco Elysium Fanwork
 <</if>>
 
 ::AboutThisCase
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant jumps as you shout the words in his ear. The Kineema fishtails as he throws you a startled look in the mirror. Your shoulder bumps into the side as the lieutenant recovers, grip tight on the levers as the motor carriage straightens out.">>
 <<PassiveSkill "Reaction Speed">>
 <<AddParagraph "Sorry. I thought shouting about murder would help.">>
 <<PassiveSkill "Composure">>
 <<AddParagraph "*With what?*">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant clears his throat, still looking a bit flustered in the glimpses you catch of his mirror self. \"Khm. Yes. I am... glad to hear you're enthusiastic about the case, Detective, but perhaps you should not scream while I am driving.\"">>
 <<AddOption "Actually look at the file you've buried your nose in." CarLookAtFile>> [[|CarLookAtFile]]
 
 ::CarLookAtFile
-<<SetSpeaker "You">>
+<<SetSpeaker "YOU">>
 <<AddParagraph "The file is surprisingly thin. A noise complaint from eight hours ago lists the presumed address and residence owner. You check the floor to make sure you haven't dropped any paperwork. Nope.">>
-<<SetSpeaker "You">>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"All I see is a noise complaint from last night. How do we know there's a murder?\"">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "There's a coiling of tension in the lieutenant's shoulders. You can only see a sliver of his face in the mirror, but his eyes are focused on the road. \"The noise complaint is hours old. There's no noise, now.\" He realises that would be normal for a noise complaint and makes a frustrated gesture. \"There was an anonymous tip. It's ... I have a bad feeling about this one.\"">>
 <<set _roll to rollDice() + $INT>>
 <<if _roll >= 8>>
@@ -927,11 +927,11 @@ A Disco Elysium Fanwork
     <<PassiveSkill "Drama">>
     <<AddParagraph "Everything checks out here, sire!">>
 <</if>>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant steers the Kineema down a side street, tapping the horn impatiently to disperse a cluster of pedestrians clogging the road. Rain starts to fall again, smearing signs and streetlights into electric blurs. The lieutenant steers the motor carriage to a stop, and you step out into the rain.">>
 <<PassiveSkill "Shivers">>
 <<AddParagraph "Revachol is cold, today, but the hot breath of Jamrock curls around your ankles as you stand on the street corner. An apartment building towers over you, stretching toward the sky as if it meant to thrust through the sun itself. Somewhere on the next block, you can hear a baby screaming, wordless and confused, a familiar sensation. You can hear the wind scrape across Lt. Kitsuragi's aerostatic jacket beside you, and the batting wings of a gull lifting off from the bins beside the building.">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Shall we?\" He gestures toward the building.">>
 <<AddOption "Go inside" 3FHall>>[[|3FHall]]
 
@@ -985,7 +985,7 @@ A Disco Elysium Fanwork
 	<<set $SpokeToGarte = 1>>
     <<SetSpeaker "Apartment 301">>
     <<AddParagraph "The door reverberates with your cop knock, and after a long moment, it swings open partway to reveal the face of someone you were not expecting to see, here.">>
-    <<SetSpeaker "Garte">>
+    <<SetSpeaker "GARTE">>
     <<AddParagraph "If that's not the same shirt he was wearing the last time you saw him at the Whirling, then he's got a closet full of them. Garte looks at you in barely-contained horror, and his eyes widen in surprise when he sees Kim, but they drift back to you, no less horrified. \"You. Again. At my home, this time. I can promise you there are no dead men hanging from trees, here.\"">>
     <<PassiveSkill "Half Light">>
     <<AddParagraph "Can he, though? When's the last time he looked outside? Maybe he should check.">>
@@ -996,13 +996,13 @@ A Disco Elysium Fanwork
 <<AddOption "Come back later" 3FHall>> [[|3FHall]]
 
 ::GarteGreeting
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "The cafeteria manager meets your enthusiasm with wide-eyed concern. He eyes your outstretched arms and inches back as you inch forward, leaning back on his heels and shaking his head.">>
-<<SetSpeaker "You">>
+<<SetSpeaker "YOU">>
 <<AddParagraph "It's too late. You've pulled him into a tight hug before he can retreat.">>
 <<PassiveSkill "Physical Instrument">>
 <<AddParagraph "A perfectly manly hug, that is, squeezing him tight so that he can feel the strength and girth of your biceps.">>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "The man lets out a strangled sort of *hrrrk* sound, his lungs struggling to expand under the constriction of your arms.">>
 <<PassiveSkill "Physical Instrument">>
 <<AddParagraph "Your very strong, very *manly* arms--">>
@@ -1010,7 +1010,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "--while you're pressed chest-to-chest with the warm body against you, his aftershave fresh and citrusy--">>
 <<PassiveSkill "Volition">>
 <<AddParagraph "Oh no. I do *not* need you two joining up, here.">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"*Khm*.\" The lieutenant pointedly clears his throat. \"Detective. Please do not suffocate our witness.\"">>
 <<PassiveSkill "Volition">>
 <<AddParagraph "Yes. Please listen to Kim. He is always a source of reason.">>
@@ -1020,13 +1020,13 @@ A Disco Elysium Fanwork
 <<AddParagraph "...shut up.">>
 <<PassiveSkill "Physical Instrument">>
 <<AddParagraph "You unwind your arms and release Garte, who teeters, red-face and frazzled.">>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"Erm. Yes. Hello, Detective. It certainly is... something to see you again. At my door. Again.\" He smooths a palm down his vest, trying to straighten the wrinkles you put there. \"Is... Is this about the noise complaint? You're a little late for it.\"">>
 <<AddOption "\"Yes. The noise complaint. The complaint about noise.\"" GarteYes>> [[|GarteYes]]
 <<AddOption "\"Actually, I was hoping you could tell me about your dead neighbour.\"" GarteNo>> [[|GarteNo]]
 
 ::GarteYes
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "Garte gives you a funny look but shrugs. \"Well, it's quiet now. I appreciate you checking in, though. Is there anything else, or can I get to work, please?\"">>
 <<set _roll to rollDice() + $MOT>>
     <<if _roll >= 8>>
@@ -1045,33 +1045,33 @@ A Disco Elysium Fanwork
     <<SkillSuccess>>
     <<PassiveSkill "Rhetoric">>
     <<AddParagraph "It's best to handle this professionally. Straight to the point.">>
-    <<SetSpeaker "You">>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Actually,\" you say, mimicking the lieutenant's calm, smooth way of speaking, \"we regret to inform you that your neighbour, Jean-François Poulin, was murdered sometime last night. Your noise complaint helps us set up a timeline and could potentially give us clues as to who else was in the apartment last night.\"">>
-    <<SetSpeaker "Garte">>
+    <<SetSpeaker "GARTE">>
     <<AddParagraph "\"What?\" he chokes. \"*Murdered*?\" His wide-eyed stare darts to the lieutenant for confirmation.">>
-    <<SetSpeaker "Kim Kitsuragi">>
+    <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "\"I am afraid so, Mr. Garte,\" the lieutenant adds. \"Our condolences.\"">>
 <<else>>
     <<SkillFailure>>
     <<PassiveSkill "Rhetoric">>
     <<AddParagraph "It's usually best to cushion bad news with some good news. You can put a positive spin on anything!">>
-    <<SetSpeaker "You">>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Well, Garte, I've got good news and bad news,\" you say. \"The good news is that your neighbour won't be making noise any more. The bad news is that it's because he's dead. Unless you didn't like him, in which case, more good news!\"">>
-    <<SetSpeaker "Garte">>
+    <<SetSpeaker "GARTE">>
     <<AddParagraph "\"*What*?\" Garte chokes, eyes and mouth going round. \"You're joking, right? Please tell me you're joking...\"">>
-    <<SetSpeaker "Kim Kitsuragi">>
+    <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "The lieutenant sighs, wiping a hand over his face. \"That is... not exactly how I would have put it, but Detective DuBois is not joking. Or... at least not about the fact that your neighbour is dead. My condolences.\"">>
 <</if>>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "The man stares at you both as the colour drains from his face. \"Oh my God,\" he breathes, eyes going vacant. \"I'm a corpse magnet.\"">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant's lips twist in a grim approximation of a smile. \"No more than we are, Mr. Garte,\" he says.">>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "Garte chokes out a shrill laugh. \"I'm a cafeteria manager. *You're* an officer of the RCM. There's a big fucking difference.\" He purses his lips and looks away as though to stop himself from saying something else. \"Look, I don't know what to tell you about the noise complaint that you don't already know. What I heard didn't exactly sound like someone *dying*, or I would have reported something worse.\"">>
 <<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
 
 ::GarteNoiseAgain
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "The man's face screws up like he's tasted something sour. \"Yes. This noise has a tendency to... come. And go.\" He shoots an uncomfortable look at the lieutenant before focusing on your shoulder.">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 16>>
@@ -1088,81 +1088,81 @@ A Disco Elysium Fanwork
         <<AddParagraph "That's a guilty look. Does he have something to with the dead man next door?">>
     <</if>>
 <</if>>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"Listen, it's... it's not a big deal.\" He holds his hands up in surrender. \"I was just tired after a long week, and I couldn't sleep. I shouldn't have called. It was lovely to see you, officers, but if you'll excuse me...\" He starts to shut the door.">>
 <<AddOption "[Physical Instrument - Easy] Shoulder the door back open." GartePushDoor>> [[|GartePushDoor]]
 <<AddOption "Back off for now. You can question him later." GarteBackOff>> [[|GarteBackOff]]
 
 ::GarteNo
 <<set $GarteKnowsDead to 1>>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"M-My dead...?\" Garte sputters, stumbling over the words. He inclines one ear towards you, like he thinks he misheard. He darts a look at the lieutenant, who nods. \"Who?\"">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"A Mr...\" The lieutenant makes a show of examing his notes. \"Jean-François Poulin. I understand the noise complaint you called in was coming from his apartment, at around 23:00 last night. Is that correct?\"">>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "Garte stares at the lieutenant owlishly for a long moment, his throat making abortive, confused sounds, like a chewed-up cassette tape stuck in its player.">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 8>>
     <<PassiveSkill "Composure">>
     <<AddParagraph "Garte's gaze flits to you, an assessing look, like he's waiting to see how you react to the lieutenant's words. He leans back, ever so slightly. A desire to retreat.">>
 <</if>>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"Right,\" the man chokes out. \"That is... correct. It sounded...\" He clears his throat awkwardly. \"Well, it didn't sound like anyone *dying*.\"">>
 <<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
 
 ::GarteHangingMen
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"What?\" The man's face twists in confusion and a little horror. \"What... what does that mean? Did you...? Oh my God, please tell me you didn't *put* a body in the tree!\"">>
 <<PassiveSkill "Half Light">>
 <<AddParagraph "Well, that wasn't what you meant at all. Rude.">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant inserts himself into the conversation to keep it from derailing. \"Mr. Garte, I can assure you there are no bodies in trees, this time.\"">>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"Then why are you here?\" he asks sharply. \"Is this about the noise complaint? You could have just said so, without making me think someone's been murdered *again*! You about gave me a heart attack!\"">>
 <<AddOption "\"So about that...\" [Rhetoric - Easy] Inform Garte of his neighbour's passing. Tactfully." GarteNeighbourDead>> [[|GarteNeighbourDead]]
 <<AddOption "\"Haaaha. Ha. Right. Yes. No murders here!\"" GarteNoMurder>> [[|GarteNoMurder]]
 
 ::GarteNoMurder
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Khm.\" The lieutenant shoots you a *look* over his notebook. \"Unfortunately, that is not quite accurate, Officer. Mr. Garte, I regret to inform you that your neighbour, Jean-François Poulin, was murdered sometime last night or early morning.\"">>
 <<set $GarteKnowsDead = 1>>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"What?\" You watch his face drain of colour.">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"You see why we are interested in hearing whatever you might have heard last night.\" The lieutenant watches him through his glasses, pen poised to paper.">>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "Garte stares at the lieutenant owlishly for a long moment, his throat making abortive, confused sounds, like a chewed-up cassette tape stuck in its player.">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 8>>
     <<PassiveSkill "Composure">>
     <<AddParagraph "Garte's gaze flits to you, an assessing look, like he's waiting to see how you react to the lieutenant's words. He leans back, ever so slightly. A desire to retreat.">>
 <</if>>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"Right,\" the man chokes out. \"Well, I'm not sure what to tell you. It sounded...\" He clears his throat awkwardly. \"Well, it didn't sound like anyone *dying*.\"">>
 <<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
 
 ::GarteLivingRoom
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant leans in and softly admonishes you. \"Detective,\" he says with gentle reproach. A subtle nudge to keep on topic.">>
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "Instead, you're distracted by the shiver of his voice in your ear.">>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"What?\" the man croaks, turning several shades whiter. \"Someone is dead? Who?\"">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Your neighbour. A Mr...\" The lieutenant makes a show of examing his notes. \"Jean-François Poulin. I understand you were the one who called in the noise complaint at around 23:00 last night. Is that correct?\"">>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "Garte stares at the lieutenant owlishly for a long moment, his throat making abortive, confused sounds, like a chewed-up cassette tape stuck in its player.">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 8>>
     <<PassiveSkill "Composure">>
     <<AddParagraph "Garte's gaze flits to you, an assessing look, like he's waiting to see how you react to the lieutenant's words. He leans back, ever so slightly. A desire to retreat.">>
 <</if>>
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"Right,\" the man chokes out. \"That is... correct. It sounded...\" He clears his throat awkwardly. \"Well, it didn't sound like anyone *dying*.\"">>
 <<AddOption "\"What did it sound like?\"" GarteSound>> [[|GarteSound]]
 
 ::GarteSound
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "Garte closes his eyes in a full-body cringe at that question. \"Look, just... It was late, okay? I don't really remember. It was just *loud*. Music, maybe?\"">>
 <<set _roll to rollDice() + $PSY>>
 <<if _roll >= 10>>
@@ -1187,17 +1187,17 @@ A Disco Elysium Fanwork
 <<AddOption "\"Music, maybe? You called the RCM in the middle of the night because of \'music maybe\'?\"" GarteMusicMaybe>> [[|GarteMusicMaybe]]
 
 ::GarteMusicMaybe
-<<SetSpeaker "Garte">>
+<<SetSpeaker "GARTE">>
 <<AddParagraph "\"L-Look, I really need to leave for work. I already told the man on the phone everything I know. Please don't drag me into whatever this is!\" He's already closing the door in your face.">>
 <<AddOption "[Physical Instrument - Easy] Shoulder the door back open." GartePushDoor>> [[|GartePushDoor]]
 <<AddOption "Back off for now. You can question him later." GarteBackOff>> [[|GarteBackOff]]
 
 ::GarteBackOff
-<<SetSpeaker "You">>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Garte's door doesn't close neatly. The wooden frame is weathered and warped, and it takes a couple of awkward shoves before it closes with an unsatisying *shwomp*. You are left staring at a closed door, questions dying on your lips.">>
 <<PassiveSkill "Inland Empire">>
 <<AddParagraph "You've been here before. Not this door, not this building, but this feeling. Your thoughts dangle with frayed edges.">>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant clears his throat softly. You turn to see he's already watching you through the sheen on his glasses. \"We can always talk to him later,\" he reminds you gently. \"He might be more amenable when he isn't late to work.\"">>
 <<AddOption "Come back later" 3FHall>> [[|3FHall]]
 
@@ -1207,7 +1207,7 @@ A Disco Elysium Fanwork
     <<SkillSuccess>>
     <<PassiveSkill "Physical Instrument">>
     <<AddParagraph "You plant your palm against the wood and lock your elbow. The door doesn't close, and a push from you sends it swinging back open.">>
-    <<SetSpeaker "Garte">>
+    <<SetSpeaker "GARTE">>
     <<AddParagraph "Garte looks up at you in surprise.">>
 	<<if $GarteKnowsDead == 1>>
     	<<PassiveSkill "Empathy">>
@@ -1217,29 +1217,29 @@ A Disco Elysium Fanwork
         	<<PassiveSkill "Half Light">>
         	<<AddParagraph "Good. Press your advantage. He knows you could snap him like a twig.">>
         <</if>>
-    	<<SetSpeaker "You">>
+    	<<SetSpeaker "YOU">>
     	<<AddParagraph "\"We're not done.\"">>
 	<<else>>
-    	<<SetSpeaker "You">>
+    	<<SetSpeaker "YOU">>
     	<<AddParagraph "\"We're not done.\"">>
-    	<<SetSpeaker "Garte">>
+    	<<SetSpeaker "GARTE">>
     	<<AddParagraph "\"We... aren't?\" Garte furrows his brows. \"Look, if you want more information on the noise complaint, go ask the man yourselves.\" He indicates Poulin's residence with a jerk of his thumb.">>
-    	<<SetSpeaker "Kim Kitsuragi">>
+    	<<SetSpeaker "KIM KITSURAGI">>
     	<<AddParagraph "At your shoulder, the lieutenant takes a fortifying breath. \"Mr. Garte, I regret to inform you that your neighbour, Jean-François Poulin, was murdered sometime last night or early morning.\"">>
 		<<set $GarteKnowsDead = 1>>
-    	<<SetSpeaker "Garte">>
+    	<<SetSpeaker "GARTE">>
     	<<AddParagraph "\"What?\" You watch the colour drain from the man's face as his stare shifts between you and the lieutenant. \"So *that's* why you're here...\"">>
 	<</if>>
-	<<SetSpeaker "Kim Kitsuragi">>
+	<<SetSpeaker "KIM KITSURAGI">>
 	<<AddParagraph "The lieutenant's gloved grips your shoulder, more a warning than a restraint, a reminder not to lose your cool. You can feel the heat of his hand through your layers of clothing. \"We understand this may have come as a shock,\" he says, his voice carefully measured. \"But we need--\"">>
-	<<SetSpeaker "Garte">>
+	<<SetSpeaker "GARTE">>
 	<<AddParagraph "\"What do you want me to say?\" Garte snaps, his voice pitched higher than usual. \"That I didn't see or hear anything? Sure! Fine! I won't tell a soul! Just, please, leave me out of it!\"">>
 	<<set _roll to rollDice() + $INT>>
     <<if _roll >= 14>>
     	<<PassiveSkill "Drama">>
     	<<AddParagraph "\'Won't tell a soul\'? A curious choice of words, sire.">>
     <</if>>
-	<<SetSpeaker "Garte">>
+	<<SetSpeaker "GARTE">>
 	<<AddParagraph "Before you can say anything else or stop him, Garte retreats deeper into his apartment and locks himself in his bedroom. !!!Could use some Shivers in here, maybe?!!!">>
 	<<AddOption "\"He seems upset.\"" GarteUpset>> [[|GarteUpset]]
 <<else>>
@@ -1250,14 +1250,14 @@ A Disco Elysium Fanwork
 <</if>>
 
 ::GarteUpset
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant hums, his hand finally slipping from your shoulder. \"I think this murder hits more close to home. Literally. This isn't like the Hanged Man or the Tribunal. He shared a wall with this man and didn't even know he'd been killed.\"">>
 <<set _roll to rollDice() + $PSY>>
 <<if _roll >= 8>>
     <<PassiveSkill "Esprit de Corps">>
     <<AddParagraph "The lieutenant's eyebrows pinch together. He hides it well, but he is unsettled.">>
 <</if>>
-<<SetSpeaker "Kim Kitsuragi">>
+<<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"We can come back later, when he has returned from work or has had a chance to process. Let's go.\"">>
 <<AddOption "Come back later" 3FHall>> [[|3FHall]]
 
@@ -1374,13 +1374,13 @@ A Disco Elysium Fanwork
     <<KimfluenceGained 1>>
     <<set $empathy = 0>>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Your memory is not so poor anymore that you don't remember what a Field Autopsy form looks like. The lieutenant's focus is steady as he starts at the top of the page. With you performing the autopsy this time, that makes him the assistant – and this, your case.">>
 <<BlankSpeaker>>
 <<AddParagraph "\"HDB-1805-0900\"">>
 <<BlankSpeaker>>
 <<AddParagraph "It's true. You got out of bed for this.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "The name of the tenant was listed in the report of the disturbance call to the station. You may remember what an Autopsy form looks like, but do you remember *that*, super cop?">>
 <<set _roll to rollDice() + $INT>>
 <<if _roll >= 10>>
@@ -1404,31 +1404,31 @@ A Disco Elysium Fanwork
     <<AddParagraph "There was some noise, and someone called to complain. At least one of the names sounded familiar...">>
     <<PassiveSkill Authority>>
     <<AddParagraph "... Well, piss. You don't remember *at all*. So much for getting your shit together. What were you even paying attention to when the lieutenant was telling you about the report?">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"I don't suppose you remember the name of the tenant?\"">>
     <<PassiveSkill "Reaction Speed">>
     <<AddParagraph "The pen stops its scratching abruptly; a single moment of silence before it resumes.">>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "\"Jean-François Poulin. Called in by the neighbour.\" He gestures over his shoulder with the pen before he resumes writing.">>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You continue running through the perfunctory introductory information. Date of Birth: N/A. Age: ... hmm.">>
 <<set _roll to rollDice() + $INT>>
 <<if _roll >= 12>>
     <<PassiveSkill "Visual Calculus">>
     <<AddParagraph "This man's done some hard living. He's actually probably a couple years younger than you, though he doesn't really look it.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Age? 40.\"">>
 <<else>>
     <<PassiveSkill "Visual Calculus>>"
     <<AddParagraph "The man looks a fair bit like you, if you're being honest with yourself. Thank heaven you don't look this old yet.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Age 50-52.\"">>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "The lieutenant raises an eyebrow and looks up from his form to eye first the body, then you.">>
     <<AddParagraph "\"That may be the head wound talking. He still seems... quite fit for a man of that age, don't you think? Especially one who... how did you put it? Who knew how to have a good time.\" He does not look like he agrees with your definition. "\"I'm putting 45.\"">>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "The rest is easy enough. Race: Occidental. Sex: presumed male. Date of death: May 18th, '52. Case number: HDB-1805-0900. Evidence of treatment...">>
 <<PassiveSkill "Conceptualization">>
 <<AddParagraph "For a moment, you're distracted by how much this man reminds you of the shattered visions of yourself you saw in the steamy mirror at the Whirling-In-Rags, last year. This could have been you. Had you not gotten your shit together, this would have been you -- your half-naked body draped like a filthy, hairy fish across a dirty floor, topped with a face beaten almost into oblivion. If it was you, you would've deserved it. One too many nights of 'The Smallest Church in Saint-Saens', and accompanying screaming bloody murder.">>
@@ -1436,19 +1436,19 @@ A Disco Elysium Fanwork
 <<AddParagraph "Focus, super cop. This is not the time to get distracted. Show Lieutenant Kitsuragi you know what you're doing.">>
 <<PassiveSkill "Visual Calculus">>
 <<AddParagraph "There is blood pooled around the body, the carpet fibres oversaturated with it. It's sprayed across the back of the door, the wall, the coatrack... a few droplets even made it to the ceiling.  A ragged bit of scalp sits an inch from the man's face, a tiny island of tissue in a sea of death. If this man had been dragged, you'd know.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"No evidence of treatment prior to examination.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Time to start the external investigation. No way around this without stepping through all that blood. Damn cadavers never leave you anywhere to stand.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"A moment, detective.\" He pulls the Trigat Mini from an inside pocket of his orange bomber jacket and begins loading a cartridge. \"Before you compromise the scene.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "How that camera doesn't distort the smoothness of his silhouette under there, you'll never know.">>
 <<PassiveSkill Authority>>
 <<AddParagraph "Maybe you should spent a little less time analyzing your partner's silhouette and a little more analyzing the crime scene, *lieutenant*. Step out of the shot so we can get on with this. And put your damn gloves on.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "There's a crisp *pop* as the capsule is shattered in the camera, pouring liquid secrets into a still image. Kim lowers the Trigat and gives you a nod, hand waiting for the picture to slide out. You can go ahead and get your shoes dirty, that nod says.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "And oh, there's no way around getting your shoes dirty. The blood squelches thick around them as you step close. The crusted film on top of the pool splits, brown clots swimming in dark red, oozing up around green snakeskin. You wish it were enough to deter the gnawing reminder that you haven't eaten since last night.">>
 <<AddParagraph "You look back to see the lieutenant set aside the photo, picking up his pen to resume the report. You pull on the wrinkled gloves. Ready to begin the external investigation.">>
 <<set _roll to rollDice() + $PSY>>
@@ -1458,7 +1458,7 @@ A Disco Elysium Fanwork
     <<KimfluenceGained 1>>
     <<AddParagraph "Kim is quiet behind you. His words say nothing. His long, quiet breath, the slight dip of his eyes to the page, tell you he is grateful for this small act of respect.">>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "To business, then. \"First item... clothing. Not bad.\" The low huff of breath from Kim is definitely *not* laughter. \"Pants: mustard yellow, size large. Vintage Piqueriques.\"">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 11>>
@@ -1469,7 +1469,7 @@ A Disco Elysium Fanwork
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "The lieutenant raises his eyebrows, but notes what you've told him. He's a little impressed.">>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"No shirt or socks present on victim. Underwear...\"">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 10>>
@@ -1485,7 +1485,7 @@ A Disco Elysium Fanwork
 		<</if>>
 	<</if>>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Well. Good to know you and this guy aren't completely identical. You wouldn't go commando in just any set of trousers. He's got one hell of a bruise under where the button sat, and you know he doesn't shave.">>
 <<AddParagraph "\"... Nothing additional for clothing.\"">>
 <<set _roll to rollDice() + $INT>>
@@ -1495,13 +1495,13 @@ A Disco Elysium Fanwork
 <</if>>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant copies dutifully as you list details. Hair. Freckles. Birth marks. Estimates on height and weight. A laundry list of contusions and injuries – some old, some to be expanded on at the end. The scratching of his pen is rhythmic. You know if you could see it from here, the henscratch would be sharp, angular, and precise. Just like him.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "There's only one thing left to establish before you move on to the next section of the autopsy: to decide what the hell is all over this man. Something off-colour under a few of the fingernails, blunted and short as they are. Residue on the cheek, a streak small but damning, and fortunate to have escaped the burble of purge coming from the nostrils. And the centrepiece: a marbled garnish of red and off-white crusted in through the thick pelt adorning the man's naked chest and belly.">>
 <<PassiveSkill Electrochemistry>>
 <<AddParagraph "Come now, Harry. None of it's anything you haven't worn before. Let's not pretend you're strangers.">>
 <<PassiveSkill "Pain Threshold">>
 <<AddParagraph "Let's not pretend you wouldn't kill to wear it again.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "The hand may be the easiest place to start. There's filth accumulated under all the victim's nails, but something looks decidedly off. There's something else.">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 7>>
@@ -1553,11 +1553,11 @@ A Disco Elysium Fanwork
 <<AddOption "Move on" AutCrustyRug>>[[|AutCrustyRug]]
 
 ::AutCrustyRug
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Right then, moving on. The crusted rug-garnish next. What does it say about your life that this little tableau seems so easily recognizable, hm?">>
 <<PassiveSkill "Perception (Sight)">>
 <<AddParagraph "The bits of red far outnumber the crusted drabs of white caught amidst the hair on the victim's soft belly. The head wound must have put him down fast – a thick shower of dried blood runs down the front of one shoulder before it goes over his side to the floor. Nothing but spatter makes it as far as the mustard yellow pants.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "And the rest of it?">>
 <<PassiveSkill "Visual Calculus">>
 <<AddParagraph "The blood's beaded along the top of the man's body hair before dripping to his skin, matting it in place. There's nothing unusual about it, considering the victim's injuries. The whitish stuff though... Almost all of it is *under* the hair, trapped like old stains in high-pile carpet. As if someone couldn't be bothered to do more than wipe it around. Most of it – though certainly not all – is on the belly.">>
@@ -1571,7 +1571,7 @@ A Disco Elysium Fanwork
 
 ::AutJizz4Lab
 <<KimfluenceGained 1>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You're not touching the crusty funk in this corpse's chest hair. You're pretty sure you know what it is, and the lab can confirm it.">>
 <<AddOption "Move on" AutFacePowder>>[[|AutFacePowder]]
 
@@ -1591,7 +1591,7 @@ A Disco Elysium Fanwork
     <<AddParagraph "It only takes you a few seconds of rubbing at this stranger's gut before two things occur to you. First: what were you gonna do with it if you *did* manage to get a bit of it? Second: was smearing around his dried-up bollock sauce really going to help this case?">>
 	<<set $knowJizz = 1>>
     <<AddParagraph "A glance over at lieutenant Kitsuragi confirms he was thinking the exact same thing.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "You clear your throat.">>
 <</if>>
 <<AddOption "\"Material on the chest and abdomen consistent with dried seminal fluid.\"" AutFacePowder>>[[|AutFacePowder]]
@@ -1599,21 +1599,21 @@ A Disco Elysium Fanwork
 
 ::AutKimSparesYou
 <<KimfluenceLost 1>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "By the set of his jaw and the flare of his nose, you're fairly certain the lieutenant does not opt for an... exact transcription.">>
 <<AddOption "Move on" AutFacePowder>>[[|AutFacePowder]]
 
 ::AutFacePowder
 <<set $StationRep += 1>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Finally, on to the cheek, to that barely-there smear facing the ceiling. This one is almost more formality than mystery.">>
 <<PassiveSkill Electrochemistry>>
 <<AddParagraph "Come on now, don't say that! There's plenty of mystery here, and you've got what it takes to solve it, big guy. How much of this world has gone up your nose or down your gullet, at one time or another? It's all training – the experience to be a better detective.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You run a gloved index finger over the dead man's cheek, bringing up a bit of the substance on your finger. It's a powder residue, no doubt about it.">>
 <<PassiveSkill Electrochemistry>>
 <<AddParagraph "Oh, the *options*. And a bloke like this, there's no way this was all he had. Forget the stiff, Harry, we've got better things to do! Doesn't get any cheaper than free!">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You rub the powder between your forefinger and thumb before bringing it close to smell. The smell, unfortunately, is barely there; not nearly enough to identify it.">>
 <<AddOption "[Perception - Medium 11] You know, there was no purge on this side of his face... you *could* taste it..." AutTasteIt>> [[|AutTasteIt]]
 <<AddOption "Sure, you could probably ID the stuff based on taste, but are you really willing to lick something that's been on the dead guy? The lab can deal with identifying this stuff, thanks. It's almost certainly drugs, and that's really all you need to know. Let's wrap this up and move on." AutInternal>>[[|AutInternal]]
@@ -1671,11 +1671,11 @@ A Disco Elysium Fanwork
     <<if _roll >= 8>>
     <<include AutIDEcstasy>>
     <<else>>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Make a note to have the Path guys run the residue. Oh, and Kim?\"">>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "The lieutenant raises an eyebrow. He does not give you any more than that.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"I won't lick the corpse again.\"">>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "Was that a meaningful blink? You'd think he'd be happier. Honestly, he can be so hard to please, sometimes.">>
@@ -1684,7 +1684,7 @@ A Disco Elysium Fanwork
 <<AddOption "And with that, the end of the external summary. Time to move on to the internal..." AutInternal>>[[|AutInternal]]
 
 ::AutIDEcstasy
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Smear of what appears to be MDMA on the decedent's cheek...\" You furrow your brow, giving another rub to the bit of stuff left on your finger before wiping it off on the victim's pants.">>
 <<if $knowJizz >=1 >>
     <<AddParagraph "\"Probably took before he... y'know.\"">>
@@ -1700,7 +1700,7 @@ A Disco Elysium Fanwork
 <<AddOption "And with that, the end of the external summary. Time to move on to the internal..." AutInternal>>[[|AutInternal]]
 
 ::AutInternal
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Most sections of the internal autopsy are either above your pay grade or just not possible to assess without laboratory equipment.">>
 <<AddOption "\"May as well skip this section, Kim. We're not pathologists.\"" AutNotPatho>>[[|AutNotPatho]]
 <<AddOption "That just means it should be quick. May as well start at the top." AutManagement>>[[|AutManagement]]
@@ -1714,12 +1714,12 @@ A Disco Elysium Fanwork
 <<AddOption "Do the injury section." AutDescInjury>>[[|AutDescInjury]]
 
 ::AutManagement
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "The top, of course, being the central nervous system, where management grins out at you from the posh new skylight. Aside from being mangled and uncharacteristically visible, however, there's not much you can say about it.">>
 <<AddParagraph "\"Brain matter visible through injuries to the skull. Badly mangled. No other CNS observations of note.\"">>
 <<PassiveSkill "Pain Threshold">>
 <<AddParagraph "Mangled is an understatement. You're only guessing it's a brain based on the fact that it's in a skull. It looks almost as bad as yours used to feel.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You fish a small pen light out of your pocket – clean hand again, you've gotten good at this – and pretend it's not the one Lieutenant Kitsuragi loaned you last week. Slowly now, you try to rotate the head for a better look. It does not work. Tacky blood pulls apart from itself, clinging like a grisly halo to the cheek and jaw, the only thing resembling salvation in this whole flat.">>
 <<AddParagraph "You pull down the eyelids to examine the conjunctiva (pale, boring). The eyes themselves are blank, irises completely dilated in death. Blood streaks through his straw-coloured sclerae, mainly on the side with the massive head trauma (you don't say). Next, a tiny shimmer of light directly up the nostrils (scabbed and powdery, which is to say unremarkable). Finally, the mouth...">>
 <<PassiveSkill "Physical Instrument">>
@@ -1730,7 +1730,7 @@ A Disco Elysium Fanwork
 	<<set $autVBite = 1>>
     <<PassiveSkill Encyclopedia>>
     <<AddParagraph "Petechiae occur where capillaries have broken, creating tiny red pinpricks against the skin. They are typically found in small clusters where an injury has occurred, but can also be caused in greater quantity or broader pattern by some types of medications, illnesses, and generally straining like hell.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Oral cavity... huh. Petechial haemorrhage on the inside of the cheek.  Appears generalized.\"">>
     <<PassiveSkill "Visual Calculus">>
     <<AddParagraph "You tip your head sideways to examine the soft skin below the jaw. Sure enough, under several days of untended facial hair you find more tiny red dots. And now that you're looking, it's plain enough to see a few more strewn fresh along the line of his neck. Actually, speaking of his neck...">>
@@ -1738,10 +1738,10 @@ A Disco Elysium Fanwork
     <<PassiveSkill Drama>>
     <<AddParagraph "It's smiling at you. It wants you to know its secret, Harry. It wants to tell you all about how it got here: how those irregular purple marks came first, a shock of pain like sparks shooting right down into the meat. How the bloom of red came second, a flush of pleasure chasing the pain right down to where he wanted it most.">>
 	<<if $knowJizz >= 1>>
-		<<SetSpeaker YOU>>
+		<<SetSpeaker "YOU">>
 		<<AddParagraph "\"Looks like I was wrong. Forget about jerking off, Kim. Our fella got laid before he died.\"">>
  	<<else>>
-		<<SetSpeaker YOU>>
+		<<SetSpeaker "YOU">>
 		<<AddParagraph "\"Hey Kim, check this one out.\" You don't touch it. Why don't you touch it? \"Looks like the poor bugger got some not too long ago. Not a bad way to spend your last day.\"">>
 		<<set $knowJizz  = 1>>
 	<</if>>
@@ -1758,7 +1758,7 @@ A Disco Elysium Fanwork
     <</if>>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "\"Khm. Well. Good for him.\" And just like that, he's disinterested again. May as well be talking about the outlet on the wall.">>
-	<<SetSpeaker YOU>>
+	<<SetSpeaker "YOU">>
     <<AddParagraph "\"I've got petechial haemorrhage on the inside of the cheek, under the jaw, and down the neck. We should see if we can track down the person who gave him this... souvenir, in case they can tell us if the guy had enemies. As for the autopsy form...\"">>
     <<AddOption "\"... we should add it.\"" AutHepatoRep>>[[|AutHepatoRep]]
     <<AddOption "\"... don't bother. Let's move on.\"" AutHepato>>[[|AutHepato]]
@@ -1777,7 +1777,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "The lieutenant pauses only a moment before stepping behind you. And then, in a single handsbreadth, the world narrows. There's leather on your scapula, strong fingers curling slowly into the muscle of your shoulder. He's *close* behind you, close enough for a hint of pine to tickle your senses. He's...">>
 <<AddParagraph "He's leaning on you. The bastard's using you as a post, so he doesn't have to get his shoes bloody.">>
 <<AddParagraph "\"Good eye, detective. Looks like petechiae.\" His brow furrows in contemplation as he pushes off you, straightening up and stepping back from the red-crusted filth. \"What would he have taken to cause that?\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "A one-shouldered shrug is the best reply you have. "\"No idea. Not one I remember, anyway.\" You wave off Kim's exceedingly skeptical eyebrow. \"He might have had some underlying health condition or something! We don't know the man.\"">>
 <<if $knowKimsCorpseClue > 0>>
     <<PassiveSkill Empathy>>
@@ -1788,12 +1788,12 @@ A Disco Elysium Fanwork
 
 ::AutHepatoRep
 <<set $StationRep += 1>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Let's be honest: how it got there is more than a bit outside your purview. That's what they pay the lab guys for.">>
 <<AddOption "Move on" AutHepato>>[[|AutHepato]]
 
 ::AutHepato
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Next system: respiratory. No obvious impediments. Gastrointestinal: N/A. Hepatobiliary... the faint yellowing of the eyes and gums, maybe? Could be nothing. Corpses turn weird colours, sometimes.">>
 <<AddOption "Add it to the report: \"Mild discolouration of eyes and mucus membranes possibly indicative of jaundice.\"" AutKimHepato>>[[|AutKimHepato]]
 <<AddOption "You don't want to look like an idiot if you're wrong. Leave this one to the pathologists." AutCVS>>[[|AutCVS]]
@@ -1812,7 +1812,7 @@ A Disco Elysium Fanwork
 <<AddOption "Ok, what's next..." AutCVS>>[[|AutCVS]]
 
 ::AutCVS
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Next: cardiovascular.\"">>
 <<PassiveSkill "Perception (Sight)">>
 <<AddParagraph "Well it's leaky, that's for damn sure. It's spilled absolutely everywhere. It's pooling in the backs of his arms and the side of his face, where they've lain for hours against the dirty floor. You know if you took off his pants, you'd see the same on the backs of his legs and the cheeks of his ass. And frankly, the number of bruises this guy's sporting is impressive, both old and new.">>
@@ -1826,24 +1826,24 @@ A Disco Elysium Fanwork
     	<<PassiveSkill Encyclopedia>>
     	<<AddParagraph "There are a host of reasons why a person may bruise so easily. Commonly they're caused by things like clotting disorders (either congenital or acquired) and drug use (be it prescription or otherwise).">>
     <</if>>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Cardiovascular abnormality, unknown cause: unusually high amount of bruising on victim. Multifocal.\"">>
 	<<set $StationRep += 1>>
 <<else>>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Made an admirable attempt at escape, but otherwise N/A.\"">>
 <</if>>
 <<AddParagraph "The last bit of the Internal Summary is a field where you can demarcate requests for testing. You look over your shoulder at the lieutenant. He is already cocking an eyebrow at you over the dark rim of his spectacles.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"I assume we're requesting toxicology.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Oh, hell yes.\"">>
 <<PassiveSkill Electrochemistry>>
 <<AddParagraph "Don't think you've ever looked quite like this after a bender. If this guy's found something new, you need to know about it.">>
 <<AddOption "On to the last section of the field autopsy..." AutDescInjury>>[[|AutDescInjury]]
 
 ::AutDescInjury
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Description of injuries.">>
 <<PassiveSkill "Pain Threshold">>
 <<AddParagraph "Fortunately, it's not meant to be a catalogue of every wound he's suffered, or you'd be here a while: broken nose, bump in the collarbone, scars on the forearm. A collage of pain plastered over the dead man's past.">>
@@ -1856,9 +1856,9 @@ A Disco Elysium Fanwork
     <<AddParagraph "Not at *high* speed, mind you. You could do better than this with one arm. Hell, didn't even break a rib.">>
 	<<set $knowKiller += 1>>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Minor contusions on the chest consistent with blunt force. Based on the angle, blows struck once the victim was on the ground. Most likely postmortem.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You're going to have to clean up that head wound a little, if you want to get a good look at it.">>
 <<AddOption "Use your sleeve. You're already right there, no need to track blood through the place." AutSleeve>>[[|AutSleeve]]
 <<AddOption "Ask Kim to find you something." AutWaterGlass>>[[|AutWaterGlass]]
@@ -1869,7 +1869,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "This was a terrible idea. And a gross one. Look at the mess. It's all over you now, *and* the victim. Isn't this why you have a partner?">>
 <<PassiveSkill Endurance>>
 <<AddParagraph "Come on, were you going to let a little thing like blood slow you down?">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"I, uh... I don't suppose you might find me some water or something?\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"What, so you can pour it into his head?\" The lieutenant's sarcasm is palpable.">>
@@ -1879,7 +1879,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He gives a small hum under his breath as he looks about the dishevelled room. The wrinkle of his nose suggests he doesn't find much here to be cleaner than the victim's gaping head wound. He does as you ask, though, settling on a tea towel and a beer mug full of tap water after only brief deliberation.">>
 <<AddParagraph "You're honestly a little surprised he managed to find a clean glass.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Even with the water, it's really more like rubbing away filth than washing anything. It takes a minute, but you finally get enough of the bloody pulp dislodged that you can get a look at the wound to the man's temple – and with a couple swipes more, half a look at his face.">>
 <<AddParagraph "He's got a strong forehead and thick eyebrows, your victim. The bridge of his nose is pronounced. Goes well with the heavy jaw. Poor bastard wouldn't have been bad-looking, in life.">>
 <<AddParagraph "You turn to hand Kim the mug. He doesn't even seem to notice. His eyes are looking past you, boring into the dead man on the floor.">>
@@ -1900,7 +1900,7 @@ A Disco Elysium Fanwork
     <<AddOption "[Composure - Easy 8] Say nothing. This is the neither the time nor the place. Besides, let the man have his dignity." AutKimposure>>[[|AutKimposure]]
     <<AddOption "\"Kim, you ok? You're kinda lookin' like hell, mate.\"" AutCalledOut>>[[|AutCalledOut]]
 <<else>>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "As if there were some world in which Kim Kitsuragi weren't stoic enough.  As if he's not the toughest sonofabitch you know.">>
     <<PassiveSkill Authority "The *second* toughest, thank you.">>
     <<PassiveSkill Endurance "And just who *would* be the toughest, Minot? If all Kim did was put up with your shit, Harry, that'd still make him tougher than you.">>
@@ -1945,7 +1945,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "You can deal with that later. Dead guy, first." AutOhRight>>[[|AutOhRight]]
 
 ::AutOhRight
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Your attention turns back to the gaping wound on the victim's temple. It's slow going, but now that you've got the worst of the blood off you can try pulling back the curtain of hair and scalp to peer into the pulpy little socket.">>
 <<AddParagraph "And it is pulpy, too, not nice and clean like in those tawdry crime serials the bookshop sells. The bone has fractured along its symphyses, where the skull plates meet. There are probably hairline fractures in the plates themselves, but gentle pressure doesn't cause any of the bone to give under your fingers. What it does yield, however, are a couple of big, soft hematomas right next door. In fact...">>
 <<set _roll to rollDice() + $MOT>>
@@ -1977,21 +1977,21 @@ KCC is now: $knowKimsCorpseClue
 	<</if>>
 <</if>>
 <<if $knowKimsPrybar >=1>>
-	<<SetSpeaker YOU>>
+	<<SetSpeaker "YOU">>
 	<<AddParagraph "\"Well, I suppose there's a small mercy here.\"">>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You talk while staring at the dead man. An odd choice. As if you're cataloguing all this for him. \"Add a section for a couple hematomas on the head, above and behind the temple. Opinion: inflicted by the assailant, but non-fatal.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant takes his notes. His eyebrow raises, but he does not interrupt.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Add another section for the... you know.\" You gesture at your preciously intact temple with one bloody index finger. \"Blunt force trauma to the skull and brain, applied at the temple. Skull fractured, brain matter exposed and badly traumatized. Opinion: Fatal injury.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "There is nothing left to write. The form is full, your verbal dissection complete. The lieutenant's eyebrow has not come down.">>
 <<if $knowKimsPrybar >=1>>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "\"You have a strange idea of mercy, detective.\"">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "You give the dead man a small smile. \"The mercy, my friend, is that it'd take a lousy cop to think you were the one swinging that prybar.\" There's a moment of dead silence in the air.">>
     <<set _roll to rollDice() + $PSY>>
     <<if _roll >= 10>>
@@ -2003,7 +2003,7 @@ KCC is now: $knowKimsCorpseClue
     <<AddOption "\"Maybe... I don't know, yet. It's my job to keep an open mind.\"" AutOpenMind>>[[|AutOpenMind]]
     <<AddOption "\"I've had enough of being a lousy cop to last me a lifetime. We'll figure this out, Kim.\"" AutKnowBetter>>[[|AutKnowBetter]]
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "He's waiting for something. Waiting for *you*. He's seen you dive past all good sense and intuition in the past, only to resurface with fistfuls of information. He's seen you weasel details from the tightest-lipped thugs and the slyest street peddlers. There's expectation in that eyebrow.">>
 <<if $knowKimsCorpseClue >= 3>>
     <<AddOption "He's worried you're already putting it together. He knows more than he's let on." AutKimsCorpse>>[[|AutKimsCorpse]]
@@ -2015,7 +2015,7 @@ KCC is now: $knowKimsCorpseClue
 <<KimfluenceLost 5>>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant shakes his head. \"Of course.\" His voice is drier than the desert during a drought. \"And I... you know what? Never mind.\" The click of his pen is final. He slides it into his pocket and flips his ledger shut before turning on heel to go investigate something else. Clearly, you've been dismissed.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You peel off the bloody gloves one at a time before reaching to pocket the knife and penlight. You hope it reads as fastidiousness, instead of giving away that you're feeling out just how much resistance your knees are going to give you when you try to stand. The floor gets further down, every day.">>
 <<PassiveSkill Composure>>
 <<AddParagraph "Just try not to faceplant into the stiff, du Bois. And for the love of all that is good, try not to blow the ass out of your pants.">>
@@ -2027,7 +2027,7 @@ KCC is now: $knowKimsCorpseClue
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "You have never seen your partner so expressive as he is right now. All the air blows out of him in a rush, held longer than he'd noticed. The orange bomber jacket rustles loud in the silence, his shoulders falling half a foot from where they'd been all but holding up his ears. For a moment – just a single moment – his eyes flutter shut. And then it's passed, and he's eyeing you again with a hint of rueful grin.">>
 <<AddParagraph "\"Yes, detective, I suspect you have. Come on now, we have work to do.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You peel off the bloody gloves one at a time before reaching to pocket the knife and penlight. You hope it reads as fastidiousness, instead of giving away that you're feeling out just how much resistance your knees are going to give you when you try to stand. The floor gets further down, every day.">>
 <<PassiveSkill Composure>>
 <<AddParagraph "Just try not to faceplant into the stiff, du Bois. And for the love of all that is good, try not to blow the ass out of your pants.">>
@@ -2035,14 +2035,14 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "Examine the rest of the scene." CrimeScene>>[[|CrimeScene]]
 
 ::AutKimsCorpse
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "He's not wrong to be worried though, is he? There's a reason you have over two hundred solved cases to your name. You're in full detail-sniffing detective mode, and his body's talking every bit as loudly as the dead man's is.">>
 <<PassiveSkill Electrochemistry>>
 <<AddParagraph "Louder, even.">>
 <<PassiveSkill "Esprit de Corps">>
 <<AddParagraph "Lieutenant Kim Kitsuragi of the RCM's 41st precinct is investigating a new homicide, one that hasn't even been reported yet. It's going to be a rough one on him, harder than usual. He's both hopeful and afraid that his partner will figure it out the truth before he has to admit to it: he knows the man. He knows him *well*. And he's desperately hoping he doesn't have to give voice to this while standing over the crumpled sack of decaying flesh the man's become.">>
 <<AddParagraph "The lieutenant is clawing at the fraying wreckage of his professionalism, a scrabbling attempt to drag the pieces between himself and the truth. Here in a dingy Jamrock apartment, he is at a loss. He's done the only two things he feels sure about right now: he's started working the case, and he's called his partner.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "He's called *you*.">>
 <<AddOption "\"I trust you.\"" AutTrust>>[[|AutTrust]]
 <<AddOption "\"Let’s go.\" Say nothing more on it." AutSayNothing>>[[|AutSayNothing]]
@@ -2058,11 +2058,11 @@ KCC is now: $knowKimsCorpseClue
     <<PassiveSkill "Physical Instrument">>
     <<AddParagraph "Ever see the teeth on a fox? Watch your hands, coppo.">>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Honestly, the guys at the lab are in a better position to interpret anything else this guy's got to say.\" After all, you're a good cop, but you're not bloody psychic.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Just like that.\" He hasn't stopped eyeing you.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You shrug, What else is there to say? \"Just like that. Now, let's see what else this place can tell us, hm?\"">>
 <<AddParagraph "You peel off the bloody gloves one at a time before reaching to pocket the knife and penlight. You hope it reads as fastidiousness, instead of giving away that you're feeling out just how much resistance your knees are going to give you when you try to stand. The floor gets further down, every day.">>
 <<PassiveSkill Composure>>
@@ -2076,17 +2076,17 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "The lieutenant blinks at you once, then twice. \"A cop.\" His tone is even flatter than his ass.">>
 <<PassiveSkill Empathy>>
 <<AddParagraph "Safe to say he does not concur.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Well, look. There's only so many places you can get an RCM-issue prybar. We haven't had any reported stolen. We should look into that noise complaint, might get a lead there.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"... We *should* look into the noise complaint, yes.\" He inclines his head at you, as if he could give any more weight to his words. \"We should *not* go around accusing our colleagues of murder.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Well, not to their faces.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "A long slow breath in, then out. \"Certainly not yet, hm?\"">>
 <<PassiveSkill "Savoir Faire">>
 <<AddParagraph "True. We'd hate to tip someone off, if they were guilty. Gotta be smart about this.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You give him a sharp nod. Best get moving.">>
 <<AddParagraph "You peel off the bloody gloves one at a time before reaching to pocket the knife and penlight. You hope it reads as fastidiousness, instead of giving away that you're feeling out just how much resistance your knees are going to give you when you try to stand. The floor gets further down, every day.">>
 <<PassiveSkill Composure>>
@@ -2096,15 +2096,15 @@ KCC is now: $knowKimsCorpseClue
 
 ::AutTrust
 <<KimfluenceGained 1>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You’ve never been the most eloquent man – or at least, you don’t have any reason to think you have. You certainly don’t feel it right now. But then, Kim’s used to your bluntness by now, right? Just... tell him.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"I trust you.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "Your partner blinks down at you slowly behind thick-rimmed lenses. \"You trust me.\"">>
 <<PassiveSkill Rhetoric>>
 <<AddParagraph "It’s a question.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"And you trust me, Kim, or I wouldn’t be here.\" He freezes on half a breath. You shrug and blow right by him. \"You’ll tell me when you’re ready.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Who says there’s anything to tell?\"">>
@@ -2112,7 +2112,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "He knows better.">>
 <<PassiveSkill Logic>>
 <<AddParagraph "You know better.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Call it a hunch. In the meantime, Kim...\" Oh, this part you’re not so good at. \"... we’ve got this. We’ll catch the prick.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He does not smile, but some colour comes back to his cheeks, and the nod he gives you is certain. Yes, he thinks to himself. We will.">>
@@ -2125,7 +2125,7 @@ KCC is now: $knowKimsCorpseClue
 <<PassiveSkill Composure>>
 <<AddParagraph "The agitation does not want to let him go.">>
 <<AddParagraph "But this is not your story to tell – it’s his. It would take a stronger man than you to make him tell it before he’s ready.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Why? Is there something else to say?\" You give him a one-sided shrug and look away. It’s as close to an admission as he’s getting. If he wants to play silent, you’ll let him. \"Come on. There’s still plenty of crime scene waiting for us. Let’s go catch this prick.\"">>
 <<PassiveSkill Endurance>>
 <<AddParagraph "And maybe you could spend less time crouching while you do it, hm?">>
@@ -2479,11 +2479,11 @@ KCC is now: $knowKimsCorpseClue
     <<AddParagraph "If they don't have sildenafil and pyrholidon on file in the office, they're even more incompetent than I thought. C'mon, think about it - clear, uncluttered thoughts; warm, soft glow; probably won't drive anyone's Kineema into the ocean; and did I mention seeing through time? You'd be a chump to pass it up, Harry. Kim can't watch forever. Into the pocket!">>
     <<PassiveSkill "Volition">>
     <<AddParagraph "What happened to that new leaf you were turning, hm? Clean yourself up? Or are you once again going to make a liar of yourself? You can't possibly tell me you're going to throw it all away for one measly pyrholidon trip. You *know* your Ancient Reptilian Brain will have many somethings to say about it. Kim will disapprove. Vicquemare will take his pound of flesh. You can't keep this quiet, the whole station has their eyes on you.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "Oh, god. Not the Ancient Reptilian brain. Alright, alright, I won't -">>
     <<PassiveSkill "Electrochemistry">>
     <<AddParagraph "One pyrholidon trip? *One?* You stuffy git, one jar of liquid sunshine and you're flying for weeks. *Weeks!* Imagine how fast you'll solve this case, when you can think at the speed of light, while your corporeal form stands for perhaps an hour at most. You know who'll agree with me? Your tie will, and since when is your tie wrong? OI! OI, TIE.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "And you want to bring -">>
     <<SetSpeaker "HORRIFIC NECKTIE">>
     <<AddParagraph "DID I HEAR PYRHOLIDON, BRATAN? IT WILL BE BEAUTIFUL, BEAUUUUTIFUL. SOME WINE, A SUNSET, PYRHOLIDON... BRING KIM TOO! IMAGINE IT! HE COULD DRAPE YOU OVER A ROCK AND IT WOULD LAST FOREVER!">>
@@ -2493,7 +2493,7 @@ KCC is now: $knowKimsCorpseClue
     <<AddParagraph "Oh, shut *up*">>
     <<SetSpeaker "HORRIFIC NECKTIE">>
     <<AddParagraph "(Your tie gives off a particular sensation you can only describe as \"miffed\".)">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "I'm seriously done with you. I made my decision while you were squabbling.">>
     <<AddOption "Steal the drugs." BathSteal>>[[|BathSteal]]
     <<AddOption "Leave the drugs where they are." BathLeave>>[[|BathLeave]]
@@ -2510,7 +2510,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "Return to the main room." CrimeScene>>[[|CrimeScene]]
 
 ::BathLeave
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You decide to leave the drugs where they are. Processing probably doesn't need them, and maybe you can come back for them later. It's not a decision that needs to be made right now.">>
 <<AddOption "Return to the main room." CrimeScene>>[[|CrimeScene]]
 
@@ -2583,11 +2583,11 @@ KCC is now: $knowKimsCorpseClue
     <<SkillSuccess>>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "\"Hmm?\" The lieutenant blinks and half turns to where you're pointing over his shoulder before it registers. He turns back to you with a scowl.">>
-    <<PassiveSkill "Savoir Faire>>
+    <<PassiveSkill "Savoir Faire">>
     <<AddParagraph "That moment of distraction was just enough time for you to shove the bottle of wine under your jacket. You cannot believe that actually worked.">>
     <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "The lieutenant sighs and adjusts his glasses. \"Officer. You know that I can see you're hiding something under your jacket, right?\"">>
-    <<PassiveSkill "Savoir Faire>>
+    <<PassiveSkill "Savoir Faire">>
     <<AddParagraph "Damn. Spoke too soon.">>
 <<else>>
     <<SkillFailure>>
@@ -2658,7 +2658,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "The owner of this place feels generous for providing a home free of roaches, and for not using overly carcinogenic sanitizers. They bleed their tenants for just as much as they think they can pay, downright magnanimous not to ask more.">>
 <<PassiveSkill "Inland Empire">>
 <<AddParagraph "You doubt any of that money has gone into updating the building’s infrastructure.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "There’s only one apartment up here likely to have heard anything of value – the one immediately above the victim’s. Kim falls into step behind you as you approach the door.">>
 <<AddOption "Knock." 4FKnock>>[[|4FKnock]]
 <<AddOption "[Perception 9 – Medium] Listen." 4FListen>>[[|4FListen]]
@@ -2666,7 +2666,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "Never mind. Back downstairs." 3FHall>>[[|3FHall]]
 
 ::4FListen
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "It’s relatively quiet in this hallway, given how thin the walls are. Someone’s listening to the radio. (Someone’s never going to make it big, if that’s the best they can sing.) You put your ear to the door in question.">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 9>>
@@ -2690,7 +2690,7 @@ KCC is now: $knowKimsCorpseClue
     <<SkillSuccess>>
     <<PassiveSkill "Physical Instrument">>
     <<AddParagraph "You’re not just a man, you’re a *machine*, an absolute powerhouse. You’re also not a dunce who thinks kicking the middle of this door is going to do anything besides make an ugly fucking hole in the fibreboard. You broaden your stance, rock your weight back onto one heel...">>
-    <<SetSpeaker “KIM KITSURAGI">>
+    <<SetSpeaker "KIM KITSURAGI">>
     <<AddParagraph "\"... Lieutenant? Wait, what are you – \"">>
     <<PassiveSkill "Physical Instrument">>
     <<AddParagraph " – and you boot that motherfucker right below the knob.">>
@@ -2728,15 +2728,15 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "\"What is this, fucking Martinaise? You can’t just go around kicking in people’s doors like you own the place. I’m calling your boss. You have to replace my door!\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Of course. We apologize. This was *most* uncalled-for.\" You get the distinct impression Kim is not merely addressing the tenant.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Two gloved hands are applying a rather uncompromising pressure against your person, forcing you back toward the stairwell – and perhaps most importantly, away from the door. This interview, such as it is, is over.">>
 <<SetSpeaker "UPSTAIRS NEIGHBOUR">>
 <<AddParagraph "The lieutenant doesn’t give the tenant any more option in that matter than he gives you. The man manages a couple more obscenities before Kim cuts him a single look over his shoulder. You’d almost feel bad for the guy, if it didn’t settle the screaming civilian issue so easily. Mercifully, the knob does not fall out of the door as it clatters shut.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Uh, Kim – ">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"No.\"
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "But – ">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"You’ve done enough here, Officer.\" He points. \"Now.\"">>
@@ -2753,7 +2753,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "When will you stop letting your partner push you around with a single look? You haven’t even noticed yet, but you’re about to crumple like cheap tin.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The look said partner is currently wearing is almost flat, save for the tension in the jaw and the small flare to his nostrils. This one’s never a good sign.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "No one makes him wear it more easily than you do. That’s... hang on. What does that mean, exactly?">>
 <<PassiveSkill Composure>>
 <<AddParagraph "That you get under his skin. That you slide under his defences in a way most can’t. !!! If we want a Thought Cabinet for ‘Kim Might Be DTF’, this may be somewhere we could drop a potential trigger for it. Not the only one of course, because this option will probably never see the light of day lol. !!!">>
@@ -2764,13 +2764,13 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "Let’s go, then." 3FHall>>[[|3FHall]]
 
 ::4FKnock
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You give a few sharp raps dead centre – your cop knock. It doesn’t take long for heavy footsteps to torture a few creaks out of the floor inside the apartment. The door swings open to reveal a blond man in his mid-thirties, wiping water of his forearms with a dishtowel.">>
 <<AddParagraph "\"Oh, for – look. I don’t want any, I don’t need any, I’ve heard the good news, I’m happy with my service. Have a good day.\" He moves to swing the door shut.">>
 <<AddOption "Stick your foot in the way." 4FInterview>>[[|4FInterview]]
 
 ::4FInterview
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "The cheap fibreboard echoes helplessly as it connects with green snakeskin.">>
 <<set _roll to rollDice() + $MOT>>
 <<if _roll >= 9>>
@@ -2787,11 +2787,11 @@ KCC is now: $knowKimsCorpseClue
     <<SetSpeaker "UPSTAIRS NEIGHBOUR">>
     <<AddParagraph "Whatever that message may be, it does appear to be the right one. The tenant opens the door all the way, gesturing you inside.">>
 <<else>>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"I’ll have a better day if you just let me in.\" Okay, that didn’t come out right. \"Because I want something.\"">>
     <<PassiveSkill "Savoir Faire">>
     <<AddParagraph "Really not better.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Well, *we* want something. From you.\"">>
     <<PassiveSkill "Savoir Faire">>
     <<AddParagraph "Please, just shut up. I’m begging you.">>
@@ -2804,12 +2804,12 @@ KCC is now: $knowKimsCorpseClue
     <<if _roll >= 12>>
     	<<PassiveSkill Electrochemistry>>
     	<<AddParagraph "Oh, he definitely means fuck-partners. He’s suggesting you and Kim do the business, as it were. !!! Rolling EC for this. Do we want to roll Reaction Speed? [check set to 12?]!!!">>
-    	<<SetSpeaker YOU>>
+    	<<SetSpeaker "YOU">>
     	<<AddParagraph "\"Pretty well all cops are partnered,\" you assure him, perhaps a touch quicker than necessary. \"For work purposes.\"">>
     	<<SetSpeaker "KIM KITSURAGI">>
     	<<AddParagraph "There’s a sigh from behind you. \"Very smooth, detective.\" The lieutenant steps around you to give the man his most professional eyebrow. \"May we come in? This shouldn’t take long.\"">>
     <<else>>
-    	<<SetSpeaker YOU>>
+    	<<SetSpeaker "YOU">>
     	<<AddParagraph "\"Pretty well all cops are partnered,\" you assure him. \"At least, anyone who does field work has a partner. It’s both for safety and to hopefully improve accountability.\"">>
     <</if>>
     <<SetSpeaker "UPSTAIRS NEIGHBOUR">>
@@ -2823,7 +2823,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "The man nods. \"I am. André Svoboda, pleased to make your acquaintance.\" He gestures you to his modest dining table. \"My grandfather was Graadian,\" he adds, as if his surname is a matter of some concern.">>
 <<PassiveSkill Logic>>
 <<AddParagraph "Why would the RCM give a shit about who his grandfather was? We’re looking into murders, not dynasties.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "It’s a modest apartment, nothing unusual for the area or the building. Bits of clutter here and there. The radio swings into another upbeat ditty from the late ‘30s. A dining chair creaks under your weight as you sit, mercifully louder than your bones do.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "Kim pulls out his latest notebook, a quiet *clak-clak* as it falls open to the newest clean page. He pulls out his pen and looks to you.">>
@@ -2832,7 +2832,7 @@ KCC is now: $knowKimsCorpseClue
 
 ::4FHarryTalks
 <<KimfluenceGained 1>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Ok, my post-Graadian friend! Tell us what you know.\" You lean back into the seat and shoot him a grin. Make the man feel at ease.">>
 <<set _roll to rollDice() + $PSY>>
 <<if _roll >= 10>>
@@ -2840,7 +2840,7 @@ KCC is now: $knowKimsCorpseClue
     <<AddParagraph "You’ve always been good at getting people to talk, but this part you’re getting better at. It helps that your features aren’t so distorted, these days. You open up your body language as you smile, and here, now – don’t stare the man down.">>
     <<SetSpeaker "ANDRÉ SVOBODA">>
     <<AddParagraph "\"Certainly, officer. Whatever helps. I assume this is about the altercation I heard last night?\"">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "\"Could be. What did you hear? When did you hear it?\" Beside you, the lieutenant’s pen begins its meticulous record-keeping.">>
     <<set _roll to rollDice() + $MOT>>
     <<if _roll >= 9>>
@@ -2867,7 +2867,7 @@ KCC is now: $knowKimsCorpseClue
     <<AddParagraph "Kim pats your arm a couple times. \"Please forgive my partner, Mister Svoboda,\" he tells the man. \"He suffers from a sort of... facial palsy. Please, continue.\"">>
     <<PassiveSkill Electrochemistry>>
     <<AddParagraph "Excuse me? *Facial palsy*? That may be one of the least fuckable things he’s ever said about you! Take that back!">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "Fortunately for those assembled, not least of which yourself, the Expression is no longer a fixed compulsion on your features. Your brow furrows in indignation, your upper lip pulls down over your teeth again and just like that – the spell is broken.">>
     <<SetSpeaker "ANDRÉ SVOBODA">>
     <<AddParagraph "\"Right.\" He’s watching you as you turn back from looking at Kim, but he holds his tongue. Perhaps wisely so. \"Okay, then. What was it you wanted, again?\"">>
@@ -2891,7 +2891,7 @@ KCC is now: $knowKimsCorpseClue
 
 ::4FKimTalks
 <<KimfluenceLost 1>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You lean back slowly, letting the back of the seat take your weight. The apartment doesn’t really tell you much as your eyes begin to wander over it. Admittedly, it’s probably not relevant to the investigation – why would it? A small television is visible but sleeping in the living area. One sofa, two end tables. A couple more dishes in the drying rack than you’d expect for a single man living alone. Maybe – ">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Khm.\" Oh, right. \"Mister Svoboda. We are investigating an incident that took place overnight last night in the unit immediately below yours. Were you home between 23:00 last night and 7:00 this morning?\"">>
@@ -2928,7 +2928,7 @@ KCC is now: $knowKimsCorpseClue
 ::4FWrong
 <<SetSpeaker "ANDRÉ SVOBODA">>
 <<AddParagraph "\"I mean, I assume wife. Whoever she was, she was a lady and they were definitely having a domestic of some kind in the middle of the night. Maybe a mistress or something. Though now that you say it, I don’t know that she was his usual, you know what I mean?\" He inclines a very meaningful eyebrow at you. It suggests you should *definitely* know what he means.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Unfortunately, police reports require something a little more explicit than an eyebrow. \"Could you be specific?\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"I don’t know that we need you to be too specific,\" the lieutenant is quick to add.">>
@@ -2951,7 +2951,7 @@ KCC is now: $knowKimsCorpseClue
     <<PassiveSkill "Esprit de Corps">>
     <<AddParagraph "Whoever this ‘woman’ was, she wasn’t his wife. Or, if she was, she’s not the type to get mad about him having sexual encounters with other people. Whatever sort of person the victim may have been, it’s not the sort Kim is.">>
 <</if>>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Okay, so the person living below you got into a brief fight with a... womanly-sounding person.\" You gesture for him to go on. \"Can you tell us anything else about them? Have you seen any of this man’s guests, women or otherwise?\"">>
 <<SetSpeaker "ANDRÉ SVOBODA">>
 <<AddParagraph "\"Look, I dunno. There was a bunch of banging, some yelling, and then no yelling. I was trying to sleep.\" He really doesn’t seem to care. \"I do have something you’ll want to know about, though.\"">>
@@ -2971,8 +2971,8 @@ KCC is now: $knowKimsCorpseClue
 	<<set _roll to rollDice() + $MOT>>
 	<<if _roll >= 10>>
 	    <<PassiveSkill "Perception (Sight)">>
-	    <<AddParagraph "[this check is set to 10. edit this later.] They may be four stories down, but there’s no mistaking the two little ginger-haired figures in the alley below. You spent way too much time with those little shits in Martinaise during your formative... weeks to ever be able to forget them. Rooting around through an open skip, flinging rubbish about and screeching at each other, are Cuno and Cunoesse.">>
-	    <<SetSpeaker YOU>>
+	    <<AddParagraph "[!!! this check (Perception) is set to 10. edit this later. !!!] They may be four stories down, but there’s no mistaking the two little ginger-haired figures in the alley below. You spent way too much time with those little shits in Martinaise during your formative... weeks to ever be able to forget them. Rooting around through an open skip, flinging rubbish about and screeching at each other, are Cuno and Cunoesse.">>
+	    <<SetSpeaker "YOU">>
 	    <<AddParagraph "\"... Well no shit.\"">>
 	    <<SetSpeaker "KIM KITSURAGI">>
 	    <<AddParagraph "\"I’m compelled to disagree, detective.\" His voice lilts up, amused. \"It definitely looks like shit down there, to me.\"">>
@@ -2994,7 +2994,7 @@ KCC is now: $knowKimsCorpseClue
 <<else>>
 	<<PassiveSkill "Perception (Sight)">>
 	<<AddParagraph "The alley looks exactly as you expect it to look. Rubbish, brick and cobble, and two screechy ginger adolescents. Nothing suspicious about it.">>
-	<<SetSpeaker YOU>>
+	<<SetSpeaker "YOU">>
 	<<AddParagraph "It takes a moment of scanning the area before you realize that Cuno and Cunoesse are the reason the tenant's dragged you over.">>
 	<<SetSpeaker "KIM KITSURAGI">>
 	<<AddParagraph "The expression on the lieutenant’s face next to you is placid, calm. He’s done here.">>
@@ -3018,11 +3018,11 @@ KCC is now: $knowKimsCorpseClue
 ::4FCunoTalk
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"You know, aging can be hard for some men.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"... Oh?\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant pushes the door shut behind you as you enter the stairwell. \"Mm. The body begins to go through some changes, you know. It’s perfectly natural, though. Very normal.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Oh, he’s definitely giving you shit.">>
 <<PassiveSkill "Physical Instrument">>
 <<AddParagraph "Who’s he think you are, anyway? Changes?? You’re every bit the beefcake you’ve ever been. You could take him any day.">>
@@ -3036,12 +3036,12 @@ KCC is now: $knowKimsCorpseClue
 <<AddOption "You’re reckless, but you’re not *that* reckless." 4FDoNot>>[[|4FDoNot]]
 
 ::4FDoNot
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Focus, focus. What was he saying? Right, aging.">>
 <<AddParagraph "\"If you’re trying to tell me you’re having a hard time with it, I’m here for you, buddy.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Me? Oh, no.\" His face is neutral. His tone is downright jovial as he reaches up to very pointedly adjust his glasses. \"*I* made peace with it a long time ago.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Are you suggesting I need glasses??\"">>
 <<PassiveSkill  "Physical Instrument">>
 <<AddParagraph "You most definitely do *not* need glasses.">>
@@ -3049,24 +3049,24 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "Mmm... how sure are you about that?">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Oh, right. I suppose the sun was just in your eyes, hm?\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"... Maybe.\"">>
 <<PassiveSkill Logic>>
 <<AddParagraph "Actually, though it has stopped raining, it’s still quite overcast.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"At least this time you weren’t missing out on much. Just a couple of... well. Painfully familiar youths.\" He almost wrinkles his nose at that.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Hang on. Painfully familiar? You’re not familiar with any kids, not really; they’re usually more under Counter-Truancy or Juvenile Crimes. In fact, the only kids you can think of off the top of your head are...">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"No.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "The lieutenant reaches past you to open the door to the third floor as you stutter to a halt. \"Oh yes, Detective. Unfortunately so.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"... Cuno.\"">>
 <<AddOption "Somehow, I’d rather talk to the dead guy." 3FHall>>[[|3FHall]]
 
 ::4FDoIt
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "You spin on the spot as your foot hits the first landing, giving the lieutenant a challenging grin. \"You say that, but I think I could take you.\"">>
 <<PassiveSkill "Reaction Speed">>
 <<AddParagraph "He froze. Just for a second, did you see that?">>
@@ -3076,7 +3076,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "\"Oh you think so, do you?\" He pushes his way onto the landing using nothing but his personal space and a sharp look. It’s enough to back you up a step to let him.">>
 <<PassiveSkill Electrochemistry>>
 <<AddParagraph "You should elaborate.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Damn right. I’ll show you my perfectly natural ‘changes’ up close and personal. What, don’t think I would?\"">>
 <<PassiveSkill Composure>>
 <<AddParagraph "Is it hot in this stairwell??">>
@@ -3092,7 +3092,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "\"At any rate, no one is taking anyone at the top of a flight of stairs.\" Oh. Right. He points one gloved hand downward, toward the next landing.">>
 <<PassiveSkill "Pain Threshold">>
 <<AddParagraph "Man’s got a point.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"... Fine,\" you grumble. He can have this one. You turn to make your way down again.">>
 <<PassiveSkill Authority>>
 <<AddParagraph "It absolutely does not mean you agree.">>
@@ -3100,11 +3100,11 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "... Did you catch that tone, though?">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Now, if you’re quite through, I’m afraid I have to break some bad news to you. About that alley.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "Uh oh.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"I’m desperately hoping it won’t become relevant, but the two little reprobates down there...\" He breathes a resigned sigh out through his nose. \"I recognized them.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"From your juvie days?\" He hates that time. It’s understandable.">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"No, Detective. You will, too.\" He allows himself a smirk. \"Well, if you get close enough to see them, of course.\"">>
@@ -3112,11 +3112,11 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "Statistically unlikely. You still remember so few people from before your attempt at self-obliteration in Martinaise, and given that you’re not Juvenile Crimes, very few of your cases actually involve children in any meaningful capacity. There have been nine over the past year in which youth were involved, of which only three were teenagers. Of those three, the two most notable would unquestionably have to be – ">>
 <<PassiveSkill Composure>>
 <<AddParagraph "Ah, fuck.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Ah, fuck.\"">>
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "\"Indeed.\"">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"... Cuno.\"">>
 <<AddOption "I’d almost rather talk to the stiff." 3FHall>>[[|3FHall]]
 
@@ -3393,7 +3393,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "\"Lieutenant?\"">>
 <<PassiveSkill Volition>>
 <<AddParagraph "*ahem*">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "\"Thank you, yes! The form! For the autopsy. The autopsy form.\"">>
 <<PassiveSkill "Savoir Faire">>
 <<AddParagraph "You couldn’t be any less smooth if he dragged you around behind his Coupris.">>
@@ -3422,7 +3422,7 @@ KCC is now: $knowKimsCorpseClue
     <<AddParagraph "Powdered residue on cheek, immediately adjacent to nose. Suspect illicit recreational substance.">>
 <<else>>
 <<AddParagraph "Powdered residue on cheek, immediately adjacent to nose. Suspect MDMA.">>
-    <<SetSpeaker YOU>>
+    <<SetSpeaker "YOU">>
     <<AddParagraph "Can’t help but notice he didn’t include how you came to said conclusion. That’s probably for the best. It’s certainly for the kindest, anyway.">>
 <</if>>
 <<if $autVSkin == 1>>
@@ -3473,11 +3473,11 @@ KCC is now: $knowKimsCorpseClue
 <<BlankSpeaker>>
 <<AddParagraph "Blunt force trauma to the skull and brain, applied at the temple. Skull fractured, brain matter exposed and badly traumatized. Fatal injury.">>
 <<if $autVWeakBar == 1>>
-	<<SetSpeaker YOU>>
+	<<SetSpeaker "YOU">>
 	<<AddParagraph "Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. That head wound took a few swings, at least. You’re likely looking for someone lacking in upper body strength.">>
 <</if>>
 <<if $autVShortBar == 1>>
-	<<SetSpeaker YOU>>
+	<<SetSpeaker "YOU">>
 	<<AddParagraph "Your observations on the nature of the assailant weren’t recorded on the autopsy form, of course. Based on the angle of those hematomas, that prybar was swung upward at quite an angle. You’re likely looking for someone significantly shorter than your victim.">>
 <</if>>
 <<if $autVSlowBar== 1>>
@@ -3488,7 +3488,7 @@ KCC is now: $knowKimsCorpseClue
 <<AddParagraph "Finally, the photograph is clipped to the back of the report. Kim was standing to the side when he took it, near the victim’s legs. It depicts the man in an awkward sprawl behind his front door, head facing away from the camera. Between the angle and the bloody head wounds, the face is unidentifiable. A red-brown pool has surrounded his body. His chest hair is thick and matted. His arms and torso are marked by a life lived at speed, decorated in bruises and old scars.">>
 <<BlankSpeaker>>
 <<AddParagraph "He looks a disturbing amount like *you*.">>
-<<SetSpeaker YOU>>
+<<SetSpeaker "YOU">>
 <<AddParagraph "There’s not much more that can be gleaned from this. You flip the ledger closed and hand it back to the lieutenant.">>
 <<AddOption "Back to business." _back>>
 
